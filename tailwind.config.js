@@ -73,9 +73,14 @@ export default {
           "50%": { transform: "scale(1)" },
           "75%": { transform: "scale(1.1)" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         heartbeat: "heartbeat 1.2s ease-in-out infinite",
+        marquee: "marquee 30s linear infinite",
       },
     },
   },
