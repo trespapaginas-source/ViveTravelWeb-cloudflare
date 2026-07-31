@@ -1,0 +1,2292 @@
+[
+  {
+    "id": "plan-16",
+    "name": "Eurotrip Clásico",
+    "slug": "eurotrip-clasico",
+    "shortDescription": "Recorre las capitales europeas más icónicas: Madrid, París y Roma en un circuito completo de 15 días.",
+    "fullDescription": "El viaje de tus sueños por el viejo continente. Descubre la historia imperial de Madrid, la magia y romance de la Ciudad de la Luz en París, y la majestuosidad de la Ciudad Eterna en Roma. Este circuito incluye pasajes de avión, hotelería de categoría superior, desayunos buffet, traslados en autobús de lujo y visitas guiadas con expertos locales en cada destino.",
+    "images": [
+      "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&h=600&fit=crop"
+    ],
+    "price": 6500000,
+    "priceRange": "$6.500.000 - $7.800.000 COP",
+    "duration": "15 días, 14 noches",
+    "location": "Madrid, París y Roma",
+    "category": "Circuitos",
+    "includes": [
+      "Tiquetes aéreos internacionales",
+      "Alojamiento 14 noches en hoteles 4★",
+      "Desayunos buffet diarios",
+      "Visita con guía local en Madrid, París y Roma",
+      "Traslados aeropuerto-hotel-aeropuerto",
+      "Tarjeta de asistencia médica"
+    ],
+    "excludes": [
+      "Almuerzos y cenas no especificados",
+      "Entradas a monumentos no descritos",
+      "Gastos personales y propinas"
+    ],
+    "highlights": [
+      "Visita al Coliseo y Foro Romano",
+      "Subida al segundo piso de la Torre Eiffel",
+      "Tour por el Palacio Real de Madrid",
+      "Crucero nocturno por el Río Sena"
+    ],
+    "rating": 4.9,
+    "reviewCount": 148,
+    "maxGuests": 25,
+    "difficulty": "Fácil",
+    "schedule": "Salidas el primer sábado de cada mes",
+    "meeting": "Aeropuerto Internacional El Dorado, Bogotá",
+    "published": true,
+    "order": 0
+  },
+  {
+    "id": "plan-18",
+    "name": "Turquía y Dubái",
+    "slug": "turquia-dubai",
+    "shortDescription": "La magia de Estambul y los globos de Capadocia junto con el lujo futurista y los safaris de Dubái.",
+    "fullDescription": "Un circuito extraordinario de 12 días que une dos de los mundos más exóticos del planeta. Déjate cautivar por las mezquitas y bazares históricos de Estambul, sobrevuela en globo los paisajes lunares de Capadocia en Turquía y luego vuela hacia el desierto para vivir la modernidad, rascacielos y safaris de lujo en Dubái.",
+    "images": [
+      "https://images.unsplash.com/photo-1527838832700-50592524df7e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&h=600&fit=crop"
+    ],
+    "price": 5900000,
+    "priceRange": "$5.900.000 - $6.900.000 COP",
+    "duration": "12 días, 11 noches",
+    "location": "Estambul, Capadocia y Dubái",
+    "category": "Circuitos",
+    "includes": [
+      "Tiquetes de vuelo internacional y doméstico",
+      "Alojamiento 11 noches en hoteles 4★ y 5★",
+      "Desayunos diarios y cenas en Turquía",
+      "Safari por el desierto de Dubái con cena BBQ",
+      "Crucero privado por el Río Bósforo en Estambul",
+      "Guías locales en español en ambos países"
+    ],
+    "excludes": [
+      "Vuelo en globo aerostático en Capadocia (opcional)",
+      "Impuesto turístico de Dubái (Tourism Dirham)",
+      "Almuerzos no especificados"
+    ],
+    "highlights": [
+      "Safari 4x4 por las dunas rojas de Dubái",
+      "Visita a la Mezquita Azul y Santa Sofía en Estambul",
+      "Paisajes de chimeneas de hadas en Capadocia",
+      "Entrada a la plataforma del Burj Khalifa"
+    ],
+    "rating": 4.8,
+    "reviewCount": 112,
+    "maxGuests": 20,
+    "difficulty": "Fácil",
+    "schedule": "Salidas grupales los días 15 de cada mes",
+    "meeting": "Aeropuerto Internacional El Dorado, Bogotá",
+    "published": true,
+    "order": 0
+  },
+  {
+    "id": "plan-17",
+    "name": "Japón Esencial",
+    "slug": "japon-esencial",
+    "shortDescription": "La combinación perfecta entre tradición milenaria y tecnología del futuro en Tokio, Kioto y Osaka.",
+    "fullDescription": "Embárcate en un fascinante circuito de 10 días por la tierra del sol naciente. Desde los rascacielos iluminados y templos antiguos de Tokio, hasta los serenos jardines zen de Kioto y la gastronomía callejera de Osaka, este viaje te mostrará la verdadera esencia de Japón. Viaja en el tren bala Shinkansen y alójate en un Ryokan tradicional con aguas termales (Onsen).",
+    "images": [
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&h=600&fit=crop"
+    ],
+    "price": 8200000,
+    "priceRange": "$8.200.000 - $9.500.000 COP",
+    "duration": "10 días, 9 noches",
+    "location": "Tokio, Kioto y Osaka",
+    "category": "Circuitos",
+    "includes": [
+      "Tiquetes aéreos internacionales",
+      "Pase de tren Japan Rail Pass (JR Pass)",
+      "Alojamiento 8 noches en hotel + 1 noche en Ryokan",
+      "Desayunos diarios y 1 cena tradicional Kaiseki",
+      "Guía acompañante de habla hispana",
+      "Entradas a todos los templos descritos"
+    ],
+    "excludes": [
+      "Almuerzos y cenas no descritos",
+      "Seguro de viaje de cobertura médica extendida",
+      "Propinas y gastos personales"
+    ],
+    "highlights": [
+      "Viaje en el Tren Bala Shinkansen",
+      "Paseo por el bosque de bambú de Arashiyama",
+      "Templo Senso-ji en Asakusa, Tokio",
+      "Visita al santuario Fushimi Inari-Taisha"
+    ],
+    "rating": 4.9,
+    "reviewCount": 94,
+    "maxGuests": 15,
+    "difficulty": "Moderado",
+    "schedule": "Salidas programadas en época de cerezos (Abril) y otoño (Octubre)",
+    "meeting": "Aeropuerto Internacional El Dorado, Bogotá",
+    "published": true,
+    "order": 0
+  },
+  {
+    "id": "f041da2d-b267-4d59-882b-48c31c14f43a",
+    "name": "Plan Manglar Metroparque",
+    "slug": "plan-manglar-metroparque",
+    "shortDescription": "Recorre los manglares de Mallorquín en kayak y descubre la fauna del ecosistema costero del Atlántico.",
+    "fullDescription": "Sumérgete en una experiencia única navegando por los canales del manglar de Mallorquín, uno de los ecosistemas más importantes de la costa caribe colombiana. Este plan incluye un recorrido guiado en kayak por los canales del manglar, donde podrás observar aves, cangrejos y otra fauna local en su hábitat natural. El guía te contará sobre la importancia ecológica del manglar y los esfuerzos de conservación. Disfruta de un refrigerio típico frente al mar y finaliza con tiempo libre en la playa de Mallorquín para relajarte y tomar fotografías.",
+    "images": [
+      "/static-media/plan-circuito-machu-picchu.jpg",
+      "https://images.unsplash.com/photo-1586105251261-72a756497a11?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
+    ],
+    "price": 90000,
+    "priceRange": "$85.000 - $120.000 COP",
+    "duration": "Medio día (4 horas)",
+    "location": "Puerto Colombia",
+    "category": "Naturaleza",
+    "includes": [
+      "Guía profesional bilingüe",
+      "Equipo de kayak completo",
+      "Refrigerio típico",
+      "Seguro de accidentes",
+      "Transporte ida y vuelta desde puntos de encuentro",
+      "Charla de conservación ambiental"
+    ],
+    "excludes": [
+      "Gastos personales",
+      "Fotografía profesional",
+      "Comidas adicionales"
+    ],
+    "highlights": [
+      "Avistamiento de aves y fauna del manglar",
+      "Navegación en kayak por canales naturales",
+      "Playa de Mallorquín",
+      "Refrigerio típico costeño"
+    ],
+    "rating": 4.8,
+    "reviewCount": 124,
+    "maxGuests": 12,
+    "difficulty": "Fácil",
+    "schedule": "7:00 AM - 11:00 AM / 2:00 PM - 6:00 PM",
+    "meeting": "Parque principal de Puerto Colombia",
+    "published": true,
+    "order": 0
+  },
+  {
+    "id": "8ef0f18b-cdd3-4cb6-a83d-8656b7d8a7cf",
+    "slug": "bora-bora-beach-club-area-club",
+    "name": "Bora Bora Beach Club - Área Club",
+    "shortDescription": "Disfruta un exclusivo día de playa con transporte, almuerzo y acceso al Área Club.",
+    "fullDescription": "Vive una experiencia premium en Bora Bora Beach Club, uno de los clubes de playa más reconocidos de las Islas del Rosario. Relájate frente al mar Caribe con acceso al Área Club, disfruta de un cóctel de bienvenida, transporte en lancha rápida y múltiples opciones de almuerzo. Ideal para quienes buscan comodidad y un ambiente exclusivo durante todo el día.",
+    "price": 390000,
+    "priceRange": "$390.000 COP",
+    "duration": "Día completo (8 horas)",
+    "location": "Islas del Rosario, Cartagena",
+    "category": "Playa",
+    "includes": [
+      "Transporte ida y regreso en lancha rápida",
+      "Cóctel de bienvenida",
+      "5 opciones de almuerzo",
+      "Cama de playa o asoleadora",
+      "Acceso al Área Club"
+    ],
+    "excludes": [
+      "Impuesto portuario",
+      "Seguro",
+      "Gastos no especificados"
+    ],
+    "highlights": [
+      "Beach Club exclusivo",
+      "Playa privada",
+      "Almuerzo incluido",
+      "Ambiente relajado frente al mar"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "maxGuests": 20,
+    "difficulty": "Fácil",
+    "schedule": "7:30 AM - 4:30 PM",
+    "meeting": "Muelle La Bodeguita, Puerta #3, Cartagena",
+    "published": true,
+    "order": 1,
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": "48598e12-26ef-4130-a373-337cb4746fa1",
+    "name": "Plan Senderismo Cerro de la Vieja",
+    "slug": "plan-senderismo-cerro-vieja",
+    "shortDescription": "Aventura de senderismo con vistas panorámicas del Atlántico desde el Cerro de la Vieja.",
+    "fullDescription": "Desafía tus sentidos con esta caminata ecológica hasta el Cerro de la Vieja, uno de los miradores naturales más impresionantes del departamento del Atlántico. Durante el recorrido, atravesarás bosques secos tropicales, observarás flora y fauna endémica, y llegarás a una cima con vistas 360° que abarcan desde la Sierra Nevada de Santa Marta hasta el mar Caribe. El plan incluye guía experto en senderismo, refrigerio energético, kit de primeros auxilios y certificado de participación. Ideal para amantes de la naturaleza y la aventura.",
+    "images": [
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&h=600&fit=crop"
+    ],
+    "price": 95000,
+    "priceRange": "$95.000 - $130.000 COP",
+    "duration": "Medio día (5 horas)",
+    "location": "Cartagena, Playa Blanca",
+    "category": "Aventura",
+    "includes": [
+      "Guía de senderismo certificado",
+      "Refrigerio energético",
+      "Kit de primeros auxilios",
+      "Seguro de accidentes",
+      "Transporte desde punto de encuentro",
+      "Certificado de participación"
+    ],
+    "excludes": [
+      "Calzado de senderizo",
+      "Gastos personales",
+      "Fotografía profesional"
+    ],
+    "highlights": [
+      "Vista panorámica 360°",
+      "Bosque seco tropical",
+      "Avistamiento de fauna endémica",
+      "Cerro a 350m sobre el nivel del mar"
+    ],
+    "rating": 4.7,
+    "reviewCount": 89,
+    "maxGuests": 10,
+    "difficulty": "Moderado",
+    "schedule": "5:30 AM - 10:30 AM",
+    "meeting": "Parque principal de Luruaco",
+    "published": true,
+    "order": 2
+  },
+  {
+    "id": "efc65d75-2595-40b7-be35-2d160163049e",
+    "name": "Plan Noche de Estrellas en la Costa",
+    "slug": "plan-noche-estrellas-costa",
+    "shortDescription": "Vive una noche mágica bajo las estrellas en la costa del Atlántico con cena y observación astronómica.",
+    "fullDescription": "Una experiencia inolvidable que combina la belleza del mar Caribe con la majestuosidad del cielo nocturno. Este plan incluye traslado al mirador costero, una cena gourmet frente al mar con mariscos frescos de la región, y una sesión de observación astronómica guiada con telescopios profesionales. Aprenderás sobre las constelaciones visibles desde el Caribe colombiano y las leyendas indígenas asociadas. Incluye barra libre de cócteles tropicales, música en vivo con sonidos del Caribe y una fogata en la playa. Romántico y educativo, perfecto para parejas y grupos pequeños.",
+    "images": [
+      "https://images.unsplash.com/photo-1475274047050-1d0c55b0033b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&h=600&fit=crop"
+    ],
+    "price": 180000,
+    "priceRange": "$180.000 - $250.000 COP",
+    "duration": "Noche completa (6 horas)",
+    "location": "Mirador Costero, Juan de Acosta",
+    "category": "Experiencia",
+    "includes": [
+      "Transporte ida y vuelta",
+      "Cena gourmet frente al mar",
+      "Barra libre de cócteles tropicales",
+      "Observación astronómica con telescopios",
+      "Guía astrónomo",
+      "Música en vivo",
+      "Fogata en la playa",
+      "Seguro de accidentes"
+    ],
+    "excludes": [
+      "Vinos premium",
+      "Souvenirs",
+      "Fotografía profesional"
+    ],
+    "highlights": [
+      "Observación de estrellas con telescopio",
+      "Cena gourmet de mariscos",
+      "Fogata y música en vivo",
+      "Mirador costero exclusivo"
+    ],
+    "rating": 4.9,
+    "reviewCount": 67,
+    "maxGuests": 8,
+    "difficulty": "Fácil",
+    "schedule": "6:00 PM - 12:00 AM",
+    "meeting": "Hotel lobby zona norte, Barranquilla",
+    "published": true,
+    "order": 4
+  },
+  {
+    "id": "0318f1eb-bf17-4215-98a1-76b6d6859e6d",
+    "name": "Plan Ruta del Bolívar Costero",
+    "slug": "plan-ruta-bolivar-costero",
+    "shortDescription": "Recorre los sitios históricos del litoral del Atlántico relacionados con la gesta libertadora.",
+    "fullDescription": "Viaja en el tiempo por la costa del Atlántico siguiendo los pasos del Libertador Simón Bolívar. Este tour cultural e histórico te lleva por los sitios más emblemáticos de la gesta independentista en el Caribe colombiano: el Museo Bolivariano, el antiguo puerto de Sabanilla, y las fortificaciones coloniales. Incluye almuerzo típico en restaurante histórico, guía historiador experto y material didáctico. Aprenderás sobre la importancia estratégica del Atlántico en la independencia de Colombia y disfrutarás de las vistas del mar Caribe desde perspectivas históricas únicas.",
+    "images": [
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1568702846914-96b305d2ced1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=800&h=600&fit=crop"
+    ],
+    "price": 75000,
+    "priceRange": "$75.000 - $100.000 COP",
+    "duration": "Medio día (4 horas)",
+    "location": "Santa Marta",
+    "category": "Cultural",
+    "includes": [
+      "Guía historiador certificado",
+      "Entradas a museos y sitios históricos",
+      "Almuerzo típico",
+      "Transporte entre sitios",
+      "Material didáctico",
+      "Seguro de viaje"
+    ],
+    "excludes": [
+      "Souvenirs y artesanías",
+      "Gastos personales",
+      "Propinas"
+    ],
+    "highlights": [
+      "Museo Bolivariano",
+      "Puerto histórico de Sabanilla",
+      "Fortificaciones coloniales",
+      "Almuerzo en restaurante histórico"
+    ],
+    "rating": 4.5,
+    "reviewCount": 43,
+    "maxGuests": 20,
+    "difficulty": "Fácil",
+    "schedule": "9:00 AM - 1:00 PM",
+    "meeting": "Museo Bolivariano, Barranquilla",
+    "published": true,
+    "order": 5
+  },
+  {
+    "id": "plan-santander-inolvidable",
+    "name": "Santander Inolvidable",
+    "slug": "santander-inolvidable",
+    "shortDescription": "Cañón del Chicamocha, Barichara, San Gil y el Socorro: historia, cultura y paisajes majestuosos en el corazón de Santander con salidas programadas.",
+    "fullDescription": "Santander no es solo un destino; es una experiencia que despierta los sentidos. Desde la arquitectura colonial que susurra historias de independencia hasta la adrenalina pura del Cañón del Chicamocha, este viaje es la mezcla perfecta de cultura, historia y paisajes de ensueño. Ven a descubrir el pueblo más lindo de Colombia, a deleitarte con los sabores más auténticos de nuestra tierra y a vivir unas vacaciones inolvidables donde cada rincón te invita a explorar algo nuevo.",
+    "itinerary": [
+      {
+        "title": "Inmersión Colonial",
+        "description": "Llegada y bienvenida en Bucaramanga. Iniciaremos con un city tour que incluye el encanto de Girón, la dulzura de Floridablanca y un recorrido de compras por las mejores fábricas de calzado."
+      },
+      {
+        "title": "Panoramas y Tradiciones",
+        "description": "Salida hacia San Gil, visitando el Mercado Campesino, la Hacienda el Roble y el majestuoso Parque Nacional del Chicamocha (Panachi), donde cruzarás el cañón en teleférico. Conoceremos el proceso del fique en Curití antes de llegar a nuestro alojamiento."
+      },
+      {
+        "title": "Naturaleza y Libertad",
+        "description": "Exploración de las cascadas de Juan Curí y visita a la Virgen de la Salud en el municipio del Páramo. Por la tarde, viajaremos a la historia en el Socorro y Pinchote para entender la revolución de los comuneros."
+      },
+      {
+        "title": "El pueblo más lindo",
+        "description": "Disfruta de un tour panorámico por San Gil, seguido de una visita inolvidable a Barichara, donde la arquitectura y la historia se encuentran."
+      },
+      {
+        "title": "Despedida",
+        "description": "Traslado al aeropuerto de Bucaramanga con la maleta llena de recuerdos."
+      }
+    ],
+    "images": [
+      "/images/destinos/santander-inolvidable/portada.jpg",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-ce74f45814da?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
+    ],
+    "price": 2650000,
+    "priceRange": "$2.650.000 COP",
+    "duration": "5 días, 4 noches",
+    "location": "Santander",
+    "category": "Nacional",
+    "includes": [
+      "Tiquetes aéreos ida y regreso",
+      "Traslados desde el aeropuerto de Bucaramanga o terminal de transportes a todos los sitios de interés",
+      "Guía acompañante durante todo el recorrido",
+      "Alojamiento: 4 noches y 5 días (1 noche en Bucaramanga, 3 noches en San Gil)",
+      "Alimentación: 4 desayunos y 4 cenas",
+      "Tarjeta de asistencia médica",
+      "Tours guiados: Girón, Floridablanca, Bucaramanga, Parque Nacional del Chicamocha (Panachi), Hacienda el Roble, San Gil, Socorro, el Páramo, cascadas de Juan Curí, Barichara y Mesa de los Santos",
+      "Entradas a experiencias como el Mercado Campesino y presentaciones teatrales locales"
+    ],
+    "excludes": [
+      "Gastos personales o servicios no especificados en el programa"
+    ],
+    "highlights": [
+      "Cañón del Chicamocha (Panachi) con cruce en teleférico",
+      "Barichara, el municipio más bello de Colombia",
+      "Cascadas de Juan Curí y Virgen de la Salud (Páramo)",
+      "Socorro y Pinchote: la revolución de los comuneros",
+      "Obleas de Floridablanca y Café Umpala en la Hacienda el Roble",
+      "Girón, Mercado Campesino y Mesa de los Santos"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "maxGuests": 30,
+    "difficulty": "Fácil",
+    "schedule": "Salidas programadas de julio a enero",
+    "meeting": "Aeropuerto Palonegro, Bucaramanga (llegada antes de las 9:00 a.m.; vuelos de regreso después de las 4:00 p.m.)",
+    "notes": [
+      "Vuelos: es obligatorio que tu llegada al destino sea antes de las 9:00 a.m. y que tu vuelo de regreso sea programado después de las 4:00 p.m.",
+      "Convivencia: para garantizar una experiencia armoniosa, no está permitido el uso de parlantes en vehículos ni habitaciones; recomendamos el uso de audífonos personales.",
+      "Bienestar: está prohibido el consumo de licor, sustancias psicoactivas o cigarrillos (incluyendo electrónicos) en vehículos y hoteles. El incumplimiento de estas normas puede resultar en el retiro del programa.",
+      "Requisitos para menores: si viajas con menores de edad, es indispensable presentar el Registro Civil y, si es necesario, el permiso notariado de los padres para acreditar el parentesco.",
+      "Recomendaciones: te sugerimos llevar una cobija viajera para los recorridos en vehículo y verificar los detalles finales de hoteles al momento de confirmar tu reserva."
+    ],
+    "published": true,
+    "order": 7,
+    "fixedDeparture": true,
+    "departureDates": [
+      {
+        "start": "2026-07-23",
+        "end": "2026-07-27"
+      },
+      {
+        "start": "2026-08-05",
+        "end": "2026-08-09"
+      },
+      {
+        "start": "2026-08-13",
+        "end": "2026-08-17"
+      },
+      {
+        "start": "2026-08-27",
+        "end": "2026-08-31"
+      },
+      {
+        "start": "2026-09-03",
+        "end": "2026-09-07"
+      },
+      {
+        "start": "2026-09-10",
+        "end": "2026-09-14"
+      },
+      {
+        "start": "2026-09-17",
+        "end": "2026-09-21"
+      },
+      {
+        "start": "2026-09-24",
+        "end": "2026-09-28"
+      },
+      {
+        "start": "2026-10-03",
+        "end": "2026-10-07"
+      },
+      {
+        "start": "2026-10-08",
+        "end": "2026-10-12"
+      },
+      {
+        "start": "2026-10-15",
+        "end": "2026-10-19"
+      },
+      {
+        "start": "2026-10-29",
+        "end": "2026-11-02"
+      },
+      {
+        "start": "2026-11-12",
+        "end": "2026-11-16"
+      },
+      {
+        "start": "2026-11-19",
+        "end": "2026-11-23"
+      },
+      {
+        "start": "2026-12-02",
+        "end": "2026-12-06"
+      },
+      {
+        "start": "2026-12-10",
+        "end": "2026-12-14"
+      },
+      {
+        "start": "2026-12-17",
+        "end": "2026-12-21"
+      },
+      {
+        "start": "2026-12-26",
+        "end": "2026-12-30"
+      },
+      {
+        "start": "2026-12-29",
+        "end": "2027-01-02"
+      },
+      {
+        "start": "2027-01-03",
+        "end": "2027-01-07"
+      },
+      {
+        "start": "2027-01-05",
+        "end": "2027-01-09"
+      },
+      {
+        "start": "2027-01-09",
+        "end": "2027-01-13"
+      }
+    ],
+    "lugares": [
+      {
+        "name": "Cañón del Chicamocha",
+        "image": "https://images.unsplash.com/photo-1572507007728-39ef5113bdc2?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Bucaramanga",
+        "image": "https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Girón",
+        "image": "https://images.unsplash.com/photo-1588668214407-2ff9a5e4dd4b?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Barichara",
+        "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Parque del Agua",
+        "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80"
+      }
+    ]
+  },
+  {
+    "id": "plan-boyaca-inolvidable",
+    "name": "Boyacá Colonial",
+    "slug": "boyaca-inolvidable",
+    "shortDescription": "Desde la Catedral de Sal hasta Villa de Leyva: un viaje por los secretos mejor guardados de Boyacá con salidas programadas en avión.",
+    "fullDescription": "¿Alguna vez has soñado con un viaje que despierte todos tus sentidos? Boyacá te espera para revelarte sus secretos mejor guardados. Desde la majestuosa ingeniería de la Catedral de Sal hasta las calles empedradas de Villa de Leyva, cada rincón de este departamento cuenta una historia. Conéctate con la paz de sus paisajes andinos, deléitate con la gastronomía tradicional y vive una experiencia auténtica en el corazón de Colombia. Es hora de hacer las maletas y dejarte cautivar por la hospitalidad boyacense.",
+    "itinerary": [
+      {
+        "title": "Traslados y Ruta Libertadora",
+        "description": "Iniciamos nuestro viaje desde Bogotá hacia el emblemático Puente de Boyacá. Exploraremos la histórica Tunja y culminaremos la jornada relajándonos en los termales de Paipa, con una vista espectacular del Lago Sochagota."
+      },
+      {
+        "title": "Tradición y Artesanía",
+        "description": "Sumérgete en el mundo del cuero en Monguí y descubre las artesanías en carbón de Tópaga. Visitaremos Nobsa, cuna de los tejidos de lana virgen, para terminar el día recorriendo el encanto del Pueblito Boyacense."
+      },
+      {
+        "title": "Naturaleza y Sabores",
+        "description": "Disfrutaremos de un tour panorámico por Sogamoso antes de maravillarnos con la Laguna de Tota, la segunda más grande de América. Conoceremos Tibasosa, famosa por su fruta exótica, la feijoa, antes de regresar para descansar."
+      },
+      {
+        "title": "Historia y Colonia",
+        "description": "Un día dedicado a Villa de Leyva, uno de los pueblos más hermosos del país. Almorzaremos en Sutamarchán, visitaremos Ráquira —la capital artesanal— y finalizaremos en Chiquinquirá, ciudad de fe y tradición."
+      },
+      {
+        "title": "La Maravilla Subterránea",
+        "description": "Tras el desayuno, nos dirigiremos hacia Zipaquirá para visitar la impresionante Catedral de Sal. Será el broche de oro antes de nuestro traslado al aeropuerto."
+      }
+    ],
+    "images": [
+      "/images/destinos/boyaca-colonial/portada.jpg",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1531065208531-4036c0dba3ca?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1572458911542-724ca7bc04e6?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1493524127391-405c952518f8?w=800&h=600&fit=crop"
+    ],
+    "price": 2600000,
+    "priceRange": "$2.600.000 COP",
+    "duration": "5 días, 4 noches",
+    "location": "Boyacá",
+    "category": "Nacional",
+    "includes": [
+      "Tiquetes ida y regreso",
+      "Traslados aeropuerto-destino-aeropuerto y transporte a todos los sitios de interés en vehículos de turismo",
+      "Guía acompañante experto durante todo el recorrido",
+      "Alojamiento 4 noches y 5 días",
+      "Alimentación: 4 desayunos y 4 cenas",
+      "Tarjeta de asistencia médica"
+    ],
+    "excludes": [
+      "Gastos no especificados en el programa"
+    ],
+    "highlights": [
+      "Catedral de Sal de Zipaquirá (primera maravilla de Colombia)",
+      "Villa de Leyva y Ráquira, capital artesanal",
+      "Laguna de Tota, la segunda más grande de América",
+      "Termales de Paipa con vista al Lago Sochagota",
+      "Ruta Libertadora: Puente de Boyacá y Tunja",
+      "Monguí, Tópaga y Nobsa: cuero, carbón y tejidos de lana virgen"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "maxGuests": 30,
+    "difficulty": "Fácil",
+    "schedule": "Salidas programadas de junio a enero",
+    "meeting": "Aeropuerto El Dorado, Bogotá (llegada antes de las 8:00 a.m.; vuelos de regreso después de las 6:00 p.m.)",
+    "notes": [
+      "Requisitos de vuelos: obligatorio llegar al aeropuerto de Bogotá antes de las 8:00 a.m. y programar vuelos de regreso después de las 6:00 p.m.",
+      "Menores de edad: los viajeros con menores deben presentar registro civil y documentación que acredite el parentesco o permiso autenticado ante notaría.",
+      "Convivencia: se recomienda el uso de audífonos personales; está prohibido el uso de parlantes dentro del vehículo y en las habitaciones.",
+      "Normas de salud: prohibido el consumo de tabaco, sustancias psicoactivas o alcohol en los vehículos y hoteles. Su incumplimiento puede derivar en el retiro del programa.",
+      "Extranjeros: asumen un costo adicional de $50.000 netos para el ingreso a la Catedral de Sal (pago al momento de reservar).",
+      "Recomendación: llevar una cobija viajera para el trayecto en el vehículo."
+    ],
+    "published": true,
+    "order": 8,
+    "fixedDeparture": true,
+    "departureDates": [
+      {
+        "start": "2026-06-18",
+        "end": "2026-06-22"
+      },
+      {
+        "start": "2026-06-25",
+        "end": "2026-06-29"
+      },
+      {
+        "start": "2026-07-02",
+        "end": "2026-07-06"
+      },
+      {
+        "start": "2026-07-16",
+        "end": "2026-07-20"
+      },
+      {
+        "start": "2026-07-23",
+        "end": "2026-07-27"
+      },
+      {
+        "start": "2026-08-05",
+        "end": "2026-08-09"
+      },
+      {
+        "start": "2026-08-13",
+        "end": "2026-08-17"
+      },
+      {
+        "start": "2026-08-27",
+        "end": "2026-08-31"
+      },
+      {
+        "start": "2026-09-03",
+        "end": "2026-09-07"
+      },
+      {
+        "start": "2026-09-10",
+        "end": "2026-09-14"
+      },
+      {
+        "start": "2026-09-17",
+        "end": "2026-09-21"
+      },
+      {
+        "start": "2026-09-24",
+        "end": "2026-09-28"
+      },
+      {
+        "start": "2026-10-03",
+        "end": "2026-10-07"
+      },
+      {
+        "start": "2026-10-08",
+        "end": "2026-10-12"
+      },
+      {
+        "start": "2026-10-15",
+        "end": "2026-10-19"
+      },
+      {
+        "start": "2026-10-29",
+        "end": "2026-11-02"
+      },
+      {
+        "start": "2026-11-12",
+        "end": "2026-11-16"
+      },
+      {
+        "start": "2026-11-19",
+        "end": "2026-11-23"
+      },
+      {
+        "start": "2026-12-02",
+        "end": "2026-12-06"
+      },
+      {
+        "start": "2026-12-10",
+        "end": "2026-12-14"
+      },
+      {
+        "start": "2026-12-17",
+        "end": "2026-12-21"
+      },
+      {
+        "start": "2026-12-26",
+        "end": "2026-12-30"
+      },
+      {
+        "start": "2026-12-29",
+        "end": "2027-01-02"
+      },
+      {
+        "start": "2027-01-03",
+        "end": "2027-01-07"
+      },
+      {
+        "start": "2027-01-07",
+        "end": "2027-01-11"
+      },
+      {
+        "start": "2027-01-09",
+        "end": "2027-01-13"
+      }
+    ],
+    "lugares": [
+      {
+        "name": "Villa de Leyva",
+        "image": "/images/lugares/villa-de-leyva.webp"
+      },
+      {
+        "name": "Laguna de Tota",
+        "image": "/images/lugares/laguna-de-tota.webp"
+      },
+      {
+        "name": "Pueblito Boyacense",
+        "image": "/images/lugares/pueblito-boyacense.webp"
+      },
+      {
+        "name": "Pozos Azules",
+        "image": "/images/lugares/pozos-azules.webp"
+      },
+      {
+        "name": "Puente de Boyacá",
+        "image": "/images/lugares/puente-de-boyaca.webp"
+      },
+      {
+        "name": "Pantano de Vargas",
+        "image": "/images/lugares/pantano-de-vargas.webp"
+      },
+      {
+        "name": "Catedral de Sal",
+        "image": "/images/lugares/catedral-de-sal.webp"
+      },
+      {
+        "name": "Raquira",
+        "image": "/images/lugares/raquira.webp"
+      },
+      {
+        "name": "Monguí",
+        "image": "/images/lugares/mongui.webp"
+      },
+      {
+        "name": "Nobsa",
+        "image": "/images/lugares/nobsa.webp"
+      },
+      {
+        "name": "Sogamoso",
+        "image": "/images/lugares/sogamoso.webp"
+      },
+      {
+        "name": "Tunja",
+        "image": "/images/lugares/tunja.webp"
+      }
+    ]
+  },
+  {
+    "id": "plan-eje-cafetero-programado",
+    "name": "Eje Cafetero Mágico",
+    "slug": "eje-cafetero-inolvidable",
+    "shortDescription": "Valle de Cocora, Parque del Café, Termales de Santa Rosa y Filandia: la cultura cafetera y el Paisaje Cultural Cafetero con salidas programadas.",
+    "fullDescription": "Escápate al corazón de Colombia y sumérgete en un paraíso donde la cultura cafetera, la biodiversidad y la calidez de su gente se encuentran. Esta es tu oportunidad de desconectarte de la rutina y recorrer paisajes de ensueño: desde el imponente Valle de Cocora con sus palmas de cera, hasta el relajante calor de los Termales de Santa Rosa de Cabal. Hemos diseñado este itinerario pensando en cada detalle para que tú solo tengas que preocuparte por crear recuerdos inolvidables.",
+    "itinerary": [
+      {
+        "title": "Llegada y conexión con la naturaleza",
+        "description": "Traslados desde el aeropuerto de Pereira hacia los espectaculares Termales de Santa Rosa de Cabal. Finalizamos el día explorando el encantador municipio de Filandia y su mirador."
+      },
+      {
+        "title": "Diversión al máximo en el Parque del Café",
+        "description": "Dedicamos este día completo a disfrutar de las atracciones, el aroma y la historia en el parque temático más representativo de Colombia."
+      },
+      {
+        "title": "Aventura agropecuaria en PANACA",
+        "description": "Un día para la aventura agropecuaria en PANACA (o la experiencia temática que hayas elegido). Regreso al hotel al caer la tarde."
+      },
+      {
+        "title": "Paisajes inspiradores",
+        "description": "Salida hacia Salento y el majestuoso Valle de Cocora, donde la naturaleza te dejará sin aliento antes de realizar el traslado de regreso al aeropuerto."
+      }
+    ],
+    "images": [
+      "/images/destinos/eje-cafetero-magico/portada.jpg",
+      "https://images.unsplash.com/photo-1622308644420-b30fbdf94f1c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518182170546-076616fdcbdd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1444930694458-01babe71870e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1505144808419-19577094b258?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1559511260-66a654ae982a?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop"
+    ],
+    "price": 2350000,
+    "priceRange": "$2.350.000 COP",
+    "duration": "4 días, 3 noches",
+    "location": "Eje Cafetero",
+    "category": "Nacional",
+    "includes": [
+      "Tiquetes aéreos ida y regreso",
+      "Traslados en vehículos de turismo (aeropuerto de Pereira y sitios de interés)",
+      "Guía acompañante durante todo el recorrido",
+      "Tarjeta de asistencia médica",
+      "Alojamiento por 3 noches / 4 días",
+      "Alimentación: 3 desayunos y 3 cenas",
+      "Ingreso al Parque del Café",
+      "Visita a Salento y Valle de Cocora",
+      "Visita al municipio de Filandia y Mirador Encanto",
+      "Tour panorámico por Armenia y Pereira",
+      "Ingreso a los Termales de Santa Rosa de Cabal"
+    ],
+    "excludes": [
+      "Ingreso a los miradores del Valle de Cocora",
+      "Guía acompañante en las experiencias opcionales",
+      "Gastos no especificados en el programa (suplementos)"
+    ],
+    "highlights": [
+      "Valle de Cocora y sus palmas de cera",
+      "Parque del Café",
+      "Termales de Santa Rosa de Cabal",
+      "Salento y Filandia (Mirador Encanto)",
+      "Tour panorámico por Armenia y Pereira",
+      "Opción de aventura agropecuaria en PANACA"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "maxGuests": 30,
+    "difficulty": "Fácil",
+    "schedule": "Salidas programadas de julio a febrero",
+    "meeting": "Aeropuerto Matecaña, Pereira (llegada antes de las 9:00 a.m.; vuelos de regreso después de las 5:00 p.m.)",
+    "notes": [
+      "Vuelos: es indispensable que tu vuelo de llegada al destino sea antes de las 9:00 a.m. y tu vuelo de regreso sea programado después de las 5:00 p.m.",
+      "Convivencia: por respeto a todos los viajeros, no se permite el uso de parlantes o música en alto volumen al interior de los vehículos ni en las habitaciones; se recomienda el uso de audífonos.",
+      "Salud y seguridad: está prohibido el consumo de cigarrillos, cigarrillos electrónicos, licor o sustancias psicoactivas dentro de los vehículos y habitaciones.",
+      "Menores de edad: es obligatorio presentar el registro civil del menor y documentos que acrediten el parentesco (padre-hijo) o el permiso notariado correspondiente si viaja con un adulto responsable.",
+      "Preparación: se recomienda llevar una cobija viajera para mayor comodidad al interior de los vehículos de transporte.",
+      "Disponibilidad: el itinerario está sujeto a cambios por disponibilidad y aforo en los destinos (especialmente en Valle de Cocora y Salento) según medidas gubernamentales."
+    ],
+    "published": true,
+    "order": 9,
+    "fixedDeparture": true,
+    "departureDates": [
+      {
+        "start": "2026-07-28",
+        "end": "2026-07-31"
+      },
+      {
+        "start": "2026-07-31",
+        "end": "2026-08-03"
+      },
+      {
+        "start": "2026-08-04",
+        "end": "2026-08-07"
+      },
+      {
+        "start": "2026-08-07",
+        "end": "2026-08-10"
+      },
+      {
+        "start": "2026-08-11",
+        "end": "2026-08-14"
+      },
+      {
+        "start": "2026-08-14",
+        "end": "2026-08-17"
+      },
+      {
+        "start": "2026-08-18",
+        "end": "2026-08-21"
+      },
+      {
+        "start": "2026-08-21",
+        "end": "2026-08-24"
+      },
+      {
+        "start": "2026-08-25",
+        "end": "2026-08-28"
+      },
+      {
+        "start": "2026-08-28",
+        "end": "2026-08-31"
+      },
+      {
+        "start": "2026-09-01",
+        "end": "2026-09-04"
+      },
+      {
+        "start": "2026-09-04",
+        "end": "2026-09-07"
+      },
+      {
+        "start": "2026-09-08",
+        "end": "2026-09-11"
+      },
+      {
+        "start": "2026-09-11",
+        "end": "2026-09-14"
+      },
+      {
+        "start": "2026-09-15",
+        "end": "2026-09-18"
+      },
+      {
+        "start": "2026-09-18",
+        "end": "2026-09-21"
+      },
+      {
+        "start": "2026-09-22",
+        "end": "2026-09-25"
+      },
+      {
+        "start": "2026-09-25",
+        "end": "2026-09-28"
+      },
+      {
+        "start": "2026-09-29",
+        "end": "2026-10-02"
+      },
+      {
+        "start": "2026-10-02",
+        "end": "2026-10-05"
+      },
+      {
+        "start": "2026-10-06",
+        "end": "2026-10-09"
+      },
+      {
+        "start": "2026-10-09",
+        "end": "2026-10-12"
+      },
+      {
+        "start": "2026-10-13",
+        "end": "2026-10-16"
+      },
+      {
+        "start": "2026-10-16",
+        "end": "2026-10-19"
+      },
+      {
+        "start": "2026-10-20",
+        "end": "2026-10-23"
+      },
+      {
+        "start": "2026-10-23",
+        "end": "2026-10-26"
+      },
+      {
+        "start": "2026-10-27",
+        "end": "2026-10-30"
+      },
+      {
+        "start": "2026-10-30",
+        "end": "2026-11-02"
+      },
+      {
+        "start": "2026-11-03",
+        "end": "2026-11-06"
+      },
+      {
+        "start": "2026-11-06",
+        "end": "2026-11-09"
+      },
+      {
+        "start": "2026-11-10",
+        "end": "2026-11-13"
+      },
+      {
+        "start": "2026-11-13",
+        "end": "2026-11-16"
+      },
+      {
+        "start": "2026-11-17",
+        "end": "2026-11-20"
+      },
+      {
+        "start": "2026-11-20",
+        "end": "2026-11-23"
+      },
+      {
+        "start": "2026-11-24",
+        "end": "2026-11-27"
+      },
+      {
+        "start": "2026-11-27",
+        "end": "2026-11-30"
+      },
+      {
+        "start": "2026-12-01",
+        "end": "2026-12-04"
+      },
+      {
+        "start": "2026-12-04",
+        "end": "2026-12-07"
+      },
+      {
+        "start": "2026-12-08",
+        "end": "2026-12-11"
+      },
+      {
+        "start": "2026-12-11",
+        "end": "2026-12-14"
+      },
+      {
+        "start": "2026-12-15",
+        "end": "2026-12-18"
+      },
+      {
+        "start": "2026-12-18",
+        "end": "2026-12-21"
+      },
+      {
+        "start": "2026-12-23",
+        "end": "2026-12-26"
+      },
+      {
+        "start": "2026-12-26",
+        "end": "2026-12-29"
+      },
+      {
+        "start": "2026-12-29",
+        "end": "2027-01-01"
+      },
+      {
+        "start": "2026-12-29",
+        "end": "2027-01-02"
+      },
+      {
+        "start": "2027-01-02",
+        "end": "2027-01-05"
+      },
+      {
+        "start": "2027-01-05",
+        "end": "2027-01-08"
+      },
+      {
+        "start": "2027-01-08",
+        "end": "2027-01-11"
+      },
+      {
+        "start": "2027-01-12",
+        "end": "2027-01-15"
+      },
+      {
+        "start": "2027-01-15",
+        "end": "2027-01-18"
+      },
+      {
+        "start": "2027-01-19",
+        "end": "2027-01-22"
+      },
+      {
+        "start": "2027-01-22",
+        "end": "2027-01-25"
+      },
+      {
+        "start": "2027-01-26",
+        "end": "2027-01-29"
+      },
+      {
+        "start": "2027-01-29",
+        "end": "2027-02-01"
+      }
+    ],
+    "featuredOrder": 3,
+    "lugares": [
+      {
+        "name": "Salento",
+        "image": "https://images.unsplash.com/photo-1588668214407-2ff9a5e4dd4b?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Filandia",
+        "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Valle del Cócora",
+        "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Pereira",
+        "image": "https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Armenia",
+        "image": "https://images.unsplash.com/photo-1572507007728-39ef5113bdc2?w=600&h=400&fit=crop&q=80"
+      }
+    ]
+  },
+  {
+    "id": "plan-huila-inolvidable",
+    "name": "Huila al Límite",
+    "slug": "huila-al-limite",
+    "shortDescription": "San Agustín, Desierto de la Tatacoa, Mano del Gigante y Salto del Mortiño: historia milenaria y paisajes de ensueño en el Huila con salidas programadas.",
+    "fullDescription": "El Huila no es solo un destino; es una experiencia que despierta todos tus sentidos. Desde los misterios arqueológicos de San Agustín hasta los atardeceres color ocre en el Desierto de la Tatacoa, este viaje es la mezcla perfecta de historia milenaria, paisajes de ensueño y aventura. Ven a descubrir por qué nuestra tierra es un tesoro oculto donde cada rincón te invita a explorar algo nuevo y fascinante.",
+    "itinerary": [
+      {
+        "title": "Llegada a Neiva",
+        "description": "Recepción y traslado al hotel. Tarde libre para descansar y aclimatarse."
+      },
+      {
+        "title": "Desierto de la Tatacoa",
+        "description": "Salida hacia esta joya natural. Recorreremos los sectores rojo y gris, culminando la noche en el observatorio astronómico para explorar las estrellas."
+      },
+      {
+        "title": "Del Gigante a la Historia",
+        "description": "Visita al Ecoparque \"Mano del Gigante\". Por la tarde, exploraremos La Jagua, el pueblo de las brujas, mitos y leyendas, antes de llegar a San Agustín."
+      },
+      {
+        "title": "Patrimonio de la Humanidad",
+        "description": "Día dedicado a explorar el Parque Arqueológico de San Agustín y el majestuoso Estrecho del Magdalena."
+      },
+      {
+        "title": "Tradición y Despedida",
+        "description": "Recorrido por el Salto del Mortiño y los pueblos de Timaná y Altamira. Finalizaremos con un City Tour en Neiva antes de nuestra última noche."
+      },
+      {
+        "title": "Regreso",
+        "description": "Desayuno y traslado al aeropuerto."
+      }
+    ],
+    "images": [
+      "/images/destinos/huila-al-limite/portada.jpg",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1532978879514-6cac7b25b6f8?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518398046578-8cca57782e17?w=800&h=600&fit=crop"
+    ],
+    "price": 2600000,
+    "priceRange": "$2.600.000 COP",
+    "duration": "6 días, 5 noches",
+    "location": "Huila",
+    "category": "Nacional",
+    "includes": [
+      "Tiquetes aéreos ida y regreso",
+      "Traslados desde el aeropuerto de Neiva y hacia todos los sitios de interés en vehículos de turismo",
+      "Guía acompañante experto durante todo el recorrido",
+      "Alojamiento: 5 noches y 6 días en hoteles tipo turista",
+      "Alimentación: 5 desayunos y 5 cenas",
+      "Tarjeta de asistencia médica",
+      "Todos los tours mencionados: Desierto de la Tatacoa, Parque Arqueológico de San Agustín, Mano del Gigante, Estrecho del Magdalena, Salto del Mortiño, City Tour Neiva, entre otros"
+    ],
+    "excludes": [
+      "Gastos personales o servicios no especificados en el programa",
+      "Actividades opcionales con costo adicional (ej. Tobogán de colores y otras atracciones en el Salto del Mortiño)"
+    ],
+    "highlights": [
+      "Parque Arqueológico de San Agustín (patrimonio UNESCO)",
+      "Desierto de la Tatacoa y observatorio astronómico",
+      "Ecoparque \"Mano del Gigante\" y puentes de cristal",
+      "Estrecho del Magdalena",
+      "Salto del Mortiño",
+      "La Jagua (pueblo de las brujas) y achiras de Altamira"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "maxGuests": 30,
+    "difficulty": "Fácil",
+    "schedule": "Salidas programadas de junio a enero",
+    "meeting": "Aeropuerto Benito Salas, Neiva (llegada a partir de las 9:00 a.m.; vuelos de regreso después de las 12:00 m.)",
+    "notes": [
+      "Gestión de vuelos: para garantizar el cumplimiento del itinerario, su llegada a Neiva debe ser a partir de las 9:00 a.m. y su vuelo de regreso debe programarse después de las 12:00 m.",
+      "Reglas de convivencia: para asegurar una experiencia armoniosa para todos, está prohibido el uso de parlantes en vehículos y habitaciones. Recomendamos el uso de audífonos personales.",
+      "Bienestar: está prohibido el consumo de licor, sustancias psicoactivas o cigarrillos (incluyendo electrónicos) en vehículos y hoteles. El incumplimiento de estas normas conlleva al retiro del programa.",
+      "Requisitos para menores: es obligatorio presentar el Registro Civil y la documentación que acredite el parentesco. Si el menor viaja sin sus padres, se requiere permiso autenticado ante notaría.",
+      "Recomendaciones: sugerimos llevar una cobija viajera para los recorridos en vehículo. La asignación de puestos se realiza bajo orden de inscripción, con prioridad para personas con discapacidad certificada."
+    ],
+    "published": true,
+    "order": 10,
+    "fixedDeparture": true,
+    "departureDates": [
+      {
+        "start": "2026-06-17",
+        "end": "2026-06-22"
+      },
+      {
+        "start": "2026-06-24",
+        "end": "2026-06-29"
+      },
+      {
+        "start": "2026-07-01",
+        "end": "2026-07-06"
+      },
+      {
+        "start": "2026-07-15",
+        "end": "2026-07-20"
+      },
+      {
+        "start": "2026-07-22",
+        "end": "2026-07-27"
+      },
+      {
+        "start": "2026-08-04",
+        "end": "2026-08-09"
+      },
+      {
+        "start": "2026-08-12",
+        "end": "2026-08-17"
+      },
+      {
+        "start": "2026-08-26",
+        "end": "2026-08-31"
+      },
+      {
+        "start": "2026-09-02",
+        "end": "2026-09-07"
+      },
+      {
+        "start": "2026-09-09",
+        "end": "2026-09-14"
+      },
+      {
+        "start": "2026-09-16",
+        "end": "2026-09-21"
+      },
+      {
+        "start": "2026-09-23",
+        "end": "2026-09-28"
+      },
+      {
+        "start": "2026-10-02",
+        "end": "2026-10-07"
+      },
+      {
+        "start": "2026-10-07",
+        "end": "2026-10-12"
+      },
+      {
+        "start": "2026-10-14",
+        "end": "2026-10-19"
+      },
+      {
+        "start": "2026-10-28",
+        "end": "2026-11-02"
+      },
+      {
+        "start": "2026-11-11",
+        "end": "2026-11-16"
+      },
+      {
+        "start": "2026-11-18",
+        "end": "2026-11-23"
+      },
+      {
+        "start": "2026-12-01",
+        "end": "2026-12-06"
+      },
+      {
+        "start": "2026-12-09",
+        "end": "2026-12-14"
+      },
+      {
+        "start": "2026-12-16",
+        "end": "2026-12-21"
+      },
+      {
+        "start": "2026-12-25",
+        "end": "2026-12-30"
+      },
+      {
+        "start": "2026-12-27",
+        "end": "2027-01-01"
+      },
+      {
+        "start": "2027-01-02",
+        "end": "2027-01-07"
+      },
+      {
+        "start": "2027-01-06",
+        "end": "2027-01-11"
+      },
+      {
+        "start": "2027-01-08",
+        "end": "2027-01-13"
+      }
+    ],
+    "lugares": [
+      {
+        "name": "Desierto de la Tatacoa",
+        "image": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Neiva",
+        "image": "https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Villavieja",
+        "image": "https://images.unsplash.com/photo-1569164139804-a628955c3a47?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Termales de Rivera",
+        "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80"
+      }
+    ]
+  },
+  {
+    "id": "plan-tatacoa-inolvidable",
+    "name": "Desierto de la Tatacoa Estelar",
+    "slug": "tatacoa-inolvidable",
+    "shortDescription": "Desierto, observación astronómica y termales en el Huila: una aventura bajo un firmamento infinito con salidas programadas en avión.",
+    "fullDescription": "Explora la magia del Huila en una aventura inolvidable. Descubre los paisajes más sorprendentes de Colombia, donde el cielo se encuentra con la tierra. Desde formaciones geológicas de colores ocres y grises hasta noches estrelladas bajo un firmamento infinito, este viaje está diseñado para quienes buscan una conexión profunda con la naturaleza y un descanso reparador.",
+    "itinerary": [
+      {
+        "title": "¡Bienvenido al Huila!",
+        "description": "Traslados desde el aeropuerto de Neiva hacia el hotel. Tarde libre para descansar y disfrutar del entorno."
+      },
+      {
+        "title": "Miradores y Aguas Termales",
+        "description": "Visita al Ecoparque \"Mano del Gigante\" para disfrutar de la majestuosidad de la montaña. Por la tarde, traslado a los Termales de Rivera para una inmersión reparadora."
+      },
+      {
+        "title": "El Desierto de las Estrellas",
+        "description": "Tour panorámico por Neiva y Villa Vieja. Exploración profunda del Desierto de la Tatacoa (Valle de los Cordones y Cuzco/Valle de los Hoyos). Cierre mágico con ingreso al observatorio astronómico."
+      },
+      {
+        "title": "Despedida",
+        "description": "Desayuno y traslado hacia el aeropuerto de Neiva para tu regreso a casa."
+      }
+    ],
+    "images": [
+      "/images/destinos/tatacoa-estelar/desierto-all-star.jpg",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1532978879514-6cac7b25b6f8?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518398046578-8cca57782e17?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=800&h=600&fit=crop"
+    ],
+    "price": 2600000,
+    "priceRange": "$2.600.000 COP",
+    "duration": "4 días, 3 noches",
+    "location": "Huila",
+    "category": "Nacional",
+    "includes": [
+      "Tiquetes aéreos ida y regreso",
+      "Traslados: transporte aeropuerto – hotel – aeropuerto y todos los recorridos a los sitios de interés en vehículos de turismo",
+      "Alojamiento: 3 noches de estadía en hoteles categoría turista",
+      "Alimentación: 3 desayunos y 3 cenas (según noches de alojamiento)",
+      "Experiencias: ingreso al observatorio astronómico y al Ecoparque \"Mano del Gigante\"",
+      "Guía: acompañamiento permanente de guía turístico local",
+      "Seguridad: tarjeta de asistencia médica"
+    ],
+    "excludes": [
+      "Gastos personales o servicios no especificados en el programa"
+    ],
+    "highlights": [
+      "Observatorio astronómico bajo cielos libres de contaminación lumínica",
+      "Desierto de la Tatacoa: Cuzco, Valle de los Hoyos y Valle de los Cordones",
+      "Ecoparque \"Mano del Gigante\" con vistas panorámicas",
+      "Termales de Rivera",
+      "Villa Vieja y la cerveza artesanal de cactus",
+      "Tour panorámico por Neiva"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "maxGuests": 30,
+    "difficulty": "Fácil",
+    "schedule": "Salidas programadas todo el año",
+    "meeting": "Aeropuerto Benito Salas, Neiva (llegada después de las 9:00 a.m.; vuelos de regreso después de las 12:00 m.)",
+    "notes": [
+      "Logística de vuelos: es fundamental programar tu llegada después de las 9:00 a.m. y tu vuelo de regreso después de las 12:00 m.",
+      "Viaje con menores: es obligatorio presentar el registro civil del menor y la documentación que acredite el parentesco. Si el menor viaja con terceros, se requiere permiso autenticado ante notaría.",
+      "Normas de convivencia: en nuestras instalaciones y vehículos, el respeto es clave. No se permite el uso de parlantes (por favor, usa audífonos personales). Está prohibido el consumo de licor, cigarrillos (incluyendo electrónicos) o sustancias psicoactivas. La mala conducta que interfiera con el programa puede resultar en el retiro del mismo.",
+      "Comodidad: se recomienda llevar una cobija viajera para los traslados en vehículo. La asignación de puestos se realiza por orden de inscripción, priorizando a personas con discapacidad y certificado médico.",
+      "Disponibilidad: el itinerario está sujeto a cambios por motivos operativos para garantizar el éxito de la experiencia."
+    ],
+    "published": true,
+    "order": 13,
+    "fixedDeparture": true,
+    "departureDates": [
+      {
+        "start": "2026-07-17",
+        "end": "2026-07-20"
+      },
+      {
+        "start": "2026-07-24",
+        "end": "2026-07-27"
+      },
+      {
+        "start": "2026-07-31",
+        "end": "2026-08-03"
+      },
+      {
+        "start": "2026-08-06",
+        "end": "2026-08-09"
+      },
+      {
+        "start": "2026-08-14",
+        "end": "2026-08-17"
+      },
+      {
+        "start": "2026-08-21",
+        "end": "2026-08-24"
+      },
+      {
+        "start": "2026-08-28",
+        "end": "2026-08-31"
+      },
+      {
+        "start": "2026-09-04",
+        "end": "2026-09-07"
+      },
+      {
+        "start": "2026-09-11",
+        "end": "2026-09-14"
+      },
+      {
+        "start": "2026-09-18",
+        "end": "2026-09-21"
+      },
+      {
+        "start": "2026-09-25",
+        "end": "2026-09-28"
+      },
+      {
+        "start": "2026-10-02",
+        "end": "2026-10-05"
+      },
+      {
+        "start": "2026-10-09",
+        "end": "2026-10-12"
+      },
+      {
+        "start": "2026-10-16",
+        "end": "2026-10-19"
+      },
+      {
+        "start": "2026-10-23",
+        "end": "2026-10-26"
+      },
+      {
+        "start": "2026-10-30",
+        "end": "2026-11-02"
+      },
+      {
+        "start": "2026-11-06",
+        "end": "2026-11-09"
+      },
+      {
+        "start": "2026-11-13",
+        "end": "2026-11-16"
+      },
+      {
+        "start": "2026-11-20",
+        "end": "2026-11-23"
+      },
+      {
+        "start": "2026-11-27",
+        "end": "2026-11-30"
+      },
+      {
+        "start": "2026-12-04",
+        "end": "2026-12-07"
+      },
+      {
+        "start": "2026-12-11",
+        "end": "2026-12-14"
+      },
+      {
+        "start": "2026-12-18",
+        "end": "2026-12-21"
+      },
+      {
+        "start": "2026-12-25",
+        "end": "2026-12-28"
+      },
+      {
+        "start": "2027-01-02",
+        "end": "2027-01-05"
+      },
+      {
+        "start": "2027-01-08",
+        "end": "2027-01-11"
+      },
+      {
+        "start": "2027-01-15",
+        "end": "2027-01-18"
+      },
+      {
+        "start": "2027-01-22",
+        "end": "2027-01-25"
+      }
+    ],
+    "lugares": [
+      {
+        "name": "Laberintos Rojos",
+        "image": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Cuzco",
+        "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Villavieja",
+        "image": "https://images.unsplash.com/photo-1569164139804-a628955c3a47?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Observatorio Astronómico",
+        "image": "https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=600&h=400&fit=crop&q=80"
+      }
+    ]
+  },
+  {
+    "id": "plan-sur-colombia-inolvidable",
+    "name": "Sur de Colombia y Tulcán Inolvidable",
+    "slug": "sur-de-colombia-inolvidable",
+    "shortDescription": "Cali, Pasto, Santuario de Las Lajas, Tulcán (Ecuador), Laguna de Cocha y Popayán: el suroccidente colombiano en un solo viaje con salidas programadas.",
+    "fullDescription": "Recorre la riqueza cultural y natural del suroccidente colombiano con una incursión cultural en Ecuador. Desde el imponente Santuario de Las Lajas —una de las siete maravillas de Colombia— hasta la Laguna de Cocha, la Ciudad Blanca de Popayán y la experiencia fronteriza de Tulcán, este viaje une historia, fe, gastronomía y paisajes andinos en una sola aventura.",
+    "itinerary": [
+      {
+        "title": "Cali, la Sucursal del Cielo",
+        "description": "Llegada y City Tour por los puntos emblemáticos: el tradicional barrio Alameda, el Bulevar del Río y la majestuosa Ermita. Finalizaremos el día con la cultura y gastronomía de San Antonio."
+      },
+      {
+        "title": "Rumbo al Sur",
+        "description": "Salida hacia la ciudad de Pasto. Disfruta del cambio de paisaje mientras nos adentramos en las montañas andinas hasta llegar a la \"Ciudad Sorpresa\"."
+      },
+      {
+        "title": "Maravillas de Piedra y Frontera",
+        "description": "Visita al imponente Santuario de Las Lajas. Posteriormente, cruzaremos a Tulcán (Ecuador) para un recorrido por su ciudad y el espectacular cementerio ornamental."
+      },
+      {
+        "title": "Naturaleza y Tradición",
+        "description": "Exploraremos la Laguna de Cocha, un epicentro ecológico de gran belleza, seguido de un City Tour por Pasto, donde conoceremos la Plaza de Nariño y sus alrededores."
+      },
+      {
+        "title": "La Ciudad Blanca",
+        "description": "Viaje hacia Popayán. Caminata histórica por el centro, visitando el Puente del Humilladero y las emblemáticas iglesias coloniales que le dan su renombre a la capital del Cauca."
+      },
+      {
+        "title": "Fe y Despedida",
+        "description": "Mañana de visita a la Basílica Menor del Señor de los Milagros en Buga antes de realizar el traslado final al aeropuerto de Cali."
+      }
+    ],
+    "images": [
+      "/images/destinos/sur-colombia/portada.jpg",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1547825716-bc338cbdc5a8?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1520637836862-4d197d17c75a?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1559511260-66a654ae982a?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518398046578-8cca57782e17?w=800&h=600&fit=crop"
+    ],
+    "price": 2600000,
+    "priceRange": "$2.600.000 COP",
+    "duration": "6 días, 5 noches",
+    "location": "Cali, Pasto, Popayán y Tulcán (Ecuador)",
+    "category": "Nacional",
+    "includes": [
+      "Tiquetes aéreos ida y regreso",
+      "Traslados en vehículos de turismo desde el aeropuerto de Cali y a todos los puntos de interés",
+      "Alojamiento: 5 noches y 6 días (1 noche en Cali, 3 en Pasto, 1 en Popayán)",
+      "Alimentación: 5 desayunos y 5 cenas",
+      "Tarjeta de asistencia médica",
+      "Guía acompañante experto durante todo el recorrido",
+      "Integración cultural con grupo de música andina en Pasto"
+    ],
+    "excludes": [
+      "Gastos personales o servicios no especificados en el programa"
+    ],
+    "highlights": [
+      "Santuario de Las Lajas, una de las siete maravillas de Colombia",
+      "Cementerio ornamental de Tulcán (Ecuador), arte mundial en topiaria",
+      "Laguna de Cocha, epicentro ecológico",
+      "Popayán, la Ciudad Blanca: Puente del Humilladero e iglesias coloniales",
+      "Cali: barrio Alameda, Bulevar del Río, Ermita y San Antonio",
+      "Basílica del Señor de los Milagros en Buga"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "maxGuests": 30,
+    "difficulty": "Fácil",
+    "schedule": "Salidas programadas de agosto a enero",
+    "meeting": "Aeropuerto Alfonso Bonilla Aragón, Cali (llegada antes de las 8:00 a.m.; vuelos de regreso después de las 4:00 p.m.)",
+    "notes": [
+      "Recomendación de vuelos: es vital que sus vuelos de llegada estén programados antes de las 8:00 a.m. y los vuelos de regreso después de las 4:00 p.m.",
+      "Normas de convivencia: para garantizar el bienestar de todos, está prohibido el uso de parlantes en vehículos y habitaciones. Recomendamos el uso de audífonos personales.",
+      "Conducta: no se permite el consumo de cigarrillos, licor ni sustancias alucinógenas. El comportamiento que interfiera con el desarrollo normal del programa puede conllevar al retiro del mismo.",
+      "Menores de edad: es obligatorio presentar el registro civil del menor y la documentación que acredite el parentesco (o permiso autenticado en notaría si viaja con terceros).",
+      "Consejos de viaje: recomendamos llevar una cobija viajera para los desplazamientos. La asignación de puestos se realiza bajo orden de inscripción, dando prioridad a personas con condiciones especiales."
+    ],
+    "published": true,
+    "order": 14,
+    "fixedDeparture": true,
+    "departureDates": [
+      {
+        "start": "2026-08-04",
+        "end": "2026-08-09"
+      },
+      {
+        "start": "2026-08-12",
+        "end": "2026-08-17"
+      },
+      {
+        "start": "2026-08-26",
+        "end": "2026-08-31"
+      },
+      {
+        "start": "2026-09-02",
+        "end": "2026-09-07"
+      },
+      {
+        "start": "2026-09-09",
+        "end": "2026-09-14"
+      },
+      {
+        "start": "2026-09-16",
+        "end": "2026-09-21"
+      },
+      {
+        "start": "2026-09-23",
+        "end": "2026-09-28"
+      },
+      {
+        "start": "2026-10-02",
+        "end": "2026-10-07"
+      },
+      {
+        "start": "2026-10-07",
+        "end": "2026-10-12"
+      },
+      {
+        "start": "2026-10-14",
+        "end": "2026-10-19"
+      },
+      {
+        "start": "2026-10-28",
+        "end": "2026-11-02"
+      },
+      {
+        "start": "2026-11-11",
+        "end": "2026-11-16"
+      },
+      {
+        "start": "2026-11-18",
+        "end": "2026-11-23"
+      },
+      {
+        "start": "2026-12-01",
+        "end": "2026-12-06"
+      },
+      {
+        "start": "2026-12-09",
+        "end": "2026-12-14"
+      },
+      {
+        "start": "2026-12-16",
+        "end": "2026-12-21"
+      },
+      {
+        "start": "2026-12-25",
+        "end": "2026-12-30"
+      },
+      {
+        "start": "2027-01-03",
+        "end": "2027-01-09"
+      },
+      {
+        "start": "2027-01-06",
+        "end": "2027-01-11"
+      },
+      {
+        "start": "2027-01-13",
+        "end": "2027-01-18"
+      },
+      {
+        "start": "2027-01-20",
+        "end": "2027-01-25"
+      }
+    ],
+    "lugares": [
+      {
+        "name": "Pasto",
+        "image": "https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Laguna de La Cocha",
+        "image": "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Túquerres",
+        "image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Ipiales",
+        "image": "https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=600&h=400&fit=crop&q=80"
+      },
+      {
+        "name": "Santuario de Las Lajas",
+        "image": "https://images.unsplash.com/photo-1572507007728-39ef5113bdc2?w=600&h=400&fit=crop&q=80"
+      }
+    ]
+  },
+  {
+    "id": "3e7dd645-73f2-45e9-ac75-1fb05f7ad900",
+    "name": "Paraíso en Punta Cana",
+    "slug": "paraiso-punta-cana",
+    "shortDescription": "Disfruta del Caribe al máximo con un plan todo incluido en las playas de Punta Cana.",
+    "fullDescription": "Relájate en las playas de arena blanca y aguas cristalinas de República Dominicana con este viaje de 5 días y 4 noches. Alójate en un resort 5 estrellas con sistema todo incluido (comidas y bebidas ilimitadas). Disfruta de shows nocturnos, deportes acuáticos no motorizados y acceso a piscinas exclusivas. El plan perfecto para descansar sin preocupaciones.",
+    "images": [
+      "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582294406180-2c40b82bc0e3?w=800&h=600&fit=crop"
+    ],
+    "price": 3500000,
+    "priceRange": "$3.500.000 - $4.200.000 COP",
+    "duration": "5 días, 4 noches",
+    "location": "Punta Cana, Rep. Dominicana",
+    "category": "Internacional",
+    "includes": [
+      "Vuelos directos",
+      "Alojamiento Todo Incluido",
+      "Traslados aeropuerto-hotel",
+      "Seguro de viaje"
+    ],
+    "excludes": [
+      "Tours opcionales",
+      "Gastos personales"
+    ],
+    "highlights": [
+      "Resort 5 estrellas",
+      "Bebidas ilimitadas",
+      "Playa privada"
+    ],
+    "rating": 4.9,
+    "reviewCount": 342,
+    "maxGuests": 30,
+    "difficulty": "Fácil",
+    "schedule": "Salidas diarias",
+    "meeting": "Aeropuerto Internacional",
+    "published": true,
+    "order": 8,
+    "featuredOrder": 2
+  },
+  {
+    "id": "56c6ff56-febf-406c-9c34-2c914dbd619f",
+    "name": "Escape a San Andrés Islas",
+    "slug": "escape-san-andres",
+    "fecha_salida": "17 de septiembre",
+    "shortDescription": "Sumérgete en el mar de los 7 colores con este plan completo a la isla de San Andrés.",
+    "fullDescription": "Descubre la belleza del Caribe colombiano en este viaje internacionalmente reconocido de 4 días y 3 noches. Disfruta de las playas de arena blanca, recorre la isla en un carrito de golf, visita el Acuario y Johnny Cay. Incluye alojamiento en hotel frente al mar, alimentación y tours emblemáticos para vivir la isla al máximo.",
+    "images": [
+      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1580228373356-820875298a00?w=800&h=600&fit=crop"
+    ],
+    "price": 1800000,
+    "priceRange": "$1.800.000 - $2.100.000 COP",
+    "duration": "4 días, 3 noches",
+    "location": "San Andrés Islas",
+    "category": "Internacional",
+    "includes": [
+      "Vuelos",
+      "Alojamiento con desayunos y cenas",
+      "Tour al Acuario",
+      "Vuelta a la isla"
+    ],
+    "excludes": [
+      "Tarjeta de turismo",
+      "Almuerzos"
+    ],
+    "highlights": [
+      "Mar de 7 colores",
+      "Johnny Cay",
+      "Hoyo Soplador"
+    ],
+    "rating": 4.7,
+    "reviewCount": 421,
+    "maxGuests": 25,
+    "difficulty": "Fácil",
+    "schedule": "Salidas diarias",
+    "meeting": "Aeropuerto",
+    "published": true,
+    "order": 9,
+    "featuredOrder": 1
+  },
+  {
+    "id": "f6065674-9ae8-4c29-a121-e3213d6e0c9b",
+    "name": "Aventura en Cancún",
+    "slug": "aventura-cancun",
+    "shortDescription": "Descubre la vibrante vida nocturna, zonas arqueológicas y playas espectaculares de Cancún.",
+    "fullDescription": "Un espectacular viaje de 6 días y 5 noches al corazón del Caribe mexicano. Hospédate en un excelente resort en la zona hotelera con sistema todo incluido. Opcionalmente podrás visitar Chichén Itzá, cenotes cristalinos o parques temáticos como Xcaret. Un destino vibrante que lo tiene todo: relax, fiesta y cultura milenaria.",
+    "images": [
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1552074284-5e88ef1aef18?w=800&h=600&fit=crop"
+    ],
+    "price": 4200000,
+    "priceRange": "$4.200.000 - $5.500.000 COP",
+    "duration": "6 días, 5 noches",
+    "location": "Cancún, México",
+    "category": "Internacional",
+    "includes": [
+      "Vuelos directos",
+      "Hotel Todo Incluido",
+      "Traslados",
+      "Asistencia médica"
+    ],
+    "excludes": [
+      "Tours arqueológicos",
+      "Propinas"
+    ],
+    "highlights": [
+      "Zona Hotelera",
+      "Playas increíbles",
+      "Vida nocturna"
+    ],
+    "rating": 4.9,
+    "reviewCount": 512,
+    "maxGuests": 40,
+    "difficulty": "Fácil",
+    "schedule": "Salidas diarias",
+    "meeting": "Aeropuerto Internacional",
+    "published": true,
+    "order": 10,
+    "featuredOrder": 4
+  },
+  {
+    "id": "53c8a10d-9a62-4fe3-aad5-96fc0d756735",
+    "slug": "bora-bora-beach-club-area-vip",
+    "name": "Bora Bora Beach Club - Área VIP",
+    "shortDescription": "La experiencia más exclusiva de Bora Bora con acceso VIP y almuerzo premium.",
+    "fullDescription": "Disfruta la versión más exclusiva de Bora Bora Beach Club con acceso tanto al Área VIP como al Área Club. Relájate en un espacio reservado, recibe un cóctel especial de bienvenida y elige entre una amplia variedad de opciones de almuerzo mientras disfrutas del Caribe colombiano.",
+    "price": 490000,
+    "priceRange": "$490.000 COP",
+    "duration": "Día completo (8 horas)",
+    "location": "Islas del Rosario, Cartagena",
+    "category": "Playa",
+    "includes": [
+      "Transporte ida y regreso en lancha rápida",
+      "Cóctel especial de bienvenida",
+      "10 opciones de almuerzo",
+      "Cama de playa",
+      "Acceso Área VIP",
+      "Acceso Área Club"
+    ],
+    "excludes": [
+      "Impuesto portuario",
+      "Seguro",
+      "Gastos personales"
+    ],
+    "highlights": [
+      "Área VIP exclusiva",
+      "Acceso Área Club",
+      "10 opciones de almuerzo",
+      "Beach Club premium"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "maxGuests": 20,
+    "difficulty": "Fácil",
+    "schedule": "7:30 AM - 4:30 PM",
+    "meeting": "Muelle La Bodeguita, Puerta #3, Cartagena",
+    "published": true,
+    "order": 11,
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": "ac658a12-c3bc-4073-b700-e3fb7efde724",
+    "name": "Expedición Grupal Sierra Limón",
+    "slug": "expedicion-sierra-limon",
+    "shortDescription": "Aventura grupal de un día descubriendo cascadas y senderos ocultos en Sierra Limón.",
+    "fullDescription": "Forma parte de esta expedición de un día pensada para grupos. Caminaremos por senderos ecológicos hasta llegar a las impresionantes cascadas de Sierra Limón. Un plan perfecto para team building o grupos de amigos que buscan aventura y naturaleza. Terminaremos con un almuerzo tradicional preparado por la comunidad local.",
+    "images": [
+      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop"
+    ],
+    "price": 180000,
+    "priceRange": "$180.000 - $220.000 COP",
+    "duration": "Día completo (8 horas)",
+    "location": "Sierra Limón",
+    "category": "Grupal",
+    "includes": [
+      "Transporte en bus",
+      "Guía local",
+      "Almuerzo tradicional",
+      "Seguro de viaje"
+    ],
+    "excludes": [
+      "Gastos personales"
+    ],
+    "highlights": [
+      "Cascadas escondidas",
+      "Senderismo",
+      "Almuerzo comunitario"
+    ],
+    "rating": 4.6,
+    "reviewCount": 88,
+    "maxGuests": 35,
+    "difficulty": "Moderado",
+    "schedule": "6:00 AM - 4:00 PM",
+    "meeting": "Plaza Central",
+    "published": true,
+    "order": 12
+  },
+  {
+    "id": "656270f5-2d91-4751-8959-694c845d4852",
+    "name": "Salto en Paracaidismo",
+    "slug": "tour-paracaidismo",
+    "shortDescription": "Siente la adrenalina extrema en una experiencia de paracaidismo tandem.",
+    "fullDescription": "Para los amantes de la adrenalina pura. Una experiencia corta pero indefinida donde realizarás un salto en paracaídas tipo tandem junto a un instructor certificado. Disfruta de una caída libre a más de 200 km/h y luego planea suavemente admirando un paisaje inigualable desde el aire.",
+    "images": [
+      "https://images.unsplash.com/photo-1520114757270-b1836a0fb494?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1521685360661-04ba71a06288?w=800&h=600&fit=crop"
+    ],
+    "price": 650000,
+    "priceRange": "$650.000 - $800.000 COP",
+    "duration": "Tour corto (3 horas)",
+    "location": "Aeródromo local",
+    "category": "Tours",
+    "includes": [
+      "Vuelo escénico",
+      "Salto tandem",
+      "Instructor certificado",
+      "Seguro"
+    ],
+    "excludes": [
+      "Fotos y video",
+      "Transporte al aeródromo"
+    ],
+    "highlights": [
+      "Caída libre de 1 minuto",
+      "Vuelo de 5 minutos en paracaídas"
+    ],
+    "rating": 4.9,
+    "reviewCount": 205,
+    "maxGuests": 2,
+    "difficulty": "Fácil",
+    "schedule": "Varios horarios disponibles",
+    "meeting": "Aeródromo",
+    "published": true,
+    "order": 13
+  },
+  {
+    "id": "3887d0c7-36d8-4784-8bce-1a044fdf5a36",
+    "name": "Tour de Buceo en San Andrés",
+    "slug": "tour-buceo-san-andres",
+    "shortDescription": "Explora los increíbles arrecifes de coral en esta inmersión para principiantes.",
+    "fullDescription": "Descubre el maravilloso mundo submarino del mar de los siete colores en un tour corto de buceo. Diseñado especialmente para principiantes (no necesitas certificación). Incluye una clase teórica, práctica en aguas poco profundas y una inmersión guiada en el arrecife de coral, donde podrás ver peces tropicales, mantarrayas y vida marina colorida.",
+    "images": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582967177931-50e82c5f1cd3?w=800&h=600&fit=crop"
+    ],
+    "price": 250000,
+    "priceRange": "$250.000 - $300.000 COP",
+    "duration": "Tour corto (4 horas)",
+    "location": "San Andrés Islas",
+    "category": "Tours",
+    "includes": [
+      "Clase teórica y práctica",
+      "Equipo completo de buceo",
+      "1 inmersión guiada",
+      "Instructor PADI"
+    ],
+    "excludes": [
+      "Fotos submarinas",
+      "Transporte al centro de buceo"
+    ],
+    "highlights": [
+      "Arrecifes de coral",
+      "Buceo seguro para novatos"
+    ],
+    "rating": 4.8,
+    "reviewCount": 310,
+    "maxGuests": 6,
+    "difficulty": "Moderado",
+    "schedule": "8:00 AM o 2:00 PM",
+    "meeting": "Centro de Buceo",
+    "published": true,
+    "order": 14
+  },
+  {
+    "id": "0ef84479-8a9d-49d2-a6ee-1fb672595c5d",
+    "slug": "pao-pao-hotel-restaurante",
+    "name": "Pao Pao Hotel & Restaurante",
+    "shortDescription": "Naturaleza, playa, piscina y snorkel en una exclusiva isla privada del Rosario.",
+    "fullDescription": "Descubre Pao Pao, una isla privada rodeada de aguas cristalinas donde podrás disfrutar de playa, piscina, actividades recreativas y gastronomía local. Incluye transporte en lancha rápida, almuerzo y experiencias como snorkel guiado y tour de fragatas para vivir un día inolvidable.",
+    "price": 390000,
+    "priceRange": "$390.000 COP",
+    "duration": "Día completo (8 horas)",
+    "location": "Islas del Rosario, Cartagena",
+    "category": "Playa",
+    "includes": [
+      "Transporte ida y regreso en lancha rápida",
+      "Cóctel de bienvenida",
+      "5 opciones de almuerzo",
+      "Asoleadora",
+      "Tour de fragatas",
+      "Wellness diario",
+      "Cornhole Championship",
+      "Piscina de agua dulce",
+      "Snorkel guiado",
+      "Traslado al Oceanario"
+    ],
+    "excludes": [
+      "Impuesto portuario",
+      "Seguro",
+      "Gastos personales"
+    ],
+    "highlights": [
+      "Piscina de agua dulce",
+      "Snorkel guiado",
+      "Isla privada",
+      "Actividades incluidas"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "maxGuests": 20,
+    "difficulty": "Fácil",
+    "schedule": "7:30 AM - 4:30 PM",
+    "meeting": "Muelle La Bodeguita, Puerta #3, Cartagena",
+    "published": true,
+    "order": 15,
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": "5b6b47b9-d2fc-49c5-9fe6-21a816ea4676",
+    "slug": "top-3-islas",
+    "name": "Top 3 Islas",
+    "shortDescription": "Recorre Bora Bora, Pao Pao e Islabela en un solo día lleno de experiencias.",
+    "fullDescription": "Explora Bora Bora, Pao Pao e Islabela en un mismo recorrido por las Islas del Rosario. Disfruta playas paradisíacas, transporte en lancha rápida, bebidas de bienvenida, almuerzo y tiempo libre para conocer tres experiencias completamente diferentes durante un solo pasadía.",
+    "price": 510000,
+    "priceRange": "$510.000 COP",
+    "duration": "Día completo (8 horas)",
+    "location": "Islas del Rosario, Cartagena",
+    "category": "Playa",
+    "includes": [
+      "Transporte en lancha rápida",
+      "Guía bilingüe",
+      "Tour panorámico por las Islas del Rosario",
+      "Bebida de bienvenida en cada isla",
+      "Agua fresca a bordo",
+      "Tres opciones de almuerzo en Islabela",
+      "Tiempo libre en cada isla"
+    ],
+    "excludes": [
+      "Impuesto portuario",
+      "Seguro",
+      "Gastos personales"
+    ],
+    "highlights": [
+      "Visita Bora Bora",
+      "Visita Pao Pao",
+      "Visita Islabela",
+      "Tres islas en un solo día"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "maxGuests": 20,
+    "difficulty": "Fácil",
+    "schedule": "8:00 AM - 4:30 PM",
+    "meeting": "Muelle La Bodeguita, Puerta #3, Cartagena",
+    "published": true,
+    "order": 16,
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": "f0cf0b55-3d92-4a89-a5ca-4d32d0d8672e",
+    "slug": "eje-cafetero-desde-medellin",
+    "name": "Eje Cafetero desde Medellín",
+    "shortDescription": "Descubre el Eje Cafetero con transporte, alojamiento y experiencias inolvidables desde Medellín.",
+    "fullDescription": "Explora uno de los destinos más emblemáticos de Colombia en un recorrido por el Eje Cafetero. Disfruta de paisajes espectaculares, pueblos llenos de tradición, fincas cafeteras, aguas termales y el impresionante Valle de Cocora. Un viaje diseñado para conectar con la naturaleza, la cultura y la gastronomía de la región.",
+    "price": 954000,
+    "priceRange": "$954.000 COP",
+    "duration": "Según itinerario del operador",
+    "location": "Eje Cafetero, Colombia",
+    "category": "Nacional",
+    "includes": [
+      "Transporte terrestre ida y regreso desde Medellín",
+      "Alojamiento seleccionado",
+      "Alimentación según el plan",
+      "Tours y actividades",
+      "Asistencia al viajero",
+      "Guía acompañante"
+    ],
+    "excludes": [
+      "Gastos personales",
+      "Servicios no especificados",
+      "Alimentación no indicada",
+      "Actividades opcionales"
+    ],
+    "highlights": [
+      "Valle de Cocora",
+      "Tour del Café",
+      "Pueblos típicos",
+      "Termales",
+      "Miradores panorámicos",
+      "Paseo en Jeep Willys"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "maxGuests": 20,
+    "difficulty": "Fácil",
+    "schedule": "Según itinerario",
+    "meeting": "Medellín",
+    "published": true,
+    "order": 17,
+    "images": [
+      "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": "75eb63c8-bde5-4514-8e8e-524b6a44bdf8",
+    "slug": "punta-cana-desde-colombia",
+    "name": "Punta Cana desde Colombia",
+    "shortDescription": "Viaja a Punta Cana con vuelos, hotel, traslados y experiencias inolvidables en el Caribe.",
+    "fullDescription": "Vive unas vacaciones inolvidables en Punta Cana, uno de los destinos más exclusivos del Caribe. Relájate en playas de arena blanca y aguas cristalinas, disfruta de excursiones únicas y descubre la hospitalidad dominicana mientras todo está organizado para que solo te preocupes por disfrutar.",
+    "price": 3650000,
+    "priceRange": "$3.650.000 COP",
+    "duration": "Según itinerario del operador",
+    "location": "Punta Cana, República Dominicana",
+    "category": "Internacional",
+    "includes": [
+      "Tiquetes aéreos",
+      "Alojamiento seleccionado",
+      "Traslados aeropuerto - hotel - aeropuerto",
+      "Tours y actividades",
+      "Asistencia al viajero",
+      "Acompañamiento antes y durante el viaje"
+    ],
+    "excludes": [
+      "Gastos personales",
+      "Excursiones opcionales",
+      "Alimentación no especificada",
+      "Servicios no mencionados en el plan"
+    ],
+    "highlights": [
+      "Isla Saona",
+      "Aventura en Buggy",
+      "Cenote",
+      "Playa Macao",
+      "Paseo en Catamarán",
+      "Vida nocturna"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "maxGuests": 20,
+    "difficulty": "Fácil",
+    "schedule": "Según itinerario",
+    "meeting": "Aeropuerto de salida según ciudad seleccionada",
+    "published": true,
+    "order": 18,
+    "images": [
+      "https://images.unsplash.com/photo-1589979481223-deb893043163?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": "a9c94f2b-6729-4c4c-bd52-2d9e3f15e54c",
+    "slug": "rio-de-janeiro-Magico",
+    "name": "Río de Janeiro desde Colombia",
+    "shortDescription": "Viaja a Río de Janeiro con vuelos, alojamiento y visitas a los principales atractivos de la ciudad.",
+    "fullDescription": "Vive una experiencia inolvidable en Río de Janeiro, una de las ciudades más emblemáticas de Brasil. Recorre el Cristo Redentor, disfruta de las impresionantes vistas desde el Pan de Azúcar, conoce las coloridas Escaleras de Selarón y relájate en la famosa playa de Copacabana mientras descubres la energía única de la ciudad maravillosa.",
+    "price": 5700000,
+    "priceRange": "$5.700.000 COP",
+    "duration": "Según itinerario del operador",
+    "location": "Río de Janeiro, Brasil",
+    "category": "Cultural",
+    "includes": [
+      "Tiquetes aéreos",
+      "Alojamiento seleccionado",
+      "Traslados aeropuerto - hotel - aeropuerto",
+      "Tours y actividades",
+      "Asistencia al viajero"
+    ],
+    "excludes": [
+      "Gastos personales",
+      "Alimentación no especificada",
+      "Actividades opcionales",
+      "Servicios no mencionados en el plan"
+    ],
+    "highlights": [
+      "Cristo Redentor",
+      "Pan de Azúcar",
+      "Escaleras de Selarón",
+      "Playa de Copacabana"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "maxGuests": 20,
+    "difficulty": "Fácil",
+    "schedule": "Según itinerario",
+    "meeting": "Aeropuerto de salida según la ciudad seleccionada",
+    "published": true,
+    "order": 19,
+    "images": [
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": "plan-cartagena-destacado",
+    "name": "Cartagena: Ciudad Amurallada",
+    "slug": "cartagena-destacado",
+    "shortDescription": "La joya colonial del Caribe: ciudad amurallada, Islas del Rosario y atardeceres Mágicos con vuelos incluidos.",
+    "fullDescription": "Sumérgete en la magia de Cartagena de Indias, la joya colonial del Caribe colombiano. Pasea por sus calles empedradas, admira la arquitectura colorida de la ciudad amurallada y relájate en las cristalinas aguas de las Islas del Rosario. Un viaje que combina historia, romanticismo y playas paradisíacas, con vuelos incluidos desde tu ciudad de origen.",
+    "itinerary": [
+      {
+        "title": "Llegada y Ciudad Amurallada",
+        "description": "Recepción en el aeropuerto y traslado al hotel. Por la tarde, recorrido por el centro histórico: Torre del Reloj, Plaza de la Aduana, Las Bóvedas y un mágico atardecer desde el Café La Vitrola o las murallas."
+      },
+      {
+        "title": "Islas del Rosario",
+        "description": "Día completo de sol y mar. Traslado en lancha al archipiélago de las Islas del Rosario, con tiempo para snorkel, playa y almuerzo típico frente al mar Caribe."
+      },
+      {
+        "title": "Castillo y Despedida",
+        "description": "Mañana de visita al imponente Castillo de San Felipe de Barajas. Tiempo libre para compras de artesanías antes del traslado al aeropuerto."
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1583531352515-8884af319dc1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1549144511-8b9bb5738639?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1598537980312-5fb3694275cb?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1583531172005-814f15c8f983?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518630904902-67c0ea0b78b2?w=800&h=600&fit=crop"
+    ],
+    "price": 1490000,
+    "priceRange": "$1.490.000 COP",
+    "duration": "3 días, 2 noches",
+    "location": "Cartagena",
+    "category": "Nacional",
+    "includes": [
+      "Tiquetes aéreos ida y regreso",
+      "Traslados aeropuerto – hotel – aeropuerto",
+      "Alojamiento: 2 noches en hotel categoría turista",
+      "Desayunos",
+      "Tour por la ciudad amurallada y centro histórico",
+      "Excursión a las Islas del Rosario con almuerzo",
+      "Ingreso al Castillo de San Felipe de Barajas",
+      "Guía acompañante en las excursiones",
+      "Tarjeta de asistencia médica"
+    ],
+    "excludes": [
+      "Almuerzos y cenas no especificados",
+      "Gastos personales y servicios no especificados en el programa"
+    ],
+    "highlights": [
+      "Centro histórico y ciudad amurallada (patrimonio UNESCO)",
+      "Castillo de San Felipe de Barajas",
+      "Islas del Rosario con snorkel",
+      "Atardecer desde las murallas",
+      "Las Bóvedas y artesanías"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "maxGuests": 30,
+    "difficulty": "Fácil",
+    "schedule": "Salidas todo el año",
+    "meeting": "Aeropuerto Internacional Rafael Núñez, Cartagena",
+    "notes": [
+      "Vuelos: incluidos desde la ciudad de origen del viajero.",
+      "Clima: se recomienda ropa ligera, protector solar y repelente.",
+      "Menores de edad: presentar registro civil y documentación de parentesco.",
+      "Convivencia: no se permite el uso de parlantes en vehículos; usar audífonos personales."
+    ],
+    "featuredOrder": 6,
+    "published": true,
+    "order": 20,
+    "fixedDeparture": false
+  }
+]

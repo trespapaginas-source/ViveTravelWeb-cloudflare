@@ -1,0 +1,20 @@
+# Layout (estructura de carpetas — FASE 0)
+#
+# src/components/
+#   layout/      → Navbar, Footer, StickySummaryBar, PublicLayout
+#   home/        → HeroSection (buscador multi-tab), FeaturedPlans, PromotionsBanner,
+#                  TickerRibbon, ScheduledDepartures(+Banner), DestinationsGallery,
+#                  InternationalDestinations, GroupTrips, CustomTrips, Testimonials,
+#                  VideoShowcase, TravelCarousel, InfluencerAuthority
+#   plans/       → PlansList, PlanDetail (con CotizadorCard, modales de reserva)
+#   cabins/      → CabinsList, CabinDetail (PriceCard), AvailabilityCalendar
+#   transports/  → TransportsView, TransportDetail
+#   visas/       → VisasSection, VisaDetail
+#   contact/     → ContactSection (form react-hook-form + zod)
+#   team/        → TeamSection
+#   favorites/   → FavoritesSection
+#   policies/    → PoliciesSection, LegalDocPage
+#   shared/      → PageBanner, SectionHeader, PropertyGallery+Lightbox,
+#                  CardImageCarousel, FilterPanel/Sidebar, ListToolbar,
+#                  ListPagination, ExpandableSection, ShareDialog, PremiumIcon
+#   ui/          → Librería base de primitivos (button, card, dialog, sheet, etc.)

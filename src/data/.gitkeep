@@ -1,0 +1,11 @@
+# Datos estáticos extraídos del proyecto de referencia (D:/Proyectos/ViveTravel)
+#
+# Archivos previstos (FASE 0 crea planes.json; el resto se carga en FASE 1):
+#   planes.json        → 27 experiencias  ✓ creado en FASE 0
+#   cabins.json        → 7 cabañas
+#   transports.json    → 5 vehículos
+#   visas.json         → 30 países
+#   legal-docs.json    → 10 documentos / 228 cláusulas
+#   testimonials.json  → 20 reseñas Google
+#   site-content.json  → textos editables (hero, navbar, footer, políticas, etc.)
+#   hero-images.json   → imágenes del hero

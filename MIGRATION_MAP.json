@@ -1,0 +1,523 @@
+{
+  "$schema": "Mapa de migración Vive Travel (Next.js → Vite + React + Tailwind). FASE 0.",
+  "meta": {
+    "projectName": "Vive Travel Web",
+    "source": {
+      "path": "D:/Proyectos/ViveTravel",
+      "framework": "Next.js 15 (App Router) + TypeScript + Tailwind + shadcn/ui",
+      "dataStrategy": "JSON estático en src/data/static sembrado en cache de TanStack Query + endpoints API Route"
+    },
+    "target": {
+      "path": "G:/Otros ordenadores/Mi portátil/Documentos/Proyectos Vive Travel/V2 ViveTravelWeb-CloudFlare",
+      "framework": "Vite 5 + React 18 + TypeScript + Tailwind + react-router-dom 6"
+    },
+    "phase": "FASE 0 — Auditoría y estructura base",
+    "generatedAt": "2026-07-31",
+    "rules": [
+      "La carpeta de referencia D:/Proyectos/ViveTravel es de SOLO LECTURA.",
+      "Migración 1:1 de rutas, textos y datos; sin rediseños funcionales en FASE 0.",
+      "shadcn/ui (Radix) se reemplaza por componentes propios o librería equivalente a decidir en FASE 1.",
+      "La autenticación/integración con Supabase/Prisma del original NO está en el alcance de la web pública."
+    ]
+  },
+
+  "navigation": {
+    "strategy": "El original usa App Router con URLs reales + un store Zustand como espejo de estado de navegación. En el destino se usa react-router-dom (BrowserRouter) como única fuente de verdad de rutas; el estado de búsqueda/scroll puede mantenerse con un store ligero (Zustand) o parámetros de URL.",
+    "navbar": {
+      "behavior": "Header fijo, transparente sobre el hero del home, opaco (blur) al hacer scroll o en páginas internas. Logo dual (color/blanco) con crossfade. Banner de campaña condicional.",
+      "desktopNav": [
+        { "key": "home", "label": "Inicio", "route": "/" },
+        { "key": "plans", "label": "Experiencias y viajes", "route": "/planes", "hasDropdown": true },
+        { "key": "cabins", "label": "Cabañas", "route": "/cabanas" },
+        { "key": "transports", "label": "Transporte", "route": "/transporte" },
+        { "key": "visas", "label": "Visas", "route": "/visas" },
+        { "key": "team", "label": "Equipo", "route": "/equipo" },
+        { "key": "contact", "label": "Contacto", "route": "/contacto" },
+        { "key": "policies", "label": "Políticas", "route": "/politicas" }
+      ],
+      "plansDropdown": [
+        { "id": "internacionales", "label": "Planes Internacionales", "route": "/planes?categoria=internacionales" },
+        { "id": "nacionales", "label": "Planes Nacionales", "route": "/planes?categoria=nacionales" },
+        { "id": "circuitos", "label": "Circuitos", "route": "/planes?categoria=circuitos" },
+        { "id": "pasadias", "label": "Pasadías", "route": "/planes?categoria=pasadias" },
+        { "id": "grupales", "label": "Viajes Grupales", "route": "/planes?categoria=grupales" },
+        { "id": "tours", "label": "Actividades", "route": "/planes?categoria=tours" }
+      ],
+      "rightActions": [
+        { "feature": "Favoritos", "icon": "Heart", "route": "/favoritos", "pulse": true },
+        { "feature": "Reservar (CTA)", "icon": "Phone", "route": "/contacto" }
+      ],
+      "mobileMenu": "Sheet lateral derecho (w-72) con todos los items + acordeón de secciones de experiencias + CTA 'Reservar ahora' + link 'Mi Colección' (/favoritos)"
+    },
+    "footer": {
+      "behavior": "Oculto en páginas de detalle (plan-detail, cabin-detail). Tema oscuro.",
+      "columns": [
+        { "title": "Marca", "span": "lg:col-span-4", "content": "Logo blanco + descripción + redes (Instagram, Facebook, TikTok, WhatsApp)" },
+        { "title": "Explorar", "span": "lg:col-span-4", "links": ["/planes", "/cabanas", "/transporte", "/visas", "/equipo"] },
+        { "title": "Legal", "span": "lg:col-span-4", "links": ["/politicas/terminos", "/politicas/privacidad", "/politicas/datos", "/politicas/cookies", "/politicas/reservas"] },
+        { "title": "Soporte", "links": ["/contacto", "/politicas/pqr", "/politicas/manual-viajero"] },
+        { "title": "Contacto", "content": "Tel +57 312 638 0048 · comercial@vivetravelcol.co · Barranquilla, Atlántico" }
+      ],
+      "bottomBar": "© {year} Vive Travel · Vive Group S.A.S. · NIT 901993710 · RNT 278488"
+    },
+    "stickySummaryBar": {
+      "trigger": "Visible en detalles (siempre) y en listados (tras scroll >200px) SOLO cuando hay una búsqueda activa desde el hero (searchDestination establecido).",
+      "content": "Ruta origen→destino · rango de fechas · pasajeros/habitaciones · precio 'Desde' · botón 'Modificar' (vuelve al home)"
+    }
+  },
+
+  "pages": [
+    {
+      "key": "home",
+      "route": "/",
+      "source": "src/app/(public)/page.tsx",
+      "title": "Home",
+      "rendering": "Client (config-driven)",
+      "description": "Compone secciones según content.homeConfig (array 'order' + flags 'active'). Cada clave mapea a un componente del registro.",
+      "sections": [
+        { "id": "hero", "active": true, "component": "HeroSection", "notes": "Buscador multi-tab: internacionales | nacionales | circuitos | pasadias | grupales | alojamientos | tours. Al enviar, navega a /planes (o /cabanas) con estado de búsqueda + activa sticky bar." },
+        { "id": "promotions", "active": true, "component": "PromotionsBanner", "notes": "3 banners + 3 tarjetas de valor" },
+        { "id": "ticker", "active": true, "component": "TickerRibbon", "notes": "Cinta animada de mensajes" },
+        { "id": "plans", "active": true, "component": "FeaturedPlans", "notes": "Planes destacados (featuredOrder)" },
+        { "id": "bannerSalidas", "active": true, "component": "ScheduledDeparturesBanner", "notes": "Banner CTA hacia salidas programadas" },
+        { "id": "gallery", "active": false, "component": "DestinationsGallery", "notes": "Galería de destinos nacionales" },
+        { "id": "salidas", "active": true, "component": "ScheduledDepartures", "notes": "Próximas salidas programadas con fechas" },
+        { "id": "international", "active": true, "component": "InternationalDestinations", "notes": "Cancún, Punta Cana, San Andrés" },
+        { "id": "stats", "active": true, "component": "(estadísticas)", "notes": "Viajeros, destinos, satisfacción, rating" },
+        { "id": "groups", "active": true, "component": "GroupTrips", "notes": "Viajes en grupo + beneficios + stats" },
+        { "id": "custom", "active": false, "component": "CustomTrips", "notes": "Viajes personalizados" },
+        { "id": "testimonials", "active": true, "component": "Testimonials", "notes": "Reseñas de Google" },
+        { "id": "team", "active": false, "component": "TeamSection", "notes": "Equipo (también página /equipo)" },
+        { "id": "readyCta", "active": true, "component": "ReadyCTA", "notes": "CTA final de conversión" },
+        { "id": "influencer", "active": false, "component": "InfluencerAuthority", "notes": "Luis Méndez (fundador)" },
+        { "id": "videoShowcase", "active": false, "component": "VideoShowcase", "notes": "Showcase de video" },
+        { "id": "travelCarousel", "active": false, "component": "TravelCarousel", "notes": "Carrusel de momentos" }
+      ]
+    },
+    {
+      "key": "plans",
+      "route": "/planes",
+      "source": "src/app/(public)/planes/page.tsx",
+      "title": "Experiencias y viajes",
+      "rendering": "Client",
+      "queryParams": ["categoria"],
+      "mainComponent": "PlansList (src/components/plans/plans-list.tsx)",
+      "sections": [
+        { "name": "PageBanner", "details": "Eyebrow 'Descubre' + título + subtítulo + imagen" },
+        { "name": "Tabs de sección", "details": "6 pills (EXPERIENCE_SECTIONS) drag-scrollables; cambia vía ?categoria=" },
+        { "name": "Filtros", "details": "FilterSidebar (desktop) / FilterMobileSheet (mobile) — checkboxes + rangos de precio; construidos dinámicamente desde buildPlanFilters" },
+        { "name": "Toolbar", "details": "ListToolbar: toggle de vista (horizontal 1 / 2-col 2 / 3-col 3) + opciones de orden + contador" },
+        { "name": "Grid de tarjetas", "details": "PlanCardHorizontal (vista 1) o PlanCardVertical (vista 2/3). Card con CardImageCarousel, badges (días, cupos, fecha salida), favoritos, precio 'Desde', botón 'Ver detalle'" },
+        { "name": "Paginación", "details": "ListPagination (ITEMS_PER_PAGE del sorting.ts)" },
+        { "name": "Motor de scoring", "details": "scorePlans reordena cuando hay búsqueda activa (match destino/fecha/capacidad)" },
+        { "name": "Empty state", "details": "Mensaje + 'Limpiar filtros'" }
+      ],
+      "filters": ["categoría/sección", "rango de precio", "duracion", "ubicación", "rating", "características (Todo Incluido, Vuelos, etc.)"],
+      "viewModes": ["1 (horizontal)", "2 (grid 2 col)", "3 (grid 3 col)"],
+      "modals": []
+    },
+    {
+      "key": "plan-detail",
+      "route": "/planes/:id",
+      "source": "src/app/(public)/planes/[id]/page.tsx",
+      "title": "Detalle de experiencia",
+      "rendering": "Client",
+      "mainComponent": "PlanDetail (src/components/plans/plan-detail.tsx)",
+      "layout": "Dos columnas: contenido (izq) + CotizadorCard sticky (der, desktop) + CTA sticky móvil (abajo)",
+      "sections": [
+        { "name": "Galería", "details": "PropertyGallery variant 'booking'|'default' + acciones flotantes móvil (back, favorito, compartir WA)" },
+        { "name": "Header", "details": "H1 + badge categoría + ubicación + botones compartir/favorito (desktop)" },
+        { "name": "Navegación ancla (booking style)", "details": "Tabs pegajosos: General / Lugares / Incluye / Itinerario / Condiciones (solo categorías Nacional/Internacional) — scroll suave" },
+        { "name": "Descripción general", "details": "fullDescription (#general)" },
+        { "name": "Lugares", "details": "LugaresCarousel (Embla) de plan.lugares (#lugares) — solo si existen" },
+        { "name": "Incluye / No incluye", "details": "Grillas con ExpandableSection (#incluye)" },
+        { "name": "Actividades", "details": "highlights en grilla (ExpandableSection)" },
+        { "name": "Horario y punto de encuentro", "details": "Solo si NO fixedDeparture: schedule + meeting" },
+        { "name": "Itinerario", "details": "Accordion de plan.itinerary (#itinerario) — solo booking style" },
+        { "name": "Información importante", "details": "plan.notes (ExpandableSection)" },
+        { "name": "Condiciones generales", "details": "4 bullets hardcoded (#condiciones)" },
+        { "name": "CotizadorCard (sidebar)", "details": "Selector fecha (Popover) + pasajeros (stepper) + ciudad de salida + precio total + botón Reservar/WhatsApp" }
+      ],
+      "modals": [
+        { "name": "Resumen de reserva (Dialog)", "trigger": "Botón Reservar (no grupal)", "content": "Configura tu reserva: fecha, personas, ciudad origen, total, confirmar por WhatsApp" },
+        { "name": "Calendario móvil (Dialog full-screen)", "trigger": "Elegir fecha (móvil)", "content": "DepartureDateOptions (salidas fijas) o calendario de fecha libre" },
+        { "name": "ShareDialog", "trigger": "Botón compartir", "content": "Compartir por WhatsApp (wa.me)" }
+      ],
+      "pricingLogic": "totalPlanPrice = guests × plan.price; los grupales usan fecha_salida con countdown"
+    },
+    {
+      "key": "cabins",
+      "route": "/cabanas",
+      "source": "src/app/(public)/cabanas/page.tsx",
+      "title": "Cabañas / Alojamientos",
+      "rendering": "Client",
+      "mainComponent": "CabinsList (src/components/cabins/cabins-list.tsx)",
+      "sections": [
+        { "name": "PageBanner", "details": "Eyebrow 'Alojamientos'" },
+        { "name": "Filtros", "details": "FilterSidebar/FilterMobileSheet — ubicación pre-seleccionable desde búsqueda del hero" },
+        { "name": "Toolbar", "details": "ListToolbar con cabinSortOptions (vista por defecto: horizontal)" },
+        { "name": "Grid de tarjetas", "details": "CabinCardHorizontal/Vertical: nombre, ubicación, capacidad/hab/baños, precio/noche, 'Ver disponibilidad'" },
+        { "name": "Paginación", "details": "ListPagination" },
+        { "name": "CTA inferior", "details": "'¿No encuentras lo que buscas?' → /contacto" }
+      ],
+      "modals": []
+    },
+    {
+      "key": "cabin-detail",
+      "route": "/cabanas/:id",
+      "source": "src/app/(public)/cabanas/[id]/page.tsx",
+      "title": "Detalle de cabaña",
+      "rendering": "Client",
+      "mainComponent": "CabinDetail (src/components/cabins/cabin-detail.tsx) — archivo más grande (~1454 líneas)",
+      "layout": "Dos columnas: contenido (izq) + PriceCard sticky (der, desktop) + CTA sticky móvil (abajo)",
+      "sections": [
+        { "name": "Galería", "details": "PropertyGallery variant 'cabin' + Lightbox para fotos de habitaciones" },
+        { "name": "Header + stats", "details": "Título + ubicación + compartir/favorito; stats: huéspedes, habitaciones, baños, piscina" },
+        { "name": "Descripción", "details": "fullDescription (ExpandableSection)" },
+        { "name": "Disponibilidad", "details": "AvailabilityCalendar (react-day-picker, modo range, 1-2 meses) con días ocupados (ICS)" },
+        { "name": "Habitaciones", "details": "'¿Dónde vas a dormir?' — carrusel snap de bedroomDetails → abre modal + Lightbox por habitación" },
+        { "name": "Puntos destacados", "details": "highlights con icono dinámico" },
+        { "name": "Comodidades", "details": "amenities con icono dinámico" },
+        { "name": "Reglas", "details": "rules con icono dinámico" },
+        { "name": "Ubicación", "details": "Texto + iframe Google Maps + mapsUrl opcional" },
+        { "name": "PriceCard (sidebar)", "details": "Precio/noche + date-range picker (Popover) + huéspedes + desglose (precio×noches + 8% service fee) + Reservar (2 pasos)" }
+      ],
+      "modals": [
+        { "name": "Habitaciones (Dialog full-screen)", "content": "Detalle por habitación + strip de imágenes → Lightbox" },
+        { "name": "Lightbox de habitación", "content": "Visor de imágenes por habitación" },
+        { "name": "Detalles del precio móvil (Dialog bottom-sheet)", "content": "Desglose precio×noches, fechas, huéspedes, total, 'Reservar por WhatsApp'" },
+        { "name": "Calendario móvil (Dialog bottom-sheet)", "content": "range Calendar con días ocupados tachados, 'Borrar' + 'Guardar'" },
+        { "name": "ShareDialog", "content": "Compartir por WhatsApp" }
+      ],
+      "availabilitySystem": {
+        "description": "Sistema más complejo de la web. Disponibilidad desde feeds ICS (iCal) por cabaña.",
+        "hook": "useCabinAvailability(cabinId) → useQuery(['availability', id]) GET /api/availability?cabin=",
+        "apiRoute": "src/app/api/availability/route.ts — parser ICS sin dependencias, cache en memoria TTL 1h (stale-while-revalidate 6h), fail-open",
+        "rangeLogic": "Estilo Airbnb: re-ancla al tocar antes del 'from'; rechaza rangos que crucen noches reservadas (rangeCrossesBooked). Replicado en 4 sitios (availability-calendar, cabin-detail ×3, PriceCard).",
+        "fields": "icsUrl por cabaña (solo La Martina lo tiene)"
+      }
+    },
+    {
+      "key": "transports",
+      "route": "/transporte",
+      "source": "src/app/(public)/transporte/page.tsx",
+      "title": "Transporte",
+      "rendering": "Server (SSG)",
+      "mainComponent": "TransportsView (src/components/transports/transports-view.tsx)",
+      "sections": [
+        { "name": "PageBanner", "details": "Banner de transporte" },
+        { "name": "Grid de vehículos", "details": "5 tarjetas (Buses, Busetas, Van, Carros, Camionetas) → /transporte/:id + WhatsApp 'Cotizar'" },
+        { "name": "Compromiso de servicio", "details": "3 pilares" },
+        { "name": "CTA", "details": "'Consultar disponibilidad' (WhatsApp)" }
+      ],
+      "modals": []
+    },
+    {
+      "key": "transport-detail",
+      "route": "/transporte/:id",
+      "source": "src/app/(public)/transporte/[id]/page.tsx",
+      "title": "Detalle de vehículo",
+      "rendering": "Server (SSG, generateStaticParams)",
+      "mainComponent": "TransportDetail (src/components/transports/transport-detail.tsx)",
+      "sections": [
+        { "name": "Breadcrumb", "details": "← /transporte" },
+        { "name": "Hero", "details": "Imagen + badge capacidad" },
+        { "name": "Descripción + 'Ideal para'", "details": "Texto + bestFor" },
+        { "name": "Características", "details": "Grid de features" },
+        { "name": "Sidebar de cotización", "details": "Precio + 'Cotizar por WhatsApp'" },
+        { "name": "Vehículos relacionados", "details": "3 tarjetas" }
+      ],
+      "modals": []
+    },
+    {
+      "key": "visas",
+      "route": "/visas",
+      "source": "src/app/(public)/visas/page.tsx",
+      "title": "Visas y requisitos",
+      "rendering": "Server (SSG)",
+      "mainComponent": "VisasSection (src/components/visas/visas-section.tsx)",
+      "sections": [
+        { "name": "Hero oscuro", "details": "Fondo #002B49 + imagen de pasaporte" },
+        { "name": "Filtro de categoría", "details": "all / required / onarrival / free" },
+        { "name": "Países agrupados", "details": "getVisasGroupedByCategory — tarjetas con bandera 3D (flagcdn) → /visas/:slug" },
+        { "name": "Disclaimer legal", "details": "Bloque informativo" }
+      ],
+      "modals": []
+    },
+    {
+      "key": "visa-detail",
+      "route": "/visas/:country",
+      "source": "src/app/(public)/visas/[country]/page.tsx",
+      "title": "Detalle de visa",
+      "rendering": "Server (SSG, generateStaticParams)",
+      "mainComponent": "VisaDetail (src/components/visas/visa-detail.tsx)",
+      "sections": [
+        { "name": "Breadcrumb", "details": "← /visas" },
+        { "name": "Header", "details": "Bandera + título + badges categoría" },
+        { "name": "Quick facts", "details": "Estadía / costo / procesamiento / canal" },
+        { "name": "Requisitos", "details": "Lista" },
+        { "name": "Paso a paso", "details": "process" },
+        { "name": "Casos especiales", "details": "specialNotes (si existen)" },
+        { "name": "Sede consular", "details": "embassyInfo (si existe)" },
+        { "name": "Documentos", "details": "documents (si existen)" },
+        { "name": "Recomendaciones + link oficial", "details": "tips + officialLink" }
+      ],
+      "modals": []
+    },
+    {
+      "key": "contact",
+      "route": "/contacto",
+      "source": "src/app/(public)/contacto/page.tsx",
+      "title": "Contacto",
+      "rendering": "Client",
+      "mainComponent": "ContactSection (src/components/contact/contact-section.tsx)",
+      "sections": [
+        { "name": "Formulario", "details": "react-hook-form + zod: nombre, email, teléfono, asunto (Select), mensaje, método de contacto (RadioGroup WA/email/phone). Toast de éxito." },
+        { "name": "Canales de atención", "details": "WhatsApp, email, ubicación, horario + redes (IG/FB/TikTok/WA)" }
+      ],
+      "modals": []
+    },
+    {
+      "key": "team",
+      "route": "/equipo",
+      "source": "src/app/(public)/equipo/page.tsx",
+      "title": "Nuestro equipo",
+      "rendering": "Server (SSG)",
+      "mainComponent": "TeamSection (src/components/team/team-section.tsx)",
+      "sections": [
+        { "name": "Header + historia", "details": "Tres amigos fundadores" },
+        { "name": "Grid de 3 miembros", "details": "Andrés Trespalacios, Luis Méndez (Vocero Principal), Jean Fontalo — HARDCODED en el componente" },
+        { "name": "Stats + CTAs", "details": "Ver planes / Contactar" }
+      ],
+      "note": "Los miembros del equipo están hardcodeados (no en JSON). Migrar tal cual o a data.",
+      "modals": []
+    },
+    {
+      "key": "favorites",
+      "route": "/favoritos",
+      "source": "src/app/(public)/favoritos/page.tsx",
+      "title": "Tu colección (Favoritos)",
+      "rendering": "Client",
+      "mainComponent": "FavoritesSection (src/components/favorites/favorites-section.tsx)",
+      "persistence": "localStorage (getFavorites/isFavorite/toggleFavorite en src/lib/favorites.ts)",
+      "sections": [
+        { "name": "Botón volver", "details": "Usa previousView/previousItemId del store" },
+        { "name": "Empty state", "details": "CTAs: Explorar experiencias / Explorar cabañas" },
+        { "name": "Lista de favoritos", "details": "FavoriteCabinCard o FavoritePlanCard (framer-motion AnimatePresence); cada uno navega a su detalle" }
+      ],
+      "modals": []
+    },
+    {
+      "key": "policies",
+      "route": "/politicas",
+      "source": "src/app/(public)/politicas/page.tsx",
+      "title": "Documentos legales",
+      "rendering": "Client",
+      "mainComponent": "PoliciesSection (src/components/policies/policies-section.tsx)",
+      "sections": [
+        { "name": "Header editorial", "details": "Índice de documentos" },
+        { "name": "Índice por categoría", "details": "getLegalDocsByCategory — tarjetas con icono (DOC_ICONS por slug) → /politicas/:slug" },
+        { "name": "Footer corporativo", "details": "Vive Group S.A.S., NIT, RNT" }
+      ],
+      "modals": []
+    },
+    {
+      "key": "legal-doc",
+      "route": "/politicas/:doc",
+      "source": "src/app/(public)/politicas/[doc]/page.tsx",
+      "title": "Documento legal",
+      "rendering": "Server (SSG, generateStaticParams)",
+      "mainComponent": "LegalDocPage (src/components/policies/legal-doc-page.tsx)",
+      "sections": [
+        { "name": "Breadcrumb", "details": "← /politicas" },
+        { "name": "Header del documento", "details": "Categoría, Doc #number, título, descripción, versión/fecha, conteo de cláusulas" },
+        { "name": "TOC sticky (desktop)", "details": "Tabla de contenidos con scroll-spy (activeClause)" },
+        { "name": "Cuerpo de cláusulas", "details": "Secciones #clausula-{number}" },
+        { "name": "Paginación prev/next", "details": "/politicas/{slug}" },
+        { "name": "Botón volver arriba", "details": "Floating" }
+      ],
+      "modals": []
+    }
+  ],
+
+  "experienceSections": [
+    { "id": "internacionales", "label": "Planes Internacionales", "subtitle": "Escapadas fuera de Colombia con enfoque en descanso, playa y experiencias memorables." },
+    { "id": "nacionales", "label": "Planes Nacionales", "subtitle": "Viajes de varios días por Colombia, organizados para descubrir nuevos destinos." },
+    { "id": "circuitos", "label": "Circuitos", "subtitle": "Grandes recorridos y circuitos turísticos organizados para vivir múltiples destinos." },
+    { "id": "pasadias", "label": "Pasadías", "subtitle": "Experiencias de un día para disfrutar playas, naturaleza, aventura y cultura." },
+    { "id": "grupales", "label": "Viajes Grupales", "subtitle": "Viajes de un día para grupos, equipos, familias y comunidades." },
+    { "id": "tours", "label": "Actividades", "subtitle": "Experiencias y actividades cortas para complementar tu estadía en la ciudad." }
+  ],
+
+  "services": [
+    {
+      "key": "plans",
+      "sourceData": "src/data/static/plans.json (27 planes)",
+      "api": "fetchPlans/fetchPlan (src/lib/api.ts) — en destino: import directo del JSON",
+      "destination": "src/data/planes.json (✓ creado en FASE 0, 27 planes copiados 1:1)",
+      "fields": ["id", "slug", "name", "shortDescription", "fullDescription", "images[]", "price", "priceRange", "duration", "location", "category", "includes[]", "excludes[]", "highlights[]", "rating", "reviewCount", "maxGuests", "difficulty", "schedule", "meeting", "published", "order", "itinerary[{title,description}]", "departureDates[{start,end}]", "fixedDeparture", "lugares[{name,image}]", "notes[]", "featuredOrder", "fecha_salida"],
+      "count": 27
+    },
+    {
+      "key": "cabins",
+      "sourceData": "src/data/static/cabins.json (7 cabañas)",
+      "api": "fetchCabins/fetchCabin + /api/availability (ICS)",
+      "destination": "src/data/cabins.json (FASE 1)",
+      "fields": ["id", "slug", "name", "shortDescription", "fullDescription", "images[]", "pricePerNight", "priceRange", "location", "capacity", "bedrooms", "bathrooms", "amenities[]", "highlights[]", "rules[]", "rating", "reviewCount", "coordinates{lat,lng}", "checkIn", "checkOut", "cancellationPolicy", "propertyType", "bedroomDetails[{id,title,beds,image,images[],order,active}]", "published", "order", "icsUrl", "mapsUrl"],
+      "count": 7
+    },
+    {
+      "key": "transports",
+      "sourceData": "src/data/static/transports.json (5 vehículos)",
+      "destination": "src/data/transports.json (FASE 1)",
+      "fields": ["id", "name", "description", "capacity", "priceFrom", "priceRange", "image", "features[]", "bestFor"],
+      "count": 5
+    },
+    {
+      "key": "visas",
+      "sourceData": "src/data/static/visas.json (30 países)",
+      "destination": "src/data/visas.json (FASE 1)",
+      "fields": ["slug", "country", "countryCode", "flagEmoji", "region", "visaCategory", "categoryId", "summary", "stayDuration", "cost", "processingTime", "whereToApply", "requirements[]", "process[]", "tips[]", "officialLink", "lastUpdated", "embassyInfo{address,phone,cas,website}", "documents[]", "specialNotes[]"],
+      "categories": ["free", "onarrival", "required"],
+      "count": 30
+    },
+    {
+      "key": "legal-docs",
+      "sourceData": "src/data/static/legal-docs.json (10 documentos / 228 cláusulas)",
+      "destination": "src/data/legal-docs.json (FASE 1)",
+      "fields": ["slug", "number", "title", "shortTitle", "description", "category", "version", "issuedAt", "clauses[{number,heading,body}]"],
+      "docs": [
+        { "number": "01", "slug": "terminos", "title": "Términos y Condiciones", "category": "Términos y contratación", "clauses": 25 },
+        { "number": "02", "slug": "reservas", "title": "Reservas, Cambios y Cancelaciones", "category": "Reservas y cancelaciones", "clauses": 28 },
+        { "number": "03", "slug": "datos", "title": "Tratamiento de Datos Personales", "category": "Privacidad y datos", "clauses": 28 },
+        { "number": "04", "slug": "privacidad", "title": "Política de Privacidad", "category": "Privacidad y datos", "clauses": 21 },
+        { "number": "05", "slug": "cookies", "title": "Política de Cookies", "category": "Privacidad y datos", "clauses": 22 },
+        { "number": "06", "slug": "pqr", "title": "Peticiones, Quejas, Reclamos y Sugerencias", "category": "Operación y responsabilidad", "clauses": 25 },
+        { "number": "07", "slug": "manual-viajero", "title": "Manual del Viajero", "category": "Operación y responsabilidad", "clauses": 17 },
+        { "number": "08", "slug": "responsabilidad", "title": "Limitación de Responsabilidad", "category": "Operación y responsabilidad", "clauses": 22 },
+        { "number": "09", "slug": "consentimiento", "title": "Consentimiento Informado del Viajero", "category": "Términos y contratación", "clauses": 22 },
+        { "number": "10", "slug": "aceptacion-digital", "title": "Aceptación Digital de Contratación", "category": "Términos y contratación", "clauses": 18 }
+      ],
+      "count": 10
+    },
+    {
+      "key": "testimonials",
+      "sourceData": "src/data/static/testimonials.json (20 reseñas Google)",
+      "destination": "src/data/testimonials.json (FASE 1)",
+      "fields": ["id", "name", "avatar", "avatarBg", "avatarUrl", "location", "text", "rating", "tripName"],
+      "count": 20
+    },
+    {
+      "key": "site-content",
+      "sourceData": "src/data/static/site-content.json (textos editables de toda la web)",
+      "destination": "src/data/site-content.json (FASE 1)",
+      "scope": ["hero", "featuredPlans", "carousel", "testimonials", "groupTrips", "customTrips", "contact", "policies", "footer", "navbar", "plansList", "cabinsList", "promotions", "influencer", "team", "gallery", "international", "homeConfig{order[],active{}}", "campaign", "seo"]
+    },
+    {
+      "key": "hero-images",
+      "sourceData": "src/data/static/hero-images.json (1 imagen hero desktop/mobile)",
+      "destination": "src/data/hero-images.json (FASE 1)",
+      "count": 1
+    }
+  ],
+
+  "componentsTree": {
+    "layout": [
+      "navbar.tsx (header fijo + megamenu experiencias + sheet móvil)",
+      "footer.tsx (oculto en detalles; marca + explorar + legal + soporte + contacto)",
+      "sticky-summary-bar.tsx (barra de búsqueda activa pegajosa)",
+      "PublicLayout (Navbar + StickySummaryBar + main + Footer)"
+    ],
+    "home": [
+      "hero-section.tsx (1118 líneas — buscador multi-tab)",
+      "promotions-banner.tsx", "ticker-ribbon.tsx", "featured-plans.tsx",
+      "scheduled-departures-banner.tsx", "scheduled-departures.tsx",
+      "destinations-gallery.tsx", "international-destinations.tsx",
+      "group-trips.tsx", "custom-trips.tsx", "testimonials.tsx",
+      "influencer-authority.tsx", "video-showcase.tsx", "travel-carousel.tsx"
+    ],
+    "plans": ["plans-list.tsx (1156 líneas)", "plan-detail.tsx (1373 líneas)"],
+    "cabins": ["cabins-list.tsx (616 líneas)", "cabin-detail.tsx (1454 líneas)", "availability-calendar.tsx (228 líneas)"],
+    "transports": ["transports-view.tsx", "transport-detail.tsx"],
+    "visas": ["visas-section.tsx", "visa-detail.tsx"],
+    "contact": ["contact-section.tsx (452 líneas — react-hook-form + zod)"],
+    "team": ["team-section.tsx (miembros hardcodeados)"],
+    "favorites": ["favorites-section.tsx (localStorage)"],
+    "policies": ["policies-section.tsx", "legal-doc-page.tsx"],
+    "shared": [
+      "page-banner.tsx", "section-header.tsx", "property-gallery.tsx (+Lightbox)",
+      "card-image-carousel.tsx", "image-carousel.tsx", "photo-gallery.tsx",
+      "filter-panel.tsx (FilterSidebar/FilterMobileSheet/buildPlanFilters/buildCabinFilters/filterPlans/filterCabins/useFilterState)",
+      "filter-sidebar.tsx", "list-toolbar.tsx (ViewMode/SortOption/cabinSortOptions)",
+      "list-pagination.tsx", "expandable-section.tsx", "share-dialog.tsx",
+      "premium-icon.tsx"
+    ],
+    "ui": "Librería shadcn/ui completa (~45 primitivos Radix): accordion, alert-dialog, badge, button, calendar, card, carousel, checkbox, collapsible, command, context-menu, dialog, drawer, dropdown-menu, form, hover-card, input-otp, input, label, menubar, navigation-menu, pagination, popover, progress, radio-group, resizable, scroll-area, select, separator, sheet, sidebar, skeleton, slider, sonner (toast), switch, table, tabs, textarea, toast, toaster, toggle, toggle-group, tooltip, aspect-ratio, avatar, safe-image"
+  },
+
+  "hooks": [
+    "use-cabin-availability.ts (disponibilidad ICS + helpers de rango puros)",
+    "use-mobile.ts (detección mobile)",
+    "use-prefetch-data.ts (precarga de queries al montar)",
+    "use-scroll-on-navigate.ts (scroll-to-top en cambio de ruta)",
+    "use-toast.ts"
+  ],
+
+  "lib": [
+    "api.ts (fetchers de todos los recursos)",
+    "store.ts (Zustand — navegación/búsqueda/favoritos pulse/viewMode; getUrlForView)",
+    "data.ts (tipos TourPlan, Cabin + datos)",
+    "content-types.ts / content-defaults.ts (tipos y defaults de site-content)",
+    "experience-sections.ts (6 secciones + clasificador getPlanExperienceSection)",
+    "sorting.ts (sortPlans/sortCabins/getGridCols/ITEMS_PER_PAGE)",
+    "favorites.ts / favorites-store.ts (localStorage)",
+    "visas.ts (getVisasGroupedByCategory/getAdjacentVisas)",
+    "legal-docs.ts (getLegalDocsByCategory/getAdjacentDocs)",
+    "geolocation.ts (detectUserCity para ciudad de salida)",
+    "use-drag-scroll.ts (scroll arrastrable para tabs)",
+    "use-site-content.ts",
+    "config.ts (WHATSAPP_NUMBER, etc.)",
+    "utils.ts (cn — classnames)"
+  ],
+
+  "techStackMigration": {
+    "routing": "Next.js App Router → react-router-dom 6 (BrowserRouter). Las rutas SSG con generateStaticParams pasan a ser simples componentes; los metadata() se manejan con react-helmet o asignación document.title.",
+    "serverComponents": "Las páginas /transporte, /visas, /politicas y sus detalles eran Server Components. En Vite (todo client-side) se convierten en componentes normales; el prerender/SEO se puede cubrir con react-snap o SSR posterior si se requiere.",
+    "dataFetching": "TanStack Query sembrado en layout → en Vite se puede mantener React Query o importar los JSON directamente. Recomendado: import directo + hooks wrappers.",
+    "uiLibrary": "shadcn/ui (Radix) → decidir en FASE 1: (a) mantener shadcn/ui (instalable en Vite), (b) librería alternativa, o (c) componentes propios. Mismas APIs/variantes para minimizar refactor.",
+    "styling": "Tailwind 3 con tokens de color (ocean, background, foreground). Los colores exactos del original (tailwind.config.ts) deben replicarse.",
+    "stateManagement": "Zustand (store.ts) se mantiene para navegación/búsqueda/favoritos.",
+    "availability": "El endpoint /api/availability (parser ICS) debe migrarse a un serverless function de Cloudflare (Workers/Pages Functions) — NO es estático.",
+    "forms": "react-hook-form + zod (contacto) — se mantiene.",
+    "toast": "sonner — se mantiene."
+  },
+
+  "mediaAssets": {
+    "note": "Las imágenes locales referenciadas en los JSON (e.g. /images/cabanas/..., /images/destinos/..., /images/lugares/*.webp, /static-media/*) deben copiarse desde D:/Proyectos/ViveTravel/public a este proyecto en public/ durante la FASE 1. Las remotas (images.unsplash.com) no requieren acción.",
+    "localImagePaths": ["/images/cabanas/", "/images/destinos/", "/images/lugares/", "/images/banner-*.webp", "/images/hero/", "/static-media/", "/logos/"]
+  },
+
+  "phase0Status": {
+    "audit": "COMPLETA — todas las rutas, páginas, pestañas, modales, componentes y servicios mapeados",
+    "viteEnv": "INICIALIZADO — package.json, vite/tsconfig, tailwind, postcss, index.html, App.tsx con router completo (placeholders)",
+    "folderStructure": "CREADA — src/{components,pages,data,routes} con .gitkeep documentales",
+    "planesJson": "CREADO — src/data/planes.json con los 27 planes (copia 1:1, 89.048 bytes idénticos)",
+    "migrationMap": "CREADO — este archivo (MIGRATION_MAP.json)"
+  },
+
+  "phase1Plan": {
+    "scope": "Construcción de la interfaz real, siguiendo el orden de dependencias.",
+    "steps": [
+      "1. Copiar el resto de JSONs (cabins, transports, visas, legal-docs, testimonials, site-content, hero-images) y assets de public/.",
+      "2. Decidir e instalar la librería de UI (shadcn/ui en Vite recomendado para máxima fidelidad).",
+      "3. Migrar src/lib/ (tipos, store Zustand, sorting, experience-sections, favorites, config, utils).",
+      "4. Migrar src/components/shared/ (galerías, filtros, toolbar, paginación, banners).",
+      "5. Migrar layout (Navbar, Footer, StickySummaryBar, PublicLayout).",
+      "6. Migrar Home por secciones (según homeConfig order/active).",
+      "7. Migrar Plans (list + detail con cotizador y modales).",
+      "8. Migrar Cabins (list + detail + AvailabilityCalendar + endpoint availability como Cloudflare Function).",
+      "9. Migrar Transporte, Visas, Contacto, Equipo, Favoritos, Políticas.",
+      "10. Verificación visual end-to-end + ajustes de SEO/meta."
+    ]
+  }
+}

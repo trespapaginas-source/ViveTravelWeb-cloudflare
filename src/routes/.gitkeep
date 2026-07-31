@@ -1,0 +1,7 @@
+# Configuración de rutas
+#
+# App.tsx ya define el <BrowserRouter> con todas las rutas (FASE 0).
+# En FASE 1, este directorio puede alojar:
+#   - protected/guards si se añaden rutas de admin
+#   - constantes de rutas centralizadas (ROUTE_PATHS)
+#   - lazy-loading con React.lazy para code-splitting

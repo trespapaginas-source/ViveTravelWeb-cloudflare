@@ -1,0 +1,17 @@
+# Páginas (una por ruta del App Router original → mapeadas a react-router-dom)
+#
+# HomePage          → /
+# PlansPage         → /planes            (lee ?categoria=)
+# PlanDetailPage    → /planes/:id
+# CabinsPage        → /cabanas
+# CabinDetailPage   → /cabanas/:id
+# TransportsPage    → /transporte
+# TransportDetailPage → /transporte/:id
+# VisasPage         → /visas
+# VisaDetailPage    → /visas/:country
+# ContactPage       → /contacto
+# TeamPage          → /equipo
+# FavoritesPage     → /favoritos
+# PoliciesPage      → /politicas
+# LegalDocPage      → /politicas/:doc
+# NotFoundPage      → *
