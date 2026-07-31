@@ -1,0 +1,383 @@
+{
+  "hero": {
+    "brandLabel": "Vive Travel Atlántico",
+    "title": "Descubre la Magia de",
+    "titleHighlight": "Malambo",
+    "subtitle": "Experiencias únicas en el Caribe colombiano. Desde playas paradisíacas hasta aventuras en la naturaleza, tu próximo viaje comienza aquí.",
+    "ctaPlans": "Explorar Planes",
+    "ctaCabins": "Ver Cabañas"
+  },
+  "featuredPlans": {
+    "title": "Planes Turísticos Destacados",
+    "subtitle": "Vive experiencias inolvidables en los rincones más hermosos del departamento del Atlántico",
+    "priceLabel": "Desde",
+    "viewMore": "Ver más",
+    "viewAll": "Ver todos los planes"
+  },
+  "carousel": {
+    "title": "Momentos que hemos vivido juntos",
+    "subtitle": "Un vistazo a los viajes y experiencias que hemos compartido con nuestros viajeros",
+    "brandHover": "Vive Travel",
+    "stats": [
+      {
+        "label": "Viajeros felices",
+        "value": "500+"
+      },
+      {
+        "label": "Destinos",
+        "value": "15+"
+      },
+      {
+        "label": "Satisfacción",
+        "value": "98%"
+      },
+      {
+        "label": "Calificación promedio",
+        "value": "4.9"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Lo que dicen nuestros clientes",
+    "subtitle": "Historias reales de quienes ya viajaron con nosotros"
+  },
+  "groupTrips": {
+    "label": "Viajes en Grupo",
+    "title": "Viaja en",
+    "titleHighlight": "Grupo",
+    "description": "Organiza viajes inolvidables con tu familia, amigos o empresa. Ofrecemos planes personalizados con descuentos especiales para grupos.",
+    "ctaQuote": "Solicitar Cotización",
+    "ctaPlans": "Ver planes",
+    "benefits": [
+      {
+        "title": "Descuentos grupales",
+        "description": "Hasta 20% de descuento para grupos de 8 o más personas"
+      },
+      {
+        "title": "Itinerarios flexibles",
+        "description": "Fechas y horarios adaptados a tu grupo"
+      },
+      {
+        "title": "Experiencias compartidas",
+        "description": "Crea recuerdos inolvidables con quienes más quieres"
+      },
+      {
+        "title": "Atención personalizada",
+        "description": "Un coordinador dedicado para tu grupo"
+      }
+    ],
+    "stats": [
+      {
+        "label": "Viajes grupales",
+        "value": "50+"
+      },
+      {
+        "label": "Participantes",
+        "value": "200+"
+      },
+      {
+        "label": "Calificación",
+        "value": "4.9★"
+      }
+    ]
+  },
+  "customTrips": {
+    "label": "Viajes Personalizados",
+    "title": "Tu Viaje a",
+    "titleHighlight": "Medida",
+    "description": "Diseñamos experiencias únicas adaptadas a tus gustos, presupuesto y ritmo. Tú sueñas, nosotros lo hacemos realidad.",
+    "benefits": [
+      {
+        "title": "Flexibilidad total",
+        "description": "Elige tus destinos, actividades y ritmo de viaje. Tú decides cómo vivir el Atlántico."
+      },
+      {
+        "title": "Expertos locales",
+        "description": "Nuestros guías conocen cada rincón del departamento y te llevan a lugares únicos."
+      },
+      {
+        "title": "Mejores precios",
+        "description": "Sin intermediarios. Armamos tu viaje a medida con tarifas directas y transparentes."
+      }
+    ],
+    "ctaTitle": "¿Listo para tu aventura?",
+    "ctaDescription": "Cuéntanos qué tipo de experiencia buscas y diseñaremos un viaje perfecto para ti.",
+    "ctaContact": "Hablar con un experto",
+    "ctaPlans": "Ver planes"
+  },
+  "contact": {
+    "badge": "Contáctanos",
+    "title": "¿Listo para",
+    "titleHighlight": "Viajar",
+    "subtitle": "Estamos aquí para ayudarte a planificar la experiencia perfecta. Escríbenos y te responderemos lo antes posible.",
+    "formTitle": "Envíanos un mensaje",
+    "whatsapp": "+57 312 6380048",
+    "email": "comercial@vivetravelcol.co",
+    "location": "Barranquilla, Atlántico, Colombia",
+    "hours": "Lun - Sáb: 8:00 AM - 6:00 PM\nDom: 9:00 AM - 1:00 PM",
+    "instagramUrl": "https://www.instagram.com/vivetravelcol/",
+    "facebookUrl": "https://www.facebook.com/vivetravelagenciadeturismo/",
+    "tiktokUrl": "https://www.tiktok.com/@vivetravelcol",
+    "whatsappUrl": "https://wa.me/573126380048",
+    "socialLabel": "Síguenos en redes",
+    "chatTitle": "Chatea con nosotros",
+    "chatDescription": "Resolvemos tus dudas al instante por WhatsApp",
+    "chatButton": "Abrir WhatsApp"
+  },
+  "policies": {
+    "badge": "Políticas",
+    "title": "Políticas de",
+    "titleHighlight": "Reserva",
+    "subtitle": "Transparencia y confianza en cada reserva. Conoce nuestras políticas antes de tu viaje.",
+    "bookingTitle": "Políticas de Reserva",
+    "bookingSubtitle": "Condiciones para asegurar tu experiencia",
+    "cancellationTitle": "Políticas de Cancelación",
+    "cancellationSubtitle": "Entendemos que los planes pueden cambiar",
+    "footerText": "Nos comprometemos a brindarte la mejor experiencia. Si tienes preguntas sobre nuestras políticas, no dudes en contactarnos.",
+    "lastUpdate": "Última actualización: Marzo 2025",
+    "bookingPolicies": [
+      {
+        "id": "booking-process",
+        "title": "Proceso de Reserva",
+        "content": "- Selecciona el plan o cabaña de tu preferencia\n- Completa el formulario de reserva con tus datos\n- Recibirás confirmación por correo electrónico\n- **Pago inicial del 30%** para confirmar la reserva"
+      },
+      {
+        "id": "payments",
+        "title": "Métodos de Pago",
+        "content": "- **Transferencia bancaria:** Bancolombia, Davivienda\n- **Nequi y Daviplata:** Pago inmediato\n- **Efectivo:** Solo en oficina física\n- **Tarjeta de crédito:** Con recargo del 4%"
+      }
+    ],
+    "cancellationPolicies": [
+      {
+        "id": "early-cancellation",
+        "title": "Cancelación Anticipada",
+        "content": "- **7+ días antes:** Reembolso del 100%\n- **3-6 días antes:** Reembolso del 70%\n- **1-2 días antes:** Reembolso del 50%"
+      }
+    ]
+  },
+  "footer": {
+    "brandName": "Vive Travel",
+    "brandSub": "Colombia",
+    "description": "Planes turísticos para toda Colombia, con la costa Caribe como casa. Tu próxima aventura empieza aquí.",
+    "instagramUrl": "https://www.instagram.com/vivetravelcol/",
+    "facebookUrl": "https://www.facebook.com/vivetravelagenciadeturismo/",
+    "tiktokUrl": "https://www.tiktok.com/@vivetravelcol",
+    "whatsappUrl": "https://wa.me/573126380048",
+    "exploreTitle": "Explorar",
+    "contactTitle": "Contacto",
+    "phone": "+57 312 638 0048",
+    "email": "comercial@vivetravelcol.co",
+    "location": "Barranquilla, Atlántico, Colombia",
+    "helpTitle": "¿Necesitas ayuda?",
+    "helpDescription": "Escríbenos por WhatsApp y te ayudamos a planear tu viaje.",
+    "chatButton": "Chatear ahora",
+    "copyright": "© {year} Vive Travel. Todos los derechos reservados.",
+    "madeWith": "Hecho en la costa Caribe, para toda Colombia"
+  },
+  "navbar": {
+    "brandName": "Vive Travel",
+    "brandSub": "Colombia",
+    "navItems": [
+      {
+        "key": "home",
+        "label": "Inicio"
+      },
+      {
+        "key": "plans",
+        "label": "Experiencias y viajes"
+      },
+      {
+        "key": "cabins",
+        "label": "Cabañas"
+      },
+      {
+        "key": "transports",
+        "label": "Transporte"
+      },
+      {
+        "key": "visas",
+        "label": "Visas"
+      },
+      {
+        "key": "team",
+        "label": "Equipo"
+      },
+      {
+        "key": "contact",
+        "label": "Contacto"
+      },
+      {
+        "key": "policies",
+        "label": "Políticas"
+      }
+    ],
+    "ctaButton": "Reservar",
+    "ctaButtonMobile": "Reservar ahora"
+  },
+  "plansList": {
+    "title": "Experiencias y viajes",
+    "subtitle": "Experiencias en la costa Caribe y destinos de toda Colombia. Playa, naturaleza, aventura y cultura.",
+    "emptyState": "No hay experiencias disponibles en esta categoría",
+    "viewAll": "Ver todas las experiencias"
+  },
+  "cabinsList": {
+    "title": "Alojamientos",
+    "subtitle": "Cabañas y alojamientos en la costa Caribe. Frente al mar, en la naturaleza o en el corazón de la ciudad.",
+    "emptyTitle": "¿No encuentras lo que buscas?",
+    "emptyDescription": "Contáctanos y te ayudamos a encontrar el alojamiento ideal.",
+    "contactButton": "Contáctanos"
+  },
+  "promotions": {
+    "sectionTitle": "Módulo Promocional",
+    "banners": [
+      {
+        "id": 1,
+        "alt": "Plan 2x1 San Andrés",
+        "url": "/images/banner-san-andres.webp"
+      },
+      {
+        "id": 2,
+        "alt": "Escápate al paraíso Punta Cana",
+        "url": "/images/banner-punta-cana.webp"
+      },
+      {
+        "id": 3,
+        "alt": "Tour Eje Cafetero",
+        "url": "/images/banner-eje-cafetero.webp"
+      }
+    ],
+    "valueCards": [
+      {
+        "id": 1,
+        "title": "Promos y medios de pago",
+        "description": "Cuotas con tarjetas de crédito, transferencias y facilidades de pago."
+      },
+      {
+        "id": 2,
+        "title": "Beneficios y promociones",
+        "description": "Acumula beneficios y aprovecha todas las promociones 2x1 activas."
+      },
+      {
+        "id": 3,
+        "title": "Mi agente Vive Travel",
+        "description": "Asesoría personalizada por WhatsApp o llamada con nuestros agentes."
+      }
+    ]
+  },
+  "influencer": {
+    "name": "Luis Méndez",
+    "role": "Fundador y Viajero",
+    "quote": "Mi propósito no es solo venderte un viaje, sino asegurarme de que vivas la misma experiencia increíble que yo descubrí He recorrido cada uno de estos destinos para garantizarte calidad, seguridad y recuerdos inolvidables.",
+    "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&h=1000&fit=crop&q=80",
+    "instagramUrl": "https://instagram.com/luismendez",
+    "instagramLabel": "Sigue mis viajes",
+    "statsLabel": "+500 viajeros felices"
+  },
+  "team": {
+    "title": "Nuestro Equipo",
+    "subtitle": "Tres amigos, una pasión: conectar al mundo con la magia del Atlántico colombiano",
+    "description": "Lo que comenzó como un sueño entre tres amigos se convirtió en una agencia que transforma la manera de vivir el Caribe colombiano. Cada uno aporta su talento único para que tu experiencia sea extraordinaria."
+  },
+  "gallery": {
+    "title": "Explora destinos",
+    "titleHighlight": "nacionales",
+    "subtitle": "Descubre los mejores tours y experiencias en los destinos más emblemáticos del Caribe colombiano",
+    "destinations": [
+      {
+        "id": "dest-baru",
+        "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&h=600&fit=crop&q=80",
+        "title": "Cartagena",
+        "subtitle": "Historia, cultura y encanto colonial"
+      },
+      {
+        "id": "dest-pasadias",
+        "image": "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1400&h=600&fit=crop&q=80",
+        "title": "Santa Marta",
+        "subtitle": "Naturaleza viva donde la sierra abraza el mar"
+      },
+      {
+        "id": "dest-rosario",
+        "image": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=1400&h=600&fit=crop&q=80",
+        "title": "Quindío",
+        "subtitle": "La verdadera esencia y tradición cafetera"
+      },
+      {
+        "id": "dest-bahia",
+        "image": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1400&h=600&fit=crop&q=80",
+        "title": "Más de Colombia",
+        "subtitle": "Descubre otras joyas y destinos inexplorados"
+      }
+    ]
+  },
+  "international": {
+    "title": "Explora destinos",
+    "titleHighlight": "internacionales",
+    "subtitle": "Descubre escapadas inolvidables fuera de Colombia",
+    "destinations": [
+      {
+        "name": "Cancún",
+        "eyebrow": "Escapadas al Caribe mexicano",
+        "image": "https://images.unsplash.com/photo-1552074284-5e88ef1aef18?w=900&h=1125&fit=crop&q=80",
+        "description": "Escapadas espectaculares al Caribe mexicano. Disfruta de playas de arena blanca, una vibrante vida nocturna y fascinantes tours arqueológicos."
+      },
+      {
+        "name": "Punta Cana",
+        "eyebrow": "Playas, descanso y resorts",
+        "image": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=900&h=1125&fit=crop&q=80",
+        "description": "El escape perfecto con todo incluido en República Dominicana. Relájate frente a aguas cristalinas con servicios premium y descanso total."
+      },
+      {
+        "name": "San Andrés",
+        "eyebrow": "Mar de siete colores",
+        "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&h=1125&fit=crop&q=80",
+        "description": "Descubre el mar de los siete colores en Colombia. Un destino caribeño lleno de vida, arrecifes de coral y hermosas playas tropicales."
+      }
+    ]
+  },
+  "homeConfig": {
+    "order": [
+      "hero",
+      "promotions",
+      "ticker",
+      "plans",
+      "bannerSalidas",
+      "salidas",
+      "gallery",
+      "international",
+      "stats",
+      "groups",
+      "custom",
+      "testimonials",
+      "team",
+      "readyCta"
+    ],
+    "active": {
+      "hero": true,
+      "team": false,
+      "plans": true,
+      "bannerSalidas": true,
+      "stats": true,
+      "custom": false,
+      "groups": true,
+      "gallery": false,
+      "salidas": true,
+      "influencer": false,
+      "promotions": true,
+      "ticker": true,
+      "testimonials": true,
+      "international": true,
+      "readyCta": true
+    }
+  },
+  "campaign": {
+    "active": false,
+    "bannerText": "🎉 ¡Descuento de activo!",
+    "ctaText": "Ver Planes",
+    "ctaUrl": "#"
+  },
+  "seo": {
+    "metaTitle": "Vive Travel Atlántico",
+    "metaDescription": "Tu agencia de viajes en el Caribe colombiano",
+    "openGraphImage": ""
+  }
+}

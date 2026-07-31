@@ -1,0 +1,1262 @@
+[
+  {
+    "slug": "terminos",
+    "number": "01",
+    "title": "Términos y Condiciones de Contratación de Servicios Turísticos",
+    "shortTitle": "Términos y Condiciones",
+    "description": "Marco contractual general aplicable a la contratación de servicios turísticos de Vive Travel.",
+    "category": "Términos y contratación",
+    "version": "1.0",
+    "issuedAt": "16 de julio de 2026",
+    "clauses": [
+      {
+        "number": 1,
+        "heading": "Presentación y aceptación",
+        "body": "El presente documento establece los términos y condiciones generales aplicables a la contratación de servicios turísticos ofrecidos por Vive Travel, marca comercial de Vive Group S.A.S., sociedad domiciliada en Barranquilla, Atlántico, Colombia, identificada con NIT 901993710, correo de atención Comercial@vivetravelcol.co, WhatsApp +57 312 638 0048, sitio web vivetravelcol.co y Registro Nacional de Turismo (RNT) 278488. Este documento integra el marco contractual básico de la relación entre Vive Travel y el cliente, viajero, comprador, contratante o usuario de sus servicios, sin perjuicio de las políticas específicas que se publiquen de forma complementaria en el sitio web o en los canales de atención oficiales. Al solicitar una cotización, enviar datos para una reserva, realizar un abono, efectuar el pago total, aceptar una propuesta comercial, firmar, confirmar por medios electrónicos o utilizar cualquier servicio de Vive Travel, el cliente declara que ha leído, entendido y aceptado estos términos y condiciones, así como las políticas complementarias que resulten aplicables. Si el cliente no está de acuerdo con alguna de las disposiciones aquí contenidas, deberá abstenerse de contratar, reservar o utilizar los servicios ofrecidos por Vive Travel."
+      },
+      {
+        "number": 2,
+        "heading": "Objeto del documento",
+        "body": "El objeto de estos términos y condiciones es regular de manera general la relación contractual, comercial y operativa entre Vive Travel y sus clientes respecto de la oferta, reserva, compra, pago, modificación, cancelación, prestación y seguimiento de servicios turísticos. Las disposiciones de este documento buscan establecer reglas claras sobre la manera en que se comercializan los servicios, el alcance de las cotizaciones, la confirmación de reservas, la actuación de Vive Travel como prestador directo o intermediario, la asignación de responsabilidades y la referencia a políticas específicas como reservas, cambios, cancelaciones, reembolsos, datos personales, privacidad, cookies y atención de PQR. Este documento tiene un carácter general y se complementa con políticas particulares y condiciones específicas por tipo de servicio. En caso de existir una condición especial informada por escrito para un producto o servicio determinado, prevalecerá sobre la regla general en aquello que no contraríe la ley ni los derechos mínimos del consumidor."
+      },
+      {
+        "number": 3,
+        "heading": "Marco normativo y principios aplicables",
+        "body": "Vive Travel desarrolla su actividad conforme al ordenamiento jurídico colombiano aplicable al sector turístico, al régimen de protección al consumidor, a la normativa sobre comercio electrónico, a las disposiciones sobre protección de datos personales y a las reglas administrativas que regulan a los prestadores de servicios turísticos. Entre otras, este documento se interpreta de manera armónica con la Ley 1480 de 2011 (Estatuto del Consumidor), la Ley 300 de 1996 (Ley General de Turismo), la Ley 1558 de 2012, la Ley 1581 de 2012 sobre protección de datos personales, la Ley 2068 de 2020 y las demás normas que las modifiquen, adicionen o sustituyan. Las partes reconocen que toda interpretación de este documento debe realizarse bajo los principios de buena fe, información suficiente, transparencia, equilibrio contractual, seguridad del consumidor, legalidad y conservación del negocio jurídico en la medida de lo posible."
+      },
+      {
+        "number": 4,
+        "heading": "Identificación del prestador",
+        "body": "Razón social: Vive Group S.A.S. Marca comercial: Vive Travel. NIT: 901993710. Domicilio: Barranquilla, Atlántico, Colombia. Sitio web oficial: vivetravelcol.co. Registro Nacional de Turismo: 278488. Los canales anteriores se consideran los medios oficiales de información y atención para efectos de cotizaciones, reservas, cambios, cancelaciones, reclamaciones y solicitudes asociadas al servicio."
+      },
+      {
+        "number": 5,
+        "heading": "Definiciones",
+        "body": "Para efectos de este documento, los siguientes términos tendrán el significado que se indica a continuación: Cliente: persona natural o jurídica que solicita, contrata, paga o utiliza un servicio ofrecido por Vive Travel. Viajero: persona natural que efectivamente participa en el viaje, actividad o prestación turística contratada. Reserva: solicitud formal de un servicio turístico realizada por el cliente y sujeta a disponibilidad, confirmación y pago. Abono: suma parcial entregada por el cliente como anticipo o pago parcial de un servicio. Pago total: valor completo del servicio contratado, incluyendo los conceptos informados en la cotización. Cotización: documento o mensaje informativo emitido por Vive Travel con precio, alcance, inclusiones, exclusiones y condiciones referenciales del servicio. Proveedor o tercero: aerolínea, hotel, operador turístico, transportador, cabaña, finca, dueño de inmueble, conductor, agencia aliada o cualquier tercero que participe en la ejecución del servicio. No Show: inasistencia del cliente o del viajero al servicio contratado sin aviso oportuno o sin cumplir las condiciones requeridas para su uso. Fuerza mayor o caso fortuito: evento imprevisible o irresistible que impide o dificulta la ejecución normal del servicio, como eventos climáticos severos, cierres, bloqueos, órdenes de autoridad, accidentes, cancelaciones de terceros o situaciones análogas. Servicios adicionales: servicios no incluidos inicialmente en la cotización y que pueden agregarse después de la reserva, siempre que exista disponibilidad y aceptación de su precio."
+      },
+      {
+        "number": 6,
+        "heading": "Naturaleza del servicio y alcance de la contratación",
+        "body": "Vive Travel ofrece servicios turísticos de manera directa, mixta o intermediada, según el producto contratado. Esto significa que, en algunos casos, Vive Travel ejecuta parte del servicio con su propia gestión comercial y operativa, y en otros casos actúa como intermediario, gestor, comercializador o canal de venta frente a proveedores terceros. El alcance exacto de cada producto dependerá de la cotización, de la confirmación enviada al cliente y de las condiciones particulares asociadas al tipo de servicio. Ningún servicio se entiende incluido si no fue expresamente informado por escrito o de manera verificable en el proceso de contratación. Las fotografías, descripciones, itinerarios, actividades, precios, horarios, amenidades y referencias publicadas en el sitio web, redes sociales, mensajes de WhatsApp o materiales comerciales tienen un propósito informativo y orientador. La información definitiva será la confirmada por Vive Travel para cada reserva."
+      },
+      {
+        "number": 7,
+        "heading": "Cotizaciones, tarifas y vigencia",
+        "body": "Toda cotización emitida por Vive Travel tendrá una vigencia limitada, la cual podrá variar según el tipo de servicio, la temporada, la disponibilidad de proveedores o la naturaleza del viaje. Si la cotización no indica expresamente un plazo de vigencia, se entenderá que la tarifa puede variar en cualquier momento antes de la confirmación de pago. Las tarifas informadas pueden estar sujetas a cambios por variaciones de inventario, disponibilidad, tipo de habitación, cupos aéreos, políticas de proveedores, tasas, impuestos, recargos, fluctuaciones cambiarias o ajustes operativos que no dependan exclusivamente de Vive Travel. La aceptación de una cotización no implica por sí sola la inmovilización de precios, disponibilidad ni condiciones comerciales. La confirmación plena del valor y la reserva solo se produce cuando Vive Travel recibe el pago correspondiente y emite la aceptación o confirmación del servicio por un medio verificable. Si por error tipográfico, de sistema o de digitación se informara un valor ostensiblemente equivocado, Vive Travel podrá corregirlo antes de confirmar la reserva, informando al cliente de manera oportuna."
+      },
+      {
+        "number": 8,
+        "heading": "Confirmación de reservas",
+        "body": "La reserva solo se considerará confirmada cuando concurran simultáneamente las siguientes condiciones: (i) disponibilidad del servicio; (ii) aceptación expresa de la cotización o propuesta; (iii) suministro completo de los datos solicitados; y (iv) recibo del pago total o del abono requerido, según corresponda al producto contratado. Vive Travel podrá solicitar información adicional para completar la reserva, incluyendo nombres completos, números de identificación, fechas de nacimiento, correos electrónicos, teléfonos, nacionalidad, requisitos migratorios, datos de acompañantes y cualquier otra información razonablemente necesaria para la gestión del servicio. El cliente reconoce que una reserva no confirmada no genera derecho adquirido sobre cupos, fechas, tarifas o disponibilidad. En consecuencia, hasta que exista confirmación expresa de Vive Travel, el servicio puede variar o ser reasignado por razones operativas o comerciales. Cuando el servicio implique la compra de tiquetes aéreos, bloqueos de cupos, contratación de proveedores o cualquier desembolso previo, la confirmación quedará condicionada a la posibilidad real de ejecución y al recaudo oportuno de los valores necesarios."
+      },
+      {
+        "number": 9,
+        "heading": "Formas de pago",
+        "body": "Vive Travel podrá habilitar, según el caso, pagos por transferencia bancaria, consignación, enlace de pago, pasarela electrónica, pago en línea, efectivo autorizado o cualquier otro medio informado al cliente. Cuando se trate de abonos, el cliente acepta que el saldo pendiente deberá pagarse dentro del plazo establecido para cada reserva. El incumplimiento del plazo podrá generar la cancelación automática del servicio, la pérdida de cupos o la aplicación de penalidades y gastos de gestión ya causados. El cliente debe conservar los soportes de pago y enviarlos cuando Vive Travel los requiera para la validación de la reserva. Los comprobantes ilegibles, inconsistentes o sin trazabilidad suficiente podrán ser rechazados hasta tanto se verifique el ingreso efectivo de los recursos. Salvo indicación en contrario, los valores publicados se entienden en pesos colombianos (COP). Si algún producto se ofrece en otra moneda, la cotización deberá especificar expresamente el tipo de cambio aplicable, el momento de liquidación y las posibles variaciones."
+      },
+      {
+        "number": 10,
+        "heading": "Obligaciones del cliente y del viajero",
+        "body": "El cliente y el viajero se obligan a suministrar información veraz, completa, actualizada y suficiente para la prestación del servicio. El cliente y el viajero deben revisar cuidadosamente nombres, apellidos, números de documento, fechas, destinos, horarios, edades, nacionalidades, restricciones y demás datos incluidos en la reserva, antes de su confirmación final. El cliente y el viajero deben atender los requisitos migratorios, sanitarios, documentales, de edad, de permisos o de equipaje exigidos por autoridades, aerolíneas, hoteles, operadores o por el propio tipo de servicio contratado. El cliente y el viajero deben presentarse con la debida anticipación a los puntos de encuentro, terminales, aeropuertos, hoteles o lugares indicados para la prestación del servicio. El cliente y el viajero deben respetar las reglas de convivencia, seguridad, comportamiento, uso de instalaciones y recomendaciones dadas por Vive Travel, los proveedores y las autoridades competentes. El cliente y el viajero deben informar oportunamente cualquier condición médica, limitación física, restricción alimentaria, embarazo, necesidad especial o circunstancia relevante que pueda afectar la participación en el viaje o actividad. La omisión de esta información será de responsabilidad exclusiva del cliente o del viajero."
+      },
+      {
+        "number": 11,
+        "heading": "Obligaciones de Vive Travel",
+        "body": "Vive Travel se obliga a actuar con diligencia comercial y operativa razonable en la gestión del servicio contratado. Vive Travel procurará informar de manera clara el alcance del producto, sus inclusiones, exclusiones, restricciones y condiciones relevantes antes de la confirmación de la compra. Vive Travel atenderá las solicitudes de sus clientes por los canales oficiales y conservará, en la medida de lo posible, el soporte de las comunicaciones relacionadas con la reserva. Vive Travel gestionará los cambios, cancelaciones, reembolsos o ajustes conforme a las políticas vigentes, a las condiciones del proveedor y a la normativa aplicable. Cuando exista una modificación importante en el servicio que dependa de Vive Travel o de un tercero gestionado por esta, se informará al cliente por el medio disponible y dentro de un plazo razonable."
+      },
+      {
+        "number": 12,
+        "heading": "Servicios prestados por terceros e intermediación",
+        "body": "Vive Travel puede comercializar servicios que son ejecutados total o parcialmente por terceros, incluyendo aerolíneas, hoteles, cabañas, transportadores, operadores turísticos, propietarios de inmuebles, receptivos y otros aliados. Cuando Vive Travel actúe como intermediario o comercializador, el cliente acepta que el servicio queda sujeto también a las condiciones del proveedor final, incluyendo políticas de capacidad, horarios, reprogramaciones, penalidades, requisitos de ingreso, restricciones operativas y condiciones tarifarias. Si el proveedor impone costos no reembolsables, penalidades de cancelación, cargos administrativos o restricciones por cambios, dichos valores podrán trasladarse al cliente cuando ello sea procedente y estén debidamente soportados. Vive Travel no garantiza la continuidad absoluta de inventarios de terceros ni la permanencia indefinida de condiciones comerciales ajenas a su control. La disponibilidad puede agotarse, modificarse o suspenderse por decisiones de proveedores o autoridades. Para servicios como alquiler de cabañas, buses, alojamiento o similares, el cliente acepta que Vive Travel puede haber adquirido previamente el servicio al propietario o proveedor para revenderlo o administrarlo comercialmente, por lo cual las penalidades y condiciones del tercero pueden afectar la reserva y cualquier solicitud de devolución."
+      },
+      {
+        "number": 13,
+        "heading": "Limitación de responsabilidad",
+        "body": "Vive Travel responde por la correcta gestión de la información y por la ejecución de las obligaciones que le sean directamente imputables conforme al servicio contratado. Vive Travel no será responsable por hechos atribuibles exclusivamente al cliente, al viajero o a terceros ajenos a su control, tales como errores en documentos, incumplimiento de horarios, pérdida de equipaje bajo custodia de terceros, cancelaciones de aerolíneas, cierres de vías, órdenes de autoridad, incumplimiento de proveedores o decisiones de inmersión del viajero en actividades no autorizadas. La responsabilidad de Vive Travel, cuando legalmente proceda, se limitará a la gestión comercial, administrativa o operativa directamente a su cargo y no se extenderá a daños indirectos, lucro cesante, pérdida de oportunidad, gastos no autorizados o consecuencias derivadas de la conducta de terceros sobre los que no tenga control material. Esta cláusula no busca excluir derechos irrenunciables del consumidor ni limitar responsabilidades que la ley colombiana prohíba excluir o limitar."
+      },
+      {
+        "number": 14,
+        "heading": "Fuerza mayor y circunstancias excepcionales",
+        "body": "Cuando un evento de fuerza mayor, caso fortuito o circunstancia excepcional impida, dificulte o vuelva inviable total o parcialmente la prestación del servicio, Vive Travel podrá reprogramar, sustituir, modificar itinerarios, gestionar alternativas con proveedores o aplicar las reglas especiales del caso concreto. Se consideran, entre otros, eventos de esta naturaleza: cierres de aeropuertos o vías, fenómenos climáticos severos, desastres naturales, protestas, bloqueos, restricciones de movilidad, accidentes graves, emergencias sanitarias, fallas operativas de terceros, cancelaciones masivas o instrucciones de autoridad. En tales eventos, Vive Travel procurará ofrecer una solución razonable al cliente, pero no estará obligada a asumir costos que excedan su esfera de control o que dependan de condiciones ya comprometidas con terceros, salvo que la ley disponga lo contrario. Las medidas adoptadas en este marco se informarán por los canales oficiales disponibles, procurando minimizar el impacto para el cliente."
+      },
+      {
+        "number": 15,
+        "heading": "Documentación, visas, permisos y requisitos del viajero",
+        "body": "El viajero es responsable de portar y presentar documentos válidos y vigentes para su desplazamiento o participación en la actividad contratada. En viajes nacionales e internacionales, el cliente debe verificar con suficiente anticipación la vigencia del documento de identidad, pasaporte, visas, permisos notariales, autorizaciones para menores, vacunas, salvoconductos, seguros, formularios o cualquier requisito exigido por la autoridad o por el proveedor. Vive Travel podrá orientar al cliente sobre requisitos generales, pero no asume responsabilidad por sanciones, inadmisiones, retenciones, denegaciones de embarque o pérdidas derivadas de documentación insuficiente, vencida o incorrecta. Si el cliente omite información relevante sobre su situación migratoria, sanitaria o documental, y ello genera la imposibilidad de realizar el servicio, se aplicarán las reglas de cancelación, no show o gastos ya causados, según corresponda."
+      },
+      {
+        "number": 16,
+        "heading": "Menores de edad y grupos familiares",
+        "body": "Cuando el servicio involucre menores de edad, el cliente declara tener la legitimación necesaria para contratar en su nombre o para autorizar su participación. En caso de que la ley, la autoridad o el proveedor exijan autorizaciones especiales, permisos notariales, acompañamiento adulto o reglas específicas, será obligación exclusiva del cliente obtenerlos y presentarlos oportunamente. Vive Travel no asumirá responsabilidad por la negativa de acceso, embarque o participación de un menor de edad cuando falten los documentos o autorizaciones requeridos."
+      },
+      {
+        "number": 17,
+        "heading": "Equipaje, objetos personales y pertenencias",
+        "body": "El cliente y el viajero son responsables de su equipaje, objetos personales, dinero, dispositivos electrónicos, documentos y demás pertenencias, salvo los casos en que la ley o el proveedor establezcan expresamente lo contrario. Vive Travel recomienda no transportar objetos de alto valor sin la debida protección y, en la medida de lo posible, conservar copias de documentos importantes. Las reclamaciones por pérdida, daño o extravío de equipaje deberán dirigirse al proveedor o transportador competente cuando sea este quien tenga la custodia o responsabilidad directa. Vive Travel colaborará razonablemente con la gestión, sin asumir obligaciones más allá de las que legalmente le correspondan."
+      },
+      {
+        "number": 18,
+        "heading": "Salud, capacidad física y aptitud para el viaje",
+        "body": "El cliente declara que el viajero se encuentra en condiciones físicas y mentales adecuadas para participar en el servicio contratado. El cliente reconoce que algunas actividades turísticas pueden implicar desplazamientos, caminatas, exposición solar, humedad, altura, navegación, contacto con fauna, cambios de clima o esfuerzos físicos moderados o altos. Si el viajero presenta condiciones médicas, embarazo, cirugías recientes, limitaciones motrices, alergias severas u otras circunstancias especiales, deberá informarlo antes de la contratación para validar la viabilidad del servicio. Vive Travel podrá sugerir la contratación de seguros o coberturas médicas de viaje, sin que ello implique asumir la función de aseguradora ni la obligación de verificar integralmente la aptitud física del viajero."
+      },
+      {
+        "number": 19,
+        "heading": "Uso de medios electrónicos, mensajes y pruebas",
+        "body": "Las cotizaciones, confirmaciones, modificaciones, instrucciones, soportes de pago, aceptaciones y demás comunicaciones intercambiadas por correo electrónico, WhatsApp, formularios web o canales digitales autorizados tendrán plena validez probatoria para efectos comerciales y contractuales, en la medida permitida por la ley. El cliente acepta que la trazabilidad de mensajes, archivos, imágenes, audios, enlaces y confirmaciones enviadas por los canales oficiales podrá ser utilizada para verificar instrucciones, reservas, cambios, cancelaciones y demás actuaciones relacionadas con el servicio. El cliente es responsable de mantener activos y accesibles los canales de comunicación que suministre a Vive Travel. La omisión de lectura o la falta de respuesta a comunicaciones enviadas a los medios aportados será de responsabilidad del cliente cuando ello afecte el proceso de reserva o prestación del servicio."
+      },
+      {
+        "number": 20,
+        "heading": "Protección de datos personales y políticas complementarias",
+        "body": "El tratamiento de los datos personales del cliente y del viajero se realizará conforme a la Política de Tratamiento de Datos Personales de Vive Travel, publicada o puesta a disposición en los canales oficiales. Al suministrar datos personales, el cliente autoriza su recolección, almacenamiento, uso, circulación, transmisión y, cuando resulte necesario, transferencia a proveedores, aliados y autoridades para la correcta gestión del servicio. El alcance específico, finalidades, derechos del titular, canales de atención y mecanismos de consulta y reclamo se desarrollarán en la política independiente de datos personales, que forma parte integral del ecosistema documental de Vive Travel. Este documento también se complementa con la Política de Privacidad, la Política de Cookies, la Política de PQR, el Manual del Viajero, la Política de Reservas, Cambios y Cancelaciones y las condiciones particulares por tipo de servicio."
+      },
+      {
+        "number": 21,
+        "heading": "Propiedad intelectual, contenidos y uso del sitio web",
+        "body": "Los textos, diseños, marcas, logotipos, fotografías, piezas comerciales, videos, descripciones, materiales promocionales y demás contenidos difundidos por Vive Travel se encuentran protegidos por las normas aplicables de propiedad intelectual o por los derechos que correspondan a sus titulares. El cliente no podrá reproducir, copiar, modificar, distribuir o explotar dichos contenidos sin autorización previa y escrita del titular respectivo, salvo los usos permitidos por la ley. El acceso al sitio web y a los materiales informativos de Vive Travel tiene una finalidad comercial y de consulta. No está permitido interferir con su funcionamiento, alterar sus sistemas, usarlo con fines ilícitos o intentar acceder de manera no autorizada a información restringida."
+      },
+      {
+        "number": 22,
+        "heading": "Peticiones, quejas, reclamos y sugerencias (PQR)",
+        "body": "El cliente podrá presentar peticiones, quejas, reclamos, sugerencias o solicitudes a través del correo Comercial@vivetravelcol.co, del WhatsApp oficial +57 312 638 0048 o de los demás canales que Vive Travel habilite para atención al usuario. Las respuestas se emitirán dentro de un plazo razonable de acuerdo con la naturaleza de la solicitud y con la complejidad de la gestión requerida. Cuando sea necesario, se solicitará información adicional para completar el análisis del caso. La regulación detallada del procedimiento PQR podrá desarrollarse en la política independiente correspondiente."
+      },
+      {
+        "number": 23,
+        "heading": "Modificaciones de este documento",
+        "body": "Vive Travel podrá actualizar, modificar, complementar o reemplazar estos términos y condiciones cuando lo considere necesario por razones legales, operativas, tecnológicas, comerciales o de mejora del servicio. Las modificaciones no afectarán retroactivamente las reservas ya confirmadas, salvo que exista una disposición legal imperativa o una aceptación expresa del cliente sobre la nueva versión. La versión vigente será la publicada en el sitio web o la que haya sido comunicada por medio verificable en el momento de la contratación."
+      },
+      {
+        "number": 24,
+        "heading": "Ley aplicable y solución de controversias",
+        "body": "Estos términos y condiciones se rigen por las leyes de la República de Colombia. Las controversias que surjan entre las partes deberán procurarse resolver de manera directa y de buena fe por los canales de atención de Vive Travel. Si no se logra una solución amistosa, las partes podrán acudir a las autoridades competentes conforme a la normatividad vigente. Para efectos de competencia, y en la medida legalmente permitida, las partes podrán acudir a las autoridades del"
+      },
+      {
+        "number": 25,
+        "heading": "Aceptación final",
+        "body": "La aceptación de una cotización, la realización de un pago, la entrega de un abono, la solicitud de reserva o el uso del servicio implica la aceptación integral de estos términos y condiciones y de las políticas complementarias que les resulten aplicables. Si el cliente reserva para sí o para terceros, declara que cuenta con autorización suficiente para aceptar estas condiciones en nombre de todos los viajeros involucrados. En señal de conformidad, Vive Travel deja este documento como marco general de contratación para la prestación de sus servicios turísticos. Anexo corporativo recomendado Este documento se complementa con: Política de Reservas, Cambios y Cancelaciones; Política de Reembolsos; Política de Fuerza Mayor y Circunstancias Excepcionales; Política de No Show; Política de Llegadas Tardías; Política de Tratamiento de Datos Personales; Política de Privacidad; Política de Cookies; Política de PQR; Manual del Viajero; y Condiciones Particulares por Tipo de Servicio."
+      }
+    ]
+  },
+  {
+    "slug": "reservas",
+    "number": "02",
+    "title": "Política de Reservas, Cambios y Cancelaciones",
+    "shortTitle": "Reservas, Cambios y Cancelaciones",
+    "description": "Reglas para reservas, cambios, cancelaciones, reembolsos y reprogramaciones de servicios.",
+    "category": "Reservas y cancelaciones",
+    "version": "1.0",
+    "issuedAt": "16 de julio de 2026",
+    "clauses": [
+      {
+        "number": 1,
+        "heading": "Finalidad de la política",
+        "body": "Esta política regula de manera específica la forma en que Vive Travel administra reservas, cambios, cancelaciones, reembolsos, reprogramaciones, no show, llegadas tardías y solicitudes asociadas a servicios turísticos contratados por sus clientes. Su finalidad es dar reglas claras, uniformes y verificables para que el cliente conozca con anticipación qué ocurre cuando desea modificar, cancelar o reprogramar un servicio, así como cuáles son los plazos, penalidades, límites y condiciones aplicables. Esta política complementa los Términos y Condiciones generales de Vive Travel y aplica en todo aquello que no haya sido regulado de forma especial en una cotización, confirmación escrita, contrato particular o política específica por producto."
+      },
+      {
+        "number": 2,
+        "heading": "Alcance de aplicación",
+        "body": "La presente política aplica a todos los servicios turísticos comercializados por Vive Travel, incluyendo, sin limitarse a ellos, planes con vuelos nacionales o internacionales, pasadías, tours, circuitos, excursiones, planes terrestres, transporte, alquiler de cabañas, servicios de alojamiento, reservas para grupos y servicios prestados mediante terceros. Cuando el producto incluya condiciones especiales informadas por el proveedor, aerolínea, hotel, transportador o aliado, tales condiciones también se considerarán parte integral de la reserva. Si un producto tiene reglas particulares más estrictas o más favorables para el cliente, dichas condiciones deberán constar por escrito en la cotización, en la confirmación de compra o en la sección específica del servicio."
+      },
+      {
+        "number": 3,
+        "heading": "Definiciones operativas",
+        "body": "Reserva: solicitud formal de un servicio que aún está sujeta a disponibilidad, validación de datos y confirmación de pago. Modificación o cambio: ajuste sobre la fecha, nombre, hora, número de viajeros, plan, itinerario, acomodación, proveedor o cualquier otro elemento esencial del servicio. Cancelación: terminación anticipada de la reserva por solicitud del cliente o por imposibilidad operativa del servicio. Reembolso: devolución total o parcial de los valores pagados por el cliente, según el momento de la solicitud, los gastos ya incurridos y las condiciones del proveedor. Servicios con vuelos: productos en los que la prestación depende total o parcialmente de tiquetes aéreos, bloqueos de cupo, penalidades de aerolínea o reemisiones. Servicios sin vuelos: productos terrestres o de experiencia turística, como pasadías, tours o actividades, que no incluyen tiquetes aéreos. No show: inasistencia del cliente o viajero al servicio contratado sin aviso oportuno o sin reunir las condiciones exigidas para su uso. Fuerza mayor o circunstancia excepcional: evento imprevisible o irresistible que altera o impide la prestación normal del servicio."
+      },
+      {
+        "number": 4,
+        "heading": "Principios generales de la reserva",
+        "body": "Toda reserva debe ser gestionada a través de los canales oficiales de Vive Travel y está sujeta a disponibilidad real del producto, a la validación de datos del cliente y a la recepción de los pagos requeridos. Una cotización no constituye por sí misma una reserva confirmada. La disponibilidad solo queda asegurada cuando Vive Travel emite confirmación expresa y recibe el pago o el abono requerido. Los cupos, tarifas, horarios, habitaciones, sillas, itinerarios y demás componentes del viaje pueden variar hasta el momento de la confirmación, especialmente cuando dependen de terceros. El cliente reconoce que Vive Travel puede requerir información adicional para completar la reserva, incluyendo nombres completos, documentos, fechas de nacimiento, nacionalidades, contactos, observaciones médicas, edades y cualquier dato necesario para la prestación del servicio."
+      },
+      {
+        "number": 5,
+        "heading": "Confirmación de reserva",
+        "body": "La reserva se entenderá confirmada una vez concurran los siguientes requisitos: (i) aceptación de la cotización o propuesta; (ii) disponibilidad del servicio; (iii) pago total o parcial según el esquema acordado; y (iv) recepción de los datos exigidos para la gestión operativa. Cuando existan pagos parciales, la reserva podrá quedar condicionada al pago del saldo dentro del plazo señalado por Vive Travel. Si el saldo no se cubre oportunamente, la reserva podrá liberarse, modificarse o cancelarse según el producto y los compromisos adquiridos. En productos de alta demanda, temporada alta o servicios sujetos a cupo limitado, Vive Travel podrá exigir pago total anticipado, sin que ello implique una infracción a la presente política."
+      },
+      {
+        "number": 6,
+        "heading": "Canales oficiales y solicitud formal",
+        "body": "Las solicitudes de reserva, cambio, cancelación o reembolso deberán presentarse por los canales oficiales de Vive Travel, principalmente correo electrónico, WhatsApp oficial o los formularios y canales dispuestos en el sitio web. Para efectos probatorios, se recomienda que toda solicitud importante se formule por escrito. Las conversaciones informales pueden servir como soporte, pero la gestión definitiva se considerará presentada cuando quede trazabilidad verificable en los canales oficiales. El cliente se obliga a mantener activos sus canales de contacto y a responder oportunamente cuando Vive Travel requiera confirmaciones, correcciones o documentos adicionales."
+      },
+      {
+        "number": 7,
+        "heading": "Política de cambios en servicios con vuelos",
+        "body": "En servicios que incluyan vuelos, el cliente deberá solicitar cualquier cambio con al menos treinta (30) días calendario de antelación a la fecha de inicio del viaje, para que la modificación pueda ser evaluada con posibilidad razonable de aprobación. Si la solicitud se presenta dentro de los treinta (30) días previos al viaje, el cambio quedará sujeto a la evaluación operativa y económica de Vive Travel, tomando en cuenta si ya se incurrió en compra de tiquetes, bloqueos, penalidades, reemisiones, tarifas no reembolsables, cargos de proveedor o costos administrativos. En esta etapa, el cambio puede ser aprobado, aprobado con ajuste de valor, aprobado parcialmente o negado, según el nivel de compromiso financiero y operativo ya existente. Para los efectos de esta política, los cambios posibles incluyen cambio de fecha, cambio de nombre cuando aplique y sea permitido por el proveedor, cambio de plan, cambio de categoría o modificación de fechas de viaje. No todo cambio será técnicamente posible ni jurídicamente transferible."
+      },
+      {
+        "number": 8,
+        "heading": "Política de cambios en servicios sin vuelos",
+        "body": "En servicios que no incluyan vuelos, como pasadías, tours, circuitos terrestres o experiencias locales, el cliente deberá solicitar cambios con al menos diez (10) días calendario de antelación a la fecha de inicio del servicio. Las solicitudes presentadas con menos de diez (10) días calendario quedarán sujetas a la disponibilidad y a los costos ya causados. En estos casos, Vive Travel podrá negar el cambio, aprobarlo con diferencia de precio o condicionarlo a nuevas reglas del proveedor. Si el cambio afecta cupos, transporte, logística o capacidad operativa del producto, puede requerirse la reexpedición de documentos, nuevas listas de viajeros o ajustes de itinerario."
+      },
+      {
+        "number": 9,
+        "heading": "Servicios adicionales y mejoras",
+        "body": "Los servicios adicionales pueden solicitarse en cualquier momento, siempre que exista disponibilidad técnica y operativa. Los adicionales solo quedarán incorporados cuando sean aceptados por Vive Travel y el cliente pague el valor correspondiente, salvo que se acuerde otra forma por escrito. Entre los servicios adicionales pueden encontrarse, entre otros, comidas, actividades extra, acomodaciones superiores, seguros, equipaje adicional, traslados privados, upgrades o cambios de categoría."
+      },
+      {
+        "number": 10,
+        "heading": "Política de cancelaciones anticipadas en servicios con vuelos",
+        "body": "Si el cliente solicita la cancelación con treinta (30) días o más de anticipación a la fecha de inicio del viaje y Vive Travel no ha incurrido en gastos no recuperables, el cliente podrá recibir hasta el ochenta por ciento (80%) del valor abonado. El veinte por ciento (20%) restante podrá retenerse como valor de gestión, estructura operativa, administración de la reserva, manejo de proveedores y demás costos asociados, en la medida permitida por la ley y por el caso concreto. Si la cancelación se solicita entre veinte (20) y veintinueve (29) días antes del viaje, el cliente podrá recibir hasta el cincuenta por ciento (50%) del valor abonado, dependiendo de los costos ya incurridos y de los compromisos asumidos con terceros. Si la cancelación se solicita entre uno (1) y diecinueve (19) días antes del viaje, no habrá lugar a devolución, salvo que una norma imperativa o una decisión expresa de Vive Travel disponga lo contrario en un caso particular."
+      },
+      {
+        "number": 11,
+        "heading": "Política de cancelaciones en servicios sin vuelos",
+        "body": "En servicios sin vuelos, como pasadías, tours, circuitos terrestres o experiencias similares, el cliente deberá cancelar con al menos diez (10) días calendario de antelación para acceder a una devolución parcial. Si la cancelación se realiza con diez (10) días o más de anticipación, la devolución podrá ascender hasta el cincuenta por ciento (50%) del valor abonado, siempre que los costos ya causados lo permitan. Si la cancelación se solicita con menos de diez (10) días de antelación, no habrá devolución, salvo que el caso esté cubierto por una disposición legal aplicable, por una circunstancia excepcional debidamente acreditada o por una política particular más favorable informada por Vive Travel. Cuando el servicio dependa de cupos, operadores, transportadores o proveedores con penalidades especiales, la devolución estará limitada por esos costos ya causados o por valores no recuperables."
+      },
+      {
+        "number": 12,
+        "heading": "Cancelaciones por solicitud del proveedor o de Vive Travel",
+        "body": "Si la cancelación obedece a causas imputables a Vive Travel o a un proveedor bajo su gestión, el caso se evaluará para reprogramar el servicio, sustituirlo por otro equivalente o gestionar la devolución que corresponda, según la naturaleza de la incidencia. Si la cancelación se debe exclusivamente al proveedor final y este reconoce devolución, Vive Travel trasladará al cliente el resultado de esa gestión, descontando únicamente los valores que legalmente sean procedentes y estén soportados. En todo caso, Vive Travel procurará buscar la alternativa más razonable para el cliente, dentro de las posibilidades reales del producto y de los compromisos adquiridos."
+      },
+      {
+        "number": 13,
+        "heading": "Fuerza mayor o circunstancias excepcionales",
+        "body": "Cuando exista fuerza mayor, caso fortuito o circunstancia excepcional que afecte el viaje o la actividad, Vive Travel podrá reprogramar el servicio, cambiar proveedores, ajustar itinerarios o aplicar la solución que mejor preserve el objeto de la contratación. Se consideran eventos de esta naturaleza, entre otros, cierres de vías, protestas, bloqueos, cancelaciones masivas de aerolíneas, fenómenos climáticos severos, órdenes de autoridad, emergencias sanitarias, fallas de infraestructura o cualquier evento ajeno al control razonable de las partes. En estos casos, la devolución, reprogramación o sustitución del servicio dependerá de los costos ya comprometidos, de la política del proveedor y de la posibilidad real de mitigar el impacto sin afectar la viabilidad del viaje. Vive Travel informará al cliente las opciones disponibles tan pronto tenga conocimiento razonable del evento y de sus efectos."
+      },
+      {
+        "number": 14,
+        "heading": "No show",
+        "body": "La inasistencia del cliente o del viajero al servicio contratado, sin aviso oportuno y sin justificación aceptada por Vive Travel o el proveedor, se considerará no show. En caso de no show, el cliente perderá el derecho a reembolso sobre los valores comprometidos, salvo que un proveedor haya reconocido expresamente una devolución parcial o que una norma imperativa disponga algo distinto. El no show incluye, entre otros, no presentarse al punto de encuentro, no abordar el transporte, no arribar al hotel, no presentarse al tour o no completar los requisitos previos para el uso del servicio."
+      },
+      {
+        "number": 15,
+        "heading": "Llegadas tardías",
+        "body": "Si el cliente o el viajero llega tarde al punto de encuentro, terminal, aeropuerto, hotel, embarque o actividad, y ello impide el uso normal del servicio, la consecuencia será de su exclusiva responsabilidad. Vive Travel no estará obligada a retrasar un transporte, modificar una salida, reabrir un check-in o alterar una operación ya iniciada por la sola llegada tardía del cliente. En servicios de horario fijo, la tardanza puede asimilarse a no show cuando el retraso impida la prestación del servicio en condiciones razonables."
+      },
+      {
+        "number": 16,
+        "heading": "Reembolsos: reglas generales",
+        "body": "Todo reembolso estará sujeto a la verificación de pagos efectivamente recibidos, costos ya causados, penalidades de terceros, tarifas no reembolsables y condiciones particulares del producto. El reembolso no implica la devolución automática del ciento por ciento (100%) de lo pagado, salvo en los casos en que Vive Travel no haya incurrido en gastos o en que la ley o el proveedor exijan una restitución mayor. Cuando el cliente tenga saldo a favor, Vive Travel podrá, de común acuerdo, aplicar dicho saldo a una reprogramación, a otro servicio o a la devolución total o parcial, según el caso."
+      },
+      {
+        "number": 17,
+        "heading": "Tabla de reembolsos orientativa para servicios con vuelos",
+        "body": "Solicitudes con 30 días o más de anticipación y sin costos comprometidos: hasta 80% de devolución. Solicitudes entre 20 y 29 días de anticipación: hasta 50% de devolución, dependiendo de costos y penalidades ya causadas. Solicitudes entre 1 y 19 días de anticipación: no aplica devolución, salvo excepción legal o decisión expresa de Vive Travel basada en soportes concretos. Si el proveedor ya ha cobrado valores no reembolsables o penalidades superiores, la devolución podrá ser menor o inexistente."
+      },
+      {
+        "number": 18,
+        "heading": "Tabla de reembolsos orientativa para servicios sin vuelos",
+        "body": "Solicitudes con 10 días o más de anticipación: hasta 50% de devolución, sujeto a costos ya incurridos. Solicitudes con menos de 10 días de anticipación: no aplica devolución. Si el servicio ha sido completamente contratado con terceros y la reserva ya generó penalidades, el reembolso podrá reducirse o desaparecer por completo."
+      },
+      {
+        "number": 19,
+        "heading": "Servicios intermediados: cabañas, buses, hoteles y aliados",
+        "body": "Cuando Vive Travel comercialice servicios de terceros, el cliente acepta que las políticas del proveedor final también forman parte de la operación. Si el tercero establece condiciones más restrictivas de cambio, cancelación o reembolso, dichas condiciones podrán prevalecer en la medida en que sean informadas al cliente y no contraríen la ley. Los anticipos, bloqueos o compras previas realizadas por Vive Travel para garantizar el producto pueden generar costos no recuperables. En ese evento, el reembolso al cliente podrá verse limitado por la penalidad del proveedor o por el gasto ya asumido. En estos servicios, Vive Travel podrá actuar como canal de cobro, gestor o intermediario, sin que ello elimine la responsabilidad del cliente de acatar las condiciones del tercero."
+      },
+      {
+        "number": 20,
+        "heading": "Procedimiento para solicitar cambios, cancelaciones o reembolsos",
+        "body": "El cliente deberá enviar una solicitud clara por los canales oficiales de Vive Travel, indicando nombre completo, número de reserva, servicio contratado, fecha del viaje, motivo de la solicitud y soportes disponibles. Vive Travel revisará la solicitud, verificará costos ya causados y comunicará al cliente la decisión, el alcance del ajuste, el valor a devolver o la imposibilidad de acceder al cambio solicitado. Cuando sea necesario, el cliente deberá firmar o aceptar un soporte de modificación o cancelación para dejar constancia de la operación y del saldo resultante. Si el cliente no aporta la información solicitada, la gestión podrá quedar suspendida hasta que se completen los datos mínimos para analizar el caso."
+      },
+      {
+        "number": 21,
+        "heading": "Plazos de respuesta y aplicación del reembolso",
+        "body": "Vive Travel responderá las solicitudes dentro de un plazo razonable, dependiendo de la complejidad del caso, la disponibilidad de soporte documental y la necesidad de consultar a terceros. Si procede una devolución, esta se efectuará al mismo medio de pago utilizado por el cliente o por el mecanismo que las partes acuerden por escrito. Los tiempos de reversión o acreditación bancaria pueden depender de la entidad financiera o pasarela de pago, por lo cual Vive Travel no controla totalmente dichos plazos."
+      },
+      {
+        "number": 22,
+        "heading": "Exclusiones de devolución",
+        "body": "No habrá devolución cuando el cliente incumpla horarios, documentos, requisitos migratorios, condiciones sanitarias, políticas de acceso, normas de comportamiento o cualquier obligación a su cargo que haga imposible el uso del servicio. Tampoco habrá devolución cuando la pérdida económica se derive de decisiones del propio cliente, como desistir por razones personales, comprar por error sin revisar la cotización o incumplir las fechas de pago acordadas. Cuando el cliente haya aceptado expresamente un producto con tarifa no reembolsable, así deberá indicarse en la cotización o confirmación, y esa condición podrá ser oponible en la medida permitida por la ley."
+      },
+      {
+        "number": 23,
+        "heading": "Retención de valores y costos administrativos",
+        "body": "Vive Travel podrá retener, descontar o trasladar al cliente los valores que correspondan a costos ya causados, penalidades de proveedores, comisiones no recuperables, tarifas de emisión, reemisiones, bloqueos, seguros ya activados, gastos bancarios y demás cargos asociados al manejo del servicio. Esta retención no constituye sanción arbitraria, sino la recuperación de costos efectivamente comprometidos o no reversibles por la operación ya ejecutada. Cuando sea posible, la retención se informará al cliente con soporte y detalle suficiente para que comprenda el origen del descuento aplicado."
+      },
+      {
+        "number": 24,
+        "heading": "Cambios de nombre, cesión o sustitución de viajero",
+        "body": "En algunos servicios, especialmente aéreos, no siempre es posible cambiar el nombre del viajero o ceder la reserva a otra persona. Si el proveedor lo permite, el cambio estará sujeto a tarifas, penalidades y requisitos documentales adicionales. Si el proveedor lo prohíbe, la reserva original permanecerá sujeta a las condiciones inicialmente pactadas y la solicitud podrá tratarse como cancelación o nueva compra."
+      },
+      {
+        "number": 25,
+        "heading": "Condiciones especiales para grupos y reservas múltiples",
+        "body": "En reservas grupales, bloqueos por cupos y viajes con varios viajeros, cualquier cambio o cancelación podrá impactar la tarifa total, el reparto de costos y la operatividad del paquete. Los ajustes solicitados por uno o varios integrantes del grupo podrán requerir reestructuración de la reserva completa, reasignación de habitaciones, modificación de listas de viajeros o cambio de tarifas. Si la reserva fue construida con base en un número mínimo de pasajeros, cualquier variación de ese número podrá afectar el precio final o la viabilidad del servicio."
+      },
+      {
+        "number": 26,
+        "heading": "Aceptación de la política",
+        "body": "Al reservar, pagar, abonar, solicitar un cambio, pedir una cancelación o usar el servicio, el cliente declara haber leído y aceptado esta política. Si el cliente actúa en nombre de terceros, declara contar con autorización suficiente para aceptar estas condiciones frente a todos los viajeros involucrados. Esta política forma parte integral de la relación comercial entre Vive Travel y el cliente, y debe interpretarse en conjunto con los Términos y Condiciones generales y las políticas complementarias del ecosistema documental."
+      },
+      {
+        "number": 27,
+        "heading": "Anexos y políticas complementarias",
+        "body": "Esta política se complementa con los Términos y Condiciones, la Política de Tratamiento de Datos Personales, la Política de Privacidad, la Política de Cookies, la Política de PQR, el Manual del Viajero y las Condiciones Particulares por Tipo de Servicio."
+      },
+      {
+        "number": 28,
+        "heading": "Versión y control documental",
+        "body": "Versión: 1.0 Vigencia: hasta su sustitución por una versión posterior publicada por Vive Travel."
+      }
+    ]
+  },
+  {
+    "slug": "datos",
+    "number": "03",
+    "title": "Política de Tratamiento de Datos Personales",
+    "shortTitle": "Tratamiento de Datos Personales",
+    "description": "Política de tratamiento de datos personales conforme a la Ley 1581 de 2012.",
+    "category": "Privacidad y datos",
+    "version": "1.0",
+    "issuedAt": "16 de julio de 2026",
+    "clauses": [
+      {
+        "number": 1,
+        "heading": "Introducción y finalidad",
+        "body": "Vive Travel, operada por Vive Group S.A.S., adopta la presente Política de Tratamiento de Datos Personales para informar de manera clara a clientes, viajeros, proveedores, aliados, colaboradores, prospectos y demás titulares sobre la manera en que recolecta, almacena, usa, circula, transmite, actualiza, suprime y, en general, trata datos personales en el desarrollo de su actividad comercial y operativa. Esta política tiene como finalidad garantizar el ejercicio efectivo del derecho de hábeas data, establecer los criterios bajo los cuales se tratan los datos personales y describir los mecanismos disponibles para que el titular conozca, actualice, rectifique, suprima o revoque la autorización cuando ello sea legalmente procedente. Vive Travel reconoce que el tratamiento de datos personales debe realizarse con respeto por la dignidad humana, la intimidad, la privacidad, la libertad de información y los demás derechos constitucionales y legales aplicables."
+      },
+      {
+        "number": 2,
+        "heading": "Identificación del responsable del tratamiento",
+        "body": "Responsable: Vive Group S.A.S. Nombre comercial: Vive Travel. NIT: 901993710. Domicilio: Barranquilla, Atlántico, Colombia. Sitio web: vivetravelcol.co. Registro Nacional de Turismo: 278488. Vive Group S.A.S. actuará como responsable del tratamiento de los datos personales recolectados por razones de su actividad comercial, salvo en aquellos casos en que otro tercero actúe como responsable independiente o en que exista una relación de encargo claramente definida."
+      },
+      {
+        "number": 3,
+        "heading": "Alcance de la política",
+        "body": "Esta política aplica a toda base de datos, archivo, repositorio, formulario, sistema, plataforma, CRM, WhatsApp Business, mecanismo manual o digital mediante el cual Vive Travel recolecte o administre datos personales. Aplica a datos de clientes, potenciales clientes, viajeros, acompañantes, menores de edad cuando sea procedente, proveedores, propietarios de cabañas, transportadores, conductores, operadores, aliados comerciales, empleados, contratistas, asesores, accionistas, visitantes del sitio web y cualquier persona natural cuyos datos sean tratados por Vive Travel. Esta política se complementa con el Aviso de Privacidad, la Política de Cookies, los Términos y Condiciones, la Política de Reservas, Cambios y Cancelaciones, la Política de PQR y las demás políticas internas o externas relacionadas con la operación del negocio."
+      },
+      {
+        "number": 4,
+        "heading": "Marco normativo de referencia",
+        "body": "La presente política se interpreta de conformidad con la Constitución Política, la Ley 1581 de 2012, sus decretos reglamentarios, las instrucciones impartidas por la Superintendencia de Industria y Comercio como autoridad de protección de datos personales y las normas que las modifiquen, sustituyan o complementen. También se tendrá en cuenta la normativa aplicable al comercio electrónico, al turismo y a la protección de consumidores cuando el tratamiento de datos esté relacionado con la contratación de servicios turísticos. Vive Travel podrá ajustar esta política cuando exista una modificación normativa, una instrucción de autoridad competente o un cambio sustancial en sus operaciones de tratamiento."
+      },
+      {
+        "number": 5,
+        "heading": "Principios aplicables al tratamiento",
+        "body": "Vive Travel aplicará, entre otros, los principios de legalidad, finalidad, libertad, veracidad o calidad, transparencia, acceso y circulación restringida, seguridad, confidencialidad y necesidad. Legalidad: el tratamiento se sujetará a lo dispuesto en la ley y en la política. Finalidad: los datos se tratarán para fines legítimos, explícitos y previamente informados al titular. Libertad: el tratamiento solo se realizará con autorización previa, expresa e informada del titular, salvo las excepciones legales. Veracidad o calidad: los datos serán veraces, completos, exactos, actualizados, comprobables y comprensibles. Transparencia: el titular podrá obtener información sobre la existencia del tratamiento y acceder a sus datos. Acceso y circulación restringida: el tratamiento estará limitado a personas autorizadas y a las finalidades informadas. Seguridad y confidencialidad: se adoptarán medidas razonables para evitar acceso no autorizado, pérdida, adulteración o uso indebido."
+      },
+      {
+        "number": 6,
+        "heading": "Definiciones",
+        "body": "Titular: persona natural cuyos datos personales son objeto de tratamiento. Autorización: consentimiento previo, expreso e informado del titular para el tratamiento de sus datos. Base de datos: conjunto organizado de datos personales objeto de tratamiento. Dato personal: cualquier información vinculada o que pueda asociarse a una persona natural determinada o determinable. Dato sensible: dato que afecta la intimidad del titular o cuyo uso indebido puede generar discriminación, como datos de salud, biométricos, creencias, origen racial, orientación política o vida sexual, entre otros. Encargado del tratamiento: persona natural o jurídica que realiza el tratamiento de datos por cuenta del responsable. Responsable del tratamiento: persona natural o jurídica que decide sobre la base de datos y/o el tratamiento. Transferencia: envío de datos personales a un responsable ubicado dentro o fuera de Colombia. Transmisión: comunicación de datos personales dentro o fuera del territorio colombiano para que un encargado realice el tratamiento por cuenta del responsable."
+      },
+      {
+        "number": 7,
+        "heading": "Datos que Vive Travel puede recolectar",
+        "body": "Vive Travel podrá recolectar, entre otros, los siguientes datos: nombres y apellidos, tipo y número de identificación, fecha de nacimiento, edad, nacionalidad, ciudad y país de residencia, teléfonos, correos electrónicos, dirección, datos de contacto de emergencia, preferencias de viaje, composición del grupo, información de reserva, historial de compras, requerimientos logísticos, observaciones de servicio, datos de pago, soportes de transferencia, datos de facturación y cualquier otro dato necesario para gestionar un servicio turístico. Dependiendo del producto contratado, también podrán recolectarse datos relacionados con restricciones alimentarias, necesidades especiales, acompañamiento de menores, requerimientos de habitación, información migratoria, documentación de viaje, datos de aerolínea, preferencia de transporte o cualquier otra información útil para la adecuada prestación del servicio. Vive Travel procurará limitar la recolección a los datos necesarios para la finalidad informada y evitará solicitar información innecesaria o desproporcionada."
+      },
+      {
+        "number": 8,
+        "heading": "Datos sensibles y tratamiento excepcional",
+        "body": "Vive Travel tratará datos sensibles solo cuando sea estrictamente necesario, exista autorización expresa del titular o se configure una excepción legal. Cuando se soliciten datos sensibles, el titular será informado de manera clara sobre la facultad que tiene de no autorizar su tratamiento, salvo que una norma o necesidad operativa justifique lo contrario. Ejemplos de datos sensibles que podrían tratarse excepcionalmente en contexto turístico: condiciones médicas relevantes, restricciones físicas, alergias severas, requerimientos de accesibilidad, embarazo, datos biométricos o información necesaria para prevenir riesgos al viajero. Vive Travel no condicionará la prestación ordinaria de un servicio al suministro de datos sensibles que no sean necesarios para la finalidad del viaje."
+      },
+      {
+        "number": 9,
+        "heading": "Tratamiento de datos de niños, niñas y adolescentes",
+        "body": "Cuando sea necesario tratar datos personales de niños, niñas y adolescentes, Vive Travel lo hará respetando el interés superior del menor, sus derechos fundamentales y la autorización que corresponda de sus representantes legales, padres o acudientes. Los datos de menores solo se recolectarán cuando sean necesarios para la prestación de un servicio turístico, para el cumplimiento de requisitos legales o para la validación de autorizaciones, permisos o reservas familiares. Vive Travel evitará el tratamiento innecesario de datos sensibles de menores y adoptará medidas reforzadas de confidencialidad."
+      },
+      {
+        "number": 10,
+        "heading": "Finalidades del tratamiento",
+        "body": "Los datos personales podrán ser tratados para las siguientes finalidades, entre otras: gestionar cotizaciones, reservas, cambios, cancelaciones y reembolsos; confirmar disponibilidad; emitir y remitir documentación de viaje; coordinar vuelos, transporte, alojamiento y actividades; hacer seguimiento postventa; atender PQR; verificar identidad; cumplir obligaciones legales, contables, administrativas y contractuales; remitir notificaciones e información operativa; administrar listas de viajeros; y facilitar la correcta prestación de los servicios turísticos. También podrán tratarse para fines de facturación, cobro, conciliación, validación de pagos, soporte a entidades financieras, análisis interno, estadísticas agregadas, seguridad informática, prevención de fraude, auditoría, mejora de procesos, control documental y comunicaciones sobre productos, promociones o novedades, siempre que ello resulte legalmente procedente. Los datos de contacto podrán emplearse para enviar información comercial, promocional o transaccional relacionada con Vive Travel, sin perjuicio de que el titular pueda solicitar la supresión o limitación de ciertos envíos cuando ello sea procedente."
+      },
+      {
+        "number": 11,
+        "heading": "Autorización del titular",
+        "body": "Salvo las excepciones legales, Vive Travel solicitará autorización previa, expresa e informada para el tratamiento de datos personales. La autorización podrá otorgarse de manera escrita, verbal, digital, por medios electrónicos, mediante formularios, casillas de aceptación, chats, correos, mensajes de WhatsApp, grabaciones autorizadas o cualquier otro mecanismo verificable que permita acreditar la voluntad del titular. Al suministrar sus datos en una cotización, formulario, reserva, conversación o contrato, el titular reconoce que ha sido informado sobre la finalidad del tratamiento y sobre los canales para ejercer sus derechos. Cuando el cliente suministre datos de terceros, declara que cuenta con la legitimación necesaria para hacerlo y que ha informado a dichos terceros sobre la presente política."
+      },
+      {
+        "number": 12,
+        "heading": "Tratamiento de datos de terceros suministrados por el cliente",
+        "body": "Si el cliente aporta datos de acompañantes, familiares, viajeros adicionales o contactos de emergencia, declara bajo su responsabilidad que cuenta con la autorización necesaria para compartirlos con Vive Travel y con los proveedores involucrados en el servicio. El cliente deberá informar a dichos terceros sobre la existencia de esta política, sobre las finalidades del tratamiento y sobre los canales de ejercicio de derechos. Vive Travel podrá confiar en la veracidad de los datos aportados por el cliente mientras no tenga evidencia en contrario."
+      },
+      {
+        "number": 13,
+        "heading": "Uso, circulación y transmisión de datos",
+        "body": "Los datos personales podrán ser compartidos con proveedores, operadores turísticos, aerolíneas, hoteles, cabañas, transportadores, aseguradoras, plataformas tecnológicas, entidades bancarias, medios de pago, autoridades competentes y demás terceros necesarios para ejecutar el servicio o cumplir obligaciones legales. Cuando sea necesario transmitir datos a encargados del tratamiento, Vive Travel procurará suscribir acuerdos o cláusulas que establezcan deberes de confidencialidad, seguridad y uso limitado. En algunos casos, la naturaleza internacional de los servicios turísticos puede requerir transferencia o transmisión de datos fuera de Colombia. En tal evento, Vive Travel buscará que el tratamiento se realice bajo estándares compatibles con la normativa aplicable."
+      },
+      {
+        "number": 14,
+        "heading": "Finalidades comerciales y marketing",
+        "body": "Vive Travel podrá usar datos de contacto para informar sobre promociones, campañas, descuentos, nuevos productos, novedades, preventas, recordatorios de pago o contenido relacionado con su oferta turística. El titular podrá solicitar la suspensión de comunicaciones comerciales en la medida permitida por la ley, sin afectar las comunicaciones indispensables para la gestión contractual o legal de la reserva. El retiro de comunicaciones promocionales no implicará necesariamente la eliminación de datos requeridos para fines contractuales, contables, regulatorios o de soporte histórico."
+      },
+      {
+        "number": 15,
+        "heading": "Conservación y almacenamiento",
+        "body": "Los datos serán conservados durante el tiempo necesario para cumplir la finalidad para la cual fueron recolectados, mientras subsista la relación contractual o comercial, y por el término adicional exigido por obligaciones legales, contables, fiscales, regulatorias o de soporte. Vive Travel podrá conservar información histórica en sus sistemas o archivos cuando ello sea necesario para demostrar el cumplimiento de obligaciones, atender reclamaciones o gestionar auditorías y trazabilidad. Una vez cumplidos los fines y vencidos los plazos de conservación, los datos podrán ser suprimidos, anonimizados o archivados de manera segura, según corresponda."
+      },
+      {
+        "number": 16,
+        "heading": "Medidas de seguridad de la información",
+        "body": "Vive Travel adoptará medidas administrativas, técnicas y organizacionales razonables para proteger la información contra acceso no autorizado, pérdida, divulgación indebida, alteración, destrucción o uso no permitido. Entre otras medidas, podrá aplicar control de accesos, credenciales, perfiles de usuario, copias de seguridad, cifrado cuando sea posible, registros de actividad, acuerdos de confidencialidad y procedimientos internos de manejo de información. No obstante, el titular reconoce que ningún sistema es absolutamente invulnerable y que Vive Travel no puede garantizar un riesgo cero frente a incidentes derivados de Internet, fallas de terceros, ataques informáticos o conductas dolosas de terceros ajenos a su control razonable."
+      },
+      {
+        "number": 17,
+        "heading": "Derechos del titular",
+        "body": "El titular tiene derecho a conocer, actualizar y rectificar sus datos personales frente a los responsables o encargados del tratamiento. También puede solicitar prueba de la autorización otorgada, ser informado respecto del uso dado a sus datos, presentar quejas ante la autoridad competente por infracciones a la normativa, revocar la autorización y/o solicitar la supresión de sus datos cuando sea procedente. Asimismo, el titular puede acceder gratuitamente a sus datos personales, salvo las limitaciones legalmente previstas. Estos derechos se ejercen de conformidad con la ley y pueden estar sujetos a restricciones cuando exista un deber legal, contractual o una obligación de conservación que impida la supresión inmediata."
+      },
+      {
+        "number": 18,
+        "heading": "Procedimiento para consultas",
+        "body": "El titular o su representante podrá formular consultas sobre los datos personales tratados por Vive Travel a través del Vive Travel atenderá la consulta dentro del plazo legal o dentro del plazo interno razonable que resulte aplicable, y responderá con la información disponible o con la orientación necesaria para acceder a ella. Cuando el titular no aporte información suficiente para verificar su identidad, Vive Travel podrá solicitar soportes adicionales antes de entregar el contenido de la consulta."
+      },
+      {
+        "number": 19,
+        "heading": "Procedimiento para reclamos",
+        "body": "Cuando el titular considere que la información debe ser corregida, actualizada, suprimida o cuando advierta un presunto incumplimiento respecto del tratamiento de sus datos, podrá presentar un reclamo por los canales oficiales. El reclamo deberá contener la identificación del titular, la descripción de los hechos, la dirección o correo para notificaciones y los documentos de soporte que considere pertinentes. Si el reclamo está incompleto, Vive Travel podrá requerir la subsanación dentro de los términos legalmente aplicables. Si el reclamo resulta procedente, Vive Travel corregirá, actualizará, suprimirá o bloqueará el dato según corresponda y dejará constancia de la gestión."
+      },
+      {
+        "number": 20,
+        "heading": "Revocatoria de la autorización y supresión de datos",
+        "body": "El titular podrá solicitar la revocatoria de la autorización y la supresión de sus datos cuando no exista un deber legal o contractual que obligue a conservarlos. Cuando la supresión proceda, Vive Travel eliminará o anonimizará el dato en la medida técnica y legalmente posible, sin afectar obligaciones de archivo, prueba, facturación, contabilidad o defensa jurídica. Si el dato se encuentra en soportes que también amparan obligaciones de terceros o intereses legítimos protegidos, la supresión podrá ser parcial o diferida conforme a la ley."
+      },
+      {
+        "number": 21,
+        "heading": "Retención por obligaciones legales o contractuales",
+        "body": "Vive Travel podrá conservar datos personales incluso después de terminada la relación comercial si existe obligación legal, contable, contractual o probatoria que así lo exija. Esta retención no implica uso indebido de la información, sino cumplimiento de deberes normativos o de conservación documental. En estos eventos, los datos se mantendrán bloqueados o restringidos a los usos estrictamente necesarios."
+      },
+      {
+        "number": 22,
+        "heading": "Cookies, analítica y tecnologías similares",
+        "body": "Cuando el usuario navegue por el sitio web de Vive Travel, la empresa podrá utilizar cookies o tecnologías similares para mejorar la experiencia, medir el uso del sitio, recordar preferencias y optimizar contenidos. El detalle del uso de cookies y las opciones de gestión se desarrollará en la Política de Cookies correspondiente. Los datos recopilados por medios analíticos se tratarán conforme a esta política y a la política específica del sitio."
+      },
+      {
+        "number": 23,
+        "heading": "Encargados del tratamiento y aliados tecnológicos",
+        "body": "Vive Travel podrá apoyarse en proveedores tecnológicos, herramientas de mensajería, CRM, alojamiento en la nube, servicios de email, formularios, sistemas de pago y otros encargados para ejecutar tareas relacionadas con el tratamiento de datos. Cuando ello ocurra, se procurará que dichos proveedores asuman compromisos de confidencialidad, seguridad y uso limitado a las instrucciones dadas por Vive Travel. Si un proveedor actúa como responsable independiente, el tratamiento se regirá también por la política de dicho tercero."
+      },
+      {
+        "number": 24,
+        "heading": "Transferencia internacional de datos",
+        "body": "Debido a la naturaleza de los servicios turísticos, algunos datos pueden requerir transferencia o transmisión internacional para coordinar vuelos, hoteles, seguros, reservas o itinerarios en otros países. Vive Travel procurará que esas operaciones respeten estándares razonables de protección y que el receptor utilice los datos exclusivamente para la finalidad informada. El titular entiende que la ejecución de ciertos servicios internacionales puede exigir compartir datos con actores ubicados fuera de Colombia."
+      },
+      {
+        "number": 25,
+        "heading": "Actualizaciones de la política",
+        "body": "Vive Travel podrá modificar esta política cuando exista un cambio normativo, tecnológico, operativo o comercial, o cuando lo considere necesario para mejorar el tratamiento de datos. Las versiones actualizadas estarán disponibles por los canales oficiales y reemplazarán la versión anterior desde su publicación, sin afectar situaciones ya consolidadas o derechos adquiridos. Se recomienda al titular revisar periódicamente la política para conocer sus eventuales modificaciones."
+      },
+      {
+        "number": 26,
+        "heading": "Canales de atención de datos personales",
+        "body": "Sitio web: vivetravelcol.co. Las respuestas a solicitudes relacionadas con datos personales se emitirán por los canales de contacto aportados por el titular o por los medios oficiales de Vive Travel."
+      },
+      {
+        "number": 27,
+        "heading": "Aceptación de la política",
+        "body": "El titular acepta esta política al suministrar sus datos, navegar en el sitio web, solicitar una cotización, realizar una reserva, contratar un servicio, interactuar con los canales oficiales o autorizar su tratamiento por cualquier medio verificable. Si el titular suministra datos de terceros, declara estar legitimado para hacerlo y obliga a dicho tercero a respetar esta política en lo pertinente. Esta política forma parte del conjunto documental de Vive Travel y debe interpretarse conjuntamente con los Términos y Condiciones, la Política de Privacidad, la Política de Cookies, la Política de PQR, el Manual del Viajero y la Política de Reservas, Cambios y Cancelaciones."
+      },
+      {
+        "number": 28,
+        "heading": "Vigencia y control documental",
+        "body": "Versión: 1.0. Vigencia: hasta su sustitución por una versión posterior aprobada y publicada por Vive Travel."
+      }
+    ]
+  },
+  {
+    "slug": "privacidad",
+    "number": "04",
+    "title": "Política de Privacidad",
+    "shortTitle": "Política de Privacidad",
+    "description": "Cómo Vive Travel recopila, usa y protege la información en sus canales digitales.",
+    "category": "Privacidad y datos",
+    "version": "1.0",
+    "issuedAt": "16 de julio de 2026",
+    "clauses": [
+      {
+        "number": 1,
+        "heading": "Propósito de esta política",
+        "body": "Esta Política de Privacidad explica, en lenguaje claro y accesible, cómo Vive Travel recopila, utiliza, comparte, resguarda y administra información personal y otra información asociada a la interacción de los usuarios con sus canales digitales, comerciales y de atención. El objetivo es que el usuario comprenda qué ocurre con la información que entrega al navegar el sitio web, solicitar una cotización, escribir por WhatsApp, llenar formularios, interactuar con campañas digitales o contratar servicios de Vive Travel. Esta política complementa, pero no sustituye, la Política de Tratamiento de Datos Personales. Mientras esta última regula el tratamiento jurídico de la información personal, la presente política se enfoca en la experiencia digital, la comunicación, la navegación y el uso del sitio y canales en línea."
+      },
+      {
+        "number": 2,
+        "heading": "Alcance",
+        "body": "Esta política se aplica a visitantes del sitio web, potenciales clientes, clientes activos, viajeros, prospectos, usuarios de formularios, suscriptores de comunicaciones, personas que interactúan con anuncios, contactos por mensajería instantánea, destinatarios de correos y cualquier persona que utilice los canales digitales de Vive Travel. También aplica a la interacción con formularios de reserva, botones de contacto, widgets de WhatsApp, landings, páginas informativas, campañas de publicidad, herramientas de seguimiento y cualquier medio digital administrado por Vive Travel o por sus proveedores tecnológicos."
+      },
+      {
+        "number": 3,
+        "heading": "Información que podemos recibir",
+        "body": "Vive Travel puede recibir información que el usuario entrega voluntariamente, como nombre, teléfono, correo electrónico, ciudad, interés de viaje, número de personas, destino deseado, fechas, presupuesto aproximado y observaciones adicionales. También puede recibir información técnica de navegación, como dirección IP, tipo de dispositivo, navegador, sistema operativo, fecha y hora de acceso, páginas visitadas, tiempo de permanencia, clics, fuente de tráfico, idioma, zona horaria y comportamiento agregado dentro del sitio. Adicionalmente, pueden recopilarse datos mediante cookies, píxeles, formularios incrustados, herramientas de análisis y mensajería externa cuando el usuario interactúa con el ecosistema digital de Vive Travel."
+      },
+      {
+        "number": 4,
+        "heading": "Uso de la información",
+        "body": "La información recabada se utiliza para responder solicitudes, preparar cotizaciones, confirmar reservas, coordinar servicios turísticos, ofrecer atención al cliente, gestionar cambios, cancelaciones o reembolsos, y enviar información operativa relacionada con el viaje. También se usa para mejorar la experiencia de navegación, optimizar el contenido del sitio, evaluar el rendimiento de campañas, identificar tendencias de interés, prevenir fraude, proteger la seguridad del sistema y cumplir obligaciones legales o contractuales. Cuando el usuario lo autorice o cuando la ley lo permita, Vive Travel podrá enviar comunicaciones comerciales, promociones, recordatorios, novedades o contenido informativo relacionado con sus servicios."
+      },
+      {
+        "number": 5,
+        "heading": "Comunicaciones electrónicas",
+        "body": "El usuario acepta que Vive Travel pueda comunicarse por correo electrónico, WhatsApp, mensajes de texto, llamadas, formularios o notificaciones dentro de sus canales digitales para fines relacionados con la solicitud, cotización, reserva, pago, atención o seguimiento del servicio. Las comunicaciones enviadas por los canales oficiales pueden incluir recordatorios de pago, cambios de itinerario, confirmaciones, instrucciones de viaje, actualización de documentos, solicitudes de soporte o información relevante sobre el servicio contratado. Si el usuario aporta un canal de contacto incorrecto, desactualizado o inaccesible, la imposibilidad de entrega no será imputable a Vive Travel mientras haya enviado la comunicación al dato suministrado por el usuario."
+      },
+      {
+        "number": 6,
+        "heading": "Cookies y tecnologías similares",
+        "body": "El sitio web de Vive Travel puede utilizar cookies y tecnologías análogas para recordar preferencias, analizar visitas, mejorar funcionalidades, medir campañas, mantener sesiones y facilitar la navegación. Las cookies pueden ser propias o de terceros, y su uso puede variar según la herramienta tecnológica o el proveedor que sostenga la infraestructura del sitio. El usuario puede gestionar, restringir o bloquear cookies desde la configuración de su navegador, aunque ello puede afectar el funcionamiento de algunas funcionalidades del sitio. El detalle completo sobre tipos de cookies, finalidades y opciones de control se desarrollará en la Política de Cookies independiente."
+      },
+      {
+        "number": 7,
+        "heading": "Contenido informativo del sitio",
+        "body": "La información publicada en el sitio web, redes o materiales digitales tiene carácter informativo y comercial. Vive Travel procura que la información sea actual, clara y suficiente, pero puede contener ajustes, actualizaciones, diferencias temporales de disponibilidad o cambios derivados de terceros. Las imágenes, videos, descripciones, rutas, precios, actividades, itinerarios o testimonios pueden ser ilustrativos y no siempre reflejar de manera exacta cada detalle final del servicio, especialmente cuando existan variaciones estacionales, operativas o de proveedor. El usuario debe revisar la cotización y la confirmación final antes de contratar, pues esos documentos prevalecen sobre descripciones generales publicadas con fines promocionales."
+      },
+      {
+        "number": 8,
+        "heading": "Enlaces y servicios de terceros",
+        "body": "El sitio web o las comunicaciones digitales de Vive Travel pueden incluir enlaces a páginas de terceros, pasarelas de pago, formularios externos, mapas, redes sociales, proveedores tecnológicos o plataformas de alojamiento. Cuando el usuario abandone el ecosistema digital de Vive Travel y acceda a un tercero, la privacidad, seguridad y tratamiento de la información se regirán por la política de dicho tercero. Vive Travel no controla el contenido, disponibilidad o prácticas de privacidad de sitios externos, aunque procurará vincular únicamente herramientas o enlaces que resulten útiles para la experiencia del usuario."
+      },
+      {
+        "number": 9,
+        "heading": "Seguridad digital",
+        "body": "Vive Travel implementa medidas razonables para proteger la información y los canales digitales contra accesos no autorizados, pérdida de información, manipulación indebida o incidentes de seguridad. Entre otras acciones, puede utilizar controles de acceso, autenticación, registros, respaldos, gestión de permisos, monitoreo técnico, actualizaciones, prácticas de minimización de datos y protocolos internos de confidencialidad. Pese a ello, el usuario reconoce que ningún entorno digital es absolutamente infalible y que siempre existe un riesgo residual inherente a Internet, a los proveedores tecnológicos y a los ataques maliciosos de terceros."
+      },
+      {
+        "number": 10,
+        "heading": "Uso responsable por parte del usuario",
+        "body": "El usuario se compromete a proporcionar información veraz, no suplantar identidades, no enviar contenido ilícito o malicioso, no intentar vulnerar sistemas, no extraer información no autorizada y no usar los canales de Vive Travel para fines contrarios a la ley. El usuario también debe proteger sus credenciales, conservar sus propios soportes y evitar compartir información sensible por canales inseguros cuando exista una alternativa oficial adecuada. Cuando el usuario actúe de forma fraudulenta, abusiva o contraria a esta política, Vive Travel podrá restringir el acceso a determinados canales, bloquear comunicaciones o remitir la situación a la autoridad competente cuando sea necesario."
+      },
+      {
+        "number": 11,
+        "heading": "Conservación de registros de interacción",
+        "body": "Vive Travel podrá conservar historiales de conversaciones, formularios, clics relevantes, correos y soportes técnicos asociados a la atención al usuario, con el fin de brindar soporte, demostrar la trazabilidad del servicio y mejorar la experiencia. Estos registros podrán utilizarse como respaldo operativo, administrativo o probatorio en caso de controversias, reclamaciones, auditorías o verificaciones internas. La conservación de dichos registros no implica un uso distinto al informado y se mantendrá bajo criterios de acceso restringido."
+      },
+      {
+        "number": 12,
+        "heading": "Publicidad y segmentación",
+        "body": "Cuando el usuario interactúe con campañas digitales, Vive Travel podrá usar datos agregados o segmentados para optimizar el contenido publicitario y medir el desempeño de sus anuncios. La publicidad puede basarse en intereses generales, ubicación aproximada, comportamiento de navegación o interacción previa con el sitio, sin que ello implique necesariamente un perfilamiento intrusivo o una toma de decisiones automatizada con efectos jurídicos. El usuario puede gestionar su interacción con anuncios o comunicaciones promocionales según las opciones disponibles en cada plataforma externa."
+      },
+      {
+        "number": 13,
+        "heading": "Menores de edad",
+        "body": "Los sitios y canales digitales de Vive Travel no están diseñados para que menores de edad suministren información de forma autónoma sin la supervisión o autorización de sus padres o representantes. Cuando sea necesario gestionar servicios para menores, la información deberá ser aportada por un adulto responsable y conforme a las reglas de la Política de Tratamiento de Datos Personales y de la normativa aplicable. Vive Travel no busca deliberadamente recolectar datos de menores sin la intervención de un adulto responsable."
+      },
+      {
+        "number": 14,
+        "heading": "Exactitud y actualización de la información",
+        "body": "El usuario debe procurar que la información aportada a Vive Travel esté completa, correcta y actualizada. Si detecta un error en los datos suministrados, podrá solicitar su corrección por los canales oficiales. Vive Travel no será responsable por fallas de gestión derivadas de datos inexactos, incompletos o desactualizados proporcionados por el usuario."
+      },
+      {
+        "number": 15,
+        "heading": "Retención, eliminación y limitación",
+        "body": "Vive Travel podrá retener información mientras exista una relación comercial, contractual, operativa o un deber legal de conservación. Cuando los datos ya no sean necesarios para la finalidad informada o ya no exista obligación de conservación, podrán ser eliminados, anonimizados o restringidos. En ciertos casos, el usuario podrá solicitar la limitación de uso o la eliminación conforme a las reglas de la Política de Tratamiento de Datos Personales."
+      },
+      {
+        "number": 16,
+        "heading": "Disponibilidad del sitio y cambios",
+        "body": "Vive Travel puede modificar, suspender temporalmente o actualizar su sitio web, formularios, canales o funcionalidades por razones técnicas, comerciales, de mantenimiento, seguridad o actualización de contenidos. El usuario entiende que la disponibilidad permanente no puede garantizarse al cien por ciento y que pueden presentarse interrupciones o ajustes de servicio. Los cambios en esta política o en el sitio no afectarán de manera retroactiva situaciones ya consolidadas, salvo mandato legal o aceptación expresa del usuario."
+      },
+      {
+        "number": 17,
+        "heading": "Comunicaciones transaccionales",
+        "body": "Las comunicaciones transaccionales son aquellas necesarias para completar una cotización, reserva, confirmación, pago, modificación, cancelación o reembolso. Estas comunicaciones son parte esencial del servicio y podrán enviarse aunque el usuario haya optado por no recibir publicidad, en la medida necesaria para ejecutar la relación contractual. El usuario deberá mantener activos sus canales de contacto para poder recibirlas oportunamente."
+      },
+      {
+        "number": 18,
+        "heading": "Responsabilidad del usuario sobre sus dispositivos y acceso",
+        "body": "El usuario es responsable de la seguridad de sus propios dispositivos, contraseñas, redes, correo electrónico y accesos a Si terceros acceden a sus dispositivos o cuentas por causas ajenas a Vive Travel, los riesgos derivados de esa situación no serán imputables a la empresa, salvo que exista negligencia comprobada directamente atribuible a esta. Se recomienda cerrar sesiones, proteger contraseñas y revisar periódicamente la actividad de los dispositivos utilizados para la comunicación."
+      },
+      {
+        "number": 19,
+        "heading": "Atención de solicitudes relacionadas con privacidad",
+        "body": "Las solicitudes, dudas, reclamos o requerimientos sobre privacidad pueden canalizarse mediante el correo Comercial@vivetravelcol.co o el WhatsApp +57 312 638 0048. Vive Travel procurará orientar al usuario hacia la política específica aplicable cuando la solicitud esté relacionada con tratamiento de datos personales, cookies, reservas o PQR. Si la solicitud requiere análisis jurídico o técnico adicional, Vive Travel podrá solicitar información complementaria antes de emitir una respuesta definitiva."
+      },
+      {
+        "number": 20,
+        "heading": "Aceptación de esta política",
+        "body": "El uso del sitio web, la interacción con los canales digitales, el envío de formularios, la solicitud de cotizaciones, el intercambio de mensajes o la contratación de servicios implica la aceptación de esta Política de Privacidad en lo que resulte aplicable. Si el usuario no está de acuerdo con la presente política, deberá abstenerse de usar los canales digitales de Vive Travel o limitar su interacción a los medios que considere adecuados bajo su propio criterio. Esta política forma parte del ecosistema documental de Vive Travel y debe leerse en conjunto con los Términos y Condiciones, la Política de Tratamiento de Datos, la Política de Cookies, la Política de PQR y la Política de Reservas, Cambios y Cancelaciones."
+      },
+      {
+        "number": 21,
+        "heading": "Vigencia y control documental",
+        "body": "Versión: 1.0. Vigencia: hasta su sustitución por una versión posterior publicada por Vive Travel."
+      }
+    ]
+  },
+  {
+    "slug": "cookies",
+    "number": "05",
+    "title": "Política de Cookies",
+    "shortTitle": "Política de Cookies",
+    "description": "Uso de cookies y tecnologías similares en el sitio web de Vive Travel.",
+    "category": "Privacidad y datos",
+    "version": "1.0",
+    "issuedAt": "16 de julio de 2026",
+    "clauses": [
+      {
+        "number": 1,
+        "heading": "Introducción",
+        "body": "Esta Política de Cookies explica cómo el sitio web, formularios, landings y demás entornos digitales de Vive Travel utilizan cookies y tecnologías similares para funcionar correctamente, mejorar la experiencia del usuario, analizar el tráfico y optimizar la comunicación comercial. El objetivo es que el usuario entienda qué son las cookies, para qué se usan, qué tipos pueden instalarse en su dispositivo, cómo puede administrarlas y qué efectos podría tener su desactivación. Esta política complementa la Política de Privacidad y la Política de Tratamiento de Datos Personales de Vive Travel."
+      },
+      {
+        "number": 2,
+        "heading": "Alcance",
+        "body": "Esta política aplica a la navegación y uso del sitio web vivetravelcol.co y de cualquier otra página, subpágina, formulario, micrositio, landing page o herramienta digital controlada por Vive Travel que utilice cookies o mecanismos similares. También aplica cuando el usuario interactúa con formularios de contacto, botones de WhatsApp, herramientas de análisis, medios de pago integrados o plataformas publicitarias asociadas al entorno digital de Vive Travel."
+      },
+      {
+        "number": 3,
+        "heading": "¿Qué son las cookies?",
+        "body": "Las cookies son pequeños archivos de texto o identificadores que se almacenan en el navegador o dispositivo del usuario cuando visita un sitio web. Su función puede ser técnica, funcional, analítica, estadística, publicitaria o de personalización, según la herramienta que las genere. Las cookies permiten recordar preferencias, reconocer visitas repetidas, mantener sesiones activas y facilitar el funcionamiento de determinadas características del sitio."
+      },
+      {
+        "number": 4,
+        "heading": "Tecnologías similares",
+        "body": "Además de cookies, Vive Travel o sus proveedores pueden utilizar tecnologías como píxeles, etiquetas, scripts, almacenamiento local, identificadores de dispositivo y herramientas de medición análogas. Estas tecnologías pueden cumplir finalidades similares a las cookies y se regirán por esta política en lo pertinente."
+      },
+      {
+        "number": 5,
+        "heading": "Tipos de cookies que puede utilizar Vive Travel",
+        "body": "Cookies estrictamente necesarias: permiten el funcionamiento básico del sitio, como navegación, seguridad, autenticación o carga de formularios. Cookies funcionales o de preferencia: recuerdan configuraciones del usuario, como idioma, región, formularios previamente completados o ajustes de visualización. Cookies analíticas o de rendimiento: ayudan a medir la forma en que los usuarios interactúan con el sitio, qué páginas visitan, cuánto tiempo permanecen y qué contenidos generan más interés. Cookies publicitarias o de marketing: permiten mostrar anuncios, evaluar campañas y medir conversiones en plataformas de terceros. Cookies de terceros: son instaladas por proveedores externos que prestan servicios de analítica, publicidad, mensajería, mapas, video, alojamiento o integración social."
+      },
+      {
+        "number": 6,
+        "heading": "Finalidades del uso de cookies",
+        "body": "Vive Travel puede usar cookies para garantizar el funcionamiento técnico del sitio, recordar sesiones, evitar duplicación de procesos, analizar la experiencia del usuario y mejorar sus contenidos. También pueden usarse para entender mejor las preferencias de navegación, medir el impacto de campañas digitales, optimizar formularios y facilitar la interacción con servicios de contacto. Cuando el usuario lo permita, las cookies pueden apoyar procesos de remarketing, segmentación y medición publicitaria."
+      },
+      {
+        "number": 7,
+        "heading": "Cookies necesarias",
+        "body": "Las cookies necesarias son esenciales para que el sitio funcione de forma correcta y segura. Sin estas cookies, algunas funcionalidades como el envío de formularios, la validación de sesiones, el acceso a áreas protegidas o la persistencia de preferencias básicas podrían no operar adecuadamente. Por su carácter técnico, estas cookies pueden instalarse sin requerir consentimiento previo cuando la ley así lo permita."
+      },
+      {
+        "number": 8,
+        "heading": "Cookies de preferencia o funcionales",
+        "body": "Estas cookies recuerdan decisiones del usuario para ofrecer una navegación más eficiente y personalizada. Ejemplos de uso pueden incluir recordar idioma, ajustes de visualización, últimas consultas o preferencias sobre formularios y contactabilidad. Su desactivación no impide necesariamente la navegación, pero sí puede reducir la comodidad o personalización de la experiencia."
+      },
+      {
+        "number": 9,
+        "heading": "Cookies analíticas",
+        "body": "Vive Travel puede utilizar herramientas analíticas para medir la interacción del usuario con el sitio, identificar tendencias de navegación y generar estadísticas agregadas. Estos datos ayudan a comprender qué contenidos funcionan mejor, qué secciones requieren mejoras y cómo optimizar la estructura del sitio. Las métricas analíticas suelen recopilarse de forma agregada o pseudonimizada, según la herramienta utilizada."
+      },
+      {
+        "number": 10,
+        "heading": "Cookies publicitarias y de segmentación",
+        "body": "Cuando se utilicen campañas digitales, Vive Travel o sus socios tecnológicos podrán emplear cookies publicitarias para medir resultados, adaptar anuncios y evaluar audiencias. Estas cookies pueden permitir que se muestre contenido promocional basado en la interacción previa del usuario con el sitio o con otras plataformas. El usuario puede ajustar su experiencia en las plataformas que le permiten administrar la publicidad personalizada."
+      },
+      {
+        "number": 11,
+        "heading": "Cookies de terceros",
+        "body": "Algunas cookies pueden ser establecidas por terceros que prestan servicios a Vive Travel, como analítica web, mapas, reproductores, chatbots, integraciones sociales, pasarelas de pago o herramientas de publicidad. Vive Travel no controla de forma absoluta la configuración técnica de esos proveedores, pero procurará seleccionar herramientas razonables y coherentes con su operación. Los terceros podrán aplicar sus propias políticas de cookies y privacidad, que el usuario deberá revisar cuando interactúe con sus servicios."
+      },
+      {
+        "number": 12,
+        "heading": "Consentimiento",
+        "body": "Cuando la ley exija consentimiento para la instalación de cookies no estrictamente necesarias, Vive Travel procurará mostrar un aviso o mecanismo de gestión de preferencias que permita al usuario aceptar, rechazar o configurar su uso. El usuario podrá continuar navegando, restringir ciertas categorías o modificar sus decisiones de acuerdo con las opciones disponibles en el sitio. Si el usuario no configura preferencias y la navegación continúa, ello podrá interpretarse como una aceptación limitada en la medida permitida por la normativa aplicable y por el aviso desplegado en el sitio."
+      },
+      {
+        "number": 13,
+        "heading": "Cómo administrar o desactivar cookies",
+        "body": "El usuario puede administrar o desactivar cookies desde la configuración de su navegador o dispositivo. Los navegadores suelen permitir borrar cookies existentes, bloquear cookies nuevas o definir excepciones por sitio. Si el usuario desactiva cookies, algunas funciones del sitio pueden no operar correctamente o hacerlo de manera limitada. Para administrar cookies, el usuario puede revisar las opciones de ayuda de su navegador o dispositivo, ya que los pasos varían según la plataforma utilizada."
+      },
+      {
+        "number": 14,
+        "heading": "Impacto de desactivar cookies",
+        "body": "Desactivar cookies puede afectar la personalización del sitio, el mantenimiento de sesiones, la seguridad de algunas funcionalidades y la medición estadística del uso. En algunos casos, la desactivación puede impedir que formularios recuerden información básica o que determinadas integraciones funcionen correctamente. Vive Travel no será responsable por las limitaciones técnicas derivadas de una desactivación voluntaria de cookies por parte del usuario."
+      },
+      {
+        "number": 15,
+        "heading": "Retención y duración",
+        "body": "Cada cookie puede tener una duración distinta, dependiendo de su finalidad y del proveedor que la administre. Algunas cookies desaparecen al cerrar el navegador, mientras que otras permanecen por un tiempo determinado o hasta que el usuario las elimine manualmente. Vive Travel procurará utilizar cookies con duraciones proporcionales a la finalidad perseguida."
+      },
+      {
+        "number": 16,
+        "heading": "Seguridad y control",
+        "body": "Vive Travel procurará utilizar herramientas razonables para gestionar, actualizar y controlar el uso de cookies y tecnologías similares dentro de su entorno digital. Sin embargo, el usuario entiende que ciertos componentes técnicos pueden ser operados por terceros y que la gestión total de todas las cookies depende también de las configuraciones del navegador y del dispositivo del usuario. El usuario debe revisar periódicamente sus preferencias de cookies si desea ajustar el tratamiento de su información de navegación."
+      },
+      {
+        "number": 17,
+        "heading": "Relación con la política de privacidad y datos personales",
+        "body": "Las cookies pueden implicar tratamiento de datos personales o de identificadores asociados a un dispositivo o navegador. Por ello, esta política debe interpretarse de forma conjunta con la Política de Tratamiento de Datos Personales y la Política de Privacidad de Vive Travel. Cuando una cookie permita identificar o asociar información a una persona natural, el tratamiento se regirá además por las reglas de datos personales aplicables."
+      },
+      {
+        "number": 18,
+        "heading": "Cambios en la política de cookies",
+        "body": "Vive Travel podrá actualizar esta política cuando cambien sus herramientas tecnológicas, sus proveedores, sus campañas o la normativa aplicable. Las modificaciones se publicarán en el sitio web o por los canales que la empresa considere adecuados. Se recomienda al usuario revisar periódicamente esta política para mantenerse informado sobre eventuales cambios."
+      },
+      {
+        "number": 19,
+        "heading": "Responsabilidad sobre herramientas de terceros",
+        "body": "Si el usuario interactúa con redes sociales, reproductores, mapas, formularios externos, sistemas de medición o publicidad de terceros, dichos terceros pueden establecer sus propias cookies y reglas. Vive Travel no controla de forma total esas prácticas, aunque procurará que la integración de dichas herramientas sea razonable y funcional. El usuario deberá acudir a la política de cookies del proveedor tercero cuando quiera conocer el detalle de su tratamiento."
+      },
+      {
+        "number": 20,
+        "heading": "Contacto para dudas sobre cookies",
+        "body": "Si el usuario tiene preguntas sobre esta política, puede comunicarse con Vive Travel a través del correo Comercial@vivetravelcol.co o del WhatsApp +57 312 638 0048. Vive Travel podrá orientar sobre el uso general de cookies y, cuando sea necesario, remitir al usuario a la política de privacidad o a las opciones técnicas de su navegador."
+      },
+      {
+        "number": 21,
+        "heading": "Aceptación",
+        "body": "El usuario acepta esta Política de Cookies al navegar en el sitio web, interactuar con los formularios, utilizar las funcionalidades digitales o gestionar sus preferencias de cookies conforme a los mecanismos que el sitio disponga. Si el usuario no desea aceptar cookies no esenciales, deberá utilizar las herramientas de configuración disponibles o abstenerse de continuar navegando en el sitio en la medida en que ello sea técnicamente necesario. Esta política forma parte del paquete documental de Vive Travel y se complementa con los Términos y Condiciones, la Política de Tratamiento de Datos Personales, la Política de Privacidad, la Política de PQR, la Política de Reservas, Cambios y Cancelaciones y el Manual del Viajero."
+      },
+      {
+        "number": 22,
+        "heading": "Vigencia y control documental",
+        "body": "Versión: 1.0. Vigencia: hasta su sustitución por una versión posterior publicada por Vive Travel."
+      }
+    ]
+  },
+  {
+    "slug": "pqr",
+    "number": "06",
+    "title": "Política de Peticiones, Quejas, Reclamos y Sugerencias (PQR)",
+    "shortTitle": "Peticiones, Quejas, Reclamos y Sugerencias",
+    "description": "Procedimiento, canales y tiempos para atender PQR de clientes y viajeros.",
+    "category": "Operación y responsabilidad",
+    "version": "1.0",
+    "issuedAt": "16 de julio de 2026",
+    "clauses": [
+      {
+        "number": 1,
+        "heading": "Objetivo",
+        "body": "Esta Política de Peticiones, Quejas, Reclamos y Sugerencias (PQR) establece el procedimiento, canales, tiempos y reglas de atención mediante los cuales Vive Travel recibe, tramita y responde las solicitudes, inconformidades, observaciones y recomendaciones presentadas por clientes, viajeros, proveedores o terceros relacionados con la prestación de sus servicios. El propósito es asegurar una atención ordenada, trazable, respetuosa y eficiente, de modo que el usuario pueda expresar sus inquietudes y recibir una respuesta clara y documentada dentro de un plazo razonable."
+      },
+      {
+        "number": 2,
+        "heading": "Alcance",
+        "body": "Esta política aplica a todas las solicitudes relacionadas con reservas, cambios, cancelaciones, reembolsos, tiempos de respuesta, información comercial, atención posventa, calidad del servicio, novedades operativas, cumplimiento de itinerarios, comportamiento del personal, cobros, inconsistencias de datos y cualquier otra situación asociada a la relación con Vive Travel. Aplica tanto a solicitudes provenientes de clientes actuales como de potenciales clientes, viajeros, aliados, proveedores o cualquier persona interesada en un servicio de la compañía."
+      },
+      {
+        "number": 3,
+        "heading": "Definiciones",
+        "body": "Petición: solicitud de información, actuación o gestión realizada por el interesado. Queja: manifestación de inconformidad frente a la conducta, atención o actuación de Vive Travel o de su personal. Reclamo: manifestación por presunta falla, incumplimiento, error, cobro indebido, inconformidad contractual o necesidad de corrección o devolución. Sugerencia: recomendación, propuesta o comentario orientado a mejorar el servicio, la atención o la operación. Canales oficiales: medios habilitados por Vive Travel para recibir solicitudes, entre ellos correo electrónico, WhatsApp oficial, formularios web o cualquier otro canal formal informado por la empresa."
+      },
+      {
+        "number": 4,
+        "heading": "Canales oficiales de atención",
+        "body": "Sitio web oficial: vivetravelcol.co. Otros canales que Vive Travel llegue a habilitar y publicar de forma verificable. El usuario deberá privilegiar los canales oficiales para garantizar trazabilidad y evitar confusiones con comunicaciones no autorizadas."
+      },
+      {
+        "number": 5,
+        "heading": "Principios de atención",
+        "body": "Vive Travel atenderá las PQR bajo los principios de respeto, buena fe, trazabilidad, oportunidad, claridad, confidencialidad, imparcialidad y orientación al usuario. Se procurará una respuesta congruente con el tipo de solicitud y con la información disponible en los sistemas, soportes y comunicaciones del caso. Cuando una solicitud involucre datos personales o información sensible, se manejará con especial reserva y únicamente se compartirá con el personal o proveedor estrictamente necesario."
+      },
+      {
+        "number": 6,
+        "heading": "Requisitos mínimos de presentación",
+        "body": "Para facilitar la gestión, la PQR debe incluir al menos: nombre completo, número de documento o identificación, medio de contacto, descripción clara de los hechos, fecha aproximada del evento o reserva, número de reserva o soporte asociado si existe y pretensión concreta cuando aplique. El usuario puede adjuntar fotografías, capturas de pantalla, comprobantes, correos, audios o cualquier documento de soporte relevante. Si la solicitud se presenta de forma incompleta, Vive Travel podrá solicitar información adicional para continuar con el trámite."
+      },
+      {
+        "number": 7,
+        "heading": "Clasificación interna de solicitudes",
+        "body": "Vive Travel podrá clasificar internamente las solicitudes para su mejor gestión, por ejemplo: consulta general, petición operativa, inconformidad comercial, reclamo económico, solicitud de reembolso, corrección de datos, seguimiento de viaje, queja de servicio, sugerencia de mejora o requerimiento jurídico. Esta clasificación interna no limita el derecho del usuario ni altera el contenido esencial de su solicitud."
+      },
+      {
+        "number": 8,
+        "heading": "Procedimiento de radicación",
+        "body": "Las solicitudes ingresadas por canales oficiales podrán ser registradas manualmente o en sistemas de gestión internos para asignar control, seguimiento y respuesta. Una vez recibida la solicitud, Vive Travel podrá enviar un acuse de recibo o confirmación de radicación cuando el canal lo permita. Si la solicitud requiere verificación adicional, podrá pedirse soporte complementario antes de emitir una respuesta final."
+      },
+      {
+        "number": 9,
+        "heading": "Tiempos de respuesta",
+        "body": "Vive Travel procurará responder dentro de un plazo razonable según la naturaleza del asunto, la complejidad del caso y la necesidad de consultar a terceros. Cuando la solicitud requiera validaciones con proveedores, aerolíneas, hoteles, transportadores o aliados, el tiempo de respuesta podrá extenderse razonablemente por fuera del control directo de la empresa. Si existe una norma especial o un plazo legal específico para un tipo de reclamo, Vive Travel observará dicho término. En los demás casos, la respuesta se emitirá según la capacidad operativa y el orden interno de gestión."
+      },
+      {
+        "number": 10,
+        "heading": "Trámite de quejas",
+        "body": "Las quejas serán analizadas para determinar la situación reportada, identificar el área involucrada y revisar si procede una corrección, explicación, disculpa formal, ajuste operativo o mejora del proceso. Vive Travel buscará evitar respuestas genéricas y procurará explicar al usuario el contexto del hecho, la revisión realizada y las medidas adoptadas o previstas."
+      },
+      {
+        "number": 11,
+        "heading": "Trámite de reclamos",
+        "body": "Los reclamos que impliquen cobros, devoluciones, cambios de reserva, incumplimientos o presuntas fallas contractuales serán revisados con base en los soportes de la cotización, confirmación, pagos, comunicaciones y condiciones del proveedor. Cuando el reclamo implique una devolución de dinero, la revisión incorporará la Política de Reservas, Cambios y Cancelaciones, la Política de Reembolsos y las reglas del proveedor aplicable. Si el reclamo no procede total o parcialmente, Vive Travel explicará de forma clara los fundamentos comerciales, operativos o contractuales de esa decisión."
+      },
+      {
+        "number": 12,
+        "heading": "Trámite de peticiones",
+        "body": "Las peticiones de información, aclaración o gestión serán atendidas con una respuesta que oriente al usuario y le permita continuar el proceso o comprender el estado de su solicitud. Si la petición requiere coordinación interna o validación documental, Vive Travel podrá indicar los pasos necesarios para avanzar."
+      },
+      {
+        "number": 13,
+        "heading": "Trámite de sugerencias",
+        "body": "Las sugerencias serán recibidas como aportes de mejora para el servicio, la comunicación, la operatividad o la experiencia del cliente. Vive Travel podrá evaluar su pertinencia e incorporarlas cuando resulten útiles, viables y consistentes con la estrategia o la operación de la empresa. Las sugerencias no generan por sí mismas un derecho a respuesta extensa, pero sí podrán ser valoradas y, cuando sea útil, reconocidas."
+      },
+      {
+        "number": 14,
+        "heading": "Escalamiento interno",
+        "body": "Cuando un caso lo requiera, la solicitud podrá escalarse a áreas de ventas, operaciones, administración, contabilidad, proveedores o dirección para obtener una solución más precisa. El escalamiento interno no elimina la responsabilidad de respuesta frente al usuario, pero sí permite una revisión más completa del caso."
+      },
+      {
+        "number": 15,
+        "heading": "Solicitudes relacionadas con viajes en curso",
+        "body": "Si la PQR se presenta durante un viaje, Vive Travel procurará analizarla con prioridad razonable, especialmente cuando esté asociada a un problema operativo que pueda afectar de inmediato la experiencia del viajero. Sin embargo, el usuario debe entender que algunas soluciones dependen del proveedor local, del horario, de la disponibilidad logística o de la naturaleza del evento."
+      },
+      {
+        "number": 16,
+        "heading": "Solicitudes económicas",
+        "body": "Las solicitudes que impliquen devolución, ajuste, compensación, crédito a favor o revisión de cobros se resolverán con base en la evidencia del caso, los compromisos adquiridos y las políticas aplicables. El hecho de presentar un reclamo no implica aceptación automática de la pretensión económica del usuario. Vive Travel podrá requerir documentos adicionales antes de decidir si un ajuste económico procede."
+      },
+      {
+        "number": 17,
+        "heading": "Evidencia y soportes",
+        "body": "Para resolver adecuadamente una PQR, Vive Travel podrá acudir a soportes de pago, mensajes, contratos, cotizaciones, audios, registros internos, comprobantes, políticas publicadas y documentación de terceros. El usuario también podrá aportar pruebas o aclaraciones que considere útiles. Las pruebas serán valoradas de buena fe y según su pertinencia para el caso concreto."
+      },
+      {
+        "number": 18,
+        "heading": "Confidencialidad",
+        "body": "Las PQR pueden contener información personal, comercial o sensible. Por ello, Vive Travel limitará su acceso a las personas estrictamente necesarias para su atención. El tratamiento de los datos asociados a una PQR se regirá además por la Política de Tratamiento de Datos Personales y la Política de Privacidad de la empresa."
+      },
+      {
+        "number": 19,
+        "heading": "Respuestas parciales o definitivas",
+        "body": "Vive Travel podrá emitir respuestas parciales cuando el caso esté en curso y aún se requieran validaciones externas. Una respuesta definitiva se emitirá una vez se complete la revisión del caso o se determine de manera razonable que no existen más acciones necesarias dentro del alcance de la empresa."
+      },
+      {
+        "number": 20,
+        "heading": "Cierre de la solicitud",
+        "body": "Una PQR se considerará cerrada cuando Vive Travel haya emitido respuesta final o cuando el usuario haya recibido la gestión solicitada y no existan trámites adicionales pendientes. Si el usuario no aporta información adicional requerida dentro de un tiempo razonable, la solicitud podrá cerrarse por imposibilidad de continuidad, dejando constancia interna del motivo."
+      },
+      {
+        "number": 21,
+        "heading": "Remisión a otras políticas",
+        "body": "Las PQR relacionadas con reservas, cambios, cancelaciones, reembolsos, fuerza mayor, no show o llegadas tardías se interpretarán también a la luz de las políticas específicas de Vive Travel sobre esos temas. Las solicitudes de datos personales se tramitarán además conforme a la Política de Tratamiento de Datos y a la Política de Privacidad."
+      },
+      {
+        "number": 22,
+        "heading": "Conductas indebidas o abusivas",
+        "body": "Vive Travel podrá abstenerse de continuar conversaciones ofensivas, amenazantes, reiterativas sin fundamento o manifiestamente abusivas, sin perjuicio de los derechos del usuario ni de las vías formales que le correspondan. En todo caso, la empresa conservará trazabilidad de las solicitudes relevantes."
+      },
+      {
+        "number": 23,
+        "heading": "Actualización de datos de contacto",
+        "body": "El usuario deberá mantener actualizados sus datos de contacto para recibir respuesta. Si la respuesta fue enviada al canal informado por el usuario, se entenderá que Vive Travel cumplió con el deber de remitirla, aun cuando el usuario no la haya leído por causas ajenas a la empresa."
+      },
+      {
+        "number": 24,
+        "heading": "Aceptación de la política",
+        "body": "El envío de una petición, queja, reclamo o sugerencia a través de los canales oficiales implica la aceptación de esta política para efectos de trámite y respuesta. Esta política forma parte del paquete documental de Vive Travel y debe leerse junto con los Términos y Condiciones, la Política de Tratamiento de Datos Personales, la Política de Privacidad, la Política de Cookies y la Política de Reservas, Cambios y Cancelaciones."
+      },
+      {
+        "number": 25,
+        "heading": "Vigencia y control documental",
+        "body": "Versión: 1.0. Vigencia: hasta su sustitución por una versión posterior publicada por Vive Travel."
+      }
+    ]
+  },
+  {
+    "slug": "manual-viajero",
+    "number": "07",
+    "title": "Manual del Viajero",
+    "shortTitle": "Manual del Viajero",
+    "description": "Recomendaciones, derechos y deberes del viajero antes, durante y después del viaje.",
+    "category": "Operación y responsabilidad",
+    "version": "1.0",
+    "issuedAt": "16 de julio de 2026",
+    "clauses": [
+      {
+        "number": 1,
+        "heading": "Bienvenida",
+        "body": "Gracias por confiar en Vive Travel. Este manual reúne las recomendaciones, derechos, obligaciones y procedimientos que todo viajero debe conocer antes, durante y después de su viaje."
+      },
+      {
+        "number": 2,
+        "heading": "Antes de viajar",
+        "body": "Verifique nombres, fechas, documentos, pagos, itinerario, vouchers y requisitos del destino. Revise restricciones de equipaje y llegue con la anticipación indicada."
+      },
+      {
+        "number": 3,
+        "heading": "Documentación",
+        "body": "Lleve documento original vigente. Para viajes internacionales confirme pasaporte, visas, vacunas y demás requisitos migratorios."
+      },
+      {
+        "number": 4,
+        "heading": "Equipaje",
+        "body": "Revise el peso permitido por la aerolínea o transportador. Objetos de valor, documentos y medicamentos deben viajar preferiblemente en el equipaje de mano."
+      },
+      {
+        "number": 5,
+        "heading": "Aeropuertos y terminales",
+        "body": "Preséntese con suficiente anticipación. El incumplimiento de horarios puede ocasionar pérdida del servicio."
+      },
+      {
+        "number": 6,
+        "heading": "Hoteles y cabañas",
+        "body": "Respete horarios de checksin y checksout, reglamentos internos y bienes del establecimiento."
+      },
+      {
+        "number": 7,
+        "heading": "Tours y pasadías",
+        "body": "Llegue puntual al punto de encuentro. Lleve ropa adecuada, hidratación y siga las instrucciones del guía."
+      },
+      {
+        "number": 8,
+        "heading": "Responsabilidades del viajero",
+        "body": "Entregar información veraz, cumplir normas migratorias, portar documentos, respetar horarios y actuar con respeto hacia otros viajeros y prestadores."
+      },
+      {
+        "number": 9,
+        "heading": "Responsabilidades de Vive Travel",
+        "body": "Gestionar correctamente las reservas, brindar información clara, coordinar los servicios contratados y asistir al viajero dentro del alcance de los servicios adquiridos."
+      },
+      {
+        "number": 10,
+        "heading": "Salud y seguridad",
+        "body": "Informe condiciones médicas relevantes. Lleve medicamentos personales. Siga recomendaciones de autoridades y operadores."
+      },
+      {
+        "number": 11,
+        "heading": "Emergencias",
+        "body": "Comuníquese inmediatamente con los canales oficiales de Vive Travel y conserve evidencias si ocurre una incidencia."
+      },
+      {
+        "number": 12,
+        "heading": "Fuerza mayor",
+        "body": "Eventos como clima extremo, cierres de vías, huelgas o decisiones de autoridades pueden modificar itinerarios sin constituir incumplimiento imputable a Vive Travel."
+      },
+      {
+        "number": 13,
+        "heading": "Pérdida de documentos",
+        "body": "Reporte inmediatamente a la autoridad competente y contacte a Vive Travel para orientación."
+      },
+      {
+        "number": 14,
+        "heading": "Derechos del viajero",
+        "body": "Recibir información clara, acceder a los servicios contratados y presentar PQR por los canales oficiales."
+      },
+      {
+        "number": 15,
+        "heading": "Deberes del viajero",
+        "body": "Cumplir las políticas de reservas, cancelaciones, equipaje, comportamiento y seguridad."
+      },
+      {
+        "number": 16,
+        "heading": "Checklist",
+        "body": "Antes de salir confirme: documentos, reservas, pagos, equipaje, cargadores, medicamentos, dinero, seguros y contactos de emergencia."
+      },
+      {
+        "number": 17,
+        "heading": "Contacto",
+        "body": "Correo: Comercial@vivetravelcol.co | WhatsApp: +57 312 638 0048 | Web: vivetravelcol.co"
+      }
+    ]
+  },
+  {
+    "slug": "responsabilidad",
+    "number": "08",
+    "title": "Documento de Limitación de Responsabilidad y Asunción de Riesgos",
+    "shortTitle": "Limitación de Responsabilidad",
+    "description": "Asunción de riesgos, distribución de responsabilidades y límites de indemnización.",
+    "category": "Operación y responsabilidad",
+    "version": "1.0",
+    "issuedAt": "16 de julio de 2026",
+    "clauses": [
+      {
+        "number": 1,
+        "heading": "Propósito del documento",
+        "body": "Este documento establece reglas específicas de asunción de riesgos, distribución de responsabilidades y límites razonables de responsabilidad aplicables a los servicios turísticos comercializados por Vive Travel. Su finalidad es informar al cliente y al viajero, de manera clara y previa, que el turismo implica riesgos inherentes, que parte de la operación depende de terceros y que la responsabilidad de Vive Travel no puede extenderse a hechos ajenos a su control material, ni puede excluir deberes legales irrenunciables. Este documento complementa los Términos y Condiciones, la Política de Reservas, Cambios y Cancelaciones, la Política de Tratamiento de Datos, la Política de Privacidad, la Política de Cookies, la Política de PQR y el Manual del Viajero."
+      },
+      {
+        "number": 2,
+        "heading": "Identificación de la empresa",
+        "body": "Razón social: Vive Group S.A.S. Marca comercial: Vive Travel. NIT: 901993710. Domicilio: Barranquilla, Atlántico, Colombia. Correo: Comercial@vivetravelcol.co. WhatsApp: +57 312 638 0048. Sitio web: vivetravelcol.co. RNT: 278488."
+      },
+      {
+        "number": 3,
+        "heading": "Naturaleza del turismo y riesgos inherentes",
+        "body": "El cliente reconoce que los servicios turísticos comprenden desplazamientos, estadías, experiencias, transporte terrestre o aéreo, alojamiento, actividades recreativas y coordinación logística con proveedores diversos. En ese contexto, existen riesgos inherentes que no pueden eliminarse por completo, entre ellos retrasos, cambios de horario, condiciones climáticas, variaciones de capacidad, congestión en vías, controles migratorios, cancelaciones de terceros, pérdida temporal de conectividad, demoras de proveedores, restricciones administrativas o eventos de fuerza mayor. El hecho de contratar un servicio turístico no elimina esos riesgos inherentes, por lo que el cliente acepta que el éxito total del viaje depende también de circunstancias externas a Vive Travel."
+      },
+      {
+        "number": 4,
+        "heading": "Asunción de riesgos por el cliente y el viajero",
+        "body": "El cliente y el viajero aceptan expresamente asumir los riesgos ordinarios propios de la actividad turística y de recreación, incluyendo aquellos asociados a movilidad, clima, horarios, manipulación de equipaje, permanencia en espacios públicos, interacción con otros viajeros y cumplimiento de instrucciones operativas. También aceptan que algunos servicios pueden exigir puntualidad estricta, condiciones físicas mínimas, documentación válida, comportamiento adecuado y respeto por las normas de cada proveedor o destino. Cuando el cliente decida continuar con la reserva pese a haber sido advertido de ciertas restricciones o riesgos, se entenderá que acepta dichos riesgos en la medida legalmente permitida."
+      },
+      {
+        "number": 5,
+        "heading": "Obligaciones del viajero para reducir riesgos",
+        "body": "El viajero debe suministrar información veraz, revisar su itinerario, respetar horarios, cumplir las instrucciones de seguridad, portar sus documentos, cuidar sus pertenencias y reportar oportunamente cualquier condición médica o logística relevante. El viajero debe evitar conductas imprudentes, ilegales o contrarias a las recomendaciones del guía, transportador, hotel, operador o personal de apoyo. El incumplimiento de estas obligaciones podrá generar pérdida del servicio, restricciones operativas, gastos adicionales o imposibilidad de reclamación contra Vive Travel respecto de hechos que deriven de esa conducta."
+      },
+      {
+        "number": 6,
+        "heading": "Responsabilidad de Vive Travel",
+        "body": "Vive Travel responde por la gestión comercial y operativa que le sea directamente imputable, por la información suministrada de forma oficial y por la coordinación razonable de los servicios contratados. Vive Travel no responde por hechos que dependan exclusivamente del cliente, del viajero, de proveedores independientes, de autoridades o de eventos externos ajenos a su control material razonable. Esta limitación no aplica para responsabilidad derivada de dolo o culpa grave que resulte legalmente imputable a Vive Travel, ni para derechos irrenunciables del consumidor."
+      },
+      {
+        "number": 7,
+        "heading": "Servicios prestados por terceros",
+        "body": "Muchos de los servicios comercializados por Vive Travel son ejecutados en todo o en parte por terceros, tales como aerolíneas, hoteles, cabañas, transportadores, operadores, guías, propietarios de inmuebles o plataformas tecnológicas. Cuando la ejecución dependa de un tercero, el cliente acepta que las condiciones, restricciones, penalidades, reprogramaciones o cancelaciones de ese tercero también inciden sobre la prestación final del servicio. Vive Travel podrá trasladar al cliente los efectos contractuales de esas condiciones cuando así lo permita la ley, el contrato y la información previamente suministrada."
+      },
+      {
+        "number": 8,
+        "heading": "Limitación de responsabilidad por hechos de terceros",
+        "body": "Vive Travel no será responsable por daños o pérdidas causados de manera exclusiva por terceros independientes, tales como retrasos de aerolíneas, sobreventa de cupos, fallas de hotelería, decisiones de autoridades, bloqueos de vías, fenómenos naturales o actos de terceros ajenos a la empresa. Cuando proceda, Vive Travel colaborará razonablemente en la gestión de novedades y en la canalización de reclamaciones, pero esa colaboración no significa asunción automática de responsabilidad económica por el hecho ajeno. Si un tercero ofrece compensaciones, devoluciones o reprogramaciones, el efecto de dichas medidas dependerá de la política de ese tercero y de su aceptación por el cliente."
+      },
+      {
+        "number": 9,
+        "heading": "Exclusiones de responsabilidad no permitidas",
+        "body": "Este documento no pretende excluir ni limitar responsabilidades que la ley colombiana considere irrenunciables o indisponibles. No se entenderán válidas, frente a derechos del consumidor, cláusulas que pretendan negar de forma absoluta el derecho a reclamar, prohibir la garantía o imponer condiciones abusivas que afecten de manera desproporcionada al usuario. Vive Travel ajustará la aplicación de este documento a la normativa de protección al consumidor y a los límites que imponga el ordenamiento jurídico."
+      },
+      {
+        "number": 10,
+        "heading": "Acontecimientos de fuerza mayor o circunstancia excepcional",
+        "body": "En caso de fuerza mayor, caso fortuito o circunstancia excepcional, Vive Travel podrá modificar itinerarios, cambiar proveedores, reprogramar fechas, suspender temporalmente la prestación o proponer alternativas razonables. Se consideran eventos de este tipo, entre otros, condiciones climáticas severas, accidentes, cierres de aeropuertos, bloqueos, disturbios, restricciones de autoridad, emergencias sanitarias, fallas masivas de infraestructura o decisiones gubernamentales que afecten la operación. En estos eventos, el cliente acepta que el resultado final del viaje puede variar sin que ello constituya automáticamente incumplimiento imputable a Vive Travel."
+      },
+      {
+        "number": 11,
+        "heading": "Riesgos de salud, condición física y participación voluntaria",
+        "body": "El cliente y el viajero declaran que participan de manera voluntaria y bajo su propia valoración de aptitud física y médica, salvo que informen condiciones especiales antes de contratar. Si el viajero tiene alergias severas, limitaciones motrices, embarazo, cirugías recientes, enfermedades o restricciones que puedan interferir con el servicio, deberá informarlo de forma previa y completa. Vive Travel no asume responsabilidad por el agravamiento de condiciones de salud no informadas o por la participación del viajero en actividades para las cuales no estaba médicamente apto."
+      },
+      {
+        "number": 12,
+        "heading": "Equipaje, objetos personales y dinero",
+        "body": "El viajero conserva bajo su exclusiva custodia sus documentos, dinero, dispositivos, joyas, objetos personales y equipaje, salvo los casos en que el proveedor tenga responsabilidad legal directa. Vive Travel recomienda mantener objetos de valor en el equipaje de mano, utilizar candados, rotulación y medidas básicas de seguridad. Las pérdidas derivadas de descuido del viajero, extravío por terceros o incumplimiento de medidas de autocuidado no serán imputables a Vive Travel cuando no exista intervención directa de la empresa."
+      },
+      {
+        "number": 13,
+        "heading": "Puntualidad, no show y llegadas tardías",
+        "body": "El cliente acepta que la puntualidad es esencial para la prestación de muchos servicios turísticos. Cuando la tardanza o no presentación impida el uso del servicio, el viajero asumirá las consecuencias operativas y económicas que se deriven de su incumplimiento. Vive Travel no estará obligada a retrasar salidas, esperas, check-ins o embarques cuando ello afecte a otros viajeros o contravenga condiciones del proveedor."
+      },
+      {
+        "number": 14,
+        "heading": "Menores de edad y personas bajo custodia",
+        "body": "Si el viaje involucra menores de edad, el adulto responsable declara tener autorización suficiente y asumir la custodia, vigilancia y decisiones necesarias para su participación. Vive Travel no sustituye a los padres, acudientes, representantes ni responsables legales del menor. El adulto responsable asume la obligación de portar y gestionar permisos, autorizaciones, documentos y acompañamiento exigidos por la ley o por el proveedor."
+      },
+      {
+        "number": 15,
+        "heading": "Seguridad, orden público y conducta del viajero",
+        "body": "El viajero debe acatar las normas de seguridad, las reglas del destino, las instrucciones del guía, los lineamientos del hotel y las disposiciones de las autoridades. Si el viajero se expone voluntariamente a riesgos no autorizados, se aparta del grupo, incurre en conductas ilícitas o desatiende instrucciones de seguridad, responderá por las consecuencias de su conducta. Vive Travel podrá suspender asistencia operativa cuando la conducta del viajero ponga en riesgo al grupo, al personal o a terceros."
+      },
+      {
+        "number": 16,
+        "heading": "Información y advertencias previas",
+        "body": "Cuando Vive Travel informe por escrito un riesgo particular, una restricción del proveedor, un cambio operativo o una limitación del servicio, el cliente acepta que esa información hace parte integral de la contratación. El cliente no podrá alegar desconocimiento de información debidamente remitida por los canales oficiales. El rechazo del cliente a una advertencia no obliga a Vive Travel a asumir consecuencias derivadas de la decisión del cliente de continuar con el viaje."
+      },
+      {
+        "number": 17,
+        "heading": "Procedimiento de incidentes",
+        "body": "Ante un incidente durante el viaje, el cliente o viajero deberá reportarlo de inmediato por los canales oficiales o al personal designado en destino, para permitir una gestión oportuna. Si el usuario omite reportar oportunamente una novedad que podía ser atendida en el momento, la posterior reclamación podrá verse limitada por esa omisión. Vive Travel procurará orientar el manejo del incidente, sin garantizar resultados que dependan de terceros o de circunstancias fuera de control."
+      },
+      {
+        "number": 18,
+        "heading": "Reclamaciones y soporte",
+        "body": "Para que una reclamación sea evaluada, el cliente deberá aportar información completa, soportes verificables y una descripción clara del hecho. La ausencia de soportes, la entrega tardía de información o la imposibilidad de verificar el evento podrán limitar la solución propuesta. Vive Travel conservará la facultad de revisar el caso con base en los documentos contractuales, las comunicaciones y la evidencia disponible."
+      },
+      {
+        "number": 19,
+        "heading": "Límites de indemnización",
+        "body": "En la medida en que la ley lo permita, la eventual responsabilidad económica de Vive Travel por un hecho imputable directamente a su gestión se analizará caso por caso y no comprenderá automáticamente daños indirectos, lucro cesante, pérdida de oportunidad o perjuicios no demostrados. Esta cláusula no busca desconocer derechos legales irrenunciables ni reemplazar el régimen aplicable de responsabilidad que corresponda en cada situación concreta. Cuando exista responsabilidad legalmente acreditada, la compensación se limitará conforme al marco normativo aplicable y a la naturaleza del servicio."
+      },
+      {
+        "number": 20,
+        "heading": "Aceptación expresa",
+        "body": "El cliente acepta este documento al cotizar, reservar, pagar, viajar, hacer uso de servicios o firmar o confirmar de cualquier forma la contratación. Si el cliente actúa por terceros, declara contar con autorización para aceptar estas condiciones en nombre de ellos. El cliente reconoce haber leído esta política y entender que no constituye una liberación absoluta de responsabilidad, sino una asignación razonable de riesgos y responsabilidades."
+      },
+      {
+        "number": 21,
+        "heading": "Relación con otros documentos",
+        "body": "Este documento se interpreta junto con los Términos y Condiciones, la Política de Reservas, Cambios y Cancelaciones, la Política de Tratamiento de Datos, la Política de Privacidad, la Política de Cookies, la Política de PQR y el Manual del Viajero. Si existe una regla especial en un documento específico, esa regla prevalecerá sobre la general en lo pertinente."
+      },
+      {
+        "number": 22,
+        "heading": "Vigencia y control documental",
+        "body": "Versión: 1.0. Vigencia: hasta su sustitución por una versión posterior publicada por Vive Travel."
+      }
+    ]
+  },
+  {
+    "slug": "consentimiento",
+    "number": "09",
+    "title": "Consentimiento Informado del Viajero",
+    "shortTitle": "Consentimiento Informado del Viajero",
+    "description": "Declaración de recepción de información y aceptación previa del viajero.",
+    "category": "Términos y contratación",
+    "version": "1.0",
+    "issuedAt": "16 de julio de 2026",
+    "clauses": [
+      {
+        "number": 1,
+        "heading": "Propósito del documento",
+        "body": "Mediante el presente consentimiento informado, el viajero declara haber recibido información suficiente, clara, comprensible y previa sobre el servicio turístico contratado con Vive Travel, sus características, alcances, límites, riesgos inherentes, condiciones de operación y políticas aplicables. Este documento busca dejar constancia escrita de que el viajero conoce las condiciones del viaje y acepta participar de manera voluntaria, bajo las reglas comerciales, operativas y de seguridad informadas por Vive Travel, sin que ello implique renuncia a derechos irrenunciables reconocidos por la ley. El presente consentimiento complementa los Términos y Condiciones, la Política de Reservas, Cambios y Cancelaciones, el Documento de Limitación de Responsabilidad y las demás políticas de Vive Travel."
+      },
+      {
+        "number": 2,
+        "heading": "Identificación del prestador",
+        "body": "Razón social: Vive Group S.A.S. Marca comercial: Vive Travel. NIT: 901993710. Domicilio: Barranquilla, Atlántico, Colombia. Correo: Comercial@vivetravelcol.co. WhatsApp: +57 312 638 0048. Sitio web: vivetravelcol.co. Registro Nacional de Turismo: 278488."
+      },
+      {
+        "number": 3,
+        "heading": "Declaración de recepción de información",
+        "body": "El viajero declara que recibió información previa sobre el itinerario, el tipo de servicio, las inclusiones, exclusiones, fechas, horarios, puntos de encuentro, formas de pago, condiciones de cambio y cancelación, requerimientos documentales, observaciones de salud cuando apliquen y reglas de comportamiento durante el viaje. El viajero manifiesta que tuvo la oportunidad de formular preguntas, solicitar aclaraciones y revisar los soportes comerciales y operativos del servicio antes de su aceptación. Si el viajero decide continuar con la contratación o el viaje, reconoce que lo hace con conocimiento suficiente del servicio ofrecido."
+      },
+      {
+        "number": 4,
+        "heading": "Naturaleza voluntaria de la participación",
+        "body": "La participación en el viaje, tour, pasadía, plan, excursión, traslado, alojamiento o experiencia turística es voluntaria y se realiza por decisión propia del viajero o de quien lo represente legalmente. El viajero declara que no ha sido obligado, engañado ni inducido con información materialmente falsa por parte de Vive Travel para tomar la decisión de contratar, salvo que existan hechos específicos que deba reclamar por los canales oficiales. Cuando el viajero actúa por cuenta de un tercero, el firmante declara contar con facultad suficiente para aceptar este consentimiento en nombre de todos los viajeros involucrados."
+      },
+      {
+        "number": 5,
+        "heading": "Conocimiento de los riesgos inherentes del turismo",
+        "body": "El viajero entiende que todo viaje puede implicar riesgos inherentes o circunstanciales, entre ellos demoras, cambios de horario, congestión, variaciones climáticas, interrupciones de itinerario, cancelaciones de terceros, pérdida temporal de conectividad, sobrecupos, restricciones de acceso, trámites migratorios, cambios operativos, fallas de transporte y eventualidades de fuerza mayor o caso fortuito. El viajero acepta que algunos servicios pueden desarrollar actividades al aire libre, navegación, desplazamientos terrestres, caminatas, exposición solar, altura, humedad, tránsito por vías con tráfico o permanencia en zonas donde existen variables externas que no pueden ser eliminadas por completo. El viajero comprende que la existencia de un riesgo inherente no equivale necesariamente a un incumplimiento por parte de Vive Travel cuando la situación obedece a causas ajenas a su control razonable."
+      },
+      {
+        "number": 6,
+        "heading": "Riesgos de salud y condición física",
+        "body": "El viajero declara que, a su mejor saber y entender, se encuentra en condiciones físicas y mentales adecuadas para participar en el viaje o actividad contratada. Si el viajero tiene enfermedades preexistentes, alergias severas, embarazo, cirugías recientes, limitaciones motrices, condiciones respiratorias, tratamiento médico especial u otra circunstancia relevante, se compromete a informarlo antes del viaje para evaluar si la participación es viable. El viajero asume la responsabilidad de portar sus medicamentos, informar sus restricciones, seguir recomendaciones médicas personales y abstenerse de participar en actividades que su condición le impida realizar de forma segura. Vive Travel puede recomendar la contratación de seguros o coberturas médicas, pero no sustituye la evaluación médica ni asume funciones de aseguradora."
+      },
+      {
+        "number": 7,
+        "heading": "Documentación, requisitos migratorios y permisos",
+        "body": "El viajero declara que verificará la vigencia y validez de sus documentos de identidad, pasaporte, visas, permisos, autorizaciones, formularios, vacunas, salvoconductos o cualquier otro requisito exigido por autoridades o proveedores. El viajero reconoce que la falta de documentos, la expiración de pasaporte, la carencia de visa, la ausencia de permisos para menores o cualquier incumplimiento documental puede impedir el embarque, el acceso o la participación en el servicio. El viajero asume las consecuencias derivadas de omisiones documentales propias, salvo que la ley determine otra cosa o que el hecho sea directamente imputable a Vive Travel por una gestión que le corresponda."
+      },
+      {
+        "number": 8,
+        "heading": "Aceptación de políticas comerciales",
+        "body": "El viajero declara conocer y aceptar las políticas de Vive Travel relativas a reservas, cambios, cancelaciones, reembolsos, no show, llegadas tardías, fuerza mayor, privacidad, tratamiento de datos, cookies y PQR. El viajero entiende que algunas solicitudes de cambio o cancelación pueden estar sujetas a plazos, penalidades o límites de devolución por compromisos ya adquiridos con terceros. El viajero reconoce que este consentimiento no elimina la aplicación de los derechos mínimos que la ley le reconozca como consumidor o usuario de servicios turísticos."
+      },
+      {
+        "number": 9,
+        "heading": "Servicios prestados por terceros",
+        "body": "El viajero comprende que parte del servicio contratado puede ser ejecutado por terceros, como aerolíneas, hoteles, cabañas, transportadores, operadores turísticos, guías, propietarios de inmuebles o plataformas tecnológicas. El viajero acepta que las decisiones operativas, reglas internas, horarios, restricciones, disponibilidad y políticas de esos terceros pueden impactar el servicio final. Cuando el tercero sea el responsable directo de una novedad, el viajero entiende que la solución concreta dependerá de la política y disponibilidad del tercero, sin perjuicio de la colaboración razonable que haga Vive Travel."
+      },
+      {
+        "number": 10,
+        "heading": "Reglas de seguridad y conducta",
+        "body": "El viajero se obliga a respetar las instrucciones de seguridad, los horarios, las normas de convivencia, las reglas del hotel o alojamiento, las recomendaciones del guía, las disposiciones del operador y las autoridades locales. El viajero entiende que conductas como agredir, acosar, desobedecer instrucciones críticas, consumir sustancias ilegales, poner en riesgo a otros viajeros, manipular instalaciones o actuar de forma temeraria pueden generar restricciones, expulsión del servicio o pérdida de beneficios, cuando ello proceda conforme a la ley y a las políticas aplicables. El viajero se compromete a no incurrir en actos que afecten el bienestar del grupo, la seguridad de la operación o la reputación de Vive Travel y de sus proveedores."
+      },
+      {
+        "number": 11,
+        "heading": "Equipaje, objetos de valor y pertenencias",
+        "body": "El viajero entiende que es responsable de sus documentos, dinero, electrónicos, joyas, objetos personales y demás pertenencias, salvo los casos en que exista custodia o responsabilidad legal expresa de un tercero. Se recomienda llevar objetos de valor en el equipaje de mano o bajo custodia personal y mantener control permanente sobre las pertenencias. El viajero asume las consecuencias de descuidos, extravíos o pérdidas ocasionadas por falta de cuidado o por la intervención de terceros ajenos a Vive Travel."
+      },
+      {
+        "number": 12,
+        "heading": "Menores de edad",
+        "body": "Cuando el viaje involucre menores de edad, el padre, madre, acudiente o representante legal declara tener la autorización y facultad necesarias para su participación. El adulto responsable asume la vigilancia, cuidado, decisiones y cumplimiento de permisos o documentos que la ley o el proveedor exijan para el menor. Vive Travel no reemplaza la custodia parental ni asume funciones de tutor o guardián legal del menor."
+      },
+      {
+        "number": 13,
+        "heading": "Reglas frente a cambios, cancelaciones y reprogramaciones",
+        "body": "El viajero acepta que los cambios, cancelaciones, reprogramaciones y devoluciones se regirán por las políticas vigentes de Vive Travel y por las condiciones del proveedor o tercero involucrado. El viajero entiende que, dependiendo del momento de la solicitud, pueden aplicarse penalidades, retenciones o pérdidas parciales o totales del valor pagado. El viajero declara que esta situación le fue informada antes de la compra y que la acepta como parte de la relación contractual."
+      },
+      {
+        "number": 14,
+        "heading": "Fuerza mayor y circunstancias excepcionales",
+        "body": "El viajero acepta que pueden presentarse eventos de fuerza mayor o circunstancias excepcionales que alteren el viaje, como clima severo, bloqueos, cierres, accidentes, órdenes de autoridad, emergencias sanitarias, fallas de infraestructura o cancelaciones de terceros. En esos casos, el viajero entiende que Vive Travel podrá reprogramar, sustituir o modificar el servicio en la medida razonable disponible, sin que ello implique automáticamente una falta imputable a la empresa."
+      },
+      {
+        "number": 15,
+        "heading": "Salud, emergencia y asistencia básica",
+        "body": "En caso de emergencia, el viajero debe informar de inmediato al personal de apoyo, al guía, al operador o a los canales oficiales de Vive Travel. El viajero autoriza a que, si su estado lo requiere, se procure asistencia básica, llamada de emergencia o coordinación con servicios locales, sin perjuicio de que el viajero siga siendo responsable de su atención médica y de sus costos, salvo pacto o ley en contrario. Vive Travel no actúa como prestador médico ni garantiza cobertura sanitaria, aunque podrá colaborar razonablemente en la coordinación de apoyo inicial."
+      },
+      {
+        "number": 16,
+        "heading": "Uso de imágenes y testimonios",
+        "body": "El viajero autoriza de manera libre y voluntaria, salvo manifestación expresa en contrario cuando exista mecanismo para ello, el uso de fotografías, videos o testimonios en los que aparezca durante la experiencia, para fines promocionales, de memoria o comerciales de Vive Travel. Esta autorización se entenderá complementada por la política de imagen o autorización específica que la empresa pueda implementar."
+      },
+      {
+        "number": 17,
+        "heading": "Declaración de veracidad",
+        "body": "El viajero declara que toda la información suministrada a Vive Travel es veraz, completa, actualizada y suficiente. Si el viajero proporciona datos incorrectos, incompletos o falsos, asume las consecuencias derivadas de esa conducta, incluyendo errores en reservas, impedimentos operativos o costos adicionales. El viajero reconoce que Vive Travel puede confiar razonablemente en los datos aportados para realizar la gestión del viaje."
+      },
+      {
+        "number": 18,
+        "heading": "Consentimiento respecto del tratamiento de datos",
+        "body": "El viajero declara haber sido informado sobre el tratamiento de sus datos personales conforme a la Política de Tratamiento de Datos y demás documentos complementarios de Vive Travel. El viajero autoriza, cuando sea necesario y procedente, la recolección, uso, almacenamiento, circulación, transmisión o transferencia de sus datos para gestionar el servicio turístico y cumplir obligaciones legales."
+      },
+      {
+        "number": 19,
+        "heading": "No sustitución de derechos irrenunciables",
+        "body": "El viajero entiende que este consentimiento informado no pretende renunciar a derechos irrenunciables previstos por la ley ni limitar de manera abusiva las responsabilidades que legalmente no puedan excluirse. Su finalidad es probar que el viajero recibió información suficiente y que decidió participar voluntariamente, con conocimiento de los riesgos inherentes y de las reglas aplicables."
+      },
+      {
+        "number": 20,
+        "heading": "Aceptación expresa y firma",
+        "body": "Al firmar este documento, marcar una casilla de aceptación, responder afirmativamente por un medio verificable o continuar con el proceso de viaje después de haber recibido la información, el viajero declara que entiende y acepta su contenido. Si el viajero actúa en representación de otros, declara que cuenta con autorización suficiente para aceptar este consentimiento en nombre de ellos. Este documento tendrá valor complementario como prueba de información y aceptación frente a la relación comercial con Vive Travel."
+      },
+      {
+        "number": 21,
+        "heading": "Relación con otros documentos",
+        "body": "Este consentimiento se interpreta en conjunto con los Términos y Condiciones, la Política de Reservas, Cambios y Cancelaciones, el Documento de Limitación de Responsabilidad, la Política de Tratamiento de Datos Personales, la Política de Privacidad, la Política de Cookies, la Política de PQR y el Manual del Viajero. En caso de contradicción entre documentos, prevalecerá la regla especial que sea más pertinente para el caso concreto, siempre dentro del marco legal aplicable."
+      },
+      {
+        "number": 22,
+        "heading": "Vigencia y control documental",
+        "body": "Versión: 1.0. Vigencia: hasta su sustitución por una versión posterior publicada por Vive Travel."
+      }
+    ]
+  },
+  {
+    "slug": "aceptacion-digital",
+    "number": "10",
+    "title": "Aceptación Digital de Contratación",
+    "shortTitle": "Aceptación Digital de Contratación",
+    "description": "Confirmación electrónica previa a la compra o reserva de servicios turísticos.",
+    "category": "Términos y contratación",
+    "version": "1.0",
+    "issuedAt": "16 de julio de 2026",
+    "clauses": [
+      {
+        "number": 1,
+        "heading": "Finalidad de este documento",
+        "body": "Este documento deja constancia de que el cliente o viajero acepta de manera previa, expresa, libre e informada la contratación electrónica de servicios turísticos ofrecidos por Vive Travel. Su propósito es fortalecer la evidencia de aceptación de los Términos y Condiciones, de la Política de Reservas, Cambios y Cancelaciones, de la Política de Tratamiento de Datos Personales, de la Política de Privacidad, de la Política de Cookies, de la Política de PQR, del Manual del Viajero, del Documento de Limitación de Responsabilidad y del Consentimiento Informado del Viajero. Esta aceptación puede realizarse por medios digitales verificables, como una casilla de aceptación en la web, un mensaje de confirmación por WhatsApp, un correo electrónico, un formulario o cualquier mecanismo electrónico razonable que deje trazabilidad."
+      },
+      {
+        "number": 2,
+        "heading": "Identificación de Vive Travel",
+        "body": "Razón social: Vive Group S.A.S. Marca comercial: Vive Travel. NIT: 901993710. Domicilio: Barranquilla, Atlántico, Colombia. Correo: Comercial@vivetravelcol.co. WhatsApp: +57 312 638 0048. Sitio web: vivetravelcol.co. Registro Nacional de Turismo: 278488."
+      },
+      {
+        "number": 3,
+        "heading": "Reconocimiento de lectura previa",
+        "body": "Al marcar la casilla de aceptación, responder afirmativamente, firmar digitalmente, contestar por un mensaje verificable o continuar con el proceso de compra, el cliente declara que ha tenido oportunidad suficiente para leer y comprender los documentos aplicables al servicio. El cliente reconoce que la información fue puesta a su disposición antes de la contratación y que pudo solicitar aclaraciones sobre precio, alcance, inclusiones, exclusiones, cambios, cancelaciones, reembolsos, riesgos y condiciones especiales del viaje. Si el cliente no leyó alguno de los documentos disponibles, ello no invalida la aceptación cuando la información fue puesta razonablemente a su disposición por los canales oficiales."
+      },
+      {
+        "number": 4,
+        "heading": "Documentos que se aceptan con esta confirmación",
+        "body": "Con esta aceptación digital, el cliente declara que entiende y acepta, según aplique al servicio contratado: Términos y Condiciones; Política de Reservas, Cambios y Cancelaciones; Política de Tratamiento de Datos Personales; Política de Privacidad; Política de Cookies; Política de PQR; Manual del Viajero; Documento de Limitación de Responsabilidad y Asunción de Riesgos; y Consentimiento Informado del Viajero. El cliente reconoce que algunos servicios pueden contar con condiciones particulares adicionales informadas en la cotización o confirmación del servicio, las cuales también formarán parte de la reserva cuando sean aceptadas."
+      },
+      {
+        "number": 5,
+        "heading": "Aceptación electrónica y trazabilidad",
+        "body": "El cliente acepta que los mensajes de datos, correos, formularios, capturas, audios, comprobantes, clics de aceptación, registros de hora, fecha, número de teléfono, dirección de correo, IP, referencias de dispositivo o cualquier otro soporte electrónico razonable podrán servir como evidencia de la contratación y de la voluntad de aceptar. El cliente entiende que el uso de medios electrónicos no desmejora por sí mismo la validez de la aceptación cuando exista trazabilidad suficiente del acto realizado. Si Vive Travel conserva la constancia de aceptación electrónica, dicha constancia podrá utilizarse como soporte probatorio interno, comercial o legal, según corresponda."
+      },
+      {
+        "number": 6,
+        "heading": "Declaración de voluntad",
+        "body": "El cliente manifiesta que su aceptación es libre y voluntaria, y que no está actuando bajo error esencial, dolo o coacción por parte de Vive Travel, sin perjuicio de los derechos que la ley reconozca para reclamar en caso de inconformidad real. El cliente declara que tiene capacidad legal para contratar o, si actúa en representación de otros viajeros, cuenta con la autorización suficiente para obligarlos frente a las políticas aceptadas."
+      },
+      {
+        "number": 7,
+        "heading": "Confirmación de datos",
+        "body": "Antes de finalizar la contratación, el cliente declara haber revisado y confirmado la exactitud de los datos suministrados, incluyendo nombres, apellidos, documentos de identidad, fechas, destinos, número de viajeros, edades, correos, teléfonos y demás información requerida para la reserva. El cliente entiende que errores en datos suministrados por él pueden afectar reservas, embarques, listas de viajeros, facturación, acceso a servicios o la ejecución general del viaje."
+      },
+      {
+        "number": 8,
+        "heading": "Aceptación de políticas económicas",
+        "body": "El cliente declara conocer y aceptar que los precios, abonos, cargos, penalidades, reembolsos, retenciones y condiciones económicas se regirán por los documentos aplicables y por los soportes comerciales enviados por Vive Travel. El cliente reconoce que una reserva puede requerir pago total o parcial anticipado y que el incumplimiento de los plazos de pago puede generar cancelación o pérdida de disponibilidad."
+      },
+      {
+        "number": 9,
+        "heading": "Aceptación de riesgos y limitación de responsabilidad",
+        "body": "El cliente declara conocer que el turismo implica riesgos inherentes y que el viaje puede verse afectado por hechos de terceros, condiciones climáticas, operaciones aéreas o terrestres, eventos de autoridad, fuerza mayor o circunstancias excepcionales. El cliente entiende que el documento de limitación de responsabilidad de Vive Travel establece una asignación razonable de riesgos y responsabilidades, sin excluir derechos irrenunciables ni renunciar a reclamaciones que la ley no permita limitar."
+      },
+      {
+        "number": 10,
+        "heading": "Retracto y derecho de información",
+        "body": "El cliente reconoce que, cuando aplique la contratación de servicios a distancia, pueden existir términos legales de retracto y excepciones previstas por la normativa colombiana. El cliente entiende también que Vive Travel informa de forma previa el alcance del servicio, los canales de atención y las condiciones comerciales relevantes antes de la compra."
+      },
+      {
+        "number": 11,
+        "heading": "Protección de datos y comunicaciones",
+        "body": "El cliente acepta el tratamiento de sus datos personales para gestionar la cotización, la reserva, la prestación del servicio, la facturación, la atención posventa y las demás finalidades informadas en la política correspondiente. Asimismo, autoriza las comunicaciones transaccionales necesarias para la ejecución del servicio y, cuando haya lugar, las comunicaciones comerciales o promocionales en los términos de las políticas aplicables y de la ley."
+      },
+      {
+        "number": 12,
+        "heading": "Confirmación del viajero",
+        "body": "Si el cliente compra para sí o para terceros, declara que ha informado a todos los viajeros sobre el contenido de este documento y sobre las políticas aplicables, y que cuenta con la autorización necesaria para aceptar en su nombre cuando ello sea requerido. El cliente asume la responsabilidad de transmitir a los demás viajeros la información relevante sobre el viaje, las políticas y las obligaciones derivadas de la contratación."
+      },
+      {
+        "number": 13,
+        "heading": "Declaración de no alteración del contenido",
+        "body": "El cliente entiende que no está autorizado a alterar, suprimir o reinterpretar unilateralmente las políticas y condiciones publicadas por Vive Travel sin aceptación expresa de la empresa. Las condiciones especiales acordadas por escrito tendrán preferencia solo en lo que expresamente modifiquen y siempre dentro del marco legal aplicable."
+      },
+      {
+        "number": 14,
+        "heading": "Uso de imagen y contenido",
+        "body": "Si la contratación incluye actividades con fotografía, video, testimonios o registro promocional, el cliente acepta que dichos materiales puedan ser usados por Vive Travel conforme a la política correspondiente, salvo restricción expresa previa en los casos donde exista un mecanismo de exclusión."
+      },
+      {
+        "number": 15,
+        "heading": "Cláusula de evidencia electrónica",
+        "body": "Las partes aceptan que una aceptación dada por medios electrónicos tiene valor de soporte documental para acreditar la voluntad contractual, sin perjuicio de las exigencias especiales que establezca la ley para determinados actos o pruebas. El cliente reconoce que no podrá desconocer la validez de una aceptación electrónica por el solo hecho de haberse emitido por correo, WhatsApp, formulario o clic de confirmación, cuando exista trazabilidad verificable del acto."
+      },
+      {
+        "number": 16,
+        "heading": "Aceptación de contratación",
+        "body": "Al continuar con la reserva, realizar el pago, aprobar la cotización, responder afirmativamente por un medio verificable o marcar la casilla de aceptación, el cliente manifiesta que acepta íntegramente este documento y las políticas aplicables al servicio contratado. Si el cliente no está de acuerdo con el contenido aquí aceptado, deberá abstenerse de cerrar la compra, realizar el abono o utilizar el servicio."
+      },
+      {
+        "number": 17,
+        "heading": "Relación con otros documentos",
+        "body": "Este documento se complementa con los Términos y Condiciones, la Política de Reservas, Cambios y Cancelaciones, el Consentimiento Informado del Viajero, el Documento de Limitación de Responsabilidad y Asunción de Riesgos, la Política de Tratamiento de Datos, la Política de Privacidad, la Política de Cookies, la Política de PQR y el Manual del Viajero. En caso de contradicción, prevalecerá la regla especial más concreta para el caso aplicable, siempre dentro del marco de la normativa vigente."
+      },
+      {
+        "number": 18,
+        "heading": "Vigencia y control documental",
+        "body": "Versión: 1.0. Vigencia: hasta su sustitución por una versión posterior publicada por Vive Travel."
+      }
+    ]
+  }
+]

@@ -1,0 +1,1052 @@
+[
+  {
+    "slug": "san-andres",
+    "country": "San Andrés y Providencia",
+    "countryCode": "CO",
+    "flagEmoji": "🇨🇴",
+    "region": "Colombia",
+    "visaCategory": "Sin visa",
+    "categoryId": "free",
+    "summary": "Destino nacional. Para colombianos no se requiere visa ni pasaporte, pero se debe comprar la Tarjeta de Turismo.",
+    "stayDuration": "Ilimitado (territorio nacional)",
+    "cost": "Tarjeta de Turismo aprox. $125.500 COP",
+    "processingTime": "Inmediato",
+    "whereToApply": "Compra la Tarjeta de Turismo online o en el aeropuerto",
+    "requirements": [
+      "Cédula de ciudadanía colombiana vigente",
+      "Tarjeta de Turismo (compra obligatoria)",
+      "Tiquete de ida y regreso"
+    ],
+    "process": [
+      "Compra la Tarjeta de Turismo en el aeropuerto o en línea",
+      "Presenta tu cédula al hacer check-in",
+      "Llega al aeropuerto con anticipación"
+    ],
+    "tips": [
+      "La Tarjeta de Turismo financia la preservación ambiental de la isla",
+      "Lleva efectivo, hay pocos cajeros en algunas zonas de la isla",
+      "Reserva con anticipación en temporada alta"
+    ],
+    "officialLink": "https://www.gobiernosanandres.gov.co",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "mexico",
+    "country": "México",
+    "countryCode": "MX",
+    "flagEmoji": "🇲🇽",
+    "region": "Norteamérica",
+    "visaCategory": "Sin visa (FMM electrónico)",
+    "categoryId": "free",
+    "summary": "Los colombianos NO requieren visa para turismo. Solo debes completar el Formato Migratorio Múltiple (FMM) en línea antes de viajar.",
+    "stayDuration": "Hasta 180 días sin actividad remunerada",
+    "cost": "FMM gratuito en línea",
+    "processingTime": "Inmediato (se completa online)",
+    "whereToApply": "Formato Migratorio Múltiple (FMM) en línea",
+    "requirements": [
+      "Pasaporte colombiano vigente mínimo 6 meses",
+      "Formato Migratorio Múltiple (FMM) completado",
+      "Tiquete de ida y regreso",
+      "Comprobante de hospedaje o dirección de estadía"
+    ],
+    "process": [
+      "Completa el FMM en línea en el sitio oficial del INM",
+      "Imprime o guarda digitalmente el FMM",
+      "Presenta el pasaporte y FMM en migración al llegar",
+      "Conserva la parte del FMM que te entregan para salir del país"
+    ],
+    "tips": [
+      "Lleva el FMM impreso como respaldo por si falla el sistema",
+      "El FMM es obligatorio incluso para tránsito",
+      "Verifica que tu pasaporte tenga páginas en blanco"
+    ],
+    "officialLink": "https://www.inm.gob.mx/fmmm",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "panama",
+    "country": "Panamá",
+    "countryCode": "PA",
+    "flagEmoji": "🇵🇦",
+    "region": "Centroamérica",
+    "visaCategory": "Sin visa",
+    "categoryId": "free",
+    "summary": "Los ciudadanos colombianos no requieren visa para ingresar a Panamá por turismo hasta por 90 días.",
+    "stayDuration": "Hasta 90 días (prorrogables)",
+    "cost": "Gratis",
+    "processingTime": "Inmediato",
+    "whereToApply": "No requiere trámite previo",
+    "requirements": [
+      "Pasaporte colombiano vigente mínimo 6 meses",
+      "Tiquete de ida y regreso o continuación de viaje",
+      "Comprobante de solvencia económica ($500 USD aprox.)",
+      "Comprobante de hospedaje o carta de invitación"
+    ],
+    "process": [
+      "Llega al aeropuerto con tu pasaporte vigente",
+      "Presenta tiquete de salida y comprobantes económicos",
+      "El agente migratorio te sella el ingreso"
+    ],
+    "tips": [
+      "Lleva efectivo en dólares (moneda oficial de Panamá)",
+      "Si llegas por tierra (Sapzurro/Capurganá) hay reglas especiales",
+      "Conserva el sello de entrada para tu salida"
+    ],
+    "officialLink": "https://www.migracion.gob.pa",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "republica-dominicana",
+    "country": "República Dominicana",
+    "countryCode": "DO",
+    "flagEmoji": "🇩🇴",
+    "region": "Caribe",
+    "visaCategory": "Tasa turística (e-ticket)",
+    "categoryId": "onarrival",
+    "summary": "Los colombianos no necesitan visa, pero deben completar la Tarjeta de Turismo electrónica (e-ticket) antes de viajar y pagar la tasa de ingreso.",
+    "stayDuration": "Hasta 30 días (prorrogables)",
+    "cost": "Tasa de turismo aprox. $10 USD",
+    "processingTime": "Inmediato (e-ticket online)",
+    "whereToApply": "E-ticket migratorio en línea",
+    "requirements": [
+      "Pasaporte colombiano vigente mínimo 6 meses",
+      "E-ticket migratorio completado en línea",
+      "Tiquete de ida y regreso",
+      "Comprobante de hospedaje"
+    ],
+    "process": [
+      "Completa el e-ticket en eticket.migracion.gob.do antes de viajar",
+      "Guarda el código QR que genera el sistema",
+      "Presenta el QR y pasaporte en migración al llegar",
+      "Paga la tasa de turismo ($10 USD) si no está incluida en el tiquete"
+    ],
+    "tips": [
+      "Muchas aerolíneas ya incluyen la tasa en el tiquete, verifica",
+      "Lleva dólares en efectivo para la tasa si no está incluida",
+      "El e-ticket es gratuito, desconfía de sitios que cobran"
+    ],
+    "officialLink": "https://eticket.migracion.gob.do",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "cuba",
+    "country": "Cuba",
+    "countryCode": "CU",
+    "flagEmoji": "🇨🇺",
+    "region": "Caribe",
+    "visaCategory": "Tarjeta de turista / eVisa",
+    "categoryId": "onarrival",
+    "summary": "Los colombianos requieren una Tarjeta de Turista (visa) para ingresar a Cuba. Se tramita en consulado, aerolínea o agencia de viajes.",
+    "stayDuration": "Hasta 30 días (prorrogable 30 más)",
+    "cost": "Aprox. $25-30 USD",
+    "processingTime": "1 a 3 días hábiles (o en el aeropuerto)",
+    "whereToApply": "Consulado de Cuba, aerolínea o agencia de viajes",
+    "requirements": [
+      "Pasaporte colombiano vigente mínimo 6 meses",
+      "Tarjeta de Turista (rosada o verde según punto de ingreso)",
+      "Tiquete de ida y regreso",
+      "Seguro de viaje con cobertura médica en Cuba",
+      "Comprobante de hospedaje o reserva"
+    ],
+    "process": [
+      "Solicita la Tarjeta de Turista en el consulado, aerolínea o agencia",
+      "Compra el seguro de viaje (obligatorio en Cuba)",
+      "Completa la declaración de aduana y salud antes de llegar",
+      "Presenta pasaporte, tarjeta y seguro en migración"
+    ],
+    "tips": [
+      "El seguro de viaje Asistur es obligatorio, contrátalo antes",
+      "Lleva euros en efectivo, mejor que dólares (menos recargo)",
+      "Las tarjetas internacionales no funcionan en todos los cajeros"
+    ],
+    "officialLink": "https://www.cubaminrex.cu",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "estados-unidos",
+    "country": "Estados Unidos",
+    "countryCode": "US",
+    "flagEmoji": "🇺🇸",
+    "region": "Norteamérica",
+    "visaCategory": "Visa B1/B2 requerida",
+    "categoryId": "required",
+    "summary": "Los ciudadanos colombianos SÍ requieren visa ordinaria B1/B2 para ingresar a Estados Unidos. El proceso incluye formulario DS-160, tarifa consular y entrevista.",
+    "stayDuration": "Hasta 6 meses según oficial migratorio",
+    "cost": "$185 USD (Tarifa DS-160)",
+    "processingTime": "2 a 12 meses (cita consular)",
+    "whereToApply": "Embajada de EE.UU. en Bogotá",
+    "requirements": [
+      "Pasaporte colombiano vigente mínimo 6 meses",
+      "Formulario DS-160 completado online",
+      "Foto 5x5 cm fondo blanco",
+      "Comprobante de pago $185 USD",
+      "Entrevista consular agendada"
+    ],
+    "process": [
+      "Completa la planilla DS-160 en línea",
+      "Genera el pin y paga la tarifa consular",
+      "Agenda la cita de huellas (CAS) y entrevista consular",
+      "Preséntate a la cita con soportes de solvencia y lazos con Colombia"
+    ],
+    "tips": [
+      "Demuestra lazos laborales y familiares sólidos con Colombia",
+      "Llega 15 minutos antes a la Embajada",
+      "La visa aprobada se entrega por mensajería"
+    ],
+    "officialLink": "https://co.usembassy.gov/es/visas-es",
+    "lastUpdated": "2026-07",
+    "embassyInfo": {
+      "address": "Calle 24 D Bis #47-51, Bogotá, D.C.",
+      "phone": "(601) 275 2000 / (601) 275 4000",
+      "cas": "Calle 26 #92-32, Connecta - Gold 4, Primer Piso, Bogotá",
+      "website": "https://co.usembassy.gov"
+    },
+    "documents": [
+      "Pasaporte biométrico o de lectura mecánica vigente mínimo 6 meses + fotocopias de pasaportes anteriores",
+      "Formulario DS-160 completado en línea e impreso (hoja de confirmación)",
+      "Fotografía reciente 5x5 cm a color con fondo blanco",
+      "Documentación de respaldo de solvencia económica y lazos con Colombia (carta laboral, desprendibles de pago, extractos bancarios de los últimos 3 meses, certificados de tradición o matrícula mercantil)"
+    ],
+    "specialNotes": [
+      "Menores de 14 años: exentos de entrevista si al menos uno de los padres cuenta con visa B1/B2 válida",
+      "Mayores de 80 años (Plan Cañitas): exentos de entrevista siempre que no hayan tenido una visa negada previamente",
+      "Renovación (19 a 79 años): aplica sin entrevista presencial para visas B1/B2 emitidas en Colombia con vigencia de 10 años y vencidas hace menos de 48 meses"
+    ]
+  },
+  {
+    "slug": "reino-unido",
+    "country": "Reino Unido",
+    "countryCode": "GB",
+    "flagEmoji": "🇬🇧",
+    "region": "Europa",
+    "visaCategory": "Visa ordinaria requerida",
+    "categoryId": "required",
+    "summary": "Los colombianos requieren visa Standard Visitor o autorización previa para ingresar a Inglaterra, Escocia, Gales e Irlanda del Norte.",
+    "stayDuration": "Hasta 6 meses",
+    "cost": "£115 GBP aprox.",
+    "processingTime": "3 a 6 semanas",
+    "whereToApply": "Centro de Solicitud de Visas VFS Global Bogotá",
+    "requirements": [
+      "Pasaporte colombiano vigente",
+      "Formulario de solicitud online UK Visas and Immigration",
+      "Prueba de fondos financieros suficientes",
+      "Itinerario de viaje y hospedaje"
+    ],
+    "process": [
+      "Completa la solicitud en línea en gov.uk",
+      "Paga la tarifa consular y programa cita biométrica en VFS Global",
+      "Acude a la toma de huellas y fotografía",
+      "Recibe tu pasaporte con la estampilla aprobada"
+    ],
+    "tips": [
+      "Prepara extractos bancarios traducidos al inglés si se requiere",
+      "Solicita con mínimo 2 meses de anticipación"
+    ],
+    "officialLink": "https://www.gov.uk/standard-visitor-visa",
+    "lastUpdated": "2026-07",
+    "embassyInfo": {
+      "address": "Carrera 9 #76-49, Piso 8, Bogotá, D.C.",
+      "phone": "(601) 326 8300",
+      "cas": "Centro VFS Global - Calle 93B #12-18, Oficina 302, Bogotá",
+      "website": "https://www.gov.uk/world/colombia"
+    },
+    "documents": [
+      "Pasaporte colombiano vigente con al menos 1 página en blanco por ambos lados",
+      "Formulario impreso de confirmación de solicitud en gov.uk",
+      "Extractos bancarios de los últimos 6 meses demostrando fondos suficientes",
+      "Certificado laboral con cargo, sueldo y antigüedad (traducido al inglés si se requiere)",
+      "Comprobante de reserva de hospedaje e itinerario de viaje detallado"
+    ],
+    "specialNotes": [
+      "No se requiere traducción oficial certificada para documentos estándar siempre que acompañen traducción simple",
+      "Toma de datos biométricos presencial obligatoria en el centro VFS Global de Bogotá"
+    ]
+  },
+  {
+    "slug": "canada",
+    "country": "Canadá",
+    "countryCode": "CA",
+    "flagEmoji": "🇨🇦",
+    "region": "Norteamérica",
+    "visaCategory": "Visa de visitante requerida",
+    "categoryId": "required",
+    "summary": "Los colombianos necesitan visa de turismo (Visitor Visa) o eTA si han tenido visa canadiense o estadounidense en los últimos 10 años.",
+    "stayDuration": "Hasta 6 meses",
+    "cost": "$100 CAD + $85 CAD biometría",
+    "processingTime": "4 a 12 semanas",
+    "whereToApply": "IRCC en línea / Centro VFS Global",
+    "requirements": [
+      "Pasaporte colombiano vigente",
+      "Formulario IMM 5257 completado",
+      "Prueba de solvencia económica y lazos con el país",
+      "Datos biométricos"
+    ],
+    "process": [
+      "Crea una cuenta en la plataforma del IRCC",
+      "Sube todos los documentos de soporte solicitados",
+      "Paga los derechos de visado y biometría",
+      "Acude al VAC para toma de huellas y envío de pasaporte"
+    ],
+    "tips": [
+      "Si tienes visa vigente de EE.UU., puedes calificar al programa eTA canadiense facilitado",
+      "Asegúrate de traducir los documentos de soporte"
+    ],
+    "officialLink": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada.html",
+    "lastUpdated": "2026-07",
+    "embassyInfo": {
+      "address": "Calle 93B #12-48, Piso 5, Bogotá, D.C.",
+      "phone": "(601) 657 9800",
+      "cas": "Centro de Solicitud de Visas de Canadá (VAC) - Carrera 13 #93-68, Oficina 303, Bogotá",
+      "website": "https://www.canada.ca/canada-and-colombia"
+    },
+    "documents": [
+      "Pasaporte colombiano vigente mínimo 6 meses + copias de pasaportes anteriores",
+      "Formulario de solicitud IMM 5257 y declaración de información familiar IMM 5645",
+      "Prueba de fondos suficientes (extractos bancarios de los últimos 4 meses)",
+      "Certificado de trabajo reciente con desprendibles de nómina o declaración de renta",
+      "Itinerario de vuelo estimado y reservas de alojamiento"
+    ],
+    "specialNotes": [
+      "Programa eTA facilitado: Si tuviste visa canadiense en los últimos 10 años o posees visa B1/B2 vigente de EE.UU., puedes tramitar eTA en línea en minutos por $7 CAD",
+      "Los menores de edad requieren autorización de salida firmada ante notaría por ambos padres"
+    ]
+  },
+  {
+    "slug": "china",
+    "country": "China",
+    "countryCode": "CN",
+    "flagEmoji": "🇨🇳",
+    "region": "Asia",
+    "visaCategory": "Visa ordinaria (L) requerida",
+    "categoryId": "required",
+    "summary": "Para viajar por turismo a la República Popular China se requiere gestionar previamente la visa tipo L ante la Embajada de China.",
+    "stayDuration": "30 a 90 días",
+    "cost": "$30 a $60 USD",
+    "processingTime": "4 a 7 días hábiles",
+    "whereToApply": "Sección Consular de la Embajada de China en Bogotá",
+    "requirements": [
+      "Pasaporte vigente mínimo 6 meses con 2 páginas libres",
+      "Formulario COAV de solicitud online completado",
+      "Tiquetes aéreos de ida y regreso",
+      "Reserva de hotel confirmada o carta de invitación"
+    ],
+    "process": [
+      "Diligencia la solicitud en el portal COAV",
+      "Programa la cita consular",
+      "Presenta la documentación física en la embajada",
+      "Reclama el pasaporte visado previa cancelación de la tarifa"
+    ],
+    "tips": [
+      "Hong Kong y Macao poseen reglas migratorias separadas",
+      "Planifica tu itinerario con hoteles con reserva confirmada"
+    ],
+    "officialLink": "http://co.china-embassy.gov.cn/esp/",
+    "lastUpdated": "2026-07",
+    "embassyInfo": {
+      "address": "Carrera 16 #98-05, Bogotá, D.C.",
+      "phone": "(601) 622 3217",
+      "website": "http://co.china-embassy.gov.cn/esp/"
+    },
+    "documents": [
+      "Pasaporte colombiano vigente mínimo 6 meses con 2 páginas en blanco contiguas",
+      "Formulario impreso de solicitud en línea (cova.mfa.gov.cn) con fotografía a color",
+      "Reservas de pasajes aéreos de ida y regreso confirmados",
+      "Reserva de hotel durante toda la estancia en China o carta de invitación oficial",
+      "Itinerario de viaje detallado día a día"
+    ],
+    "specialNotes": [
+      "Tránsito de 24, 72 y 144 horas sin visa aplicable en ciertos aeropuertos internacionales como Pekín, Shanghái y Cantón cumpliendo tiquete a un tercer país",
+      "Hong Kong y Macao poseen políticas migratorias independientes (consulte requisitos específicos)"
+    ]
+  },
+  {
+    "slug": "irlanda",
+    "country": "Irlanda",
+    "countryCode": "IE",
+    "flagEmoji": "🇮🇪",
+    "region": "Europa",
+    "visaCategory": "Visa de corta estadía requerida",
+    "categoryId": "required",
+    "summary": "Irlanda no forma parte del espacio Schengen. Los ciudadanos colombianos requieren visa de corta estadía (Short Stay 'C') antes de viajar.",
+    "stayDuration": "Hasta 90 días",
+    "cost": "€60 EUR (Entrada única) / €100 EUR (Múltiple)",
+    "processingTime": "4 a 8 semanas",
+    "whereToApply": "AVATS en línea / Servicio de Visas del Consulado",
+    "requirements": [
+      "Pasaporte vigente mínimo 6 meses",
+      "Resumen impreso de solicitud AVATS firmada",
+      "Estado de cuenta bancario de los últimos 6 meses",
+      "Seguro médico de viaje internacional"
+    ],
+    "process": [
+      "Diligencia la solicitud en el sistema AVATS",
+      "Realiza el pago de la tarifa consular",
+      "Envía la documentación requerida a la oficina correspondiente",
+      "Espera la aprobación e impresión de la visa"
+    ],
+    "tips": [
+      "No compres tiquetes no reembolsables hasta tener la aprobación",
+      "Irlanda requiere justificación exhaustiva de fondos económicos"
+    ],
+    "officialLink": "https://www.irishimmigration.ie/",
+    "lastUpdated": "2026-07",
+    "embassyInfo": {
+      "address": "Embajada de Irlanda en Bogotá - Carrera 9 #74-08, Oficina 1202, Bogotá",
+      "phone": "(601) 518 7840",
+      "website": "https://www.dfa.ie/irish-embassy/colombia/"
+    },
+    "documents": [
+      "Pasaporte colombiano con vigencia mínima de 6 meses posteriores a la fecha prevista de salida",
+      "Resumen impreso y firmado de la solicitud en línea del sistema AVATS",
+      "2 fotografías tamaño pasaporte a color",
+      "Estados de cuenta bancarios detallados de los últimos 6 meses del solicitante o patrocinador",
+      "Carta explicativa en inglés del motivo del viaje y plan de itinerario detallado"
+    ],
+    "specialNotes": [
+      "Irlanda no pertenece al Espacio Schengen; la visa irlandesa no permite el libre tránsito por Europa continental",
+      "Aplica el programa de exención de visa de tránsito para Reino Unido e Irlanda en casos específicos de visa británica vigente"
+    ]
+  },
+  {
+    "slug": "nueva-zelanda",
+    "country": "Nueva Zelanda",
+    "countryCode": "NZ",
+    "flagEmoji": "🇳🇿",
+    "region": "Oceanía",
+    "visaCategory": "Visitor Visa requerida",
+    "categoryId": "required",
+    "summary": "Los colombianos necesitan la Visitor Visa solicitada de manera 100% digital a través de Immigration New Zealand.",
+    "stayDuration": "Hasta 9 meses",
+    "cost": "$246 NZD aprox.",
+    "processingTime": "3 a 6 semanas",
+    "whereToApply": "Immigration New Zealand Online",
+    "requirements": [
+      "Pasaporte colombiano vigente",
+      "Fotografía digital formato pasaporte",
+      "Demostración de fondos ($1000 NZD por mes de estadía)",
+      "Boleto de salida de Nueva Zelanda"
+    ],
+    "process": [
+      "Crea tu perfil en RealMe de Immigration New Zealand",
+      "Diligencia el formulario de Visitor Visa",
+      "Adjunta fotos, extractos y tiquetes",
+      "Recibe la visa electrónica (eVisa) en tu correo"
+    ],
+    "tips": [
+      "Debes estar en salud óptima; estancias largas pueden requerir examen de rayos X",
+      "Conserva copia impresa del e-Visa PDF al viajar"
+    ],
+    "officialLink": "https://www.immigration.govt.nz/",
+    "lastUpdated": "2026-07",
+    "embassyInfo": {
+      "address": "Trámite 100% en línea a través del portal oficial de Immigration New Zealand",
+      "website": "https://www.immigration.govt.nz/"
+    },
+    "documents": [
+      "Pasaporte colombiano escaneado en alta resolución (página de datos y sellos previos)",
+      "Fotografía digital reciente en formato JPG según especificaciones de INZ",
+      "Extractos de cuenta bancaria o tarjeta de crédito acreditando mínimo $1.000 NZD por mes",
+      "Carta laboral con permiso de vacaciones o certificado de estudio vigente",
+      "Boleto de avión de regreso a Colombia o ticket hacia un tercer país"
+    ],
+    "specialNotes": [
+      "La solicitud de visa para Nueva Zelanda no requiere envío físico de pasaporte a ninguna embajada",
+      "Incluye el cobro del impuesto internacional de conservación y turismo (IVL)"
+    ]
+  },
+  {
+    "slug": "sudafrica",
+    "country": "Sudáfrica",
+    "countryCode": "ZA",
+    "flagEmoji": "🇿🇦",
+    "region": "África",
+    "visaCategory": "Visa de visitante requerida",
+    "categoryId": "required",
+    "summary": "Los colombianos requieren solicitar una Visitor's Visa o eVisa antes de abordar hacia territorio sudafricano.",
+    "stayDuration": "Hasta 90 días",
+    "cost": "Sin costo de tarifa consular / cargo de servicio e-Visa",
+    "processingTime": "10 a 20 días hábiles",
+    "whereToApply": "Portal e-Visa de Sudáfrica / Embajada",
+    "requirements": [
+      "Pasaporte colombiano con 2 páginas libres",
+      "Certificado de vacunación de Fiebre Amarilla (obligatorio)",
+      "Extractos bancarios certificados",
+      "Tiquete aéreo de regreso"
+    ],
+    "process": [
+      "Regístrate en el portal sudafricano de eVisa",
+      "Sube el certificado de fiebre amarilla y pasaporte",
+      "Envía la solicitud y rastrea el avance online",
+      "Descarga la autorización electrónica para abordar"
+    ],
+    "tips": [
+      "El certificado internacional de vacuna contra Fiebre Amarilla es estrictamente exigido",
+      "Verifica la validez de tu pasaporte por más de 30 días posteriores al viaje"
+    ],
+    "officialLink": "https://e-visa.homeaffairs.gov.za/",
+    "lastUpdated": "2026-07",
+    "embassyInfo": {
+      "address": "Embajada de Sudáfrica en Bogotá - Carrera 9 #99-02, Oficina 702, Bogotá",
+      "phone": "(601) 742 0480",
+      "website": "https://www.dirco.gov.za/"
+    },
+    "documents": [
+      "Pasaporte colombiano vigente con mínimo 2 páginas contiguas completamente en blanco",
+      "Certificado Internacional de Vacunación contra la Fiebre Amarilla (aplicada al menos 10 días antes del viaje)",
+      "Formulario de solicitud e-Visa o visa consular BI-84 en inglés",
+      "Estados de cuenta bancarios certificados de los últimos 3 meses",
+      "Boleto aéreo de ida y vuelta confirmado"
+    ],
+    "specialNotes": [
+      "El carné de vacuna contra la Fiebre Amarilla es un requisito de salud pública biológicamente obligatorio en los filtros de embarque",
+      "La visa es gratuita de derechos consulares para nacionales colombianos"
+    ]
+  },
+  {
+    "slug": "costa-rica",
+    "country": "Costa Rica",
+    "countryCode": "CR",
+    "flagEmoji": "🇨🇷",
+    "region": "Centroamérica",
+    "visaCategory": "Visa consultar requerida",
+    "categoryId": "required",
+    "summary": "Los ciudadanos colombianos requieren visa consular para ingresar a Costa Rica, salvo que posean visa de EE.UU. o Schengen vigente.",
+    "stayDuration": "Hasta 30 días",
+    "cost": "$52 USD",
+    "processingTime": "5 a 10 días hábiles",
+    "whereToApply": "Consulado General de Costa Rica en Bogotá",
+    "requirements": [
+      "Pasaporte vigente mínimo 6 meses",
+      "Certificado de antecedentes judiciales apostillado",
+      "Demostración de solvencia económica ($500 USD mínimo)",
+      "Certificado de Fiebre Amarilla"
+    ],
+    "process": [
+      "Solicita la cita consular previa",
+      "Lleva el formulario y documentos impresos",
+      "Asiste al trámite biográfico",
+      "Recoge el pasaporte visado"
+    ],
+    "tips": [
+      "Si tienes visa turística vigente de EE.UU., Canadá o Schengen (mínimo 3 meses de validez), estás exento de la visa costarricense",
+      "La vacuna contra fiebre amarilla es requisito sanitario"
+    ],
+    "officialLink": "https://www.migracion.go.cr",
+    "lastUpdated": "2026-07",
+    "embassyInfo": {
+      "address": "Consulado General de Costa Rica - Calle 93 #14-20, Oficina 408, Bogotá",
+      "phone": "(601) 621 5130",
+      "website": "https://www.migracion.go.cr"
+    },
+    "documents": [
+      "Pasaporte colombiano vigente mínimo 6 meses",
+      "Certificado de antecedentes penales apostillado expedido por la Policía Nacional",
+      "Carné Internacional de vacunación contra la Fiebre Amarilla",
+      "Estados bancarios demostrando solvencia económica mínima de $500 USD por persona",
+      "Tiquete aéreo o itinerario confirmado de entrada y salida"
+    ],
+    "specialNotes": [
+      "EXENCIÓN IMPORTANTE: Los colombianos con visa de turismo de Estados Unidos (B1/B2), Canadá o miembros del Espacio Schengen con vigencia mínima de 3 meses al ingresar NO necesitan visa para Costa Rica",
+      "El permiso de ingreso se otorga inicialmente por 30 días renovables"
+    ]
+  },
+  {
+    "slug": "libano",
+    "country": "Líbano",
+    "countryCode": "LB",
+    "flagEmoji": "🇱🇧",
+    "region": "Medio Oriente",
+    "visaCategory": "Visa ordinaria requerida",
+    "categoryId": "required",
+    "summary": "Los ciudadanos colombianos requieren trámite de visa ordinaria previa ante la misión diplomática del Líbano.",
+    "stayDuration": "Hasta 30 días",
+    "cost": "$35 USD aprox.",
+    "processingTime": "2 a 4 semanas",
+    "whereToApply": "Embajada del Líbano en Bogotá",
+    "requirements": [
+      "Pasaporte colombiano vigente sin sellos ni visados de Israel",
+      "Formulario consular diligenciado",
+      "Reserva de vuelo de retorno",
+      "Prueba de alojamiento"
+    ],
+    "process": [
+      "Presenta la documentación en la Embajada del Líbano",
+      "Consigna el valor de la tasa en la cuenta autorizada",
+      "Aguarda la autorización de la Dirección de Seguridad General en Beirut",
+      "Retira el pasaporte estampado"
+    ],
+    "tips": [
+      "Tu pasaporte no debe contener sellos o estampillas de entrada/salida de Israel",
+      "Confirma los requerimientos de seguridad antes de planear el itinerario"
+    ],
+    "officialLink": "https://bogota.mfa.gov.lb/",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "islas-caiman",
+    "country": "Islas Caimán",
+    "countryCode": "KY",
+    "flagEmoji": "🇰🇾",
+    "region": "Caribe",
+    "visaCategory": "Visa requerida",
+    "categoryId": "required",
+    "summary": "Los colombianos requieren visa para ingresar como turistas a este territorio de ultramar británico.",
+    "stayDuration": "Hasta 30 días",
+    "cost": "$112 USD",
+    "processingTime": "15 a 30 días hábiles",
+    "whereToApply": "Departamento de Inmigración de las Islas Caimán",
+    "requirements": [
+      "Pasaporte colombiano vigente",
+      "Formulario de visa impreso",
+      "Carta laboral y estados de cuenta bancarios",
+      "Reserva de crucero o vuelo ida y vuelta"
+    ],
+    "process": [
+      "Envía la solicitud a través del canal oficial de inmigración",
+      "Consigna los cargos de procesamiento",
+      "Espera el certificado de aprobación antes del embarque"
+    ],
+    "tips": [
+      "Pasajeros en cruceros que desembarcan el mismo día pueden tener exenciones temporales",
+      "Certifica tus ingresos con la carta del banco"
+    ],
+    "officialLink": "https://www.cbc.gov.ky/",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "kuwait",
+    "country": "Kuwait",
+    "countryCode": "KW",
+    "flagEmoji": "🇰🇼",
+    "region": "Medio Oriente",
+    "visaCategory": "Visa consular requerida",
+    "categoryId": "required",
+    "summary": "Los colombianos requieren autorización previa y visa aprobada antes del viaje expedida por la embajada de Kuwait.",
+    "stayDuration": "Hasta 30 días",
+    "cost": "$30 USD",
+    "processingTime": "2 a 3 semanas",
+    "whereToApply": "Embajada de Kuwait / Patrocinador oficial",
+    "requirements": [
+      "Pasaporte vigente con más de 6 meses de validez",
+      "Carta de invitación o reserva de hotel de cadena",
+      "Certificado de antecedentes penales",
+      "Itinerario aéreo completo"
+    ],
+    "process": [
+      "Radica la documentación ante la representación consular",
+      "Obtén la aprobación de la autoridad migratoria kuwaití",
+      "Instala la visa o certificado en tu pasaporte"
+    ],
+    "tips": [
+      "Tener un contacto local o patrocinador (hotel/empresa) agiliza el trámite",
+      "Comprueba los requisitos de vestimenta y comportamiento cultural"
+    ],
+    "officialLink": "https://evisa.moi.gov.kw/",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "arabia-saudi",
+    "country": "Arabia Saudita",
+    "countryCode": "SA",
+    "flagEmoji": "🇸🇦",
+    "region": "Medio Oriente",
+    "visaCategory": "eVisa / Visa de turismo",
+    "categoryId": "required",
+    "summary": "Arabia Saudita exige trámite de eVisa o visa consular previa para ciudadanos colombianos con fines turísticos.",
+    "stayDuration": "Hasta 90 días acumulados",
+    "cost": "$140 USD (incluye seguro médico obligatorio)",
+    "processingTime": "1 a 5 días hábiles",
+    "whereToApply": "Portal oficial de Turismo KSA (MOFA)",
+    "requirements": [
+      "Pasaporte vigente mínimo 6 meses",
+      "Fotografía tamaño pasaporte digital",
+      "Seguro médico internacional (incluido en la plataforma)",
+      "Alojamiento confirmado"
+    ],
+    "process": [
+      "Ingresa a la plataforma oficial de visados del Reino",
+      "Rellena los datos personales y de pasaporte",
+      "Realiza el pago con tarjeta internacional",
+      "Recibe la eVisa aprobada en tu correo"
+    ],
+    "tips": [
+      "Respetar las leyes locales y regulaciones culturales durante la estadía",
+      "Guarda copia del seguro médico que emite el sistema"
+    ],
+    "officialLink": "https://visa.visitsaudi.com/",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "haiti",
+    "country": "Haití",
+    "countryCode": "HT",
+    "flagEmoji": "🇭🇹",
+    "region": "Caribe",
+    "visaCategory": "Visa ordinaria requerida",
+    "categoryId": "required",
+    "summary": "Los ciudadanos colombianos requieren tramitar visa previa en la Embajada de Haití para ingresar a su territorio.",
+    "stayDuration": "Hasta 90 días",
+    "cost": "$25 USD",
+    "processingTime": "5 a 10 días hábiles",
+    "whereToApply": "Embajada de Haití en Bogotá",
+    "requirements": [
+      "Pasaporte con validez mínima de 6 meses",
+      "Formulario consular oficial",
+      "Dos fotos recientes",
+      "Reserva aérea y prueba de fondos"
+    ],
+    "process": [
+      "Acude a la sede consular en Bogotá",
+      "Entrega el pasaporte e itinerario",
+      "Cancela la tasa en el banco indicado",
+      "Retira el documento con el visado adherido"
+    ],
+    "tips": [
+      "Consulta la alerta de viaje vigente antes de planificar la fecha",
+      "Adquiere un seguro médico completo"
+    ],
+    "officialLink": "https://www.haiti.org",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "japon",
+    "country": "Japón",
+    "countryCode": "JP",
+    "flagEmoji": "🇯🇵",
+    "region": "Asia",
+    "visaCategory": "Visa de turismo requerida",
+    "categoryId": "required",
+    "summary": "Los ciudadanos colombianos requieren visa turística previa expedida por la Embajada del Japón en Colombia.",
+    "stayDuration": "Hasta 15 o 30 días",
+    "cost": "Sin costo de tasa consular para colombianos",
+    "processingTime": "5 a 8 días hábiles",
+    "whereToApply": "Embajada del Japón en Bogotá",
+    "requirements": [
+      "Pasaporte colombiano vigente",
+      "Formulario de solicitud con foto adherida",
+      "Programa de estancia día por día en Japón",
+      "Certificado de ingresos y extracto bancario reciente"
+    ],
+    "process": [
+      "Prepara la carpeta completa con el itinerario diario",
+      "Entrega los documentos en la recepción de la Embajada",
+      "Espera la revisión del cónsul",
+      "Reclama el pasaporte con la visa impresa"
+    ],
+    "tips": [
+      "El trámite de la visa no tiene costo para colombianos, solo requieres cumplir los requisitos",
+      "Detallar minuciosamente el plan de viaje ayuda a la aprobación"
+    ],
+    "officialLink": "https://www.co.emb-japan.go.jp/",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "israel",
+    "country": "Israel",
+    "countryCode": "IL",
+    "flagEmoji": "🇮🇱",
+    "region": "Medio Oriente",
+    "visaCategory": "ETA-IL (Autorización electrónica)",
+    "categoryId": "onarrival",
+    "summary": "Los colombianos no requieren visa tradicional, pero deben tramitar obligatoriamente la autorización electrónica ETA-IL en línea antes del viaje.",
+    "stayDuration": "Hasta 90 días",
+    "cost": "25 ILS (aprox. $7 USD)",
+    "processingTime": "24 a 72 horas",
+    "whereToApply": "Plataforma oficial ETA-IL de la Autoridad de Población e Inmigración",
+    "requirements": [
+      "Pasaporte colombiano vigente por lo menos 6 meses",
+      "Formulario ETA-IL completado en línea",
+      "Tiquete aéreo confirmado",
+      "Tarjeta de crédito para la tasa"
+    ],
+    "process": [
+      "Solicita tu ETA-IL al menos 72 horas antes de volar",
+      "Rellena los datos en el portal de migración",
+      "Paga la tarifa de registro de 25 NIS",
+      "Recibe la aprobación vinculada a tu número de pasaporte"
+    ],
+    "tips": [
+      "La ETA-IL tiene validez por 2 años o hasta el vencimiento del pasaporte",
+      "Lleva el comprobante impreso por respaldo"
+    ],
+    "officialLink": "https://israel-entry.piba.gov.il/",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "kenia",
+    "country": "Kenia",
+    "countryCode": "KE",
+    "flagEmoji": "🇰🇪",
+    "region": "África",
+    "visaCategory": "eTA Obligatoria",
+    "categoryId": "onarrival",
+    "summary": "Kenia exige la obtención de una autorización electrónica de viaje (eTA) previa antes del embarque para todos los viajeros colombianos.",
+    "stayDuration": "Hasta 90 días",
+    "cost": "$30 USD",
+    "processingTime": "3 días hábiles",
+    "whereToApply": "Plataforma oficial eTA Kenya (etakenya.go.ke)",
+    "requirements": [
+      "Pasaporte colombiano con 6 meses de validez",
+      "Foto tamaño pasaporte reciente",
+      "Reserva de hotel o carta de invitación",
+      "Certificado de vacunación contra la Fiebre Amarilla"
+    ],
+    "process": [
+      "A accede al sitio oficial etakenya.go.ke",
+      "Carga la copia de pasaporte y reserva",
+      "Paga los $30 USD mediante tarjeta",
+      "Presenta el documento PDF de la eTA al aerolínea"
+    ],
+    "tips": [
+      "El certificado de Fiebre Amarilla es requisito de ingreso obligatorio en fronteras",
+      "Tramítalo con mínimo 7 días de antelación"
+    ],
+    "officialLink": "https://www.etakenya.go.ke",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "australia",
+    "country": "Australia",
+    "countryCode": "AU",
+    "flagEmoji": "🇦🇺",
+    "region": "Oceanía",
+    "visaCategory": "eVisa (Subclass 600)",
+    "categoryId": "onarrival",
+    "summary": "Los colombianos deben solicitar la Visitor Visa (subclase 600) de manera 100% digital a través de ImmiAccount antes del viaje.",
+    "stayDuration": "Hasta 3, 6 o 12 meses",
+    "cost": "$190 AUD",
+    "processingTime": "15 a 30 días hábiles",
+    "whereToApply": "Portal ImmiAccount del Departamento de Asuntos Internos",
+    "requirements": [
+      "Pasaporte colombiano vigente",
+      "Prueba de solvencia financiera",
+      "Soportes de empleo o estudio en Colombia",
+      "Seguro de salud para la estancia"
+    ],
+    "process": [
+      "Crea tu usuario en la plataforma ImmiAccount",
+      "Llena el formulario digital de visa turística",
+      "Adjunta la documentación de solvencia traducida",
+      "Espera la notificación digital del visado"
+    ],
+    "tips": [
+      "Australia no estampa pasaportes; la visa queda ligada digitalmente a tu número de pasaporte",
+      "Verifica las exigencias de datos biométricos si se solicitan"
+    ],
+    "officialLink": "https://immi.homeaffairs.gov.au",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "india",
+    "country": "India",
+    "countryCode": "IN",
+    "flagEmoji": "🇮🇳",
+    "region": "Asia",
+    "visaCategory": "e-Visa de turismo",
+    "categoryId": "onarrival",
+    "summary": "Los colombianos pueden solicitar la e-Tourist Visa en línea sin necesidad de acudir a la embajada.",
+    "stayDuration": "Hasta 30 días, 1 año o 5 años",
+    "cost": "$25 USD (temporada baja) / $40 USD (temporada alta)",
+    "processingTime": "3 a 5 días hábiles",
+    "whereToApply": "Portal oficial Indian e-Visa (indianvisaonline.gov.in)",
+    "requirements": [
+      "Pasaporte con validez de al menos 6 meses y 2 páginas en blanco",
+      "Foto reciente con fondo blanco",
+      "Copia en PDF de la página de datos del pasaporte"
+    ],
+    "process": [
+      "Ingresa al sitio oficial indianvisaonline.gov.in",
+      "Llena la solicitud e-Visa",
+      "Carga la foto y el PDF del pasaporte",
+      "Recibe la Electronic Travel Authorization (ETA) por e-mail"
+    ],
+    "tips": [
+      "Asegúrate de acceder solo al portal del Gobierno de la India y evitar estafas",
+      "Imprime la ETA para presentarla en el control de inmigración"
+    ],
+    "officialLink": "https://indianvisaonline.gov.in/evisa/",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "malasia",
+    "country": "Malasia",
+    "countryCode": "MY",
+    "flagEmoji": "🇲🇾",
+    "region": "Asia",
+    "visaCategory": "Sin visa (MDAC digital)",
+    "categoryId": "onarrival",
+    "summary": "Los colombianos no necesitan visa previa para estadías de hasta 90 días, pero deben completar la Malaysia Digital Arrival Card (MDAC) antes de llegar.",
+    "stayDuration": "Hasta 90 días",
+    "cost": "Gratis",
+    "processingTime": "Inmediato (se completa 3 días antes del viaje)",
+    "whereToApply": "Portal MDAC de Inmigración de Malasia",
+    "requirements": [
+      "Pasaporte colombiano vigente mínimo 6 meses",
+      "Registro de llegada MDAC en línea",
+      "Tiquete aéreo de salida",
+      "Reserva de alojamiento"
+    ],
+    "process": [
+      "Diligencia el formulario MDAC dentro de los 3 días previos al vuelo",
+      "Descarga la confirmación con código QR",
+      "Presenta el pasaporte y el código al ingresar"
+    ],
+    "tips": [
+      "El trámite de registro MDAC es totalmente gratuito",
+      "Verifica las fechas del tiquete de salida"
+    ],
+    "officialLink": "https://imigresen-online.imi.gov.my/mdac/main",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "taiwan",
+    "country": "Taiwán",
+    "countryCode": "TW",
+    "flagEmoji": "🇹🇼",
+    "region": "Asia",
+    "visaCategory": "eVisa de turismo",
+    "categoryId": "onarrival",
+    "summary": "Los ciudadanos colombianos pueden tramitar la eVisa electrónica para ingresar a Taiwán por negocios o turismo.",
+    "stayDuration": "Hasta 30 días",
+    "cost": "$50 USD",
+    "processingTime": "3 a 5 días hábiles",
+    "whereToApply": "Bureau of Consular Affairs eVisa Portal",
+    "requirements": [
+      "Pasaporte colombiano con 6 meses de vigencia",
+      "Tiquete aéreo de salida",
+      "Reserva de hotel",
+      "Prueba de solvencia financiera"
+    ],
+    "process": [
+      "Solicita el código de e-Visa en la web oficial de relaciones exteriores",
+      "Rellena la aplicación online",
+      "Realiza el pago correspondiente",
+      "Imprime la confirmación electrónica recibida por correo"
+    ],
+    "tips": [
+      "Revisa que todos los nombres coincidan exactamente con tu pasaporte",
+      "Conserva la copia física junto a tus tiquetes"
+    ],
+    "officialLink": "https://visawebapp.boca.gov.tw/",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "espana",
+    "country": "España",
+    "countryCode": "ES",
+    "flagEmoji": "🇪🇸",
+    "region": "Europa",
+    "visaCategory": "Sin visa (Schengen)",
+    "categoryId": "free",
+    "summary": "Los colombianos NO requieren visa para turismo en España (Espacio Schengen) hasta por 90 días en cualquier período de 180 días.",
+    "stayDuration": "Hasta 90 días en 180 días (Schengen)",
+    "cost": "Gratis",
+    "processingTime": "Inmediato",
+    "whereToApply": "No requiere trámite previo",
+    "requirements": [
+      "Pasaporte colombiano vigente mínimo 3 meses tras la salida",
+      "Tiquete de ida y regreso",
+      "Comprobante de hospedaje o carta de invitación",
+      "Seguro de viaje con cobertura mínima de €30.000",
+      "Comprobante de solvencia económica (€100 aprox. por día)"
+    ],
+    "process": [
+      "Llega con pasaporte vigente y tiquete de regreso",
+      "El oficial de frontera puede pedir hospedaje y seguro",
+      "Sella el pasaporte al ingresar (conserva la fecha del sello)",
+      "Respeta los 90 días máximos del período Schengen"
+    ],
+    "tips": [
+      "El seguro de viaje Schengen es altamente recomendado",
+      "Lleva cartas de invitación notariadas si te hospedas con familiares",
+      "El cómputo de días aplica para todo el espacio Schengen"
+    ],
+    "officialLink": "https://www.exteriores.gob.es",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "argentina",
+    "country": "Argentina",
+    "countryCode": "AR",
+    "flagEmoji": "🇦🇷",
+    "region": "Sudamérica",
+    "visaCategory": "Sin visa",
+    "categoryId": "free",
+    "summary": "Los colombianos pueden ingresar a Argentina sin visa portando solo cédula de ciudadanía de Colombia o pasaporte.",
+    "stayDuration": "Hasta 90 días",
+    "cost": "Gratis",
+    "processingTime": "Inmediato",
+    "whereToApply": "No requiere trámite previo",
+    "requirements": [
+      "Pasaporte colombiano vigente o cédula de ciudadanía",
+      "Tiquete de ida y regreso"
+    ],
+    "process": [
+      "Viaja con cédula o pasaporte vigente",
+      "El oficial migratorio te sella el ingreso",
+      "Conserva la boleta de entrada"
+    ],
+    "tips": [
+      "Por el acuerdo Mercosur, tienes beneficios de libre tránsito",
+      "El pasaporte es recomendado para evitar contratiempos con la aerolínea"
+    ],
+    "officialLink": "https://www.argentina.gob.ar/interior/migraciones",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "peru",
+    "country": "Perú",
+    "countryCode": "PE",
+    "flagEmoji": "🇵🇪",
+    "region": "Sudamérica",
+    "visaCategory": "Sin visa",
+    "categoryId": "free",
+    "summary": "Los colombianos NO requieren visa para ingresar a Perú por turismo con cédula o pasaporte.",
+    "stayDuration": "Hasta 183 días",
+    "cost": "Gratis",
+    "processingTime": "Inmediato",
+    "whereToApply": "No requiere trámite previo",
+    "requirements": [
+      "Pasaporte colombiano o cédula de ciudadanía",
+      "Tiquete de salida del país"
+    ],
+    "process": [
+      "Presenta la cédula o pasaporte en migración",
+      "Obtén el sello digital/físico de ingreso"
+    ],
+    "tips": [
+      "Conserva tu comprobante de ingreso para la salida",
+      "Lleva sol peruano en efectivo para transporte local"
+    ],
+    "officialLink": "https://www.migraciones.gob.pe",
+    "lastUpdated": "2026-07"
+  },
+  {
+    "slug": "ecuador",
+    "country": "Ecuador",
+    "countryCode": "EC",
+    "flagEmoji": "🇪🇨",
+    "region": "Sudamérica",
+    "visaCategory": "Sin visa",
+    "categoryId": "free",
+    "summary": "Los colombianos NO requieren visa para ingresar a Ecuador con cédula o pasaporte por el acuerdo andino.",
+    "stayDuration": "Hasta 90 días",
+    "cost": "Gratis",
+    "processingTime": "Inmediato",
+    "whereToApply": "No requiere trámite previo",
+    "requirements": [
+      "Cédula de ciudadanía colombiana o pasaporte vigente",
+      "Tiquete o comprobante de viaje"
+    ],
+    "process": [
+      "Preséntate al puesto de control migratorio",
+      "Registra tu ingreso"
+    ],
+    "tips": [
+      "Ecuador utiliza el dólar estadounidense como moneda oficial",
+      "Para vuelos internacionales el pasaporte es recomendable"
+    ],
+    "officialLink": "https://www.cancilleria.gob.ec",
+    "lastUpdated": "2026-07"
+  }
+]

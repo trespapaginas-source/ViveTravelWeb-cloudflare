@@ -1,0 +1,222 @@
+[
+  {
+    "id": "rev-juleny",
+    "name": "juleny Ramirez",
+    "avatar": "JR",
+    "avatarBg": "#1a73e8",
+    "avatarUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWxXIHtaibmDl9HOOV1Go3lec2q3rUL3MMJP3-RyDnAhGI4UWEJ=w96-h96-p-rp-mo-br100",
+    "location": "Hace 1 semana",
+    "text": "Es la mejor agencia, excelente servicio, cumplidos y te brindan la mejor experiencia. Repetiría con ellos mil veces y mil viajes.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-dennys",
+    "name": "dennys margarita fernandez sacramento",
+    "avatar": "DF",
+    "avatarBg": "#0f9d58",
+    "avatarUrl": "https://lh3.googleusercontent.com/a/ACg8ocKIyE_FexeuvpGUi2aISEvQVMRT5YAT38DKKvatyCcX61NLeA=w96-h96-p-rp-mo-br100",
+    "location": "Hace 2 semanas",
+    "text": "Fue una experiencia sin límites! , súper espectacular! . Yo volvería a vivir esta maravillosa experiencia con Vive Travel",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-jennifer",
+    "name": "Jennifer Paola Olivares Rojas",
+    "avatar": "JO",
+    "avatarBg": "#f4b400",
+    "avatarUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUwZwEqZ2HIvOZL7ipnunDiW7AWiBuOF9CcET4sYvQMRPyXCIP3Jw=w96-h96-p-rp-mo-br100",
+    "location": "Hace 2 semanas",
+    "text": "Maravillosa experiencia! Vive travel, la mejor opción para vivir experiencias inolvidables!!",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-mateo",
+    "name": "Mateo Gómez",
+    "avatar": "MG",
+    "avatarBg": "#4285F4",
+    "avatarUrl": null,
+    "location": "Hace 3 semanas",
+    "text": "Excelente servicio. Alquilamos una cabaña en Santa Verónica para un evento familiar y todo estuvo impecable. Muy recomendados.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-diana",
+    "name": "Diana Carolina Ruiz",
+    "avatar": "DR",
+    "avatarBg": "#34A853",
+    "avatarUrl": null,
+    "location": "Hace 1 mes",
+    "text": "El tour al Desierto de la Tatacoa fue mágico. La organización, los guías y el transporte excelentes. Cumplieron con todo lo prometido.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-carlos",
+    "name": "Carlos Alfredo Mendoza",
+    "avatar": "CM",
+    "avatarBg": "#FBBC05",
+    "avatarUrl": null,
+    "location": "Hace 1 mes",
+    "text": "Viajamos al Eje Cafetero con la familia y la pasamos increíble. Muy buena atención y logística de principio a fin.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-valentina",
+    "name": "Valentina Restrepo",
+    "avatar": "VR",
+    "avatarBg": "#EA4335",
+    "avatarUrl": null,
+    "location": "Hace 2 meses",
+    "text": "Las cabañas en Tubará tienen una vista espectacular. El proceso de reserva fue rápido y la atención de primera.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-jorge",
+    "name": "Jorge Eliecer Díaz",
+    "avatar": "JD",
+    "avatarBg": "#1a73e8",
+    "avatarUrl": null,
+    "location": "Hace 2 meses",
+    "text": "Excelente atención por WhatsApp, resolvieron todas mis dudas de inmediato. Muy confiable para reservar pasadías en el Atlántico.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-camila",
+    "name": "Camila Andrea Torres",
+    "avatar": "CT",
+    "avatarBg": "#0f9d58",
+    "avatarUrl": null,
+    "location": "Hace 3 meses",
+    "text": "Hicimos el viaje grupal a Boyacá Colonial y quedamos fascinados con los pueblos y la historia. Una experiencia muy organizada.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-santiago",
+    "name": "Santiago Pineda",
+    "avatar": "SP",
+    "avatarBg": "#f4b400",
+    "avatarUrl": null,
+    "location": "Hace 3 meses",
+    "text": "Muy buen servicio de transporte privado para nuestro equipo de trabajo corporativo. Conductores puntuales and amables.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-natalia",
+    "name": "Natalia Sofía Castro",
+    "avatar": "NC",
+    "avatarBg": "#4285F4",
+    "avatarUrl": null,
+    "location": "Hace 4 meses",
+    "text": "La cabaña de Juan de Acosta superó nuestras expectativas. Ideal para descansar y desconectarse de la ciudad.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-andres",
+    "name": "Andrés Felipe Suárez",
+    "avatar": "AS",
+    "avatarBg": "#34A853",
+    "avatarUrl": null,
+    "location": "Hace 4 meses",
+    "text": "Hicimos la ruta de Santander Inolvidable. La caminata por Barichara y el cañón del Chicamocha espectaculares. ¡Excelente guía!",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-mariana",
+    "name": "Mariana Isabella Vargas",
+    "avatar": "MV",
+    "avatarBg": "#FBBC05",
+    "avatarUrl": null,
+    "location": "Hace 5 meses",
+    "text": "Excelente opción para viajar seguros. Toda la logística de salidas programadas estuvo muy bien estructurada.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-david",
+    "name": "David Alejandro Ortiz",
+    "avatar": "DO",
+    "avatarBg": "#EA4335",
+    "avatarUrl": null,
+    "location": "Hace 5 meses",
+    "text": "Nos encantó el pasadía en los manglares de Mallorquín. Muy educativo, relajante y apto para toda la familia.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-paola",
+    "name": "Paola Andrea Muñoz",
+    "avatar": "PM",
+    "avatarBg": "#1a73e8",
+    "avatarUrl": null,
+    "location": "Hace 6 meses",
+    "text": "Súper recomendados. Las cabañas en Barú son de ensueño. Tuvimos unas vacaciones maravillosas gracias a Vive Travel.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-juan",
+    "name": "Juan Sebastián Meza",
+    "avatar": "JM",
+    "avatarBg": "#0f9d58",
+    "avatarUrl": null,
+    "location": "Hace 6 meses",
+    "text": "La puntualidad del transporte y la amabilidad de los guías hicieron de nuestro viaje a los Llanos Orientales algo inolvidable.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-isabella",
+    "name": "Isabella Sofia Londoño",
+    "avatar": "IL",
+    "avatarBg": "#f4b400",
+    "avatarUrl": null,
+    "location": "Hace 7 meses",
+    "text": "Recomiendo al 100% esta agencia. Su atención personalizada marca la diferencia en cada detalle de la experiencia.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-manuel",
+    "name": "Manuel Antonio Guerrero",
+    "avatar": "MG",
+    "avatarBg": "#4285F4",
+    "avatarUrl": null,
+    "location": "Hace 7 meses",
+    "text": "Las mejores tarifas en transporte privado corporativo en Barranquilla y Cartagena. Vehículos muy cómodos y modernos.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-gabriela",
+    "name": "Gabriela María Palacios",
+    "avatar": "GP",
+    "avatarBg": "#34A853",
+    "avatarUrl": null,
+    "location": "Hace 8 meses",
+    "text": "Viajamos en salida programada a Caño Cristales y fue el viaje de mi vida. Todo impecable, comida deliciosa y gran acompañamiento.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  },
+  {
+    "id": "rev-ricardo",
+    "name": "Ricardo José Salazar",
+    "avatar": "RS",
+    "avatarBg": "#FBBC05",
+    "avatarUrl": null,
+    "location": "Hace 8 meses",
+    "text": "Excelente servicio al cliente. Hubo un cambio de última hora en nuestro itinerario y nos ayudaron a resolverlo en minutos.",
+    "rating": 5,
+    "tripName": "Opinión de Google"
+  }
+]

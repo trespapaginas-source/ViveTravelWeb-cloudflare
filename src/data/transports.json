@@ -1,0 +1,92 @@
+[
+  {
+    "id": "transport-bus",
+    "name": "Buses",
+    "description": "Ideales para viajes en grupo, turismo y eventos especiales.",
+    "capacity": "Hasta 40 personas",
+    "priceFrom": 600000,
+    "priceRange": "Desde $600.000 COP",
+    "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&h=600&fit=crop",
+    "features": [
+      "Aire acondicionado",
+      "Sillas reclinables confortables",
+      "Bodega amplia de equipaje",
+      "Conductor profesional certificado",
+      "Seguro de viaje de pasajeros completo",
+      "Ideal para eventos corporativos, bodas y turismo masivo"
+    ],
+    "bestFor": "Grupos muy grandes, eventos especiales e integración empresarial"
+  },
+  {
+    "id": "transport-buseta",
+    "name": "Busetas",
+    "description": "Comodidad y eficiencia para grupos medianos.",
+    "capacity": "Hasta 30 personas",
+    "priceFrom": 600000,
+    "priceRange": "Desde $600.000 COP",
+    "image": "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=800&h=600&fit=crop",
+    "features": [
+      "Aire acondicionado",
+      "Sillas semi-reclinables",
+      "Portaequipaje superior",
+      "Conductor profesional certificado",
+      "Seguro de viaje de pasajeros completo",
+      "Perfecto para traslados intermunicipales o paseos familiares"
+    ],
+    "bestFor": "Grupos medianos, traslados de aeropuertos y giras regionales"
+  },
+  {
+    "id": "transport-van",
+    "name": "Van",
+    "description": "Perfectas para traslados ejecutivos o familiares.",
+    "capacity": "Hasta 18 personas",
+    "priceFrom": 600000,
+    "priceRange": "Desde $600.000 COP",
+    "image": "https://images.unsplash.com/photo-1608248597481-496100c80836?w=800&h=600&fit=crop",
+    "features": [
+      "Aire acondicionado centralizado",
+      "Sillas ejecutivas ergonómicas",
+      "Espacio trasero de maletas cómodo",
+      "Conductor profesional certificado",
+      "Seguro de viaje de pasajeros completo",
+      "Privacidad y confort premium en carretera"
+    ],
+    "bestFor": "Familias grandes, traslados de negocios y grupos pequeños"
+  },
+  {
+    "id": "transport-carro",
+    "name": "Carros",
+    "description": "Viaja cómodo, seguro y con estilo.",
+    "capacity": "Hasta 5 puestos",
+    "priceFrom": 600000,
+    "priceRange": "Desde $600.000 COP",
+    "image": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&h=600&fit=crop",
+    "features": [
+      "Aire acondicionado",
+      "Vehículos modernos tipo sedán",
+      "Espacio para equipaje de mano y maletas",
+      "Conductor profesional certificado",
+      "Seguro de viaje completo",
+      "Ideal para movilizarse en ciudad o traslados rápidos"
+    ],
+    "bestFor": "Parejas, viajeros individuales y ejecutivos"
+  },
+  {
+    "id": "transport-camioneta",
+    "name": "Camionetas",
+    "description": "Espacio, confort y versatilidad para cualquier destino.",
+    "capacity": "Hasta 7 puestos",
+    "priceFrom": 600000,
+    "priceRange": "Desde $600.000 COP",
+    "image": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&h=600&fit=crop",
+    "features": [
+      "Climatización dual / Aire acondicionado",
+      "Tracción 4x4 opcional para terrenos rurales",
+      "Gran espacio de baúl",
+      "Conductor profesional certificado",
+      "Seguro de viaje completo",
+      "Confort superior y diseño robusto"
+    ],
+    "bestFor": "Familias, traslados con equipaje pesado o terrenos difíciles"
+  }
+]
