@@ -1,17 +1,23 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Search } from "lucide-react";
+import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCabanas } from "@/hooks/use-plans";
 import { useSiteContent } from "@/lib/use-site-content";
-import { CabinCard } from "@/components/cabins/cabin-card";
+import { cn } from "@/lib/utils";
+import { CabinCard, CabinCardHorizontal } from "@/components/cabins/cabin-card";
 import { EmptyState } from "@/components/shared/empty-state";
+import { ListToolbar } from "@/components/shared/list-toolbar";
+import {
+  type ViewMode,
+  type SortOption,
+  cabinSortOptions,
+  getGridCols,
+  sortCabins,
+  ITEMS_PER_PAGE,
+} from "@/lib/sorting";
 
 /**
- * CabinsPage — catálogo de cabañas/alojamientos.
- *
- * Consume los datos EXCLUSIVAMENTE vía `useCabanas()`.
- * Lee el parámetro `destino` de la URL (buscador del home) para pre-filtrar.
- * Filtros: búsqueda por texto y ubicación.
+ * CabinsPage — catálogo de cabañas con filtros, view modes y orden.
  */
 export function CabinsPage() {
   const { data: cabins, isLoading } = useCabanas();
@@ -21,8 +27,11 @@ export function CabinsPage() {
 
   const [search, setSearch] = useState(() => searchParams.get("destino") ?? "");
   const [location, setLocation] = useState<string>("all");
+  // Cabañas: default vista de lista (como en el original).
+  const [viewMode, setViewMode] = useState<ViewMode>("1");
+  const [sortOption, setSortOption] = useState<SortOption>("popular");
+  const [currentPage, setCurrentPage] = useState(1);
 
-  // Ubicaciones únicas para el filtro.
   const locations = useMemo(
     () => Array.from(new Set(cabins.map((c) => c.location))).sort(),
     [cabins]
@@ -42,14 +51,29 @@ export function CabinsPage() {
     });
   }, [cabins, search, location]);
 
+  const sorted = useMemo(
+    () => sortCabins(filtered, sortOption),
+    [filtered, sortOption]
+  );
+
+  useEffect(() => setCurrentPage(1), [search, location, sortOption]);
+
+  const totalPages = Math.ceil(sorted.length / ITEMS_PER_PAGE);
+  const paginated = sorted.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
   const resetFilters = () => {
     setSearch("");
     setLocation("all");
   };
 
+  const gridCols = getGridCols(viewMode);
+  const isHorizontal = viewMode === "1";
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      {/* Cabecera */}
       <div className="mb-6">
         <h1 className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
           {copy.title}
@@ -83,16 +107,25 @@ export function CabinsPage() {
         </select>
       </div>
 
-      <p className="mb-4 text-sm text-muted-foreground">
-        {filtered.length} alojamiento{filtered.length !== 1 ? "s" : ""}{" "}
-        disponible{filtered.length !== 1 ? "s" : ""}
-      </p>
+      {/* Toolbar */}
+      <div className="mb-4">
+        <ListToolbar
+          viewMode={viewMode}
+          onViewModeChange={setViewMode}
+          sortOption={sortOption}
+          onSortOptionChange={setSortOption}
+          sortOptions={cabinSortOptions}
+          resultCount={sorted.length}
+          resultLabel={`alojamiento${sorted.length !== 1 ? "s" : ""}`}
+        />
+      </div>
 
+      {/* Grid de resultados */}
       {isLoading ? (
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="animate-pulse rounded-2xl border border-border">
-              <div className="h-52 bg-muted" />
+              <div className="aspect-[16/10] bg-muted" />
               <div className="space-y-2 p-4">
                 <div className="h-4 w-3/4 rounded bg-muted" />
                 <div className="h-3 w-1/2 rounded bg-muted" />
@@ -100,26 +133,60 @@ export function CabinsPage() {
             </div>
           ))}
         </div>
-      ) : filtered.length === 0 ? (
+      ) : paginated.length === 0 ? (
         <EmptyState onReset={resetFilters} />
       ) : (
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((cabin) => (
-            <CabinCard key={cabin.id} cabin={cabin} />
+        <div className={cn("grid gap-5 sm:gap-6", gridCols)}>
+          {paginated.map((cabin) =>
+            isHorizontal ? (
+              <CabinCardHorizontal key={cabin.id} cabin={cabin} />
+            ) : (
+              <CabinCard key={cabin.id} cabin={cabin} />
+            )
+          )}
+        </div>
+      )}
+
+      {/* Paginación */}
+      {totalPages > 1 && (
+        <div className="mt-8 flex items-center justify-center gap-2">
+          <button
+            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+            disabled={currentPage === 1}
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-border disabled:opacity-40"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+          {Array.from({ length: totalPages }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentPage(i + 1)}
+              className={cn(
+                "h-9 w-9 rounded-lg text-sm font-medium transition-colors",
+                currentPage === i + 1
+                  ? "bg-ocean text-white"
+                  : "border border-border hover:bg-accent"
+              )}
+            >
+              {i + 1}
+            </button>
           ))}
+          <button
+            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+            disabled={currentPage === totalPages}
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-border disabled:opacity-40"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
         </div>
       )}
 
       {/* CTA inferior */}
       <div className="mt-12 rounded-2xl bg-muted/50 p-6 text-center">
-        <h3 className="text-base font-bold text-foreground">
-          {copy.emptyTitle}
-        </h3>
-        <p className="mt-1 text-sm text-muted-foreground">
-          {copy.emptyDescription}
-        </p>
+        <h3 className="text-base font-bold text-foreground">{copy.emptyTitle}</h3>
+        <p className="mt-1 text-sm text-muted-foreground">{copy.emptyDescription}</p>
         <a
-          href={`https://wa.me/573126380048`}
+          href="https://wa.me/573126380048"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 inline-flex items-center gap-2 rounded-full bg-ocean px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-ocean-dark"
