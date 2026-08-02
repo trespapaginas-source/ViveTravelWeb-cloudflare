@@ -109,9 +109,9 @@ export function PlanDetailPage() {
         className="mb-6"
       />
 
-      <div className="grid gap-8 lg:grid-cols-[1fr_380px]">
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_380px]">
         {/* Contenido principal */}
-        <div>
+        <div className="min-w-0">
           {/* Título */}
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>

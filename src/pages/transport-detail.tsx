@@ -49,7 +49,7 @@ export function TransportDetailPage() {
         <ArrowLeft className="h-4 w-4" /> Volver a transporte
       </button>
 
-      <div className="grid gap-8 lg:grid-cols-[1fr_360px]">
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
         {/* Contenido */}
         <div>
           {/* Hero */}

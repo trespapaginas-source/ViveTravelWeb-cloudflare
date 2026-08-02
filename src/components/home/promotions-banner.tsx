@@ -29,8 +29,8 @@ export function PromotionsBanner() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
       {/* Carrusel de banners */}
-      <div className="group relative overflow-hidden rounded-3xl">
-        <div className="relative aspect-[2560/675] h-[119px] sm:h-auto">
+      <div className="group relative max-w-full overflow-hidden rounded-3xl">
+        <div className="relative h-[119px] w-full sm:aspect-[2560/675] sm:h-auto">
           {banners.map((b, i) => (
             <img
               key={b.id}

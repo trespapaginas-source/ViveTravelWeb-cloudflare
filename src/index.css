@@ -35,6 +35,11 @@
   border-color: hsl(var(--border));
 }
 
+/* Salvaguarda: los iframes (mapas embebidos) nunca desbordan su contenedor. */
+iframe {
+  max-width: 100%;
+}
+
 body {
   @apply bg-background text-foreground antialiased;
   font-family: "Inter", system-ui, sans-serif;
