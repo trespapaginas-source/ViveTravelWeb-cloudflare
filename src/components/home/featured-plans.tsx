@@ -37,11 +37,11 @@ export function FeaturedPlans() {
 
       {/* Grid: carrusel horizontal en móvil, grid en sm+ */}
       <div className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-3">
-        {featured.map((plan) => (
+        {featured.map((plan, i) => (
           <article
             key={plan.id}
             onClick={() => navigate(ROUTES.planDetail(plan.id))}
-            className="group flex w-[85vw] max-w-[320px] shrink-0 cursor-pointer snap-start flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-md sm:w-auto"
+            className={`group flex w-[85vw] max-w-[320px] shrink-0 cursor-pointer snap-start flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-md sm:w-auto animate-fade-up stagger-${Math.min(i + 1, 6)}`}
           >
             {/* Imagen */}
             <div className="relative h-52 overflow-hidden">

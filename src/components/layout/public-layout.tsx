@@ -1,11 +1,12 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { WhatsAppFab } from "@/components/shared/whatsapp-fab";
 
 /**
  * PublicLayout — envoltura global compartida por todas las rutas.
- * Incluye Navbar fijo y Footer (este último se auto-oculta en detalles).
- * El padding-top del main compensa el header fijo.
+ * Incluye Navbar fijo, Footer (auto-oculto en detalles) y el botón flotante
+ * de WhatsApp. El padding-top del main compensa el header fijo.
  */
 export function PublicLayout() {
   const { pathname } = useLocation();
@@ -14,16 +15,11 @@ export function PublicLayout() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
-      <main
-        className={
-          isHome
-            ? "flex-1"
-            : "flex-1 pt-16 sm:pt-20"
-        }
-      >
+      <main className={isHome ? "flex-1" : "flex-1 pt-16 sm:pt-20"}>
         <Outlet />
       </main>
       <Footer />
+      <WhatsAppFab />
     </div>
   );
 }

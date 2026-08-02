@@ -154,13 +154,15 @@ export function PlansPage() {
             <EmptyState onReset={resetFilters} />
           ) : (
             <div className={cn("grid gap-5 sm:gap-6", gridCols)}>
-              {paginated.map((plan) =>
-                isHorizontal ? (
-                  <PlanCardHorizontal key={plan.id} plan={plan} />
-                ) : (
-                  <PlanCard key={plan.id} plan={plan} />
-                )
-              )}
+              {paginated.map((plan, i) => (
+                <div key={plan.id} className={cn("animate-fade-up", `stagger-${Math.min(i + 1, 6)}`)}>
+                  {isHorizontal ? (
+                    <PlanCardHorizontal plan={plan} />
+                  ) : (
+                    <PlanCard plan={plan} />
+                  )}
+                </div>
+              ))}
             </div>
           )}
 

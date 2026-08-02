@@ -137,13 +137,15 @@ export function CabinsPage() {
         <EmptyState onReset={resetFilters} />
       ) : (
         <div className={cn("grid gap-5 sm:gap-6", gridCols)}>
-          {paginated.map((cabin) =>
-            isHorizontal ? (
-              <CabinCardHorizontal key={cabin.id} cabin={cabin} />
-            ) : (
-              <CabinCard key={cabin.id} cabin={cabin} />
-            )
-          )}
+          {paginated.map((cabin, i) => (
+            <div key={cabin.id} className={cn("animate-fade-up", `stagger-${Math.min(i + 1, 6)}`)}>
+              {isHorizontal ? (
+                <CabinCardHorizontal cabin={cabin} />
+              ) : (
+                <CabinCard cabin={cabin} />
+              )}
+            </div>
+          ))}
         </div>
       )}
 
