@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { useGoBack } from "@/hooks/use-go-back";
 import {
   ArrowLeft,
   MapPin,
@@ -33,7 +34,7 @@ import {
 export function PlanDetailPage() {
   const { id } = useParams<{ id: string }>();
   const { data: plan, notFound } = usePlanDetail(id);
-  const navigate = useNavigate();
+  const goBack = useGoBack(ROUTES.plans);
 
   const [guests, setGuests] = useState(2);
   const [selectedDate, setSelectedDate] = useState<string>("");
@@ -95,10 +96,10 @@ export function PlanDetailPage() {
     <div className="mx-auto max-w-7xl px-4 pb-32 pt-6 sm:px-6 lg:px-8 lg:pb-12">
       {/* Volver */}
       <button
-        onClick={() => navigate(ROUTES.plans)}
+        onClick={goBack}
         className="mb-4 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground"
       >
-        <ArrowLeft className="h-4 w-4" /> Volver a experiencias
+        <ArrowLeft className="h-4 w-4" /> Volver
       </button>
 
       {/* Galería */}

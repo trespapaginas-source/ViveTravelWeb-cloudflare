@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useGoBack } from "@/hooks/use-go-back";
 import {
   ArrowLeft,
   ChevronRight,
@@ -18,6 +19,7 @@ import { EmptyState } from "@/components/shared/empty-state";
 export function LegalDocPage() {
   const { doc: slug } = useParams<{ doc: string }>();
   const { data: doc, prev, next, notFound } = useLegalDocs(slug);
+  const goBack = useGoBack(ROUTES.policies);
   const [activeClause, setActiveClause] = useState<number | null>(null);
   const [showTop, setShowTop] = useState(false);
 
@@ -58,12 +60,12 @@ export function LegalDocPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Breadcrumb */}
-      <Link
-        to={ROUTES.policies}
+      <button
+        onClick={goBack}
         className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground"
       >
-        <ArrowLeft className="h-4 w-4" /> Documentos legales
-      </Link>
+        <ArrowLeft className="h-4 w-4" /> Volver
+      </button>
 
       {/* Header */}
       <header className="mt-4 border-b border-border pb-6">

@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppFab } from "@/components/shared/whatsapp-fab";
+import { ScrollToTop } from "@/components/shared/scroll-to-top";
 
 /**
  * PublicLayout — envoltura global compartida por todas las rutas.
@@ -14,6 +15,7 @@ export function PublicLayout() {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollToTop />
       <Navbar />
       <main className={isHome ? "flex-1" : "flex-1 pt-16 sm:pt-20"}>
         <Outlet />

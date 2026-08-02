@@ -1,4 +1,5 @@
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { useGoBack } from "@/hooks/use-go-back";
 import {
   ArrowLeft,
   Users,
@@ -17,10 +18,10 @@ import { EmptyState } from "@/components/shared/empty-state";
 export function TransportDetailPage() {
   const { id } = useParams<{ id: string }>();
   const { data: transports } = useTransports();
-  const navigate = useNavigate();
 
   const transport = transports.find((t) => t.id === id) ?? null;
   const related = transports.filter((t) => t.id !== id).slice(0, 3);
+  const goBack = useGoBack(ROUTES.transports);
 
   if (!transport) {
     return (
@@ -43,10 +44,10 @@ export function TransportDetailPage() {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Breadcrumb */}
       <button
-        onClick={() => navigate(ROUTES.transports)}
+        onClick={goBack}
         className="mb-4 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground"
       >
-        <ArrowLeft className="h-4 w-4" /> Volver a transporte
+        <ArrowLeft className="h-4 w-4" /> Volver
       </button>
 
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">

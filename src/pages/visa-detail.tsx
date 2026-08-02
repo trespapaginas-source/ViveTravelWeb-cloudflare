@@ -1,4 +1,5 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useGoBack } from "@/hooks/use-go-back";
 import {
   ArrowLeft,
   Clock,
@@ -36,6 +37,7 @@ const CATEGORY_LABEL: Record<string, string> = {
 export function VisaDetailPage() {
   const { country: slug } = useParams<{ country: string }>();
   const { data: visa, notFound } = useVisaDetail(slug);
+  const goBack = useGoBack(ROUTES.visas);
 
   if (notFound) {
     return (
@@ -52,12 +54,12 @@ export function VisaDetailPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Breadcrumb */}
-      <Link
-        to={ROUTES.visas}
+      <button
+        onClick={goBack}
         className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground"
       >
-        <ArrowLeft className="h-4 w-4" /> Visas y requisitos
-      </Link>
+        <ArrowLeft className="h-4 w-4" /> Volver
+      </button>
 
       {/* Header */}
       <header className="mt-4 flex flex-wrap items-center gap-4 border-b border-border pb-6">
