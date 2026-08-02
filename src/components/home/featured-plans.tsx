@@ -1,20 +1,19 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Star, MapPin, ArrowRight } from "lucide-react";
-import plans from "@/data/planes.json";
+import { usePlanes } from "@/hooks/use-plans";
 import { useSiteContent } from "@/lib/use-site-content";
 import { ROUTES } from "@/lib/routes";
 import { formatPrice, formatShortDuration, formatShortLocation } from "@/lib/utils";
 import { SectionHeader } from "@/components/shared/section-header";
-import type { TourPlan } from "@/lib/data";
-
-const allPlans = plans as TourPlan[];
 
 /**
  * FeaturedPlans — muestra hasta 6 planes destacados (ordenados por
- * `featuredOrder`) en grid responsive (carrusel en móvil).
+ * `is_featured` / `featuredOrder`) en grid responsive (carrusel en móvil).
+ * Consume los datos vía el hook `usePlanes()`.
  */
 export function FeaturedPlans() {
+  const { data: allPlans } = usePlanes();
   const { content } = useSiteContent();
   const fp = content.featuredPlans;
   const navigate = useNavigate();
@@ -22,10 +21,10 @@ export function FeaturedPlans() {
   const featured = useMemo(
     () =>
       allPlans
-        .filter((p) => p.published !== false && typeof p.featuredOrder === "number")
+        .filter((p) => p.is_active && p.is_featured)
         .sort((a, b) => (a.featuredOrder ?? 0) - (b.featuredOrder ?? 0))
         .slice(0, 6),
-    []
+    [allPlans]
   );
 
   return (

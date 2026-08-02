@@ -1,29 +1,13 @@
 import { PagePlaceholder } from "@/pages/page-placeholder";
 
-// Páginas placeholder para cada ruta mapeada en MIGRATION_MAP.json.
-// Se reemplazarán por implementaciones reales en fases posteriores.
-
-export const PlansPage = () => (
-  <PagePlaceholder
-    eyebrow="Experiencias y viajes"
-    title="Experiencias y viajes"
-    description="Listado de planes con filtros por categoría, orden, vistas y paginación. Se implementa en la siguiente fase."
-  />
-);
+// Páginas placeholder para las rutas que aún no tienen implementación real.
+// (Plans, Cabins, Visas, Transports ya tienen sus archivos propios.)
 
 export const PlanDetailPage = () => (
   <PagePlaceholder
     eyebrow="Detalle de experiencia"
     title="Detalle del plan"
     description="Galería, descripción, itinerario, cotizador y reserva por WhatsApp. Se implementa en la siguiente fase."
-  />
-);
-
-export const CabinsPage = () => (
-  <PagePlaceholder
-    eyebrow="Alojamientos"
-    title="Cabañas"
-    description="Listado de cabañas con filtros de ubicación, precio y orden. Se implementa en la siguiente fase."
   />
 );
 
@@ -35,27 +19,11 @@ export const CabinDetailPage = () => (
   />
 );
 
-export const TransportsPage = () => (
-  <PagePlaceholder
-    eyebrow="Transporte"
-    title="Transporte y vehiculos"
-    description="Buses, busetas, vans, carros y camionetas con cotización por WhatsApp. Se implementa en la siguiente fase."
-  />
-);
-
 export const TransportDetailPage = () => (
   <PagePlaceholder
     eyebrow="Detalle de vehículo"
     title="Detalle del vehículo"
     description="Ficha del vehículo con características, capacidad y cotización. Se implementa en la siguiente fase."
-  />
-);
-
-export const VisasPage = () => (
-  <PagePlaceholder
-    eyebrow="Visas y requisitos"
-    title="Visas y requisitos migratorios"
-    description="Índice de países con filtro por categoría (sin visa / a la llegada / requerida). Se implementa en la siguiente fase."
   />
 );
 

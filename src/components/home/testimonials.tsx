@@ -1,10 +1,8 @@
 import { Star } from "lucide-react";
-import testimonialsData from "@/data/testimonials.json";
+import { useTestimonials } from "@/hooks/use-plans";
 import { useSiteContent } from "@/lib/use-site-content";
 import { SectionHeader } from "@/components/shared/section-header";
 import type { Testimonial } from "@/lib/data";
-
-const testimonials = testimonialsData as Testimonial[];
 
 /** Logo de Google (SVG simplificado multi-color). */
 function GoogleLogo() {
@@ -22,6 +20,7 @@ function GoogleLogo() {
  * Testimonials — reseñas de Google. Marquee infinito en desktop, scroll-snap en móvil.
  */
 export function Testimonials() {
+  const { data: testimonials } = useTestimonials();
   const { content } = useSiteContent();
   const t = content.testimonials;
   const marquee = [...testimonials, ...testimonials];

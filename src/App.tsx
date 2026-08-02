@@ -1,14 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PublicLayout } from "@/components/layout/public-layout";
 import { HomePage } from "@/pages/home";
+import { PlansPage } from "@/pages/plans";
+import { CabinsPage } from "@/pages/cabins";
+import { VisasPage } from "@/pages/visas";
+import { TransportsPage } from "@/pages/transports";
 import {
-  PlansPage,
   PlanDetailPage,
-  CabinsPage,
   CabinDetailPage,
-  TransportsPage,
   TransportDetailPage,
-  VisasPage,
   VisaDetailPage,
   ContactPage,
   TeamPage,

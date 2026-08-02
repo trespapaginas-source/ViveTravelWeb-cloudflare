@@ -1,24 +1,23 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Clock, CalendarDays, ArrowRight } from "lucide-react";
-import plansData from "@/data/planes.json";
+import { usePlanes } from "@/hooks/use-plans";
 import { ROUTES } from "@/lib/routes";
 import { formatPrice } from "@/lib/utils";
 import { SectionHeader } from "@/components/shared/section-header";
-import type { TourPlan } from "@/lib/data";
-
-const allPlans = plansData as TourPlan[];
 
 /**
  * ScheduledDepartures — destinos nacionales con salidas programadas fijas
  * (fixedDeparture === true). Grid de 6 planes.
+ * Consume los datos vía el hook `usePlanes()`.
  */
 export function ScheduledDepartures() {
+  const { data: allPlans } = usePlanes();
   const navigate = useNavigate();
 
   const departures = useMemo(
-    () => allPlans.filter((p) => p.published !== false && p.fixedDeparture),
-    []
+    () => allPlans.filter((p) => p.is_active && p.fixedDeparture),
+    [allPlans]
   );
 
   if (departures.length === 0) return null;
