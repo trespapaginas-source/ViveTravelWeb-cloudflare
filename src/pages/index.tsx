@@ -1,23 +1,8 @@
 import { PagePlaceholder } from "@/pages/page-placeholder";
 
 // Páginas placeholder para las rutas que aún no tienen implementación real.
-// (Plans, Cabins, Visas, Transports ya tienen sus archivos propios.)
-
-export const PlanDetailPage = () => (
-  <PagePlaceholder
-    eyebrow="Detalle de experiencia"
-    title="Detalle del plan"
-    description="Galería, descripción, itinerario, cotizador y reserva por WhatsApp. Se implementa en la siguiente fase."
-  />
-);
-
-export const CabinDetailPage = () => (
-  <PagePlaceholder
-    eyebrow="Detalle de cabaña"
-    title="Detalle de la cabaña"
-    description="Galería, disponibilidad (ICS), habitaciones, comodidades y reserva. Se implementa en la siguiente fase."
-  />
-);
+// (Plans, Cabins, Visas, Transports, PlanDetail, CabinDetail, Policies y
+// LegalDoc ya tienen sus archivos propios.)
 
 export const TransportDetailPage = () => (
   <PagePlaceholder
@@ -56,22 +41,6 @@ export const FavoritesPage = () => (
     eyebrow="Tu colección"
     title="Mis favoritos"
     description="Planes y cabañas guardados (almacenamiento local). Se implementa en la siguiente fase."
-  />
-);
-
-export const PoliciesPage = () => (
-  <PagePlaceholder
-    eyebrow="Documentos legales"
-    title="Documentos legales"
-    description="Índice de los 10 documentos legales agrupados por categoría. Se implementa en la siguiente fase."
-  />
-);
-
-export const LegalDocPage = () => (
-  <PagePlaceholder
-    eyebrow="Documento legal"
-    title="Documento legal"
-    description="Contenido del documento con tabla de contenidos y cláusulas. Se implementa en la siguiente fase."
   />
 );
 

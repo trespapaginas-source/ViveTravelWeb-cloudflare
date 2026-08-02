@@ -5,16 +5,16 @@ import { PlansPage } from "@/pages/plans";
 import { CabinsPage } from "@/pages/cabins";
 import { VisasPage } from "@/pages/visas";
 import { TransportsPage } from "@/pages/transports";
+import { PlanDetailPage } from "@/pages/plan-detail";
+import { CabinDetailPage } from "@/pages/cabin-detail";
+import { LegalDocPage } from "@/pages/legal-doc";
+import { PoliciesPage } from "@/pages/policies";
 import {
-  PlanDetailPage,
-  CabinDetailPage,
   TransportDetailPage,
   VisaDetailPage,
   ContactPage,
   TeamPage,
   FavoritesPage,
-  PoliciesPage,
-  LegalDocPage,
   NotFoundPage,
 } from "@/pages";
 
