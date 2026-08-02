@@ -70,6 +70,8 @@ export function HeroSection() {
   const { setSearchPayload } = useNavigation();
 
   const [activeTab, setActiveTab] = useState<SearchTab>(DEFAULT_TAB);
+  // Switch "Todavía no he decidido la fecha" (solo pestañas con habitaciones).
+  const [noDecidido, setNoDecidido] = useState(false);
   const [tabParams, setTabParams] = useState<Record<SearchTab, TabParams>>({
     internacionales: makeInitial("internacionales"),
     nacionales: makeInitial("nacionales"),
@@ -92,6 +94,24 @@ export function HeroSection() {
       ...prev,
       [activeTab]: { ...prev[activeTab], ...patch },
     }));
+
+  /** Cambia de pestaña y resetea el switch de fecha (como en el original). */
+  const changeTab = (tab: SearchTab) => {
+    setActiveTab(tab);
+    setNoDecidido(false);
+  };
+
+  /** Toggle del switch "Todavía no he decidido la fecha". */
+  const handleNoDecididoChange = (checked: boolean) => {
+    setNoDecidido(checked);
+    if (checked) {
+      // Limpia las fechas al activar el switch.
+      update({ fecha: "" });
+      if ("fechaFin" in params) {
+        update({ fechaFin: "" });
+      }
+    }
+  };
 
   /** Submit: serializa la búsqueda en la URL y navega con react-router. */
   const handleSearch = () => {
@@ -176,7 +196,7 @@ export function HeroSection() {
         {/* Tarjeta del buscador */}
         <div className="mt-8 w-full max-w-5xl rounded-2xl border border-white/20 bg-white/65 p-3 backdrop-blur-xl sm:bg-white/95 sm:p-4">
           {/* Tabs */}
-          <TabBar activeTab={activeTab} onChange={setActiveTab} />
+          <TabBar activeTab={activeTab} onChange={changeTab} />
 
           {/* Campos dinámicos */}
           <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-12">
@@ -236,30 +256,84 @@ export function HeroSection() {
               <>
                 <Field
                   className="md:col-span-2"
-                  icon={<CalendarIcon className="h-4 w-4 text-muted-foreground" />}
+                  icon={
+                    <CalendarIcon
+                      className={cn(
+                        "h-4 w-4",
+                        noDecidido ? "text-zinc-300" : "text-muted-foreground"
+                      )}
+                    />
+                  }
                   label="Entrada"
                 >
                   <input
                     type="date"
                     value={params.fecha}
                     min={todayStr()}
+                    disabled={noDecidido}
                     onChange={(e) => update({ fecha: e.target.value })}
-                    className="w-full bg-transparent text-sm font-medium text-foreground outline-none"
+                    className={cn(
+                      "w-full bg-transparent text-sm font-medium outline-none",
+                      noDecidido
+                        ? "cursor-not-allowed text-zinc-400"
+                        : "text-foreground"
+                    )}
+                    placeholder={noDecidido ? "Sin fecha" : undefined}
                   />
                 </Field>
                 <Field
                   className="md:col-span-2"
-                  icon={<CalendarIcon className="h-4 w-4 text-muted-foreground" />}
+                  icon={
+                    <CalendarIcon
+                      className={cn(
+                        "h-4 w-4",
+                        noDecidido ? "text-zinc-300" : "text-muted-foreground"
+                      )}
+                    />
+                  }
                   label="Salida"
                 >
                   <input
                     type="date"
                     value={params.fechaFin ?? ""}
                     min={params.fecha || todayStr()}
+                    disabled={noDecidido}
                     onChange={(e) => update({ fechaFin: e.target.value })}
-                    className="w-full bg-transparent text-sm font-medium text-foreground outline-none"
+                    className={cn(
+                      "w-full bg-transparent text-sm font-medium outline-none",
+                      noDecidido
+                        ? "cursor-not-allowed text-zinc-400"
+                        : "text-foreground"
+                    )}
                   />
                 </Field>
+
+                {/* Switch "Todavía no he decidido la fecha" */}
+                <div className="md:col-span-4 flex items-center gap-2 pb-1">
+                  <button
+                    type="button"
+                    role="switch"
+                    aria-checked={noDecidido}
+                    onClick={() => handleNoDecididoChange(!noDecidido)}
+                    className={cn(
+                      "relative h-5 w-9 shrink-0 rounded-full transition-colors",
+                      noDecidido ? "bg-ocean" : "bg-zinc-300"
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "absolute top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform",
+                        noDecidido ? "translate-x-4" : "translate-x-0.5"
+                      )}
+                    />
+                  </button>
+                  <label
+                    className="cursor-pointer select-none text-xs font-semibold text-zinc-500 transition-colors hover:text-zinc-700"
+                    onClick={() => handleNoDecididoChange(!noDecidido)}
+                  >
+                    Todavía no he decidido la fecha
+                  </label>
+                </div>
               </>
             ) : (
               <Field
