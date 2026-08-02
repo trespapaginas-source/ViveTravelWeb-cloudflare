@@ -9,14 +9,12 @@ import { PlanDetailPage } from "@/pages/plan-detail";
 import { CabinDetailPage } from "@/pages/cabin-detail";
 import { LegalDocPage } from "@/pages/legal-doc";
 import { PoliciesPage } from "@/pages/policies";
-import {
-  TransportDetailPage,
-  VisaDetailPage,
-  ContactPage,
-  TeamPage,
-  FavoritesPage,
-  NotFoundPage,
-} from "@/pages";
+import { TransportDetailPage } from "@/pages/transport-detail";
+import { VisaDetailPage } from "@/pages/visa-detail";
+import { ContactPage } from "@/pages/contact";
+import { TeamPage } from "@/pages/team";
+import { FavoritesPage } from "@/pages/favorites";
+import { NotFoundPage } from "@/pages";
 
 /**
  * App — FASE 1: navegación 100% funcional.
