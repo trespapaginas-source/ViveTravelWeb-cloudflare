@@ -12,8 +12,11 @@ import { cn } from "@/lib/utils";
 
 /**
  * Sheet — panel lateral modal (equivalente al de Radix usado en el original).
- * Implementación ligera sin dependencias externas: overlay + panel lateral
- * animado con cierre por tecla Escape y click fuera.
+ * Implementación ligera: overlay + panel lateral animado.
+ *
+ * El contenido SOLO se renderiza en el DOM cuando el Sheet está abierto
+ * (o durante la transición de cierre), evitando que ocupe espacio visual
+ * o solape el contenido en desktop cuando está cerrado.
  */
 interface SheetContextValue {
   open: boolean;
@@ -81,10 +84,26 @@ export function SheetContent({
 }) {
   const ctx = useContext(SheetContext);
   const [mounted, setMounted] = useState(false);
+  // `render` controla si el portal está en el DOM. Permite mantener la
+  // animación de salida: al cerrar, espera 300ms antes de desmontar.
+  const [render, setRender] = useState(false);
 
   useEffect(() => setMounted(true), []);
+
   useEffect(() => {
-    if (!ctx?.open) return;
+    if (!ctx) return;
+    if (ctx.open) {
+      // Abrir: montar inmediatamente y dejar que la transición lo lleve a visible.
+      setRender(true);
+    } else if (render) {
+      // Cerrar: desmontar tras la duración de la animación (300ms).
+      const t = setTimeout(() => setRender(false), 320);
+      return () => clearTimeout(t);
+    }
+  }, [ctx, ctx?.open, render]);
+
+  useEffect(() => {
+    if (!ctx?.open || !render) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") ctx.onOpenChange(false);
     };
@@ -94,20 +113,18 @@ export function SheetContent({
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
     };
-  }, [ctx]);
+  }, [ctx, ctx?.open, render]);
 
-  if (!ctx || !mounted) return null;
+  // No renderizar nada si: no hay contexto, no hay montaje SSR, o está cerrado
+  // y el retardo de animación ya expiró. Así el Sheet NUNCA ocupa espacio en
+  // desktop cuando está cerrado.
+  if (!ctx || !mounted || !render) return null;
 
   return createPortal(
-    <div
-      className={cn(
-        "fixed inset-0 z-[100]",
-        !ctx.open && "pointer-events-none"
-      )}
-    >
+    <div className="fixed inset-0 z-[100]">
       <div
         className={cn(
-          "absolute inset-0 bg-black/50 transition-opacity duration-200",
+          "absolute inset-0 bg-black/50 transition-opacity duration-300",
           ctx.open ? "opacity-100" : "opacity-0"
         )}
         onClick={() => ctx.onOpenChange(false)}
@@ -133,3 +150,4 @@ export function SheetContent({
     document.body
   );
 }
+
