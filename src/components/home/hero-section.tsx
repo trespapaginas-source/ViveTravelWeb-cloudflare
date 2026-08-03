@@ -21,6 +21,7 @@ import {
   CITIES,
   POPULAR_DESTINATIONS,
   ROOM_TABS,
+  TRAVELER_TYPES,
   getDestinationPlaceholder,
   type SearchTab,
 } from "@/lib/hero-data";
@@ -62,6 +63,44 @@ function makeInitial(tab: SearchTab): TabParams {
   if (tab === "tours") base.actividad = "";
   if (tab === "grupales") base.tipoViajero = "";
   return base;
+}
+
+/**
+ * layoutCols — devuelve el ancho (en columnas de un grid de 12) para cada
+ * campo del buscador según la pestaña activa. Siempre suma 12 para que todo
+ * quepa en una sola fila en desktop, con el botón "Buscar" al final.
+ */
+function layoutCols(tab: SearchTab): {
+  origen: number;
+  destino: number;
+  actividad: number;
+  entrada: number;
+  salida: number;
+  fecha: number;
+  travelers: number;
+  buscar: number;
+} {
+  switch (tab) {
+    // Origen + Destino + Entrada + Salida + Hab + Buscar = 2+3+2+2+1+2 = 12
+    case "internacionales":
+    case "nacionales":
+    case "circuitos":
+      return { origen: 2, destino: 3, actividad: 0, entrada: 2, salida: 2, fecha: 0, travelers: 1, buscar: 2 };
+    // Destino + Entrada + Salida + Hab + Buscar = 3+2+2+3+2 = 12
+    case "alojamientos":
+      return { origen: 0, destino: 3, actividad: 0, entrada: 2, salida: 2, fecha: 0, travelers: 3, buscar: 2 };
+    // Destino + Actividad + Fecha + Viajeros + Buscar = 2+2+3+2+3 = 12
+    case "tours":
+      return { origen: 0, destino: 2, actividad: 2, entrada: 0, salida: 0, fecha: 3, travelers: 2, buscar: 3 };
+    // Destino + Fecha + Viajeros + Buscar = 3+3+3+3 = 12
+    case "pasadias":
+      return { origen: 0, destino: 3, actividad: 0, entrada: 0, salida: 0, fecha: 3, travelers: 3, buscar: 3 };
+    // Tipo viajero + Viajeros + Buscar = 5+3+4 = 12
+    case "grupales":
+      return { origen: 0, destino: 0, actividad: 0, entrada: 0, salida: 0, fecha: 0, travelers: 3, buscar: 4 };
+    default:
+      return { origen: 0, destino: 3, actividad: 0, entrada: 0, salida: 0, fecha: 3, travelers: 3, buscar: 3 };
+  }
 }
 
 export function HeroSection() {
@@ -198,12 +237,28 @@ export function HeroSection() {
           {/* Tabs */}
           <TabBar activeTab={activeTab} onChange={changeTab} />
 
-          {/* Campos dinámicos */}
-          <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-12">
+          {/* Campos dinámicos — grid de 12 columnas, todo en una sola fila en desktop */}
+          {(() => {
+            // Mapa de clases col-span estáticas (Tailwind requiere literales completas).
+            const COL: Record<number, string> = {
+              1: "md:col-span-1",
+              2: "md:col-span-2",
+              3: "md:col-span-3",
+              4: "md:col-span-4",
+              5: "md:col-span-5",
+              6: "md:col-span-6",
+            };
+            // Anchos por pestaña, siempre sumando 12.
+            const hasOrigin = ["internacionales", "nacionales", "circuitos"].includes(activeTab);
+            const hasDestino = activeTab !== "grupales";
+            const cols = layoutCols(activeTab);
+            return (
+              <>
+          <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-12 md:items-stretch">
             {/* Origen (solo internacionales/nacionales/circuitos) */}
-            {["internacionales", "nacionales", "circuitos"].includes(activeTab) && (
+            {hasOrigin && (
               <Field
-                className="md:col-span-3"
+                className={COL[cols.origen]}
                 icon={<MapPin className="h-4 w-4 text-muted-foreground" />}
                 label="Origen"
               >
@@ -217,11 +272,9 @@ export function HeroSection() {
             )}
 
             {/* Destino */}
-            {activeTab !== "grupales" ? (
+            {hasDestino ? (
               <Field
-                className={cn(
-                  hasRooms ? "md:col-span-3" : "md:col-span-4"
-                )}
+                className={COL[cols.destino]}
                 icon={<MapPin className="h-4 w-4 text-muted-foreground" />}
                 label="Destino"
               >
@@ -237,7 +290,7 @@ export function HeroSection() {
             {/* Actividad (solo tours) */}
             {activeTab === "tours" && (
               <Field
-                className="md:col-span-4"
+                className={COL[cols.actividad]}
                 icon={<Sparkles className="h-4 w-4 text-muted-foreground" />}
                 label="Actividad"
               >
@@ -255,7 +308,7 @@ export function HeroSection() {
             {hasRooms ? (
               <>
                 <Field
-                  className="md:col-span-2"
+                  className={COL[cols.entrada]}
                   icon={
                     <CalendarIcon
                       className={cn(
@@ -282,7 +335,7 @@ export function HeroSection() {
                   />
                 </Field>
                 <Field
-                  className="md:col-span-2"
+                  className={COL[cols.salida]}
                   icon={
                     <CalendarIcon
                       className={cn(
@@ -307,37 +360,10 @@ export function HeroSection() {
                     )}
                   />
                 </Field>
-
-                {/* Switch "Todavía no he decidido la fecha" */}
-                <div className="md:col-span-4 flex items-center gap-2 pb-1">
-                  <button
-                    type="button"
-                    role="switch"
-                    aria-checked={noDecidido}
-                    onClick={() => handleNoDecididoChange(!noDecidido)}
-                    className={cn(
-                      "relative h-5 w-9 shrink-0 rounded-full transition-colors",
-                      noDecidido ? "bg-ocean" : "bg-zinc-300"
-                    )}
-                  >
-                    <span
-                      className={cn(
-                        "absolute top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform",
-                        noDecidido ? "translate-x-4" : "translate-x-0.5"
-                      )}
-                    />
-                  </button>
-                  <label
-                    className="cursor-pointer select-none text-xs font-semibold text-zinc-500 transition-colors hover:text-zinc-700"
-                    onClick={() => handleNoDecididoChange(!noDecidido)}
-                  >
-                    Todavía no he decidido la fecha
-                  </label>
-                </div>
               </>
-            ) : (
+            ) : cols.fecha > 0 ? (
               <Field
-                className="md:col-span-3"
+                className={COL[cols.fecha]}
                 icon={<CalendarIcon className="h-4 w-4 text-muted-foreground" />}
                 label="Fecha"
               >
@@ -349,15 +375,32 @@ export function HeroSection() {
                   className="w-full bg-transparent text-sm font-medium text-foreground outline-none"
                 />
               </Field>
+            ) : null}
+
+            {/* Tipo de viajero (solo grupales) */}
+            {activeTab === "grupales" && (
+              <Field
+                className="md:col-span-5"
+                icon={<Users className="h-4 w-4 text-muted-foreground" />}
+                label="Tipo de grupo"
+              >
+                <select
+                  value={params.tipoViajero ?? "Cualquiera"}
+                  onChange={(e) => update({ tipoViajero: e.target.value })}
+                  className="w-full bg-transparent text-sm font-medium text-foreground outline-none"
+                >
+                  {TRAVELER_TYPES.map((t) => (
+                    <option key={t} value={t}>{t}</option>
+                  ))}
+                </select>
+              </Field>
             )}
 
             {/* Pasajeros / Habitaciones */}
             <Field
-              className={cn(
-                hasRooms ? "md:col-span-2" : "md:col-span-3"
-              )}
+              className={COL[cols.travelers]}
               icon={<Users className="h-4 w-4 text-muted-foreground" />}
-              label={hasRooms ? "Habitaciones" : "Viajeros"}
+              label={hasRooms ? "Hab." : "Viajeros"}
             >
               <TravelersPopover
                 adults={params.adultos}
@@ -368,17 +411,53 @@ export function HeroSection() {
               />
             </Field>
 
-            {/* Botón buscar */}
-            <div className="flex items-end md:col-span-12">
-              <button
-                onClick={handleSearch}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-ocean px-6 py-3 text-sm font-semibold text-white shadow-md transition-colors hover:bg-ocean-dark md:w-auto"
-              >
-                <Search className="h-4 w-4" />
+            {/* Botón buscar — en la misma fila, alineado a la derecha */}
+            <button
+              onClick={handleSearch}
+              className={cn(
+                "flex items-center justify-center gap-2 rounded-xl bg-ocean px-6 py-3 text-sm font-semibold text-white shadow-md transition-colors hover:bg-ocean-dark md:h-auto md:self-stretch",
+                COL[cols.buscar]
+              )}
+            >
+              <Search className="h-4 w-4" />
+              <span className="md:hidden lg:inline">
                 {activeTab === "grupales" ? "Ver Viaje" : "Buscar"}
-              </button>
-            </div>
+              </span>
+              <span className="hidden md:inline lg:hidden">Ir</span>
+            </button>
           </div>
+
+          {/* Switch "Todavía no he decidido la fecha" — fila secundaria, no intrusiva */}
+          {hasRooms && (
+            <div className="mt-2 flex items-center gap-2 px-1">
+              <button
+                type="button"
+                role="switch"
+                aria-checked={noDecidido}
+                onClick={() => handleNoDecididoChange(!noDecidido)}
+                className={cn(
+                  "relative h-5 w-9 shrink-0 rounded-full transition-colors",
+                  noDecidido ? "bg-ocean" : "bg-zinc-300"
+                )}
+              >
+                <span
+                  className={cn(
+                    "absolute top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform",
+                    noDecidido ? "translate-x-4" : "translate-x-0.5"
+                  )}
+                />
+              </button>
+              <label
+                className="cursor-pointer select-none text-xs font-semibold text-zinc-500 transition-colors hover:text-zinc-700"
+                onClick={() => handleNoDecididoChange(!noDecidido)}
+              >
+                Todavía no he decidido la fecha
+              </label>
+            </div>
+          )}
+              </>
+            );
+          })()}
         </div>
 
         {/* CTAs secundarios */}
