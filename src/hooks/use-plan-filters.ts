@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { EXPERIENCE_SECTIONS } from "@/lib/experience-sections";
+import { getPlanRegion, PLAN_REGIONS } from "@/lib/plan-regions";
 import type { NormalizedPlan } from "@/lib/data-access";
 
 /* ────────────────── Clasificador de sección de experiencia ────────────── */
@@ -73,6 +74,10 @@ export interface PlanFilters {
   priceMax: number | null;
   /** Duración máxima en días. null = sin límite. */
   maxDays: number | null;
+  /** País/región (id de PLAN_REGIONS). undefined = todos. */
+  country: string | undefined;
+  /** Categoría específica del plan (campo `category`). undefined = todas. */
+  category: string | undefined;
 }
 
 export const DEFAULT_FILTERS: PlanFilters = {
@@ -81,6 +86,8 @@ export const DEFAULT_FILTERS: PlanFilters = {
   priceMin: null,
   priceMax: null,
   maxDays: null,
+  country: undefined,
+  category: undefined,
 };
 
 /** Extrae los días numéricos de una cadena de duración ("5 días" → 5). */
@@ -91,19 +98,31 @@ export function parseDays(duration: string | undefined): number {
 }
 
 /**
- * Hook de filtrado de planes. Aplica sección + búsqueda + precio + duración.
- * Devuelve la lista filtrada y los rangos de precio disponibles (para el slider).
+ * Hook de filtrado de planes. Aplica sección + país + categoría + búsqueda +
+ * precio + duración. Devuelve la lista filtrada, los rangos de precio, y las
+ * opciones de país/categoría disponibles (para los dropdowns del panel).
  */
 export function usePlanFilters(
   allPlans: NormalizedPlan[],
   filters: PlanFilters
 ) {
   return useMemo(() => {
-    const filtered = allPlans.filter((plan) => {
-      // 1. Sección de experiencia
-      if (getPlanExperienceSection(plan) !== filters.section) return false;
+    // Subset de la sección activa (base para calcular opciones y bounds).
+    const sectionPlans = allPlans.filter(
+      (p) => getPlanExperienceSection(p) === filters.section
+    );
 
-      // 2. Búsqueda por destino/nombre (case-insensitive, coincide parcial)
+    const filtered = sectionPlans.filter((plan) => {
+      // 1. País/región
+      if (filters.country) {
+        const region = getPlanRegion(plan);
+        if (region.id !== filters.country) return false;
+      }
+
+      // 2. Categoría específica
+      if (filters.category && plan.category !== filters.category) return false;
+
+      // 3. Búsqueda por destino/nombre (case-insensitive, coincide parcial)
       if (filters.search.trim()) {
         const q = filters.search.trim().toLowerCase();
         const haystack = [
@@ -117,13 +136,13 @@ export function usePlanFilters(
         if (!haystack.includes(q)) return false;
       }
 
-      // 3. Rango de precio
+      // 4. Rango de precio
       if (filters.priceMin !== null && plan.price < filters.priceMin)
         return false;
       if (filters.priceMax !== null && plan.price > filters.priceMax)
         return false;
 
-      // 4. Duración máxima
+      // 5. Duración máxima
       if (filters.maxDays !== null) {
         const days = parseDays(plan.duration);
         if (days > filters.maxDays) return false;
@@ -132,16 +151,45 @@ export function usePlanFilters(
       return true;
     });
 
-    // Rangos de precio del subset actual de la sección (para el slider).
-    const sectionPlans = allPlans.filter(
-      (p) => getPlanExperienceSection(p) === filters.section
-    );
+    // Rangos de precio del subset de la sección (para el slider).
     const prices = sectionPlans.map((p) => p.price);
     const priceBounds =
       prices.length > 0
         ? { min: Math.min(...prices), max: Math.max(...prices) }
         : { min: 0, max: 0 };
 
-    return { filtered, priceBounds };
+    return {
+      filtered,
+      priceBounds,
+      /** Regiones/países disponibles en la sección activa, agrupadas. */
+      availableCountries: getAvailableCountries(sectionPlans),
+      /** Categorías disponibles en la sección activa. */
+      availableCategories: getAvailableCategories(sectionPlans),
+    };
   }, [allPlans, filters]);
+}
+
+/**
+ * Devuelve las regiones/países presentes en una lista de planes, agrupadas por
+ * grupo (colombia / internacional) y ordenadas según PLAN_REGIONS.
+ */
+export function getAvailableCountries(plans: NormalizedPlan[]) {
+  const seenIds = new Set<string>();
+  for (const p of plans) {
+    seenIds.add(getPlanRegion(p).id);
+  }
+  // Filtrar PLAN_REGIONS por los ids presentes, manteniendo el orden definido.
+  return PLAN_REGIONS.filter((r) => seenIds.has(r.id));
+}
+
+/**
+ * Devuelve las categorías (campo `category`) presentes en una lista de planes,
+ * ordenadas alfabéticamente.
+ */
+export function getAvailableCategories(plans: NormalizedPlan[]): string[] {
+  const set = new Set<string>();
+  for (const p of plans) {
+    if (p.category) set.add(p.category);
+  }
+  return Array.from(set).sort((a, b) => a.localeCompare(b, "es"));
 }

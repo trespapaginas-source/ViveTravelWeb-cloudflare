@@ -9,6 +9,7 @@ import {
   type ExperienceId,
 } from "@/hooks/use-plan-filters";
 import { EXPERIENCE_SECTIONS } from "@/lib/experience-sections";
+import type { PlanRegion } from "@/lib/plan-regions";
 import { formatPrice, cn } from "@/lib/utils";
 import { useSiteContent } from "@/lib/use-site-content";
 import { PlanCard, PlanCardHorizontal } from "@/components/plans/plan-card";
@@ -56,7 +57,8 @@ export function PlansPage() {
     setSearchParams(next, { replace: true });
   }, [filters.section, filters.search, setSearchParams]);
 
-  const { filtered, priceBounds } = usePlanFilters(plans, filters);
+  const { filtered, priceBounds, availableCountries, availableCategories } =
+    usePlanFilters(plans, filters);
 
   // Ordenar resultados.
   const sorted = useMemo(
@@ -65,7 +67,10 @@ export function PlansPage() {
   );
 
   // Reset de paginación al cambiar filtros/orden/sección.
-  useEffect(() => setCurrentPage(1), [filters.section, filters.search, sortOption]);
+  useEffect(
+    () => setCurrentPage(1),
+    [filters.section, filters.search, filters.country, filters.category, sortOption]
+  );
 
   // Paginación.
   const totalPages = Math.ceil(sorted.length / ITEMS_PER_PAGE);
@@ -98,7 +103,9 @@ export function PlansPage() {
         {EXPERIENCE_SECTIONS.map((section) => (
           <button
             key={section.id}
-            onClick={() => update({ section: section.id })}
+            onClick={() =>
+              update({ section: section.id, country: undefined, category: undefined })
+            }
             className={cn(
               "whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition-colors",
               filters.section === section.id
@@ -117,6 +124,8 @@ export function PlansPage() {
           <FiltersPanel
             filters={filters}
             priceBounds={priceBounds}
+            availableCountries={availableCountries}
+            availableCategories={availableCategories}
             onUpdate={update}
             onReset={resetFilters}
           />
@@ -222,6 +231,8 @@ export function PlansPage() {
             <FiltersPanel
               filters={filters}
               priceBounds={priceBounds}
+              availableCountries={availableCountries}
+              availableCategories={availableCategories}
               onUpdate={update}
               onReset={resetFilters}
             />
@@ -243,11 +254,15 @@ export function PlansPage() {
 function FiltersPanel({
   filters,
   priceBounds,
+  availableCountries,
+  availableCategories,
   onUpdate,
   onReset,
 }: {
   filters: PlanFilters;
   priceBounds: { min: number; max: number };
+  availableCountries: (PlanRegion & { matched?: boolean })[];
+  availableCategories: string[];
   onUpdate: (patch: Partial<PlanFilters>) => void;
   onReset: () => void;
 }) {
@@ -258,6 +273,10 @@ function FiltersPanel({
     { label: "Hasta 5 días", value: 5 },
     { label: "Hasta 7 días", value: 7 },
   ];
+
+  // Agrupar regiones por grupo (colombia / internacional) para el dropdown.
+  const colombiaRegions = availableCountries.filter((r) => r.group === "colombia");
+  const intlRegions = availableCountries.filter((r) => r.group === "internacional");
 
   return (
     <div className="space-y-6 rounded-2xl border border-border bg-card p-5">
@@ -276,6 +295,65 @@ function FiltersPanel({
           />
         </div>
       </div>
+
+      {/* País / Región */}
+      {availableCountries.length > 0 && (
+        <div>
+          <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            País / Región
+          </label>
+          <select
+            value={filters.country ?? ""}
+            onChange={(e) =>
+              onUpdate({ country: e.target.value || undefined })
+            }
+            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-ocean"
+          >
+            <option value="">Todos los destinos</option>
+            {colombiaRegions.length > 0 && (
+              <optgroup label="Colombia">
+                {colombiaRegions.map((r) => (
+                  <option key={r.id} value={r.id}>
+                    {r.label}
+                  </option>
+                ))}
+              </optgroup>
+            )}
+            {intlRegions.length > 0 && (
+              <optgroup label="Internacional">
+                {intlRegions.map((r) => (
+                  <option key={r.id} value={r.id}>
+                    {r.label}
+                  </option>
+                ))}
+              </optgroup>
+            )}
+          </select>
+        </div>
+      )}
+
+      {/* Categoría específica */}
+      {availableCategories.length > 0 && (
+        <div>
+          <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Tipo de experiencia
+          </label>
+          <select
+            value={filters.category ?? ""}
+            onChange={(e) =>
+              onUpdate({ category: e.target.value || undefined })
+            }
+            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-ocean"
+          >
+            <option value="">Todas las categorías</option>
+            {availableCategories.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
 
       <div>
         <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-muted-foreground">
