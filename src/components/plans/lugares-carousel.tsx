@@ -58,7 +58,7 @@ export function LugaresCarousel({ lugares }: { lugares: Lugar[] }) {
   const showArrows = lugares.length > 3;
 
   return (
-    <section id="lugares" className="mt-8 scroll-mt-32">
+    <section id="lugares" className="mt-8 scroll-mt-24">
       <h2 className="text-lg font-bold tracking-tight text-foreground sm:text-xl">
         Lugares a conocer
       </h2>

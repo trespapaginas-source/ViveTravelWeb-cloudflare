@@ -41,17 +41,6 @@ import {
 } from "@/lib/whatsapp";
 
 /**
- * Secciones navegables del detalle. El id coincide con el `id` del `<section>`
- * para que el click haga scroll suave vía `scrollIntoView`. `when` indica si
- * la sección aplica según el plan (para ocultar el tab si no corresponde).
- */
-type NavSection = {
-  id: string;
-  label: string;
-  when: boolean;
-};
-
-/**
  * PlanDetailPage — detalle de un plan/experiencia.
  * Consume los datos vía `usePlanDetail(id)`.
  *
@@ -121,42 +110,6 @@ export function PlanDetailPage() {
     window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
-  // Pestañas de navegación (solo las que aplican al plan actual).
-  const navSections: NavSection[] = [
-    { id: "general", label: "General", when: true },
-    {
-      id: "lugares",
-      label: "Lugares",
-      when: !!(plan.lugares && plan.lugares.length > 0),
-    },
-    {
-      id: "incluye",
-      label: "Incluye",
-      when: plan.includes.length > 0 || plan.excludes.length > 0,
-    },
-    {
-      id: "itinerario",
-      label: "Itinerario",
-      when: !!(plan.itinerary && plan.itinerary.length > 0),
-    },
-    {
-      id: "condiciones",
-      label: "Condiciones",
-      when: !!(plan.notes && plan.notes.length > 0),
-    },
-  ].filter((s) => s.when);
-
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    // Offset = header fijo (~64-80px) + barra de tabs (~48px) + margen.
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
-    // Compensa el header+tabs pegajosos.
-    setTimeout(() => {
-      window.scrollBy({ top: -120, behavior: "smooth" });
-    }, 0);
-  };
-
   return (
     <div className="mx-auto max-w-7xl px-4 pb-32 pt-6 sm:px-6 lg:px-8 lg:pb-12">
       {/* Volver */}
@@ -178,25 +131,6 @@ export function PlanDetailPage() {
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_380px]">
         {/* Contenido principal */}
         <div className="min-w-0">
-          {/* Barra de navegación pegajosa entre secciones */}
-          {navSections.length > 1 && (
-            <nav className="sticky top-16 z-30 -mx-4 mb-4 border-b border-border bg-background/95 px-4 py-2 backdrop-blur sm:top-20 sm:mx-0 sm:rounded-xl sm:border sm:px-3">
-              <div className="no-scrollbar flex gap-1 overflow-x-auto">
-                {navSections.map((s) => (
-                  <button
-                    key={s.id}
-                    type="button"
-                    onClick={() => scrollToSection(s.id)}
-                    className="shrink-0 whitespace-nowrap rounded-lg px-3 py-1.5 text-[13px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-                  >
-                    {s.label}
-                  </button>
-                ))}
-              </div>
-            </nav>
-          )}
-
-          {/* Título */}
           {/* Título */}
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
@@ -241,7 +175,7 @@ export function PlanDetailPage() {
           </div>
 
           {/* Descripción — Acerca de este plan */}
-          <section id="general" className="mt-6 scroll-mt-32">
+          <section id="general" className="mt-6 scroll-mt-24">
             <h2 className="text-lg font-bold text-foreground">Acerca de este plan</h2>
             <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
               {plan.fullDescription}
@@ -254,7 +188,7 @@ export function PlanDetailPage() {
           )}
 
           {/* Incluye / No incluye */}
-          <section id="incluye" className="mt-8 scroll-mt-32">
+          <section id="incluye" className="mt-8 scroll-mt-24">
             <h2 className="text-lg font-bold text-foreground">Qué incluye este plan</h2>
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
               {plan.includes.map((item, i) => (
@@ -300,7 +234,7 @@ export function PlanDetailPage() {
 
           {/* Itinerario — acordeón interactivo */}
           {plan.itinerary && plan.itinerary.length > 0 && (
-            <section id="itinerario" className="mt-8 scroll-mt-32">
+            <section id="itinerario" className="mt-8 scroll-mt-24">
               <h2 className="text-lg font-bold text-foreground">Itinerario día a día</h2>
               <Accordion
                 type="single"
@@ -356,7 +290,7 @@ export function PlanDetailPage() {
 
           {/* Notas / Condiciones */}
           {plan.notes && plan.notes.length > 0 && (
-            <section id="condiciones" className="mt-8 scroll-mt-32">
+            <section id="condiciones" className="mt-8 scroll-mt-24">
               <h2 className="text-lg font-bold text-foreground">
                 Información importante
               </h2>
@@ -573,7 +507,7 @@ function ReserveModal({
             {isFixedDeparture ? (
               upcomingDepartures.length > 0 ? (
                 <div className="max-h-[220px] space-y-1.5 overflow-y-auto rounded-xl border border-border p-1.5">
-                  {upcomingDepartures.slice(0, 8).map((d) => {
+                  {upcomingDepartures.map((d) => {
                     const isSelected = selectedDate === d.start;
                     return (
                       <button
@@ -761,7 +695,7 @@ function DatePopover({
             onClick={() => setOpen(false)}
           />
           <div className="absolute left-0 right-0 top-full z-20 mt-1 max-h-[260px] overflow-y-auto rounded-xl border border-border bg-white p-1.5 shadow-lg">
-            {upcomingDepartures.slice(0, 8).map((d) => {
+            {upcomingDepartures.map((d) => {
               const isSelected = selectedDate === d.start;
               return (
                 <button
