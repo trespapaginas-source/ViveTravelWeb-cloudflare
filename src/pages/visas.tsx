@@ -12,7 +12,7 @@ const CATEGORY_META: Record<
   free: {
     label: "Sin visa requerida",
     description: "Destinos a los que los colombianos pueden ingresar libremente.",
-    color: "bg-emerald-100 text-emerald-700",
+    color: "bg-ocean/10 text-ocean",
   },
   onarrival: {
     label: "Visa a la llegada / electrónica",

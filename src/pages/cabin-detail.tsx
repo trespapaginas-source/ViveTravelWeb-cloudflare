@@ -177,7 +177,7 @@ export function CabinDetailPage() {
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
                 {cabin.amenities.map((a, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-ocean" />
                     <span className="text-foreground">{a}</span>
                   </div>
                 ))}

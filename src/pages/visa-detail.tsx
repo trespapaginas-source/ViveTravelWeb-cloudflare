@@ -19,7 +19,7 @@ import { EmptyState } from "@/components/shared/empty-state";
 
 /** Color de badge según categoría de visa. */
 const CATEGORY_STYLE: Record<string, string> = {
-  free: "bg-emerald-100 text-emerald-700",
+  free: "bg-ocean/10 text-ocean",
   onarrival: "bg-amber-100 text-amber-700",
   required: "bg-rose-100 text-rose-700",
 };
@@ -107,7 +107,7 @@ export function VisaDetailPage() {
           <ul className="mt-3 space-y-2">
             {visa.requirements.map((req, i) => (
               <li key={i} className="flex items-start gap-2 text-sm">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-ocean" />
                 <span className="text-foreground">{req}</span>
               </li>
             ))}

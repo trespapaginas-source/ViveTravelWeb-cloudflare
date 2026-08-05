@@ -109,7 +109,7 @@ export function ContactPage() {
         <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
           {sent ? (
             <div className="flex flex-col items-center justify-center py-12 text-center">
-              <CheckCircle2 className="h-14 w-14 text-emerald-500" />
+              <CheckCircle2 className="h-14 w-14 text-ocean" />
               <h2 className="mt-4 text-lg font-bold text-foreground">
                 ¡Mensaje enviado!
               </h2>

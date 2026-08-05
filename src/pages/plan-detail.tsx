@@ -204,7 +204,7 @@ export function PlanDetailPage() {
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
               {plan.includes.map((item, i) => (
                 <div key={i} className="flex items-start gap-2 text-sm">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-ocean" />
                   <span className="text-foreground">{item}</span>
                 </div>
               ))}

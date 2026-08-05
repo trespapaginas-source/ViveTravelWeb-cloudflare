@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Package, CreditCard, Headset } from "lucide-react";
 import { useSiteContent } from "@/lib/use-site-content";
 import { cn } from "@/lib/utils";
 
@@ -125,11 +125,11 @@ export function PromotionsBanner() {
 }
 
 function ValueIcon({ index }: { index: number }) {
-  // Iconos simples por posición (promos / beneficios / agente).
+  // Iconos lucide por posición (promos / medios de pago / agente).
   const icons = [
-    <svg key="0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5"><path d="M20 7L12 3 4 7m16 0-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>,
-    <svg key="1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4" /><path d="M4 6v12c0 1.1.9 2 2 2h14v-4" /><path d="M18 12a2 2 0 0 0 0 4h4v-4Z" /></svg>,
-    <svg key="2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5"><path d="M12 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5Z" /><path d="M5 21v-1a7 7 0 0 1 14 0v1" /></svg>,
+    <Package key="0" className="h-5 w-5" />,
+    <CreditCard key="1" className="h-5 w-5" />,
+    <Headset key="2" className="h-5 w-5" />,
   ];
   return icons[index] ?? icons[0];
 }

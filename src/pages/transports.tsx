@@ -63,7 +63,7 @@ export function TransportsPage() {
                       key={f}
                       className="flex items-start gap-1.5 text-xs text-muted-foreground"
                     >
-                      <Check className="mt-0.5 h-3 w-3 shrink-0 text-emerald-500" />
+                      <Check className="mt-0.5 h-3 w-3 shrink-0 text-ocean" />
                       {f}
                     </li>
                   ))}
