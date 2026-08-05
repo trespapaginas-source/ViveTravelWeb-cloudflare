@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   MapPin,
@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { usePlanDetail } from "@/hooks/use-detail";
 import { useGoBack } from "@/hooks/use-go-back";
+import { useGeoCity } from "@/hooks/use-geo-city";
 import { ROUTES } from "@/lib/routes";
 import { formatPrice, formatDateLong, cn } from "@/lib/utils";
 import { PropertyGallery } from "@/components/shared/property-gallery";
@@ -56,7 +57,17 @@ export function PlanDetailPage() {
   const [reserveOpen, setReserveOpen] = useState(false);
   const [guests, setGuests] = useState(2);
   const [selectedDate, setSelectedDate] = useState<string>("");
-  const [originCity, setOriginCity] = useState("Barranquilla");
+  const [originCity, setOriginCity] = useState("");
+
+  // Detecta la ciudad del usuario por IP (no bloqueante). Si el usuario ya
+  // escribió algo manualmente, no se sobreescribe (bandera touched).
+  const { city: geoCity, loading: geoLoading } = useGeoCity();
+  const [cityTouched, setCityTouched] = useState(false);
+  useEffect(() => {
+    if (!cityTouched && geoCity) {
+      setOriginCity(geoCity);
+    }
+  }, [geoCity, cityTouched]);
 
   // Próximas fechas de salida (solo futuras).
   const upcomingDepartures = useMemo(() => {
@@ -352,21 +363,19 @@ export function PlanDetailPage() {
                 )}
               </div>
 
-              {/* Ciudad de origen */}
+              {/* Ciudad de origen (editable, autodetectada por IP) */}
               <div>
                 <label className="mb-1 block text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
                   Ciudad de salida
                 </label>
-                <select
+                <CityInput
                   value={originCity}
-                  onChange={(e) => setOriginCity(e.target.value)}
-                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-ocean"
-                >
-                  <option>Barranquilla</option>
-                  <option>Bogotá</option>
-                  <option>Medellín</option>
-                  <option>Cali</option>
-                </select>
+                  onChange={(c) => {
+                    setCityTouched(true);
+                    setOriginCity(c);
+                  }}
+                  loading={geoLoading}
+                />
               </div>
 
               {/* Viajeros */}
@@ -450,7 +459,11 @@ export function PlanDetailPage() {
         selectedDate={selectedDate}
         onSelectDate={setSelectedDate}
         originCity={originCity}
-        onOriginCityChange={setOriginCity}
+        onOriginCityChange={(c) => {
+          setCityTouched(true);
+          setOriginCity(c);
+        }}
+        geoLoading={geoLoading}
         onConfirm={handleReserve}
       />
     </div>
@@ -473,6 +486,7 @@ function ReserveModal({
   onSelectDate,
   originCity,
   onOriginCityChange,
+  geoLoading,
   onConfirm,
 }: {
   open: boolean;
@@ -488,8 +502,15 @@ function ReserveModal({
   onSelectDate: (d: string) => void;
   originCity: string;
   onOriginCityChange: (c: string) => void;
+  geoLoading: boolean;
   onConfirm: () => void;
 }) {
+  // Controla si la lista de fechas está expandida o colapsada (móvil).
+  // Por defecto expandida si no hay fecha elegida; al elegir una se colapsa
+  // automáticamente para no llenar la pantalla con la lista completa.
+  const [datesExpanded, setDatesExpanded] = useState(true);
+  const hasSelection = !!selectedDate;
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
@@ -506,38 +527,78 @@ function ReserveModal({
             </label>
             {isFixedDeparture ? (
               upcomingDepartures.length > 0 ? (
-                <div className="max-h-[220px] space-y-1.5 overflow-y-auto rounded-xl border border-border p-1.5">
-                  {upcomingDepartures.map((d) => {
-                    const isSelected = selectedDate === d.start;
-                    return (
-                      <button
-                        key={d.start}
-                        type="button"
-                        onClick={() => onSelectDate(d.start)}
-                        className={cn(
-                          "flex w-full items-center justify-between rounded-lg border p-2.5 text-left text-sm transition-colors",
-                          isSelected
-                            ? "border-ocean bg-ocean/5"
-                            : "border-transparent hover:bg-muted"
-                        )}
-                      >
-                        <div className="min-w-0">
-                          <span
+                <div>
+                  {/* Resumen de la fecha seleccionada (colapsable) */}
+                  {hasSelection && !datesExpanded && (
+                    <button
+                      type="button"
+                      onClick={() => setDatesExpanded(true)}
+                      className="flex w-full items-center justify-between rounded-lg border border-ocean bg-ocean/5 p-2.5 text-left text-sm transition-colors hover:bg-ocean/10"
+                    >
+                      <div className="min-w-0">
+                        <span className="block truncate text-[13px] font-semibold text-ocean">
+                          {formatDateLong(selectedDate)}
+                        </span>
+                        {(() => {
+                          const sel = upcomingDepartures.find(
+                            (d) => d.start === selectedDate
+                          );
+                          return sel ? (
+                            <span className="text-[11px] text-muted-foreground">
+                              al {formatDateLong(sel.end)}
+                            </span>
+                          ) : null;
+                        })()}
+                      </div>
+                      <span className="flex items-center gap-1 text-[11px] font-medium text-ocean">
+                        Cambiar
+                        <ChevronDown className="h-3.5 w-3.5" />
+                      </span>
+                    </button>
+                  )}
+
+                  {/* Lista completa de fechas (colapsable) */}
+                  {(!hasSelection || datesExpanded) && (
+                    <div className="max-h-[260px] space-y-1.5 overflow-y-auto rounded-xl border border-border p-1.5">
+                      {upcomingDepartures.map((d) => {
+                        const isSelected = selectedDate === d.start;
+                        return (
+                          <button
+                            key={d.start}
+                            type="button"
+                            onClick={() => {
+                              onSelectDate(d.start);
+                              // Colapsa automáticamente tras elegir.
+                              setDatesExpanded(false);
+                            }}
                             className={cn(
-                              "block truncate text-[13px] font-semibold",
-                              isSelected ? "text-ocean" : "text-foreground"
+                              "flex w-full items-center justify-between rounded-lg border p-2.5 text-left text-sm transition-colors",
+                              isSelected
+                                ? "border-ocean bg-ocean/5"
+                                : "border-transparent hover:bg-muted"
                             )}
                           >
-                            {formatDateLong(d.start)}
-                          </span>
-                          <span className="text-[11px] text-muted-foreground">
-                            al {formatDateLong(d.end)}
-                          </span>
-                        </div>
-                        {isSelected && <Check className="h-4 w-4 shrink-0 text-ocean" />}
-                      </button>
-                    );
-                  })}
+                            <div className="min-w-0">
+                              <span
+                                className={cn(
+                                  "block truncate text-[13px] font-semibold",
+                                  isSelected ? "text-ocean" : "text-foreground"
+                                )}
+                              >
+                                {formatDateLong(d.start)}
+                              </span>
+                              <span className="text-[11px] text-muted-foreground">
+                                al {formatDateLong(d.end)}
+                              </span>
+                            </div>
+                            {isSelected && (
+                              <Check className="h-4 w-4 shrink-0 text-ocean" />
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               ) : (
                 <p className="rounded-lg bg-muted/50 p-3 text-xs text-muted-foreground">
@@ -556,21 +617,16 @@ function ReserveModal({
             )}
           </div>
 
-          {/* Ciudad de origen */}
+          {/* Ciudad de origen (editable, autodetectada por IP) */}
           <div>
             <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-muted-foreground">
               Ciudad de salida
             </label>
-            <select
+            <CityInput
               value={originCity}
-              onChange={(e) => onOriginCityChange(e.target.value)}
-              className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-ocean"
-            >
-              <option>Barranquilla</option>
-              <option>Bogotá</option>
-              <option>Medellín</option>
-              <option>Cali</option>
-            </select>
+              onChange={onOriginCityChange}
+              loading={geoLoading}
+            />
           </div>
 
           {/* Viajeros */}
@@ -623,6 +679,58 @@ function ReserveModal({
 }
 
 /* ─────────────────────── Sub-componentes ─────────────────────── */
+
+/** Ciudades colombianas sugeridas en el datalist del input de ciudad. */
+const POPULAR_CITIES = [
+  "Barranquilla",
+  "Bogotá",
+  "Medellín",
+  "Cali",
+  "Cartagena",
+  "Santa Marta",
+  "Bucaramanga",
+  "Pereira",
+  "Manizales",
+  "Cúcuta",
+];
+
+/**
+ * CityInput — input de texto editable para la ciudad de salida, con un
+ * `datalist` que sugiere las principales ciudades colombianas. Muestra un
+ * indicador sutil mientras se detecta la ubicación por IP.
+ */
+function CityInput({
+  value,
+  onChange,
+  loading,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  loading?: boolean;
+}) {
+  return (
+    <div className="relative">
+      <input
+        type="text"
+        list="popular-cities"
+        value={value}
+        placeholder={loading ? "Detectando ubicación…" : "Escribe tu ciudad"}
+        onChange={(e) => onChange(e.target.value)}
+        className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-ocean"
+      />
+      <datalist id="popular-cities">
+        {POPULAR_CITIES.map((c) => (
+          <option key={c} value={c} />
+        ))}
+      </datalist>
+      {loading && !value && (
+        <span className="absolute right-3 top-1/2 -translate-y-1/2">
+          <span className="inline-block h-3.5 w-3.5 animate-spin rounded-full border-2 border-ocean/30 border-t-ocean" />
+        </span>
+      )}
+    </div>
+  );
+}
 
 function StepperBtn({
   children,
