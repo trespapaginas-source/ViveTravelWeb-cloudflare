@@ -109,7 +109,7 @@ export function PlansPage() {
             className={cn(
               "whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition-colors",
               filters.section === section.id
-                ? "bg-ocean text-white shadow-sm"
+                ? "bg-neutral-900 text-white shadow-sm"
                 : "bg-muted text-muted-foreground hover:bg-accent"
             )}
           >
@@ -192,7 +192,7 @@ export function PlansPage() {
                   className={cn(
                     "h-9 w-9 rounded-lg text-sm font-medium transition-colors",
                     currentPage === i + 1
-                      ? "bg-ocean text-white"
+                      ? "bg-neutral-900 text-white"
                       : "border border-border hover:bg-accent"
                   )}
                 >
@@ -238,7 +238,7 @@ export function PlansPage() {
             />
             <button
               onClick={() => setShowFiltersMobile(false)}
-              className="mt-5 w-full rounded-xl bg-ocean py-3 text-sm font-semibold text-white"
+              className="mt-5 w-full rounded-xl bg-neutral-900 py-3 text-sm font-semibold text-white"
             >
               Ver {sorted.length} resultados
             </button>
@@ -291,7 +291,7 @@ function FiltersPanel({
             value={filters.search}
             onChange={(e) => onUpdate({ search: e.target.value })}
             placeholder="¿A dónde viajas?"
-            className="w-full rounded-lg border border-border bg-background py-2 pl-9 pr-3 text-sm outline-none focus:border-ocean"
+            className="w-full rounded-lg border border-border bg-background py-2 pl-9 pr-3 text-sm outline-none focus:border-neutral-900"
           />
         </div>
       </div>
@@ -307,7 +307,7 @@ function FiltersPanel({
             onChange={(e) =>
               onUpdate({ country: e.target.value || undefined })
             }
-            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-ocean"
+            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-neutral-900"
           >
             <option value="">Todos los destinos</option>
             {colombiaRegions.length > 0 && (
@@ -343,7 +343,7 @@ function FiltersPanel({
             onChange={(e) =>
               onUpdate({ category: e.target.value || undefined })
             }
-            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-ocean"
+            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-neutral-900"
           >
             <option value="">Todas las categorías</option>
             {availableCategories.map((cat) => (
@@ -373,7 +373,7 @@ function FiltersPanel({
                   : Number(e.target.value),
             })
           }
-          className="w-full accent-ocean"
+          className="w-full accent-neutral-900"
         />
         <div className="mt-1 flex justify-between text-[11px] text-muted-foreground">
           <span>{formatPrice(priceBounds.min)}</span>
@@ -396,7 +396,7 @@ function FiltersPanel({
               className={cn(
                 "block w-full rounded-lg px-3 py-1.5 text-left text-sm transition-colors",
                 filters.maxDays === opt.value
-                  ? "bg-ocean/10 font-semibold text-ocean"
+                  ? "bg-neutral-100 font-semibold text-neutral-900"
                   : "text-muted-foreground hover:bg-muted"
               )}
             >

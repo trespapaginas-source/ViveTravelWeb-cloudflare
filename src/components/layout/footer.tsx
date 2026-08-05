@@ -61,8 +61,13 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-ocean-dark text-slate-300 mt-auto border-t border-slate-800/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
+    <footer
+      className="relative mt-auto overflow-hidden bg-cover bg-center text-white"
+      style={{ backgroundImage: "url('/images/sky-banner-bg.jpg')" }}
+    >
+      {/* Overlay oscuro para legibilidad */}
+      <div className="absolute inset-0 bg-neutral-950/85 backdrop-blur-[2px]" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-8 border-b border-slate-800/80 items-start">
           {/* Marca + redes */}
           <div className="lg:col-span-4 space-y-4">
@@ -182,7 +187,7 @@ export function Footer() {
                     href={`tel:${f.phone.replace(/\s/g, "")}`}
                     className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group"
                   >
-                    <Phone className="w-3.5 h-3.5 text-slate-500 group-hover:text-ocean-light shrink-0 transition-colors" />
+                    <Phone className="w-3.5 h-3.5 text-slate-500 group-hover:text-white shrink-0 transition-colors" />
                     <span>{f.phone}</span>
                   </a>
                 </li>
@@ -191,7 +196,7 @@ export function Footer() {
                     href={`mailto:${f.email}`}
                     className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group"
                   >
-                    <Mail className="w-3.5 h-3.5 text-slate-500 group-hover:text-ocean-light shrink-0 transition-colors" />
+                    <Mail className="w-3.5 h-3.5 text-slate-500 group-hover:text-white shrink-0 transition-colors" />
                     <span className="break-all">{f.email}</span>
                   </a>
                 </li>
@@ -214,9 +219,9 @@ export function Footer() {
             <span className="hidden sm:inline text-slate-600">•</span>
             <span className="font-medium text-slate-300">Vive Group S.A.S.</span>
             <span className="hidden sm:inline text-slate-600">•</span>
-            <span className="font-semibold text-ocean-light">NIT 901993710</span>
+            <span className="font-semibold text-white">NIT 901993710</span>
             <span className="hidden sm:inline text-slate-600">•</span>
-            <span className="font-semibold text-ocean-light">RNT 278488</span>
+            <span className="font-semibold text-white">RNT 278488</span>
           </div>
           <div className="flex items-center gap-4 shrink-0">
             <Link

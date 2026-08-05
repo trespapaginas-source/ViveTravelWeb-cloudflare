@@ -26,7 +26,7 @@ export function EmptyState({
       {onReset && (
         <button
           onClick={onReset}
-          className="mt-5 inline-flex items-center gap-2 rounded-full bg-ocean px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-ocean-dark"
+          className="mt-5 inline-flex items-center gap-2 rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-neutral-950"
         >
           <RotateCcw className="h-4 w-4" />
           {resetLabel}

@@ -7,22 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand — alias "ocean" usado en todo el código del original.
+        // Brand accent "ocean" — USO RESTRINGIDO: solo botón circular del
+        // Hero (5% de acento permitido). Todo el resto de la UI es neutral.
         ocean: {
           DEFAULT: "#008B8B",
           light: "#03A6A6",
           dark: "#005C5C",
         },
-        // Neutrales heredados del original (mint/sky/sand/leaf → gris).
-        mint: { DEFAULT: "#9CA3AF", light: "#D1D5DB" },
-        sky: { DEFAULT: "#9CA3AF", light: "#D1D5DB" },
-        sand: { DEFAULT: "#9CA3AF", light: "#D1D5DB" },
-        leaf: { DEFAULT: "#6B7280", light: "#E5E7EB" },
-        palm: { DEFAULT: "#6B7280", light: "#E5E7EB" },
-        sunset: { DEFAULT: "#F27405", light: "#F2A365" },
-        // Acentos de marca
-        indigo: { DEFAULT: "#008B8B", light: "#E0F4F4" },
-        coral: "#008B8B",
         // Tokens semánticos (shadcn-style, vía variables CSS en index.css)
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

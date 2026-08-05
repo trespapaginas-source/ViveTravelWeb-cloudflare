@@ -106,7 +106,7 @@ export function LegalDocPage() {
                   className={
                     "block w-full border-l-2 py-1.5 pl-3 text-left text-xs transition-colors " +
                     (activeClause === clause.number
-                      ? "border-ocean bg-muted/60 font-semibold text-foreground"
+                      ? "border-neutral-900 bg-muted/60 font-semibold text-foreground"
                       : "border-transparent text-muted-foreground hover:bg-muted/40")
                   }
                 >
@@ -127,7 +127,7 @@ export function LegalDocPage() {
                 className="scroll-mt-24 p-6"
               >
                 <h2 className="text-base font-bold text-foreground">
-                  <span className="font-mono text-ocean">
+                  <span className="font-mono text-neutral-900">
                     Cláusula {clause.number}.
                   </span>{" "}
                   {clause.heading}
@@ -144,7 +144,7 @@ export function LegalDocPage() {
             {prev ? (
               <Link
                 to={ROUTES.legalDoc(prev.slug)}
-                className="rounded-xl border border-border bg-card p-4 transition-colors hover:border-ocean"
+                className="rounded-xl border border-border bg-card p-4 transition-colors hover:border-neutral-900"
               >
                 <span className="flex items-center gap-1 text-xs font-medium text-muted-foreground">
                   <ArrowLeft className="h-3 w-3" /> Anterior
@@ -159,7 +159,7 @@ export function LegalDocPage() {
             {next ? (
               <Link
                 to={ROUTES.legalDoc(next.slug)}
-                className="rounded-xl border border-border bg-card p-4 text-right transition-colors hover:border-ocean"
+                className="rounded-xl border border-border bg-card p-4 text-right transition-colors hover:border-neutral-900"
               >
                 <span className="flex items-center justify-end gap-1 text-xs font-medium text-muted-foreground">
                   Siguiente <ChevronRight className="h-3 w-3" />

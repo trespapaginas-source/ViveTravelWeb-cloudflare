@@ -245,7 +245,7 @@ export function HeroSection() {
           </span>
           <h1 className="mt-4 text-4xl font-extrabold leading-tight drop-shadow-lg sm:text-5xl lg:text-6xl">
             {hero.title}{" "}
-            <span className="text-ocean-light">{hero.titleHighlight}</span>
+            <span className="text-white">{hero.titleHighlight}</span>
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-base text-white/90 drop-shadow sm:text-lg">
             {hero.subtitle}
@@ -447,19 +447,13 @@ export function HeroSection() {
               />
             </Field>
 
-            {/* Botón buscar — en la misma fila, alineado a la derecha */}
+            {/* Botón buscar — circular, solo icono. Único acento de color del Hero. */}
             <button
               onClick={handleSearch}
-              className={cn(
-                "flex items-center justify-center gap-2 rounded-xl bg-ocean px-6 py-3 text-sm font-semibold text-white shadow-md transition-colors hover:bg-ocean-dark md:h-auto md:self-stretch",
-                COL[cols.buscar]
-              )}
+              aria-label="Buscar"
+              className="flex items-center justify-center rounded-full bg-ocean p-0 text-white shadow-md transition-all hover:scale-105 md:col-span-1 md:h-full"
             >
-              <Search className="h-4 w-4" />
-              <span className="md:hidden lg:inline">
-                {activeTab === "grupales" ? "Ver Viaje" : "Buscar"}
-              </span>
-              <span className="hidden md:inline lg:hidden">Ir</span>
+              <Search className="h-5 w-5 text-white" />
             </button>
           </div>
               </>
@@ -551,7 +545,7 @@ function Field({
         {icon}
         <span className="truncate">{label}</span>
       </label>
-      <div className="rounded-xl border border-border bg-background px-3 py-2 transition-colors focus-within:border-ocean">
+      <div className="rounded-xl border border-border bg-background px-3 py-2 transition-colors focus-within:border-neutral-900">
         {children}
       </div>
     </div>
@@ -579,7 +573,7 @@ function NoDateSwitch({
         onClick={() => onChange(!checked)}
         className={cn(
           "relative h-5 w-9 shrink-0 rounded-full transition-colors",
-          checked ? "bg-ocean" : "bg-zinc-300"
+          checked ? "bg-neutral-900" : "bg-zinc-300"
         )}
       >
         <span
@@ -751,7 +745,7 @@ function TravelersPopover({
           <button
             type="button"
             onClick={() => setOpen(false)}
-            className="mt-2 w-full rounded-md bg-ocean py-1.5 text-xs font-semibold text-white hover:bg-ocean-dark"
+            className="mt-2 w-full rounded-md bg-neutral-900 py-1.5 text-xs font-semibold text-white hover:bg-black"
           >
             Listo
           </button>

@@ -44,7 +44,7 @@ export function TeamPage() {
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Header */}
       <div className="mb-10 text-center">
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-ocean/10 px-4 py-1 text-xs font-semibold text-ocean">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-neutral-100 px-4 py-1 text-xs font-semibold text-neutral-900">
           <Users className="h-4 w-4" /> {content.navbar.navItems.find((n) => n.key === "team")?.label ?? "Equipo"}
         </span>
         <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
@@ -63,7 +63,7 @@ export function TeamPage() {
             key={member.name}
             className={
               "flex flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-md " +
-              (member.featured ? "border-ocean ring-1 ring-ocean/20" : "border-border")
+              (member.featured ? "border-neutral-900 ring-1 ring-neutral-900/20" : "border-border")
             }
           >
             <div className="relative aspect-[4/5] overflow-hidden">
@@ -78,14 +78,14 @@ export function TeamPage() {
                 }}
               />
               {member.featured && (
-                <span className="absolute left-3 top-3 rounded-full bg-ocean px-3 py-1 text-xs font-semibold text-white">
+                <span className="absolute left-3 top-3 rounded-full bg-neutral-900 px-3 py-1 text-xs font-semibold text-white">
                   Vocero Principal
                 </span>
               )}
             </div>
             <div className="flex flex-1 flex-col p-5">
               <h3 className="text-base font-bold text-foreground">{member.name}</h3>
-              <p className="text-sm font-medium text-ocean">{member.role}</p>
+              <p className="text-sm font-medium text-neutral-900">{member.role}</p>
               <p className="mt-2 text-sm text-muted-foreground">{member.bio}</p>
             </div>
           </div>
@@ -99,7 +99,7 @@ export function TeamPage() {
             key={s.label}
             className="rounded-2xl border border-border bg-muted/30 p-5 text-center"
           >
-            <p className="text-2xl font-extrabold text-ocean">{s.value}</p>
+            <p className="text-2xl font-extrabold text-neutral-900">{s.value}</p>
             <p className="mt-0.5 text-xs text-muted-foreground">{s.label}</p>
           </div>
         ))}

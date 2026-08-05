@@ -78,7 +78,7 @@ export function Navbar() {
       {content.campaign?.active && isHome && (
         <div
           className={cn(
-            "bg-ocean text-white text-center text-xs font-semibold transition-all duration-200 ease-in-out overflow-hidden relative z-50 flex items-center justify-center",
+            "bg-neutral-900 text-white text-center text-xs font-semibold transition-all duration-200 ease-in-out overflow-hidden relative z-50 flex items-center justify-center",
             scrolled ? "h-0 opacity-0" : "h-[36px] opacity-100"
           )}
         >
@@ -222,10 +222,10 @@ export function Navbar() {
                 "rounded-full h-10 w-10 sm:h-9 sm:w-9 flex items-center justify-center transition-colors duration-200",
                 isFav
                   ? showOpaque
-                    ? "bg-ocean/10 text-ocean font-semibold"
+                    ? "bg-neutral-100 text-neutral-900 font-semibold"
                     : "bg-white/20 text-white"
                   : showOpaque
-                  ? "text-zinc-600 hover:text-ocean hover:bg-ocean/5"
+                  ? "text-zinc-600 hover:text-neutral-900 hover:bg-neutral-50"
                   : "text-white/90 hover:text-white hover:bg-white/10"
               )}
               aria-label="Mis favoritos"
@@ -295,8 +295,8 @@ export function Navbar() {
                               className={cn(
                                 "flex items-center justify-between w-full rounded-xl transition-colors duration-150 min-h-[44px]",
                                 active
-                                  ? "bg-ocean/10 text-ocean font-semibold"
-                                  : "text-zinc-600 hover:bg-zinc-50 hover:text-ocean"
+                                  ? "bg-neutral-100 text-neutral-900 font-semibold"
+                                  : "text-zinc-600 hover:bg-zinc-50 hover:text-neutral-900"
                               )}
                             >
                               <Link
@@ -337,7 +337,7 @@ export function Navbar() {
                                     key={section.id}
                                     to={ROUTES.plansByCategory(section.id)}
                                     onClick={closeMobile}
-                                    className="px-4 py-2.5 rounded-lg text-left text-sm transition-colors duration-150 min-h-[40px] flex items-center text-zinc-500 hover:bg-zinc-50 hover:text-ocean"
+                                    className="px-4 py-2.5 rounded-lg text-left text-sm transition-colors duration-150 min-h-[40px] flex items-center text-zinc-500 hover:bg-zinc-50 hover:text-neutral-900"
                                   >
                                     {section.label}
                                   </Link>
@@ -356,8 +356,8 @@ export function Navbar() {
                           className={cn(
                             "px-4 py-3 rounded-xl text-left text-sm font-medium transition-colors duration-150 min-h-[44px] flex items-center",
                             active
-                              ? "bg-ocean/10 text-ocean font-semibold"
-                              : "text-zinc-600 hover:bg-zinc-50 hover:text-ocean"
+                              ? "bg-neutral-100 text-neutral-900 font-semibold"
+                              : "text-zinc-600 hover:bg-zinc-50 hover:text-neutral-900"
                           )}
                         >
                           {item.label}
@@ -373,8 +373,8 @@ export function Navbar() {
                       className={cn(
                         "flex items-center gap-2.5 px-4 py-3 rounded-xl text-left text-sm font-medium transition-colors duration-150 min-h-[44px]",
                         isFav
-                          ? "bg-ocean/10 text-ocean font-semibold"
-                          : "text-zinc-600 hover:bg-zinc-50 hover:text-ocean"
+                          ? "bg-neutral-100 text-neutral-900 font-semibold"
+                          : "text-zinc-600 hover:bg-zinc-50 hover:text-neutral-900"
                       )}
                     >
                       <Heart

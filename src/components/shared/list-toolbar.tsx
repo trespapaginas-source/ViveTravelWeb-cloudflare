@@ -44,7 +44,7 @@ export function ListToolbar({
           <select
             value={sortOption}
             onChange={(e) => onSortOptionChange(e.target.value as SortOption)}
-            className="h-8 min-w-[180px] appearance-none rounded-md border border-border bg-background py-1 pl-8 pr-3 text-xs text-foreground outline-none focus:border-ocean"
+            className="h-8 min-w-[180px] appearance-none rounded-md border border-border bg-background py-1 pl-8 pr-3 text-xs text-foreground outline-none focus:border-neutral-900"
           >
             {sortOptions.map((opt) => (
               <option key={opt} value={opt}>

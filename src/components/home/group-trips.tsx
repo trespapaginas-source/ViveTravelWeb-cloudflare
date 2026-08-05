@@ -24,7 +24,7 @@ export function GroupTrips() {
       <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         {/* Columna izquierda: copy + CTAs + stats */}
         <div className="flex flex-col justify-center">
-          <span className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-ocean">
+          <span className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-neutral-900">
             <Users className="h-4 w-4" />
             {g.label}
           </span>
@@ -54,7 +54,7 @@ export function GroupTrips() {
           <div className="mt-6 flex gap-6">
             {g.stats.map((s) => (
               <div key={s.label}>
-                <p className="text-2xl font-extrabold text-ocean">{s.value}</p>
+                <p className="text-2xl font-extrabold text-neutral-900">{s.value}</p>
                 <p className="text-xs text-muted-foreground">{s.label}</p>
               </div>
             ))}
@@ -71,7 +71,7 @@ export function GroupTrips() {
                 className="rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-muted">
-                  <Icon className="h-5 w-5 text-ocean" />
+                  <Icon className="h-5 w-5 text-neutral-900" />
                 </div>
                 <h3 className="mt-3 text-sm font-bold text-card-foreground">{b.title}</h3>
                 <p className="mt-1 text-xs text-muted-foreground">{b.description}</p>

@@ -16,7 +16,7 @@ export function CabinCard({ cabin }: { cabin: NormalizedCabin }) {
   return (
     <article
       onClick={() => navigate(ROUTES.cabinDetail(cabin.id))}
-      className="group flex cursor-pointer flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card py-0 shadow-sm transition-all hover:-translate-y-0.5 hover:border-ocean/20 hover:shadow-md"
+      className="group flex cursor-pointer flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card py-0 shadow-sm transition-all hover:-translate-y-0.5 hover:border-neutral-900/20 hover:shadow-md"
     >
       <div className="relative aspect-[16/10] overflow-hidden">
         <div className="absolute inset-0">
@@ -24,7 +24,7 @@ export function CabinCard({ cabin }: { cabin: NormalizedCabin }) {
         </div>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         {cabin.is_featured && (
-          <span className="absolute right-2.5 top-2.5 z-10 rounded-full bg-ocean px-2 py-1 text-[11px] font-semibold text-white">
+          <span className="absolute right-2.5 top-2.5 z-10 rounded-md bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-md border border-white/10">
             ★ Destacado
           </span>
         )}
@@ -99,14 +99,14 @@ export function CabinCardHorizontal({ cabin }: { cabin: NormalizedCabin }) {
   return (
     <article
       onClick={() => navigate(ROUTES.cabinDetail(cabin.id))}
-      className="group flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:border-ocean/20 hover:shadow-md sm:flex-row"
+      className="group flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:border-neutral-900/20 hover:shadow-md sm:flex-row"
     >
       <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden sm:aspect-none sm:min-h-[220px] sm:w-[320px] sm:self-stretch">
         <div className="absolute inset-0">
           <CardImageCarousel images={cabin.images} alt={cabin.name} />
         </div>
         {cabin.is_featured && (
-          <span className="absolute right-2.5 top-2.5 z-10 rounded-full bg-ocean px-2 py-1 text-[11px] font-semibold text-white">
+          <span className="absolute right-2.5 top-2.5 z-10 rounded-md bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-md border border-white/10">
             ★ Destacado
           </span>
         )}

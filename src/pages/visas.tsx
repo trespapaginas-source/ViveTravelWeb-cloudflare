@@ -12,7 +12,7 @@ const CATEGORY_META: Record<
   free: {
     label: "Sin visa requerida",
     description: "Destinos a los que los colombianos pueden ingresar libremente.",
-    color: "bg-ocean/10 text-ocean",
+    color: "bg-neutral-100 text-neutral-900",
   },
   onarrival: {
     label: "Visa a la llegada / electrónica",
@@ -95,7 +95,7 @@ export function VisasPage() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Buscar país o región..."
-          className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-ocean sm:max-w-xs"
+          className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-neutral-900 sm:max-w-xs"
         />
         <div className="no-scrollbar flex gap-2 overflow-x-auto">
           {FILTERS.map((f) => (
@@ -105,7 +105,7 @@ export function VisasPage() {
               className={
                 "whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition-colors " +
                 (activeFilter === f.id
-                  ? "bg-ocean text-white"
+                  ? "bg-neutral-900 text-white"
                   : "bg-muted text-muted-foreground hover:bg-accent")
               }
             >
@@ -154,7 +154,7 @@ export function VisasPage() {
                     <Link
                       key={visa.slug}
                       to={ROUTES.visaDetail(visa.slug)}
-                      className="group flex items-center gap-3 rounded-xl border border-border bg-card p-3 transition-all hover:-translate-y-0.5 hover:border-ocean hover:shadow-sm"
+                      className="group flex items-center gap-3 rounded-xl border border-border bg-card p-3 transition-all hover:-translate-y-0.5 hover:border-neutral-900 hover:shadow-sm"
                     >
                       <img
                         src={`https://flagcdn.com/w80/${visa.countryCode.toLowerCase()}.png`}
@@ -163,7 +163,7 @@ export function VisasPage() {
                         className="h-10 w-10 rounded-full object-cover ring-1 ring-border"
                       />
                       <div className="min-w-0 flex-1">
-                        <p className="line-clamp-1 text-sm font-semibold text-card-foreground group-hover:text-ocean">
+                        <p className="line-clamp-1 text-sm font-semibold text-card-foreground group-hover:text-neutral-900">
                           {visa.country}
                         </p>
                         <p className="line-clamp-1 text-xs text-muted-foreground">

@@ -76,7 +76,7 @@ export function PromotionsBanner() {
                     aria-label={`Ir al banner ${i + 1}`}
                     className={cn(
                       "h-1.5 rounded-full bg-white/60 transition-all",
-                      i === index ? "w-5 bg-ocean" : "w-1.5"
+                      i === index ? "w-5 bg-neutral-900" : "w-1.5"
                     )}
                   />
                 ))}
@@ -90,7 +90,7 @@ export function PromotionsBanner() {
           {valueCards.map((card, i) => {
             const inner = (
               <div className="flex h-full items-start gap-2 rounded-xl border border-border bg-white p-2.5 shadow-md sm:gap-3 sm:rounded-2xl sm:p-4">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-ocean/10 text-ocean sm:h-10 sm:w-10">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-neutral-900 sm:h-10 sm:w-10">
                   <ValueIcon index={i} />
                 </div>
                 <div className="min-w-0">

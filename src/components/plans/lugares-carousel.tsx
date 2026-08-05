@@ -105,7 +105,7 @@ export function LugaresCarousel({ lugares }: { lugares: Lugar[] }) {
               disabled={!canPrev}
               aria-label="Anterior"
               className={cn(
-                "absolute left-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white p-2 text-foreground shadow-lg transition-colors hover:bg-ocean hover:text-white disabled:cursor-default disabled:opacity-40 sm:-left-3 sm:h-10 sm:w-10"
+                "absolute left-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white p-2 text-foreground shadow-lg transition-colors hover:bg-neutral-900 hover:text-white disabled:cursor-default disabled:opacity-40 sm:-left-3 sm:h-10 sm:w-10"
               )}
             >
               <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -116,7 +116,7 @@ export function LugaresCarousel({ lugares }: { lugares: Lugar[] }) {
               disabled={!canNext}
               aria-label="Siguiente"
               className={cn(
-                "absolute right-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white p-2 text-foreground shadow-lg transition-colors hover:bg-ocean hover:text-white disabled:cursor-default disabled:opacity-40 sm:-right-3 sm:h-10 sm:w-10"
+                "absolute right-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white p-2 text-foreground shadow-lg transition-colors hover:bg-neutral-900 hover:text-white disabled:cursor-default disabled:opacity-40 sm:-right-3 sm:h-10 sm:w-10"
               )}
             >
               <ChevronRight className="h-4 w-5 sm:h-5 sm:w-5" />

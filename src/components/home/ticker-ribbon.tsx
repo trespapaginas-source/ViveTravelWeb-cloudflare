@@ -17,7 +17,7 @@ export function TickerRibbon() {
       <div className="flex w-max animate-[marquee_30s_linear_infinite] gap-8">
         {items.map((item, i) => (
           <div key={i} className="flex items-center gap-3 text-white">
-            <item.icon className="h-4 w-4 text-ocean-light" />
+            <item.icon className="h-4 w-4 text-white" />
             <span className="text-xs font-extrabold uppercase tracking-widest sm:text-sm">
               {item.label}
             </span>

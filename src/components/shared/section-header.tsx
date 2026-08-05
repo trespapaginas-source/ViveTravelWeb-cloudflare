@@ -30,13 +30,13 @@ export function SectionHeader({
       )}
     >
       {eyebrow && (
-        <span className="inline-block text-xs font-semibold uppercase tracking-wider text-ocean">
+        <span className="inline-block text-xs font-semibold uppercase tracking-wider text-neutral-900">
           {eyebrow}
         </span>
       )}
       <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
         {title}{" "}
-        {titleHighlight && <span className="text-ocean">{titleHighlight}</span>}
+        {titleHighlight && <span className="text-neutral-900">{titleHighlight}</span>}
       </h2>
       {subtitle && (
         <p className="mt-3 text-sm text-muted-foreground sm:text-base">{subtitle}</p>

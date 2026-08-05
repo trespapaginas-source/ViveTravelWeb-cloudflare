@@ -29,7 +29,7 @@ export function PlanCard({ plan }: { plan: NormalizedPlan }) {
           {plan.category}
         </span>
         {plan.is_featured && (
-          <span className="absolute right-2.5 top-2.5 z-10 rounded-full bg-ocean px-2 py-1 text-[11px] font-semibold text-white">
+          <span className="absolute right-2.5 top-2.5 z-10 rounded-md bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-md border border-white/10">
             ★ Destacado
           </span>
         )}
@@ -141,7 +141,7 @@ export function PlanCardHorizontal({ plan }: { plan: NormalizedPlan }) {
             <span className="flex items-center gap-0.5">
               <Users className="h-3.5 w-3.5" /> Máx. {plan.maxGuests} personas
             </span>
-            <span className="rounded-full bg-ocean/10 px-2 py-0.5 text-[11px] font-medium text-ocean">
+            <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-[11px] font-medium text-neutral-900">
               {plan.difficulty}
             </span>
           </div>

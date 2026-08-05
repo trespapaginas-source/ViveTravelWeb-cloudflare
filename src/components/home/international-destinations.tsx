@@ -52,7 +52,7 @@ export function InternationalDestinations() {
                 {dest.name}
               </h3>
               <p className="mt-1 line-clamp-2 text-sm text-white/85">{dest.description}</p>
-              <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3.5 py-1.5 text-xs font-semibold backdrop-blur-sm transition-colors group-hover:bg-white group-hover:text-ocean">
+              <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3.5 py-1.5 text-xs font-semibold backdrop-blur-sm transition-colors group-hover:bg-white group-hover:text-neutral-900">
                 Ver destino <ArrowRight className="h-3.5 w-3.5" />
               </span>
             </div>

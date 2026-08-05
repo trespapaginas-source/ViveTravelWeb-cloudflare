@@ -93,11 +93,11 @@ export function ContactPage() {
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Header */}
       <div className="mb-8 text-center">
-        <span className="inline-block rounded-full bg-ocean/10 px-4 py-1 text-xs font-semibold text-ocean">
+        <span className="inline-block rounded-full bg-neutral-100 px-4 py-1 text-xs font-semibold text-neutral-900">
           {c.badge}
         </span>
         <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-          {c.title} <span className="text-ocean">{c.titleHighlight}</span>
+          {c.title} <span className="text-neutral-900">{c.titleHighlight}</span>
         </h1>
         <p className="mx-auto mt-2 max-w-xl text-sm text-muted-foreground">
           {c.subtitle}
@@ -109,7 +109,7 @@ export function ContactPage() {
         <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
           {sent ? (
             <div className="flex flex-col items-center justify-center py-12 text-center">
-              <CheckCircle2 className="h-14 w-14 text-ocean" />
+              <CheckCircle2 className="h-14 w-14 text-neutral-900" />
               <h2 className="mt-4 text-lg font-bold text-foreground">
                 ¡Mensaje enviado!
               </h2>
@@ -202,7 +202,7 @@ export function ContactPage() {
                           onChange={(e) =>
                             setForm({ ...form, contactMethod: e.target.value })
                           }
-                          className="accent-ocean"
+                          className="accent-neutral-900"
                         />
                         {opt.label}
                       </label>
@@ -211,7 +211,7 @@ export function ContactPage() {
                 </Field>
                 <button
                   type="submit"
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-ocean py-3 text-sm font-semibold text-white transition-colors hover:bg-ocean-dark"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-neutral-900 py-3 text-sm font-semibold text-white transition-colors hover:bg-neutral-950"
                 >
                   <Send className="h-4 w-4" /> Enviar mensaje
                 </button>
@@ -229,9 +229,9 @@ export function ContactPage() {
                 href={ch.href}
                 target={ch.external ? "_blank" : undefined}
                 rel={ch.external ? "noopener noreferrer" : undefined}
-                className="rounded-2xl border border-border bg-card p-4 transition-colors hover:border-ocean"
+                className="rounded-2xl border border-border bg-card p-4 transition-colors hover:border-neutral-900"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-ocean/10 text-ocean">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 text-neutral-900">
                   {ch.icon}
                 </div>
                 <p className="mt-3 text-sm font-semibold text-foreground">{ch.label}</p>
@@ -258,7 +258,7 @@ export function ContactPage() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-ocean hover:text-ocean"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-neutral-900 hover:text-neutral-900"
                   aria-label={s.label}
                 >
                   <s.icon className="h-5 w-5" />

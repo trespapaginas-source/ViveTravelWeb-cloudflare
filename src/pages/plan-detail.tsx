@@ -146,7 +146,7 @@ export function PlanDetailPage() {
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
               <div className="flex items-center gap-2">
-                <span className="rounded-full bg-ocean/85 px-3 py-1 text-xs font-semibold text-white">
+                <span className="rounded-full bg-neutral-900/90 px-3 py-1 text-xs font-semibold text-white">
                   {plan.category}
                 </span>
                 {plan.rating > 0 && (
@@ -173,14 +173,14 @@ export function PlanDetailPage() {
           {/* Stats rápidas */}
           <div className="mt-4 flex flex-wrap gap-4 border-y border-border py-3 text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
-              <Clock className="h-4 w-4 text-ocean" /> {plan.duration}
+              <Clock className="h-4 w-4 text-neutral-900" /> {plan.duration}
             </span>
             <span className="flex items-center gap-1.5">
-              <Users className="h-4 w-4 text-ocean" /> Máx. {plan.maxGuests} personas
+              <Users className="h-4 w-4 text-neutral-900" /> Máx. {plan.maxGuests} personas
             </span>
             {plan.difficulty && (
               <span className="flex items-center gap-1.5">
-                <Sparkles className="h-4 w-4 text-ocean" /> {plan.difficulty}
+                <Sparkles className="h-4 w-4 text-neutral-900" /> {plan.difficulty}
               </span>
             )}
           </div>
@@ -204,7 +204,7 @@ export function PlanDetailPage() {
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
               {plan.includes.map((item, i) => (
                 <div key={i} className="flex items-start gap-2 text-sm">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-ocean" />
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-neutral-900" />
                   <span className="text-foreground">{item}</span>
                 </div>
               ))}
@@ -235,7 +235,7 @@ export function PlanDetailPage() {
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
                 {plan.highlights.map((h, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm">
-                    <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-ocean" />
+                    <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-neutral-900" />
                     <span className="text-foreground">{h}</span>
                   </div>
                 ))}
@@ -257,7 +257,7 @@ export function PlanDetailPage() {
                   <AccordionItem key={i} value={`day-${i}`}>
                     <AccordionTrigger>
                       <span className="text-left text-[15px] text-foreground">
-                        <span className="font-bold text-ocean">Día {i + 1}:</span>{" "}
+                        <span className="font-bold text-neutral-900">Día {i + 1}:</span>{" "}
                         <span className="font-normal">{day.title}</span>
                       </span>
                     </AccordionTrigger>
@@ -281,7 +281,7 @@ export function PlanDetailPage() {
               <div className="mt-3 space-y-2">
                 {plan.schedule && (
                   <div className="flex items-start gap-2 rounded-lg bg-muted/50 p-3 text-sm">
-                    <CalendarIcon className="mt-0.5 h-4 w-4 text-ocean" />
+                    <CalendarIcon className="mt-0.5 h-4 w-4 text-neutral-900" />
                     <div>
                       <strong>Horario:</strong> {plan.schedule}
                     </div>
@@ -289,7 +289,7 @@ export function PlanDetailPage() {
                 )}
                 {plan.meeting && (
                   <div className="flex items-start gap-2 rounded-lg bg-muted/50 p-3 text-sm">
-                    <Navigation className="mt-0.5 h-4 w-4 text-ocean" />
+                    <Navigation className="mt-0.5 h-4 w-4 text-neutral-900" />
                     <div>
                       <strong>Punto de encuentro:</strong> {plan.meeting}
                     </div>
@@ -358,7 +358,7 @@ export function PlanDetailPage() {
                     value={selectedDate}
                     min={new Date().toISOString().split("T")[0]}
                     onChange={(e) => setSelectedDate(e.target.value)}
-                    className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-ocean"
+                    className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-neutral-900"
                   />
                 )}
               </div>
@@ -418,7 +418,7 @@ export function PlanDetailPage() {
 
             <Link
               to={ROUTES.contact}
-              className="mt-3 block text-center text-xs font-medium text-ocean hover:underline"
+              className="mt-3 block text-center text-xs font-medium text-neutral-900 hover:underline"
             >
               ¿Dudas? Contáctanos directamente
               <ChevronRight className="ml-0.5 inline h-3 w-3" />
@@ -533,10 +533,10 @@ function ReserveModal({
                     <button
                       type="button"
                       onClick={() => setDatesExpanded(true)}
-                      className="flex w-full items-center justify-between rounded-lg border border-ocean bg-ocean/5 p-2.5 text-left text-sm transition-colors hover:bg-ocean/10"
+                      className="flex w-full items-center justify-between rounded-lg border border-neutral-900 bg-neutral-50 p-2.5 text-left text-sm transition-colors hover:bg-neutral-100"
                     >
                       <div className="min-w-0">
-                        <span className="block truncate text-[13px] font-semibold text-ocean">
+                        <span className="block truncate text-[13px] font-semibold text-neutral-900">
                           {formatDateLong(selectedDate)}
                         </span>
                         {(() => {
@@ -550,7 +550,7 @@ function ReserveModal({
                           ) : null;
                         })()}
                       </div>
-                      <span className="flex items-center gap-1 text-[11px] font-medium text-ocean">
+                      <span className="flex items-center gap-1 text-[11px] font-medium text-neutral-900">
                         Cambiar
                         <ChevronDown className="h-3.5 w-3.5" />
                       </span>
@@ -574,7 +574,7 @@ function ReserveModal({
                             className={cn(
                               "flex w-full items-center justify-between rounded-lg border p-2.5 text-left text-sm transition-colors",
                               isSelected
-                                ? "border-ocean bg-ocean/5"
+                                ? "border-neutral-900 bg-neutral-50"
                                 : "border-transparent hover:bg-muted"
                             )}
                           >
@@ -582,7 +582,7 @@ function ReserveModal({
                               <span
                                 className={cn(
                                   "block truncate text-[13px] font-semibold",
-                                  isSelected ? "text-ocean" : "text-foreground"
+                                  isSelected ? "text-neutral-900" : "text-foreground"
                                 )}
                               >
                                 {formatDateLong(d.start)}
@@ -592,7 +592,7 @@ function ReserveModal({
                               </span>
                             </div>
                             {isSelected && (
-                              <Check className="h-4 w-4 shrink-0 text-ocean" />
+                              <Check className="h-4 w-4 shrink-0 text-neutral-900" />
                             )}
                           </button>
                         );
@@ -612,7 +612,7 @@ function ReserveModal({
                 value={selectedDate}
                 min={new Date().toISOString().split("T")[0]}
                 onChange={(e) => onSelectDate(e.target.value)}
-                className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-ocean"
+                className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-neutral-900"
               />
             )}
           </div>
@@ -716,7 +716,7 @@ function CityInput({
         value={value}
         placeholder={loading ? "Detectando ubicación…" : "Escribe tu ciudad"}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-ocean"
+        className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-neutral-900"
       />
       <datalist id="popular-cities">
         {POPULAR_CITIES.map((c) => (
@@ -725,7 +725,7 @@ function CityInput({
       </datalist>
       {loading && !value && (
         <span className="absolute right-3 top-1/2 -translate-y-1/2">
-          <span className="inline-block h-3.5 w-3.5 animate-spin rounded-full border-2 border-ocean/30 border-t-ocean" />
+          <span className="inline-block h-3.5 w-3.5 animate-spin rounded-full border-2 border-neutral-900/30 border-t-neutral-900" />
         </span>
       )}
     </div>
@@ -779,7 +779,7 @@ function DatePopover({
         onClick={() => setOpen((v) => !v)}
         className={cn(
           "flex w-full items-center justify-between rounded-lg border bg-background px-3 py-2 text-left text-sm outline-none transition-colors",
-          open ? "border-ocean" : "border-border focus:border-ocean"
+          open ? "border-neutral-900" : "border-border focus:border-neutral-900"
         )}
       >
         <span className={cn("truncate", selected ? "text-foreground" : "text-muted-foreground")}>
@@ -816,7 +816,7 @@ function DatePopover({
                   className={cn(
                     "flex w-full items-center justify-between rounded-lg border p-2.5 text-left text-sm transition-colors",
                     isSelected
-                      ? "border-ocean bg-ocean/5"
+                      ? "border-neutral-900 bg-neutral-50"
                       : "border-transparent hover:bg-muted"
                   )}
                 >
@@ -824,7 +824,7 @@ function DatePopover({
                     <span
                       className={cn(
                         "block truncate text-[13px] font-semibold",
-                        isSelected ? "text-ocean" : "text-foreground"
+                        isSelected ? "text-neutral-900" : "text-foreground"
                       )}
                     >
                       {formatDateLong(d.start)}
@@ -833,7 +833,7 @@ function DatePopover({
                       al {formatDateLong(d.end)}
                     </span>
                   </div>
-                  {isSelected && <Check className="h-4 w-4 shrink-0 text-ocean" />}
+                  {isSelected && <Check className="h-4 w-4 shrink-0 text-neutral-900" />}
                 </button>
               );
             })}

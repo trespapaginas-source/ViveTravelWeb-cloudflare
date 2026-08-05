@@ -105,7 +105,7 @@ export function CabinDetailPage() {
           {/* Título */}
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <span className="rounded-full bg-ocean/85 px-3 py-1 text-xs font-semibold text-white">
+              <span className="rounded-full bg-neutral-900/90 px-3 py-1 text-xs font-semibold text-white">
                 {cabin.propertyType}
               </span>
               <h1 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
@@ -162,7 +162,7 @@ export function CabinDetailPage() {
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
                 {cabin.highlights.map((h, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm">
-                    <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-ocean" />
+                    <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-neutral-900" />
                     <span className="text-foreground">{h}</span>
                   </div>
                 ))}
@@ -177,7 +177,7 @@ export function CabinDetailPage() {
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
                 {cabin.amenities.map((a, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-ocean" />
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-neutral-900" />
                     <span className="text-foreground">{a}</span>
                   </div>
                 ))}
@@ -189,7 +189,7 @@ export function CabinDetailPage() {
           {cabin.rules.length > 0 && (
             <section className="mt-8">
               <h2 className="flex items-center gap-2 text-lg font-bold text-foreground">
-                <Shield className="h-5 w-5 text-ocean" /> Reglas de la cabaña
+                <Shield className="h-5 w-5 text-neutral-900" /> Reglas de la cabaña
               </h2>
               <div className="mt-3 space-y-2">
                 {cabin.rules.map((r, i) => (
@@ -224,7 +224,7 @@ export function CabinDetailPage() {
                 href={cabin.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 inline-block text-xs font-medium text-ocean hover:underline"
+                className="mt-2 inline-block text-xs font-medium text-neutral-900 hover:underline"
               >
                 Ver ubicación exacta en Google Maps
               </a>
@@ -256,7 +256,7 @@ export function CabinDetailPage() {
                   value={checkIn}
                   min={todayStr()}
                   onChange={(e) => setCheckIn(e.target.value)}
-                  className="w-full rounded-lg border border-border bg-background px-2 py-2 text-sm outline-none focus:border-ocean"
+                  className="w-full rounded-lg border border-border bg-background px-2 py-2 text-sm outline-none focus:border-neutral-900"
                 />
               </div>
               <div>
@@ -268,7 +268,7 @@ export function CabinDetailPage() {
                   value={checkOut}
                   min={checkIn || todayStr()}
                   onChange={(e) => setCheckOut(e.target.value)}
-                  className="w-full rounded-lg border border-border bg-background px-2 py-2 text-sm outline-none focus:border-ocean"
+                  className="w-full rounded-lg border border-border bg-background px-2 py-2 text-sm outline-none focus:border-neutral-900"
                 />
               </div>
             </div>
@@ -372,7 +372,7 @@ function Stat({
 }) {
   return (
     <div className="flex flex-col items-center gap-1 text-center">
-      <span className="text-ocean">{icon}</span>
+      <span className="text-neutral-900">{icon}</span>
       <span className="text-sm font-bold text-foreground">{value}</span>
       <span className="text-[11px] text-muted-foreground">{label}</span>
     </div>

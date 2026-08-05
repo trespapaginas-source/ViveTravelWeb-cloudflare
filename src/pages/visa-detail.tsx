@@ -19,7 +19,7 @@ import { EmptyState } from "@/components/shared/empty-state";
 
 /** Color de badge según categoría de visa. */
 const CATEGORY_STYLE: Record<string, string> = {
-  free: "bg-ocean/10 text-ocean",
+  free: "bg-neutral-100 text-neutral-900",
   onarrival: "bg-amber-100 text-amber-700",
   required: "bg-rose-100 text-rose-700",
 };
@@ -102,12 +102,12 @@ export function VisaDetailPage() {
         {/* Requisitos */}
         <section>
           <h2 className="flex items-center gap-2 text-lg font-bold text-foreground">
-            <ListChecks className="h-5 w-5 text-ocean" /> Requisitos
+            <ListChecks className="h-5 w-5 text-neutral-900" /> Requisitos
           </h2>
           <ul className="mt-3 space-y-2">
             {visa.requirements.map((req, i) => (
               <li key={i} className="flex items-start gap-2 text-sm">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-ocean" />
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-neutral-900" />
                 <span className="text-foreground">{req}</span>
               </li>
             ))}
@@ -117,12 +117,12 @@ export function VisaDetailPage() {
         {/* Paso a paso */}
         <section>
           <h2 className="flex items-center gap-2 text-lg font-bold text-foreground">
-            <FileText className="h-5 w-5 text-ocean" /> Paso a paso
+            <FileText className="h-5 w-5 text-neutral-900" /> Paso a paso
           </h2>
           <ol className="mt-3 space-y-3">
             {visa.process.map((step, i) => (
               <li key={i} className="flex gap-3 text-sm">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-ocean text-xs font-bold text-white">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-neutral-900 text-xs font-bold text-white">
                   {i + 1}
                 </span>
                 <span className="pt-0.5 text-foreground">{step}</span>
@@ -136,7 +136,7 @@ export function VisaDetailPage() {
       {visa.specialNotes && visa.specialNotes.length > 0 && (
         <section className="mt-8">
           <h2 className="flex items-center gap-2 text-lg font-bold text-foreground">
-            <Info className="h-5 w-5 text-ocean" /> Casos especiales
+            <Info className="h-5 w-5 text-neutral-900" /> Casos especiales
           </h2>
           <div className="mt-3 space-y-2">
             {visa.specialNotes.map((note, i) => (
@@ -155,7 +155,7 @@ export function VisaDetailPage() {
       {visa.embassyInfo && (
         <section className="mt-8">
           <h2 className="flex items-center gap-2 text-lg font-bold text-foreground">
-            <Building2 className="h-5 w-5 text-ocean" /> Sede consular
+            <Building2 className="h-5 w-5 text-neutral-900" /> Sede consular
           </h2>
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
             <div className="rounded-xl border border-border bg-card p-4 text-sm">
@@ -178,9 +178,9 @@ export function VisaDetailPage() {
               href={visa.embassyInfo.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-xl border border-border bg-card p-4 text-sm transition-colors hover:border-ocean"
+              className="flex items-center gap-2 rounded-xl border border-border bg-card p-4 text-sm transition-colors hover:border-neutral-900"
             >
-              <ExternalLink className="h-4 w-4 text-ocean" />
+              <ExternalLink className="h-4 w-4 text-neutral-900" />
               <span className="font-semibold text-foreground">Sitio web oficial</span>
             </a>
           </div>
@@ -191,7 +191,7 @@ export function VisaDetailPage() {
       {visa.documents && visa.documents.length > 0 && (
         <section className="mt-8">
           <h2 className="flex items-center gap-2 text-lg font-bold text-foreground">
-            <FileText className="h-5 w-5 text-ocean" /> Documentos requeridos
+            <FileText className="h-5 w-5 text-neutral-900" /> Documentos requeridos
           </h2>
           <ul className="mt-3 space-y-2">
             {visa.documents.map((doc, i) => (
@@ -208,7 +208,7 @@ export function VisaDetailPage() {
       {visa.tips.length > 0 && (
         <section className="mt-8">
           <h2 className="flex items-center gap-2 text-lg font-bold text-foreground">
-            <Lightbulb className="h-5 w-5 text-ocean" /> Recomendaciones
+            <Lightbulb className="h-5 w-5 text-neutral-900" /> Recomendaciones
           </h2>
           <ul className="mt-3 space-y-2">
             {visa.tips.map((tip, i) => (
@@ -222,12 +222,12 @@ export function VisaDetailPage() {
       )}
 
       {/* Link oficial */}
-      <div className="mt-8 rounded-2xl bg-ocean/5 p-5 text-center">
+      <div className="mt-8 rounded-2xl bg-neutral-50 p-5 text-center">
         <a
           href={visa.officialLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-ocean hover:underline"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-900 hover:underline"
         >
           <ExternalLink className="h-4 w-4" /> Consultar fuente oficial
         </a>
@@ -250,7 +250,7 @@ function FactCard({
 }) {
   return (
     <div className="rounded-xl border border-border bg-card p-4">
-      <div className="flex items-center gap-2 text-ocean">
+      <div className="flex items-center gap-2 text-neutral-900">
         {icon}
         <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
           {label}

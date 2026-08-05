@@ -95,7 +95,7 @@ export function TransportDetailPage() {
                   key={i}
                   className="flex items-start gap-2 rounded-lg border border-border bg-card p-3 text-sm"
                 >
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-ocean" />
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-neutral-900" />
                   <span className="text-foreground">{f}</span>
                 </div>
               ))}
@@ -148,7 +148,7 @@ export function TransportDetailPage() {
               <Link
                 key={t.id}
                 to={ROUTES.transportDetail(t.id)}
-                className="group flex items-center gap-3 rounded-xl border border-border bg-card p-3 transition-all hover:-translate-y-0.5 hover:border-ocean hover:shadow-sm"
+                className="group flex items-center gap-3 rounded-xl border border-border bg-card p-3 transition-all hover:-translate-y-0.5 hover:border-neutral-900 hover:shadow-sm"
               >
                 <img
                   src={t.image}
@@ -157,7 +157,7 @@ export function TransportDetailPage() {
                   className="h-14 w-14 shrink-0 rounded-lg object-cover"
                 />
                 <div className="min-w-0 flex-1">
-                  <p className="line-clamp-1 text-sm font-semibold text-card-foreground group-hover:text-ocean">
+                  <p className="line-clamp-1 text-sm font-semibold text-card-foreground group-hover:text-neutral-900">
                     {t.name}
                   </p>
                   <p className="text-xs text-muted-foreground">{t.capacity}</p>

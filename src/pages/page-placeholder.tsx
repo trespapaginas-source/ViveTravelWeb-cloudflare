@@ -37,7 +37,7 @@ export function PagePlaceholder({
         className
       )}
     >
-      <span className="inline-block rounded-full bg-ocean/10 px-4 py-1 text-sm font-medium text-ocean-dark">
+      <span className="inline-block rounded-full bg-neutral-100 px-4 py-1 text-sm font-medium text-neutral-900-dark">
         {eyebrow}
       </span>
       <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">

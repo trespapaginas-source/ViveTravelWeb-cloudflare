@@ -90,13 +90,13 @@ export function CabinsPage() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Buscar por nombre o destino..."
-            className="w-full rounded-lg border border-border bg-background py-2.5 pl-9 pr-3 text-sm outline-none focus:border-ocean"
+            className="w-full rounded-lg border border-border bg-background py-2.5 pl-9 pr-3 text-sm outline-none focus:border-neutral-900"
           />
         </div>
         <select
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          className="rounded-lg border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-ocean"
+          className="rounded-lg border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-neutral-900"
         >
           <option value="all">Todas las ubicaciones</option>
           {locations.map((loc) => (
@@ -166,7 +166,7 @@ export function CabinsPage() {
               className={cn(
                 "h-9 w-9 rounded-lg text-sm font-medium transition-colors",
                 currentPage === i + 1
-                  ? "bg-ocean text-white"
+                  ? "bg-neutral-900 text-white"
                   : "border border-border hover:bg-accent"
               )}
             >
@@ -191,7 +191,7 @@ export function CabinsPage() {
           href="https://wa.me/573126380048"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-flex items-center gap-2 rounded-full bg-ocean px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-ocean-dark"
+          className="mt-4 inline-flex items-center gap-2 rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-neutral-950"
         >
           {copy.contactButton}
         </a>

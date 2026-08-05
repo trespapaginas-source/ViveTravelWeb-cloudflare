@@ -31,8 +31,8 @@ export function FavoritesPage() {
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Header */}
       <div className="mb-8 flex items-center gap-3">
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-ocean/10">
-          <Heart className="h-6 w-6 fill-ocean text-ocean" />
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-neutral-100">
+          <Heart className="h-6 w-6 fill-neutral-900 text-neutral-900" />
         </div>
         <div>
           <h1 className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
@@ -58,7 +58,7 @@ export function FavoritesPage() {
           <div className="mt-5 flex flex-wrap justify-center gap-3">
             <button
               onClick={() => navigate(ROUTES.plansByCategory("pasadias"))}
-              className="inline-flex items-center gap-2 rounded-full bg-ocean px-5 py-2.5 text-sm font-semibold text-white hover:bg-ocean-dark"
+              className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-neutral-950"
             >
               Explorar experiencias <ArrowRight className="h-4 w-4" />
             </button>
@@ -166,7 +166,7 @@ function FavCard({
         </button>
       </div>
       <div className="cursor-pointer p-4" onClick={onClick}>
-        <h3 className="line-clamp-1 text-sm font-bold text-card-foreground group-hover:text-ocean">
+        <h3 className="line-clamp-1 text-sm font-bold text-card-foreground group-hover:text-neutral-900">
           {title}
         </h3>
         <p className="mt-0.5 flex items-center gap-1 text-xs text-muted-foreground">

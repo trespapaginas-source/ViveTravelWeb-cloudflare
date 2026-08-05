@@ -90,7 +90,7 @@ export function FeaturedPlans() {
                     {formatPrice(plan.price)}
                   </span>
                 </div>
-                <span className="flex items-center gap-1 text-xs font-semibold text-ocean">
+                <span className="flex items-center gap-1 text-xs font-semibold text-neutral-900">
                   {fp.viewMore} <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </div>

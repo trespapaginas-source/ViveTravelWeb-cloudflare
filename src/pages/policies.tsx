@@ -33,7 +33,7 @@ export function PoliciesPage() {
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Header */}
       <div className="mb-8 border-b border-border pb-6 text-center">
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-ocean/10 px-4 py-1 text-xs font-semibold text-ocean">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-neutral-100 px-4 py-1 text-xs font-semibold text-neutral-900">
           <ShieldCheck className="h-4 w-4" /> Documentos Legales
         </span>
         <h1 className="mt-3 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
@@ -50,7 +50,7 @@ export function PoliciesPage() {
         {Object.entries(grouped).map(([category, items]) => (
           <section key={category}>
             <h2 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-muted-foreground">
-              <span className="text-ocean">
+              <span className="text-neutral-900">
                 {CATEGORY_ICONS[category] ?? <FileText className="h-5 w-5" />}
               </span>
               {category}
@@ -60,14 +60,14 @@ export function PoliciesPage() {
                 <Link
                   key={doc.slug}
                   to={ROUTES.legalDoc(doc.slug)}
-                  className="group flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-ocean hover:shadow-sm"
+                  className="group flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-neutral-900 hover:shadow-sm"
                 >
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
                       <span className="font-mono text-xs text-muted-foreground">
                         #{doc.number}
                       </span>
-                      <h3 className="line-clamp-1 text-sm font-semibold text-card-foreground group-hover:text-ocean">
+                      <h3 className="line-clamp-1 text-sm font-semibold text-card-foreground group-hover:text-neutral-900">
                         {doc.shortTitle}
                       </h3>
                     </div>
@@ -75,7 +75,7 @@ export function PoliciesPage() {
                       {doc.description}
                     </p>
                   </div>
-                  <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-ocean" />
+                  <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-neutral-900" />
                 </Link>
               ))}
             </div>
