@@ -35,13 +35,13 @@ export function FeaturedPlans() {
         subtitle={fp.subtitle}
       />
 
-      {/* Grid: carrusel horizontal en móvil, grid uniforme en sm+ (3 cols en lg) */}
-      <div className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 sm:items-stretch sm:overflow-visible sm:pb-0 lg:grid-cols-3">
+      {/* Grid idéntico al de Salidas Programadas: 1 col móvil, 2 cols sm, 3 cols lg, mismo gap-4 */}
+      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {featured.map((plan, i) => (
           <article
             key={plan.id}
             onClick={() => navigate(ROUTES.planDetail(plan.id))}
-            className={`group flex w-[85vw] max-w-[320px] shrink-0 cursor-pointer snap-start flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-md sm:w-auto animate-fade-up stagger-${Math.min(i + 1, 6)}`}
+            className={`group flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-md animate-fade-up stagger-${Math.min(i + 1, 6)}`}
           >
             {/* Imagen */}
             <div className="relative h-52 overflow-hidden">

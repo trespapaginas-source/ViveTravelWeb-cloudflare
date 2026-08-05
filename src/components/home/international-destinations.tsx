@@ -24,27 +24,27 @@ export function InternationalDestinations() {
         subtitle={intl.subtitle}
       />
 
-      {/* Grid estricto de 3 columnas de igual dimensión. Sin carrusel, sin
-          anchos variables: cada tarjeta ocupa exactamente 1 columna y tiene
-          la misma altura fija para mantener proporciones idénticas. */}
-      <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
+      {/* Grid idéntico al de Salidas Programadas: sm:grid-cols-2 lg:grid-cols-3,
+          mismo gap-4, items-stretch para que todas las tarjetas midan lo alto. */}
+      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {intl.destinations.map((dest) => (
           <article
             key={dest.name}
             onClick={() => navigate(ROUTES.plansByCategory("internacionales"))}
-            className="group relative h-[380px] w-full cursor-pointer overflow-hidden rounded-2xl md:h-[450px]"
+            className="group relative flex h-[300px] w-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-border shadow-sm transition-all hover:-translate-y-1 hover:shadow-md sm:h-[340px] lg:h-[380px]"
           >
             {/* Imagen: llena el 100% del contenedor sin distorsionarse */}
             <img
               src={dest.image}
               alt={dest.name}
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               onError={(e) => {
                 e.currentTarget.src = FALLBACK;
               }}
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
             {/* Overlay de texto: posicionamiento absoluto inferior */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
+            <div className="relative mt-auto p-5 text-white">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-white/90">
                 {dest.eyebrow}
               </span>
