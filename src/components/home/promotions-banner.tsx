@@ -29,7 +29,7 @@ export function PromotionsBanner() {
   return (
     <section className="mx-auto max-w-7xl px-4 pt-6 sm:px-6 lg:px-8 lg:pt-8">
       {/* Espacio inferior reserva la mitad de las tarjetas superpuestas */}
-      <div className="pb-12 sm:pb-14 lg:pb-16">
+      <div className="pb-10 sm:pb-11 lg:pb-12">
       {/* Contenedor relativo: banner + tarjetas superpuestas */}
       <div className="group relative max-w-full overflow-visible rounded-3xl">
         {/* Carrusel de banners */}

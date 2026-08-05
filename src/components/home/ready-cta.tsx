@@ -13,7 +13,7 @@ export function ReadyCTA() {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-white py-12 lg:py-16">
+    <section className="bg-white py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-6 rounded-3xl bg-gray-50 p-8 lg:flex-row lg:justify-between lg:p-10">
           <div className="max-w-xl text-center lg:text-left">

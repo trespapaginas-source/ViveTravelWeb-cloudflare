@@ -23,14 +23,14 @@ export function ScheduledDepartures() {
   if (departures.length === 0) return null;
 
   return (
-    <section id="salidas-programadas" className="border-y border-border bg-zinc-50/60 py-12 lg:py-16">
+    <section id="salidas-programadas" className="border-y border-border bg-zinc-50/60 py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Salidas Programadas"
           subtitle="Destinos nacionales con calendario de salidas definido. Reserva tu fecha con anticipación."
         />
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {departures.map((plan) => (
             <article
               key={plan.id}

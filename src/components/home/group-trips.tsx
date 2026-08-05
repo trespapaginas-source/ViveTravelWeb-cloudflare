@@ -20,7 +20,7 @@ export function GroupTrips() {
   const navigate = useNavigate();
 
   return (
-    <section className="border-y border-border bg-gray-50 py-12 lg:py-16">
+    <section className="border-y border-border bg-gray-50 py-8 lg:py-10">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         {/* Columna izquierda: copy + CTAs + stats */}
         <div className="flex flex-col justify-center">
@@ -51,7 +51,7 @@ export function GroupTrips() {
           </div>
 
           {/* Stats */}
-          <div className="mt-8 flex gap-6">
+          <div className="mt-6 flex gap-6">
             {g.stats.map((s) => (
               <div key={s.label}>
                 <p className="text-2xl font-extrabold text-ocean">{s.value}</p>

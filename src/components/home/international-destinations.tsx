@@ -17,7 +17,7 @@ export function InternationalDestinations() {
   const navigate = useNavigate();
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
       <SectionHeader
         title={intl.title}
         titleHighlight={intl.titleHighlight}
@@ -27,7 +27,7 @@ export function InternationalDestinations() {
       {/* Grid estricto de 3 columnas de igual dimensión. Sin carrusel, sin
           anchos variables: cada tarjeta ocupa exactamente 1 columna y tiene
           la misma altura fija para mantener proporciones idénticas. */}
-      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
         {intl.destinations.map((dest) => (
           <article
             key={dest.name}

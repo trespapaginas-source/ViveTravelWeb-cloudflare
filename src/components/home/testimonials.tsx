@@ -26,13 +26,13 @@ export function Testimonials() {
   const marquee = [...testimonials, ...testimonials];
 
   return (
-    <section className="bg-zinc-50/60 py-12 lg:py-16">
+    <section className="bg-zinc-50/60 py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader title={t.title} subtitle={t.subtitle} />
       </div>
 
       {/* Marquee desktop */}
-      <div className="group relative mt-8 hidden overflow-hidden md:block">
+      <div className="group relative mt-6 hidden overflow-hidden md:block">
         <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-zinc-50 to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-zinc-50 to-transparent" />
         <div className="flex w-max gap-4 px-4 animate-[marquee_60s_linear_infinite] group-hover:[animation-play-state:paused]">
@@ -43,7 +43,7 @@ export function Testimonials() {
       </div>
 
       {/* Scroll-snap móvil */}
-      <div className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] md:hidden [&::-webkit-scrollbar]:hidden">
+      <div className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] md:hidden [&::-webkit-scrollbar]:hidden">
         {testimonials.map((rev, i) => (
           <TestimonialCard key={i} rev={rev} className="shrink-0" />
         ))}

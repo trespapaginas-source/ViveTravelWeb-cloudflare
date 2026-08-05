@@ -11,7 +11,7 @@ export function ScheduledDeparturesBanner() {
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   return (
-    <section className="relative w-full overflow-hidden border-y border-zinc-800 bg-zinc-900 py-10 sm:py-12 lg:py-16">
+    <section className="relative w-full overflow-hidden border-y border-zinc-800 bg-zinc-900 py-8 sm:py-10 lg:py-12">
       {/* Fondo: poster + video */}
       <div className="absolute inset-0 z-0">
         <img
