@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils";
 import { useDragScroll } from "@/hooks/use-drag-scroll";
 import { useNavigation } from "@/lib/store";
 import { useSiteContent } from "@/lib/use-site-content";
+import { useGeoCity } from "@/hooks/use-geo-city";
 import { ROUTES } from "@/lib/routes";
 import {
   SEARCH_TABS,
@@ -81,7 +82,7 @@ function layoutCols(tab: SearchTab): {
   buscar: number;
 } {
   switch (tab) {
-    // Origen + Destino + Entrada + Salida + Hab + Buscar = 2+3+2+2+1+2 = 12
+    // Origen + Destino + Entrada + Salida + Pasajeros + Buscar = 2+3+2+2+1+2 = 12
     case "internacionales":
     case "nacionales":
     case "circuitos":
@@ -120,6 +121,25 @@ export function HeroSection() {
     alojamientos: makeInitial("alojamientos"),
     tours: makeInitial("tours"),
   });
+
+  // Autodetección de la ciudad de origen por IP (no bloqueante). Si el
+  // usuario ya escribió manualmente, no se sobreescribe.
+  const { city: geoCity, loading: geoLoading } = useGeoCity();
+  const [originTouched, setOriginTouched] = useState(false);
+  useEffect(() => {
+    if (originTouched) return;
+    if (geoCity) {
+      setTabParams((prev) => {
+        const next = { ...prev };
+        (["internacionales", "nacionales", "circuitos"] as SearchTab[]).forEach(
+          (tab) => {
+            next[tab] = { ...next[tab], origen: geoCity };
+          }
+        );
+        return next;
+      });
+    }
+  }, [geoCity, originTouched]);
 
   const hero = content.hero;
   const backgroundImage = "/images/hero/desktop.jpg";
@@ -255,7 +275,7 @@ export function HeroSection() {
             return (
               <>
           <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-12 md:items-stretch">
-            {/* Origen (solo internacionales/nacionales/circuitos) */}
+            {/* Origen (solo internacionales/nacionales/circuitos) — autodetectado por IP */}
             {hasOrigin && (
               <Field
                 className={COL[cols.origen]}
@@ -264,9 +284,16 @@ export function HeroSection() {
               >
                 <AutocompleteInput
                   value={params.origen ?? ""}
-                  placeholder="Ciudad de salida"
+                  placeholder={
+                    geoLoading && !params.origen
+                      ? "Detectando ciudad…"
+                      : "Ciudad de salida"
+                  }
                   options={CITIES}
-                  onChange={(v) => update({ origen: v })}
+                  onChange={(v) => {
+                    setOriginTouched(true);
+                    update({ origen: v });
+                  }}
                 />
               </Field>
             )}
@@ -304,63 +331,72 @@ export function HeroSection() {
               </Field>
             )}
 
-            {/* Fechas */}
+            {/* Fechas — Entrada + Salida agrupados con el switch debajo */}
             {hasRooms ? (
-              <>
-                <Field
-                  className={COL[cols.entrada]}
-                  icon={
-                    <CalendarIcon
+              <div
+                className={cn(
+                  "flex flex-col gap-1.5",
+                  COL[cols.entrada + cols.salida]
+                )}
+              >
+                <div className="grid grid-cols-2 gap-2">
+                  <Field
+                    icon={
+                      <CalendarIcon
+                        className={cn(
+                          "h-4 w-4",
+                          noDecidido ? "text-zinc-300" : "text-muted-foreground"
+                        )}
+                      />
+                    }
+                    label="Entrada"
+                  >
+                    <input
+                      type="date"
+                      value={params.fecha}
+                      min={todayStr()}
+                      disabled={noDecidido}
+                      onChange={(e) => update({ fecha: e.target.value })}
                       className={cn(
-                        "h-4 w-4",
-                        noDecidido ? "text-zinc-300" : "text-muted-foreground"
+                        "w-full bg-transparent text-sm font-medium outline-none",
+                        noDecidido
+                          ? "cursor-not-allowed text-zinc-400"
+                          : "text-foreground"
                       )}
                     />
-                  }
-                  label="Entrada"
-                >
-                  <input
-                    type="date"
-                    value={params.fecha}
-                    min={todayStr()}
-                    disabled={noDecidido}
-                    onChange={(e) => update({ fecha: e.target.value })}
-                    className={cn(
-                      "w-full bg-transparent text-sm font-medium outline-none",
-                      noDecidido
-                        ? "cursor-not-allowed text-zinc-400"
-                        : "text-foreground"
-                    )}
-                    placeholder={noDecidido ? "Sin fecha" : undefined}
-                  />
-                </Field>
-                <Field
-                  className={COL[cols.salida]}
-                  icon={
-                    <CalendarIcon
+                  </Field>
+                  <Field
+                    icon={
+                      <CalendarIcon
+                        className={cn(
+                          "h-4 w-4",
+                          noDecidido ? "text-zinc-300" : "text-muted-foreground"
+                        )}
+                      />
+                    }
+                    label="Salida"
+                  >
+                    <input
+                      type="date"
+                      value={params.fechaFin ?? ""}
+                      min={params.fecha || todayStr()}
+                      disabled={noDecidido}
+                      onChange={(e) => update({ fechaFin: e.target.value })}
                       className={cn(
-                        "h-4 w-4",
-                        noDecidido ? "text-zinc-300" : "text-muted-foreground"
+                        "w-full bg-transparent text-sm font-medium outline-none",
+                        noDecidido
+                          ? "cursor-not-allowed text-zinc-400"
+                          : "text-foreground"
                       )}
                     />
-                  }
-                  label="Salida"
-                >
-                  <input
-                    type="date"
-                    value={params.fechaFin ?? ""}
-                    min={params.fecha || todayStr()}
-                    disabled={noDecidido}
-                    onChange={(e) => update({ fechaFin: e.target.value })}
-                    className={cn(
-                      "w-full bg-transparent text-sm font-medium outline-none",
-                      noDecidido
-                        ? "cursor-not-allowed text-zinc-400"
-                        : "text-foreground"
-                    )}
-                  />
-                </Field>
-              </>
+                  </Field>
+                </div>
+                {/* Switch directamente debajo del bloque Entrada/Salida */}
+                <NoDateSwitch
+                  checked={noDecidido}
+                  onChange={handleNoDecididoChange}
+                />
+              </div>
             ) : cols.fecha > 0 ? (
               <Field
                 className={COL[cols.fecha]}
@@ -396,11 +432,11 @@ export function HeroSection() {
               </Field>
             )}
 
-            {/* Pasajeros / Habitaciones */}
+            {/* Pasajeros y habitaciones */}
             <Field
               className={COL[cols.travelers]}
               icon={<Users className="h-4 w-4 text-muted-foreground" />}
-              label={hasRooms ? "Hab." : "Viajeros"}
+              label="Pasajeros y habitaciones"
             >
               <TravelersPopover
                 adults={params.adultos}
@@ -426,35 +462,6 @@ export function HeroSection() {
               <span className="hidden md:inline lg:hidden">Ir</span>
             </button>
           </div>
-
-          {/* Switch "Todavía no he decidido la fecha" — fila secundaria, no intrusiva */}
-          {hasRooms && (
-            <div className="mt-2 flex items-center gap-2 px-1">
-              <button
-                type="button"
-                role="switch"
-                aria-checked={noDecidido}
-                onClick={() => handleNoDecididoChange(!noDecidido)}
-                className={cn(
-                  "relative h-5 w-9 shrink-0 rounded-full transition-colors",
-                  noDecidido ? "bg-ocean" : "bg-zinc-300"
-                )}
-              >
-                <span
-                  className={cn(
-                    "absolute top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform",
-                    noDecidido ? "translate-x-4" : "translate-x-0.5"
-                  )}
-                />
-              </button>
-              <label
-                className="cursor-pointer select-none text-xs font-semibold text-zinc-500 transition-colors hover:text-zinc-700"
-                onClick={() => handleNoDecididoChange(!noDecidido)}
-              >
-                Todavía no he decidido la fecha
-              </label>
-            </div>
-          )}
               </>
             );
           })()}
@@ -540,15 +547,60 @@ function Field({
   return (
     <div
       className={cn(
-        "flex flex-col rounded-xl border border-border bg-background px-3 py-2",
+        "relative flex flex-col rounded-xl border border-border bg-background px-3 pb-2 pt-3.5",
         className
       )}
     >
-      <div className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
+      {/* Etiqueta "floating label": flota sobre el borde superior, con
+          fondo que corta la línea del border (efecto notch). */}
+      <span
+        className="absolute -top-2 left-2.5 flex items-center gap-1 bg-background px-1 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground"
+      >
         {icon}
-        {label}
-      </div>
-      <div className="mt-1">{children}</div>
+        <span className="max-w-full truncate">{label}</span>
+      </span>
+      <div>{children}</div>
+    </div>
+  );
+}
+
+/**
+ * NoDateSwitch — switch "Todavía no he decidido la fecha". Se renderiza
+ * directamente debajo del bloque Entrada/Salida. Al activarse deshabilita
+ * los inputs de fecha (lógica en el padre) y permite buscar sin fechas.
+ */
+function NoDateSwitch({
+  checked,
+  onChange,
+}: {
+  checked: boolean;
+  onChange: (v: boolean) => void;
+}) {
+  return (
+    <div className="flex items-center gap-2 px-0.5">
+      <button
+        type="button"
+        role="switch"
+        aria-checked={checked}
+        onClick={() => onChange(!checked)}
+        className={cn(
+          "relative h-5 w-9 shrink-0 rounded-full transition-colors",
+          checked ? "bg-ocean" : "bg-zinc-300"
+        )}
+      >
+        <span
+          className={cn(
+            "absolute top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform",
+            checked ? "translate-x-4" : "translate-x-0.5"
+          )}
+        />
+      </button>
+      <label
+        className="cursor-pointer select-none text-xs font-semibold text-zinc-500 transition-colors hover:text-zinc-700"
+        onClick={() => onChange(!checked)}
+      >
+        Todavía no he decidido la fecha
+      </label>
     </div>
   );
 }

@@ -28,15 +28,15 @@ export function FeaturedPlans() {
   );
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
       <SectionHeader
         title={fp.title.replace(/\s*Destacados\s*/i, "")}
         titleHighlight="Destacados"
         subtitle={fp.subtitle}
       />
 
-      {/* Grid: carrusel horizontal en móvil, grid en sm+ */}
-      <div className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-3">
+      {/* Grid: carrusel horizontal en móvil, grid uniforme en sm+ (3 cols en lg) */}
+      <div className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 sm:items-stretch sm:overflow-visible sm:pb-0 lg:grid-cols-3">
         {featured.map((plan, i) => (
           <article
             key={plan.id}
@@ -100,7 +100,7 @@ export function FeaturedPlans() {
       </div>
 
       {/* CTA ver todos */}
-      <div className="mt-8 text-center">
+      <div className="mt-6 text-center">
         <button
           onClick={() => navigate(ROUTES.plans)}
           className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-accent"
