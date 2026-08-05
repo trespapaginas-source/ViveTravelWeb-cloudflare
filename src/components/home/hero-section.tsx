@@ -545,21 +545,15 @@ function Field({
   children: React.ReactNode;
 }) {
   return (
-    <div
-      className={cn(
-        "relative flex flex-col rounded-xl border border-border bg-background px-3 pb-2 pt-3.5",
-        className
-      )}
-    >
-      {/* Etiqueta "floating label": flota sobre el borde superior, con
-          fondo que corta la línea del border (efecto notch). */}
-      <span
-        className="absolute -top-2 left-2.5 flex items-center gap-1 bg-background px-1 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground"
-      >
+    <div className={cn("flex flex-col", className)}>
+      {/* Etiqueta limpia encima del campo, fuera del borde. */}
+      <label className="mb-1 flex items-center gap-1.5 text-xs font-medium text-gray-600">
         {icon}
-        <span className="max-w-full truncate">{label}</span>
-      </span>
-      <div>{children}</div>
+        <span className="truncate">{label}</span>
+      </label>
+      <div className="rounded-xl border border-border bg-background px-3 py-2 transition-colors focus-within:border-ocean">
+        {children}
+      </div>
     </div>
   );
 }
@@ -577,7 +571,7 @@ function NoDateSwitch({
   onChange: (v: boolean) => void;
 }) {
   return (
-    <div className="flex items-center gap-2 px-0.5">
+    <div className="mt-2 flex items-center gap-2 text-xs text-gray-500">
       <button
         type="button"
         role="switch"
@@ -596,7 +590,7 @@ function NoDateSwitch({
         />
       </button>
       <label
-        className="cursor-pointer select-none text-xs font-semibold text-zinc-500 transition-colors hover:text-zinc-700"
+        className="cursor-pointer select-none font-medium transition-colors hover:text-gray-700"
         onClick={() => onChange(!checked)}
       >
         Todavía no he decidido la fecha

@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppFab } from "@/components/shared/whatsapp-fab";
 import { ScrollToTop } from "@/components/shared/scroll-to-top";
+import { cn } from "@/lib/utils";
 
 /**
  * PublicLayout — envoltura global compartida por todas las rutas.
@@ -14,10 +15,10 @@ export function PublicLayout() {
   const isHome = pathname === "/";
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
       <ScrollToTop />
       <Navbar />
-      <main className={isHome ? "flex-1" : "flex-1 pt-16 sm:pt-20"}>
+      <main className={cn("flex-1", isHome ? "" : "pt-16 sm:pt-20")}>
         <Outlet />
       </main>
       <Footer />
