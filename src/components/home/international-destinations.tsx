@@ -27,7 +27,7 @@ export function InternationalDestinations() {
       {/* Grid estricto de 3 columnas de igual dimensión. Sin carrusel, sin
           anchos variables: cada tarjeta ocupa exactamente 1 columna y tiene
           la misma altura fija para mantener proporciones idénticas. */}
-      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
         {intl.destinations.map((dest) => (
           <article
             key={dest.name}
