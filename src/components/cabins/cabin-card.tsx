@@ -24,7 +24,7 @@ export function CabinCard({ cabin }: { cabin: NormalizedCabin }) {
         </div>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         {cabin.is_featured && (
-          <span className="absolute right-2.5 top-2.5 z-10 rounded-md bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-md border border-white/10">
+          <span className="absolute right-2.5 top-2.5 z-10 rounded-md border border-white/15 bg-black/30 px-3 py-1 text-xs font-medium text-white shadow-sm backdrop-blur-md">
             ★ Destacado
           </span>
         )}
@@ -66,7 +66,7 @@ export function CabinCard({ cabin }: { cabin: NormalizedCabin }) {
 
       <div className="space-y-2.5 border-t border-border/30 p-3.5 pt-2.5 sm:p-4">
         <div className="text-right">
-          <span className="block text-[10px] uppercase tracking-wide text-muted-foreground">
+          <span className="block text-[10px] uppercase tracking-wide text-muted-foreground sm:mr-1 sm:inline">
             Desde
           </span>
           <span className="text-[15px] font-extrabold text-foreground sm:text-[17px]">
@@ -106,7 +106,7 @@ export function CabinCardHorizontal({ cabin }: { cabin: NormalizedCabin }) {
           <CardImageCarousel images={cabin.images} alt={cabin.name} />
         </div>
         {cabin.is_featured && (
-          <span className="absolute right-2.5 top-2.5 z-10 rounded-md bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-md border border-white/10">
+          <span className="absolute right-2.5 top-2.5 z-10 rounded-md border border-white/15 bg-black/30 px-3 py-1 text-xs font-medium text-white shadow-sm backdrop-blur-md">
             ★ Destacado
           </span>
         )}
@@ -146,7 +146,7 @@ export function CabinCardHorizontal({ cabin }: { cabin: NormalizedCabin }) {
 
         <div className="mt-4 flex flex-col gap-3 border-t border-border/30 pt-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="sm:text-right">
-            <span className="block text-[10px] uppercase tracking-wide text-muted-foreground">
+            <span className="block text-[10px] uppercase tracking-wide text-muted-foreground sm:mr-1 sm:inline">
               Desde
             </span>
             <span className="text-lg font-extrabold text-foreground">
