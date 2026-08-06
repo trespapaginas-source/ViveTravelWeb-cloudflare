@@ -1916,7 +1916,14 @@
     "schedule": "6:00 AM - 4:00 PM",
     "meeting": "Plaza Central",
     "published": true,
-    "order": 12
+    "order": 12,
+    "fixedDeparture": true,
+    "departureDates": [
+      {
+        "start": "2026-09-17",
+        "end": "2026-09-17"
+      }
+    ]
   },
   {
     "id": "656270f5-2d91-4751-8959-694c845d4852",
