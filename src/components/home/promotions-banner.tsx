@@ -89,12 +89,12 @@ export function PromotionsBanner() {
         <div className="absolute inset-x-0 -bottom-0 grid translate-y-[42%] grid-cols-3 gap-2 px-2 sm:gap-4 sm:px-4">
           {valueCards.map((card, i) => {
             const inner = (
-              <div className="flex h-full items-start gap-2 rounded-xl border border-border bg-white p-2.5 shadow-md sm:gap-3 sm:rounded-2xl sm:p-4">
+              <div className="flex h-full flex-col items-center gap-1.5 rounded-xl border border-border bg-white p-2 text-center shadow-md sm:flex-row sm:items-start sm:gap-3 sm:rounded-2xl sm:p-4 sm:text-left">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-neutral-900 sm:h-10 sm:w-10">
                   <ValueIcon index={i} />
                 </div>
-                <div className="min-w-0">
-                  <h3 className="text-[11px] font-bold leading-tight text-card-foreground sm:text-sm">
+                <div className="min-w-0 w-full sm:w-auto">
+                  <h3 className="line-clamp-2 text-[10px] font-bold leading-tight text-card-foreground sm:line-clamp-none sm:text-sm">
                     {card.title}
                   </h3>
                   <p className="mt-0.5 hidden line-clamp-2 text-xs text-muted-foreground sm:mt-1 sm:block">

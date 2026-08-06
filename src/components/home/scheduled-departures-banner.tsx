@@ -1,41 +1,56 @@
-import { useState } from "react";
+import { useEffect, useRef } from "react";
 import { useSiteContent } from "@/lib/use-site-content";
 
 /**
  * ScheduledDeparturesBanner — banner de video/fondo con CTA hacia salidas programadas.
- * El video se carga progresivamente sobre una imagen poster.
+ * El atributo nativo `poster` muestra la imagen mientras el video carga; el
+ * propio navegador hace el reemplazo en cuanto arranca la reproducción, sin
+ * necesitar una segunda capa <img> con transición de opacidad manejada por JS.
  */
 export function ScheduledDeparturesBanner() {
   const { content } = useSiteContent();
   void content; // textos hardcodeados como en el original
-  const [videoLoaded, setVideoLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const tryPlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    // React no siempre sincroniza la propiedad `muted` del DOM a tiempo
+    // para que el navegador autorice el autoplay solo con el atributo JSX.
+    video.muted = true;
+    video.play().catch(() => {
+      // Autoplay bloqueado por el navegador: se mantiene el poster visible.
+    });
+  };
+
+  // El primer intento puede fallar si la pestaña está en segundo plano al
+  // montar (el navegador bloquea el autoplay sin avisar), así que se
+  // reintenta cuando el documento vuelve a estar visible y cuando el video
+  // confirma que ya tiene datos suficientes (canplay).
+  useEffect(() => {
+    tryPlay();
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "visible") tryPlay();
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    return () =>
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+  }, []);
 
   return (
     <section className="relative w-full overflow-hidden border-y border-zinc-800 bg-zinc-900 py-8 sm:py-10 lg:py-12">
-      {/* Fondo: poster + video */}
+      {/* Fondo: video con imagen poster nativa mientras carga */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/images/sky-banner-bg.jpg"
-          alt=""
-          aria-hidden="true"
-          className={`h-full w-full object-cover transition-opacity duration-700 ${
-            videoLoaded ? "opacity-0" : "opacity-100"
-          }`}
-          onError={(e) => {
-            e.currentTarget.src = "/images/sky-banner-bg.png";
-          }}
-        />
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
           poster="/images/sky-banner-bg.jpg"
-          onCanPlay={() => setVideoLoaded(true)}
-          onLoadedData={() => setVideoLoaded(true)}
-          className={`h-full w-full object-cover transition-opacity duration-700 ${
-            videoLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          onCanPlay={tryPlay}
+          className="h-full w-full object-cover"
         >
           <source src="/videos/sky-banner-video.mp4" type="video/mp4" />
         </video>

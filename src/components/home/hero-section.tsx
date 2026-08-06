@@ -72,9 +72,9 @@ function makeInitial(tab: SearchTab): TabParams {
 }
 
 /**
- * layoutCols — devuelve el ancho (en columnas de un grid de 12) para cada
- * campo del buscador según la pestaña activa. Siempre suma 12 para que todo
- * quepa en una sola fila en desktop, con el botón "Buscar" al final.
+ * layoutCols — devuelve el peso relativo (flex-grow) de cada campo del
+ * buscador según la pestaña activa, sobre una base de 12. Determina qué
+ * tan ancha es cada sección de la barra tipo "pill" en desktop.
  */
 function layoutCols(tab: SearchTab): {
   origen: number;
@@ -140,8 +140,9 @@ export function HeroSection() {
   }, [allPlans]);
 
   const [activeTab, setActiveTab] = useState<SearchTab>(DEFAULT_TAB);
-  // Switch "Todavía no he decidido la fecha" (solo pestañas con habitaciones).
-  const [noDecidido, setNoDecidido] = useState(false);
+  // Ref al input de "Salida" para abrir su selector automáticamente en
+  // cuanto el usuario elige la fecha de "Entrada" (ahorra un clic).
+  const salidaInputRef = useRef<HTMLInputElement>(null);
   const [tabParams, setTabParams] = useState<Record<SearchTab, TabParams>>({
     internacionales: makeInitial("internacionales"),
     nacionales: makeInitial("nacionales"),
@@ -183,24 +184,6 @@ export function HeroSection() {
       ...prev,
       [activeTab]: { ...prev[activeTab], ...patch },
     }));
-
-  /** Cambia de pestaña y resetea el switch de fecha (como en el original). */
-  const changeTab = (tab: SearchTab) => {
-    setActiveTab(tab);
-    setNoDecidido(false);
-  };
-
-  /** Toggle del switch "Todavía no he decidido la fecha". */
-  const handleNoDecididoChange = (checked: boolean) => {
-    setNoDecidido(checked);
-    if (checked) {
-      // Limpia las fechas al activar el switch.
-      update({ fecha: "" });
-      if ("fechaFin" in params) {
-        update({ fechaFin: "" });
-      }
-    }
-  };
 
   /** Submit: serializa la búsqueda en la URL y navega con react-router. */
   const handleSearch = () => {
@@ -285,244 +268,207 @@ export function HeroSection() {
         {/* Tarjeta del buscador */}
         <div className="mt-8 w-full max-w-5xl rounded-2xl border border-white/20 bg-white/65 p-3 backdrop-blur-xl sm:bg-white/95 sm:p-4">
           {/* Tabs */}
-          <TabBar activeTab={activeTab} onChange={changeTab} />
+          <TabBar activeTab={activeTab} onChange={setActiveTab} />
 
-          {/* Campos dinámicos — grid de 12 columnas, todo en una sola fila en desktop */}
+          {/* Campos dinámicos — barra tipo "pill" con divisores verticales
+              entre secciones (estilo buscador de referencia), una sola fila
+              en desktop y apiladas en móvil. Los pesos (weight) reutilizan
+              los mismos anchos relativos que antes definía layoutCols. */}
           {(() => {
-            // Mapa de clases col-span estáticas (Tailwind requiere literales completas).
-            const COL: Record<number, string> = {
-              1: "md:col-span-1",
-              2: "md:col-span-2",
-              3: "md:col-span-3",
-              4: "md:col-span-4",
-              5: "md:col-span-5",
-              6: "md:col-span-6",
-            };
-            // Anchos por pestaña, siempre sumando 12.
             const hasOrigin = ["internacionales", "nacionales", "circuitos", "grupales"].includes(activeTab);
             const hasDestino = activeTab !== "grupales";
             const cols = layoutCols(activeTab);
             return (
-              <>
-          <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-12 md:items-start">
-            {/* Origen (solo internacionales/nacionales/circuitos) — autodetectado por IP */}
-            {hasOrigin && (
-              <Field
-                className={COL[cols.origen]}
-                icon={<MapPin className="h-4 w-4 text-muted-foreground" />}
-                label="Origen"
-              >
-                <AutocompleteInput
-                  value={params.origen ?? ""}
-                  placeholder={
-                    geoLoading && !params.origen
-                      ? "Detectando ciudad…"
-                      : "Ciudad de salida"
-                  }
-                  options={CITIES}
-                  onChange={(v) => {
-                    setOriginTouched(true);
-                    update({ origen: v });
-                  }}
-                />
-              </Field>
-            )}
-
-            {/* Destino */}
-            {hasDestino ? (
-              <Field
-                className={COL[cols.destino]}
-                icon={<MapPin className="h-4 w-4 text-muted-foreground" />}
-                label="Destino"
-              >
-                <AutocompleteInput
-                  value={params.destino}
-                  placeholder={getDestinationPlaceholder(activeTab)}
-                  options={destinationOptions(activeTab)}
-                  onChange={(v) => update({ destino: v })}
-                />
-              </Field>
-            ) : null}
-
-            {/* Actividad (solo tours) */}
-            {activeTab === "tours" && (
-              <Field
-                className={COL[cols.actividad]}
-                icon={<Sparkles className="h-4 w-4 text-muted-foreground" />}
-                label="Actividad"
-              >
-                <input
-                  type="text"
-                  value={params.actividad ?? ""}
-                  placeholder="Ej: Paracaidismo, Buceo"
-                  onChange={(e) => update({ actividad: e.target.value })}
-                  className="w-full bg-transparent text-sm font-medium text-foreground outline-none placeholder:font-normal placeholder:text-muted-foreground"
-                />
-              </Field>
-            )}
-
-            {/* Fechas — Entrada + Salida agrupados con el switch debajo */}
-            {hasRooms ? (
-              <div
-                className={cn(
-                  "flex flex-col gap-1.5",
-                  COL[cols.entrada + cols.salida]
-                )}
-              >
-                <div className="grid grid-cols-2 gap-2">
+              <div className="mt-3 flex flex-col divide-y divide-border rounded-2xl border border-border bg-white md:flex-row md:items-center md:divide-x md:divide-y-0 md:rounded-full">
+                {/* Origen (internacionales/nacionales/circuitos/grupales) — autodetectado por IP */}
+                {hasOrigin && (
                   <Field
-                    icon={
-                      <CalendarIcon
-                        className={cn(
-                          "h-4 w-4",
-                          noDecidido ? "text-zinc-300" : "text-muted-foreground"
-                        )}
+                    weight={cols.origen}
+                    icon={<MapPin className="h-4 w-4 text-muted-foreground" />}
+                    label="Origen"
+                  >
+                    <AutocompleteInput
+                      value={params.origen ?? ""}
+                      placeholder={
+                        geoLoading && !params.origen
+                          ? "Detectando ciudad…"
+                          : "Ciudad de salida"
+                      }
+                      options={CITIES}
+                      onChange={(v) => {
+                        setOriginTouched(true);
+                        update({ origen: v });
+                      }}
+                    />
+                  </Field>
+                )}
+
+                {/* Destino */}
+                {hasDestino && (
+                  <Field
+                    weight={cols.destino}
+                    icon={<MapPin className="h-4 w-4 text-muted-foreground" />}
+                    label="Destino"
+                  >
+                    <AutocompleteInput
+                      value={params.destino}
+                      placeholder={getDestinationPlaceholder(activeTab)}
+                      options={destinationOptions(activeTab)}
+                      onChange={(v) => update({ destino: v })}
+                    />
+                  </Field>
+                )}
+
+                {/* Actividad (solo tours) */}
+                {activeTab === "tours" && (
+                  <Field
+                    weight={cols.actividad}
+                    icon={<Sparkles className="h-4 w-4 text-muted-foreground" />}
+                    label="Actividad"
+                  >
+                    <input
+                      type="text"
+                      value={params.actividad ?? ""}
+                      placeholder="Ej: Paracaidismo, Buceo"
+                      onChange={(e) => update({ actividad: e.target.value })}
+                      className="w-full bg-transparent text-sm font-medium text-foreground outline-none placeholder:font-normal placeholder:text-muted-foreground"
+                    />
+                  </Field>
+                )}
+
+                {/* Entrada / Salida (pestañas con habitaciones) */}
+                {hasRooms && (
+                  <>
+                    <Field
+                      weight={cols.entrada}
+                      icon={<CalendarIcon className="h-4 w-4 text-muted-foreground" />}
+                      label="Entrada"
+                    >
+                      <input
+                        type="date"
+                        value={params.fecha}
+                        min={todayStr()}
+                        onChange={(e) => {
+                          const value = e.target.value;
+                          update({ fecha: value });
+                          // Al elegir la entrada, abre automáticamente el selector
+                          // de salida para que el usuario no tenga que hacer clic.
+                          if (value) {
+                            setTimeout(() => {
+                              const input = salidaInputRef.current;
+                              if (!input) return;
+                              if (typeof input.showPicker === "function") {
+                                try {
+                                  input.showPicker();
+                                } catch {
+                                  input.focus();
+                                }
+                              } else {
+                                input.focus();
+                              }
+                            }, 0);
+                          }
+                        }}
+                        className="w-full bg-transparent text-sm font-medium text-foreground outline-none"
                       />
-                    }
-                    label="Entrada"
+                    </Field>
+                    <Field
+                      weight={cols.salida}
+                      icon={<CalendarIcon className="h-4 w-4 text-muted-foreground" />}
+                      label="Salida"
+                    >
+                      <input
+                        ref={salidaInputRef}
+                        type="date"
+                        value={params.fechaFin ?? ""}
+                        min={params.fecha || todayStr()}
+                        onChange={(e) => update({ fechaFin: e.target.value })}
+                        className="w-full bg-transparent text-sm font-medium text-foreground outline-none"
+                      />
+                    </Field>
+                  </>
+                )}
+
+                {/* Fecha simple (pasadías/tours) */}
+                {!hasRooms && cols.fecha > 0 && activeTab !== "grupales" && (
+                  <Field
+                    weight={cols.fecha}
+                    icon={<CalendarIcon className="h-4 w-4 text-muted-foreground" />}
+                    label="Fecha"
                   >
                     <input
                       type="date"
                       value={params.fecha}
                       min={todayStr()}
-                      disabled={noDecidido}
                       onChange={(e) => update({ fecha: e.target.value })}
-                      className={cn(
-                        "w-full bg-transparent text-sm font-medium outline-none",
-                        noDecidido
-                          ? "cursor-not-allowed text-zinc-400"
-                          : "text-foreground"
-                      )}
+                      className="w-full bg-transparent text-sm font-medium text-foreground outline-none"
                     />
                   </Field>
+                )}
+
+                {/* Fechas disponibles (solo grupales) — selector de viajes con salida programada */}
+                {activeTab === "grupales" && (
                   <Field
-                    icon={
-                      <CalendarIcon
-                        className={cn(
-                          "h-4 w-4",
-                          noDecidido ? "text-zinc-300" : "text-muted-foreground"
-                        )}
-                      />
-                    }
-                    label="Salida"
+                    weight={cols.fecha}
+                    icon={<CalendarIcon className="h-4 w-4 text-muted-foreground" />}
+                    label="Fechas disponibles"
                   >
-                    <input
-                      type="date"
-                      value={params.fechaFin ?? ""}
-                      min={params.fecha || todayStr()}
-                      disabled={noDecidido}
-                      onChange={(e) => update({ fechaFin: e.target.value })}
-                      className={cn(
-                        "w-full bg-transparent text-sm font-medium outline-none",
-                        noDecidido
-                          ? "cursor-not-allowed text-zinc-400"
-                          : "text-foreground"
-                      )}
-                    />
-                  </Field>
-                </div>
-                {/* Switch directamente debajo del bloque Entrada/Salida */}
-                <NoDateSwitch
-                  checked={noDecidido}
-                  onChange={handleNoDecididoChange}
-                />
-              </div>
-            ) : cols.fecha > 0 && activeTab !== "grupales" ? (
-              <Field
-                className={COL[cols.fecha]}
-                icon={<CalendarIcon className="h-4 w-4 text-muted-foreground" />}
-                label="Fecha"
-              >
-                <input
-                  type="date"
-                  value={params.fecha}
-                  min={todayStr()}
-                  onChange={(e) => update({ fecha: e.target.value })}
-                  className="w-full bg-transparent text-sm font-medium text-foreground outline-none"
-                />
-              </Field>
-            ) : null}
-
-            {/* Fechas disponibles (solo grupales) — selector de viajes con salida programada */}
-            {activeTab === "grupales" && (
-              <Field
-                className={COL[cols.fecha]}
-                icon={<CalendarIcon className="h-4 w-4 text-muted-foreground" />}
-                label="Fechas disponibles"
-              >
-                <select
-                  value={
-                    params.fecha && params.destino
-                      ? `${params.destino}|${params.fecha}`
-                      : ""
-                  }
-                  onChange={(e) => {
-                    const [destino, fecha] = e.target.value.split("|");
-                    update({ destino, fecha });
-                  }}
-                  className="w-full bg-transparent text-sm font-medium text-foreground outline-none"
-                >
-                  <option value="">Elige un viaje con fecha…</option>
-                  {groupTripsWithDates.map((trip) => (
-                    <option
-                      key={`${trip.planId}-${trip.start}`}
-                      value={`${trip.planName}|${trip.start}`}
+                    <select
+                      value={
+                        params.fecha && params.destino
+                          ? `${params.destino}|${params.fecha}`
+                          : ""
+                      }
+                      onChange={(e) => {
+                        const [destino, fecha] = e.target.value.split("|");
+                        update({ destino, fecha });
+                      }}
+                      className="w-full bg-transparent text-sm font-medium text-foreground outline-none"
                     >
-                      {trip.planName} — {formatDateLong(trip.start)}
-                    </option>
-                  ))}
-                </select>
-              </Field>
-            )}
+                      <option value="">Elige un viaje con fecha…</option>
+                      {groupTripsWithDates.map((trip) => (
+                        <option
+                          key={`${trip.planId}-${trip.start}`}
+                          value={`${trip.planName}|${trip.start}`}
+                        >
+                          {trip.planName} — {formatDateLong(trip.start)}
+                        </option>
+                      ))}
+                    </select>
+                  </Field>
+                )}
 
-            {/* Pasajeros (y habitaciones salvo en grupales) */}
-            <Field
-              className={COL[cols.travelers]}
-              icon={<Users className="h-4 w-4 text-muted-foreground" />}
-              label={activeTab === "grupales" ? "Pasajeros" : "Pasajeros y habitaciones"}
-            >
-              <TravelersPopover
-                adults={params.adultos}
-                children={params.ninos}
-                rooms={params.rooms}
-                hasRooms={activeTab === "grupales" ? false : hasRooms}
-                onChange={(patch) => update(patch)}
-              />
-            </Field>
+                {/* Pasajeros (y habitaciones salvo en grupales) */}
+                <Field
+                  weight={cols.travelers}
+                  icon={<Users className="h-4 w-4 text-muted-foreground" />}
+                  label={activeTab === "grupales" ? "Pasajeros" : "Pasajeros y habitaciones"}
+                >
+                  <TravelersPopover
+                    adults={params.adultos}
+                    children={params.ninos}
+                    rooms={params.rooms}
+                    hasRooms={activeTab === "grupales" ? false : hasRooms}
+                    onChange={(patch) => update(patch)}
+                  />
+                </Field>
 
-            {/* Botón buscar — circular perfecto en desktop (con animación hover
-                de escala+rotación sobre el icono) / full-width en móvil.
-                Único acento de color del Hero (5% rule).
-                El spacer-label invisible iguala la altura del label de los
-                Field contiguos, alineando la base del botón con las cajas. */}
-            <div className={cn("flex flex-col", COL[cols.buscar])}>
-              {/* Spacer que ocupa el mismo espacio que el label de los Field */}
-              <span className="mb-1 hidden text-xs leading-4 md:block">&nbsp;</span>
-              <button
-                onClick={handleSearch}
-                aria-label="Buscar"
-                className="group/btn flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-ocean text-white shadow-md transition-colors hover:bg-ocean-dark md:h-9 md:w-9 md:flex-shrink-0 md:justify-self-end md:rounded-full"
-              >
-                <Search className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover/btn:scale-110 group-hover/btn:rotate-6 md:h-[18px] md:w-[18px]" />
-                <span className="text-sm font-semibold md:hidden">Buscar</span>
-              </button>
-            </div>
-          </div>
-              </>
+                {/* Botón buscar — circular en desktop (con animación hover de
+                    escala+rotación sobre el icono) / full-width en móvil.
+                    Único acento de color del Hero (5% rule). */}
+                <div className="flex items-center justify-center p-2 md:pl-1.5 md:pr-2">
+                  <button
+                    onClick={handleSearch}
+                    aria-label="Buscar"
+                    className="group/btn flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-ocean text-white shadow-md transition-colors hover:bg-ocean-dark md:h-11 md:w-11 md:flex-shrink-0 md:rounded-full"
+                  >
+                    <Search className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover/btn:scale-110 group-hover/btn:rotate-6 md:h-[18px] md:w-[18px]" />
+                    <span className="text-sm font-semibold md:hidden">Buscar</span>
+                  </button>
+                </div>
+              </div>
             );
           })()}
-        </div>
-
-        {/* CTAs secundarios */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <a
-            href={content.contact?.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs font-medium text-white/90 underline-offset-4 hover:underline"
-          >
-            ¿Necesitas asesoría? Escríbenos por WhatsApp
-          </a>
         </div>
       </div>
     </section>
@@ -582,65 +528,25 @@ function TabBar({
 function Field({
   icon,
   label,
-  className,
+  weight,
   children,
 }: {
   icon: React.ReactNode;
   label: string;
-  className?: string;
+  weight?: number;
   children: React.ReactNode;
 }) {
   return (
-    <div className={cn("flex flex-col", className)}>
-      {/* Etiqueta limpia encima del campo, fuera del borde. */}
-      <label className="mb-1 flex items-center gap-1.5 text-xs font-medium text-gray-600">
+    <div
+      className="flex min-w-0 flex-1 flex-col justify-center px-4 py-2.5 md:py-2"
+      style={weight ? { flex: `${weight} ${weight} 0%` } : undefined}
+    >
+      {/* Etiqueta en negrita encima del valor, sin caja/borde individual. */}
+      <label className="flex items-center gap-1.5 text-xs font-bold text-foreground">
         {icon}
         <span className="truncate">{label}</span>
       </label>
-      <div className="rounded-xl border border-border bg-background px-3 py-2 transition-colors focus-within:border-neutral-900">
-        {children}
-      </div>
-    </div>
-  );
-}
-
-/**
- * NoDateSwitch — switch "Todavía no he decidido la fecha". Se renderiza
- * directamente debajo del bloque Entrada/Salida. Al activarse deshabilita
- * los inputs de fecha (lógica en el padre) y permite buscar sin fechas.
- */
-function NoDateSwitch({
-  checked,
-  onChange,
-}: {
-  checked: boolean;
-  onChange: (v: boolean) => void;
-}) {
-  return (
-    <div className="mt-2 flex items-center gap-2 text-xs text-gray-500">
-      <button
-        type="button"
-        role="switch"
-        aria-checked={checked}
-        onClick={() => onChange(!checked)}
-        className={cn(
-          "relative h-5 w-9 shrink-0 rounded-full transition-colors",
-          checked ? "bg-neutral-900" : "bg-zinc-300"
-        )}
-      >
-        <span
-          className={cn(
-            "absolute top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform",
-            checked ? "translate-x-4" : "translate-x-0.5"
-          )}
-        />
-      </button>
-      <label
-        className="cursor-pointer select-none font-medium transition-colors hover:text-gray-700"
-        onClick={() => onChange(!checked)}
-      >
-        Todavía no he decidido la fecha
-      </label>
+      <div className="mt-0.5">{children}</div>
     </div>
   );
 }
