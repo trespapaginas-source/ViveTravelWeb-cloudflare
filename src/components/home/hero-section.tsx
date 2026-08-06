@@ -84,25 +84,25 @@ function layoutCols(tab: SearchTab): {
   buscar: number;
 } {
   switch (tab) {
-    // Origen + Destino + Entrada/Salida + Pasajeros + Buscar = 2+4+4+1+1 = 12
+    // Origen + Destino + Entrada/Salida + Pasajeros + Buscar = 2+3+2+2+2+1 = 12
     case "internacionales":
     case "nacionales":
     case "circuitos":
-      return { origen: 2, destino: 4, actividad: 0, entrada: 2, salida: 2, fecha: 0, travelers: 1, buscar: 1 };
-    // Destino + Entrada/Salida + Hab + Buscar = 4+4+3+1 = 12
+      return { origen: 2, destino: 3, actividad: 0, entrada: 2, salida: 2, fecha: 0, travelers: 2, buscar: 1 };
+    // Destino + Entrada/Salida + Hab + Buscar = 5+2+2+2+1 = 12
     case "alojamientos":
-      return { origen: 0, destino: 4, actividad: 0, entrada: 2, salida: 2, fecha: 0, travelers: 3, buscar: 1 };
+      return { origen: 0, destino: 5, actividad: 0, entrada: 2, salida: 2, fecha: 0, travelers: 2, buscar: 1 };
     // Destino + Actividad + Fecha + Viajeros + Buscar = 3+2+3+3+1 = 12
     case "tours":
       return { origen: 0, destino: 3, actividad: 2, entrada: 0, salida: 0, fecha: 3, travelers: 3, buscar: 1 };
     // Destino + Fecha + Viajeros + Buscar = 4+3+4+1 = 12
     case "pasadias":
-      return { origen: 0, destino: 4, actividad: 0, entrada: 0, salida: 0, fecha: 3, travelers: 4, buscar: 1 };
-    // Fechas disponibles + Pasajeros + Buscar = 7+4+1 = 12
+      return { origen: 0, destino: 4, actividad: 0, entrada: 0, salida: 0, fecha: 4, travelers: 3, buscar: 1 };
+    // Fechas disponibles + Pasajeros + Buscar = 8+3+1 = 12
     case "grupales":
-      return { origen: 0, destino: 0, actividad: 0, entrada: 0, salida: 0, fecha: 7, travelers: 4, buscar: 1 };
+      return { origen: 0, destino: 0, actividad: 0, entrada: 0, salida: 0, fecha: 8, travelers: 3, buscar: 1 };
     default:
-      return { origen: 0, destino: 4, actividad: 0, entrada: 0, salida: 0, fecha: 3, travelers: 4, buscar: 1 };
+      return { origen: 0, destino: 4, actividad: 0, entrada: 0, salida: 0, fecha: 4, travelers: 3, buscar: 1 };
   }
 }
 
@@ -301,7 +301,7 @@ export function HeroSection() {
             const cols = layoutCols(activeTab);
             return (
               <>
-          <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-12 md:items-stretch">
+          <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-12 md:items-end">
             {/* Origen (solo internacionales/nacionales/circuitos) — autodetectado por IP */}
             {hasOrigin && (
               <Field
@@ -489,11 +489,12 @@ export function HeroSection() {
 
             {/* Botón buscar — circular perfecto en desktop (con animación hover
                 de escala+rotación sobre el icono) / full-width en móvil.
-                Único acento de color del Hero (5% rule). */}
+                Único acento de color del Hero (5% rule).
+                items-end en el grid alinea su base con las cajas de input. */}
             <button
               onClick={handleSearch}
               aria-label="Buscar"
-              className="group/btn flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-ocean text-white shadow-md transition-colors hover:bg-ocean-dark md:h-14 md:w-14 md:flex-shrink-0 md:self-center md:justify-self-end md:rounded-full"
+              className="group/btn flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-ocean text-white shadow-md transition-colors hover:bg-ocean-dark md:h-10 md:w-10 md:flex-shrink-0 md:justify-self-end md:rounded-full"
             >
               <Search className="h-5 w-5 shrink-0 transition-transform duration-300 group-hover/btn:scale-110 group-hover/btn:rotate-6" />
               <span className="text-sm font-semibold md:hidden">Buscar</span>
