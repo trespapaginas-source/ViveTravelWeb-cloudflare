@@ -85,19 +85,19 @@ export function PromotionsBanner() {
           )}
         </div>
 
-        {/* Tarjetas de valor superpuestas sobre el borde inferior del banner */}
-        <div className="absolute inset-x-0 -bottom-0 grid translate-y-[42%] grid-cols-3 gap-2 px-2 sm:gap-4 sm:px-4">
+        {/* Tarjetas de valor superpuestas sobre el borde inferior del banner (ocultas en móvil) */}
+        <div className="absolute inset-x-0 -bottom-0 hidden translate-y-[42%] grid-cols-3 gap-3 px-3 sm:grid">
           {valueCards.map((card, i) => {
             const inner = (
-              <div className="flex h-full flex-col items-center gap-1.5 rounded-xl border border-border bg-white p-2 text-center shadow-md sm:flex-row sm:items-start sm:gap-3 sm:rounded-2xl sm:p-4 sm:text-left">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-neutral-900 sm:h-10 sm:w-10">
+              <div className="flex h-full items-start gap-2 rounded-xl border border-border bg-white p-3 shadow-md">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-neutral-900">
                   <ValueIcon index={i} />
                 </div>
-                <div className="min-w-0 w-full sm:w-auto">
-                  <h3 className="line-clamp-2 text-[10px] font-bold leading-tight text-card-foreground sm:line-clamp-none sm:text-sm">
+                <div className="min-w-0">
+                  <h3 className="text-xs font-bold leading-tight text-card-foreground">
                     {card.title}
                   </h3>
-                  <p className="mt-0.5 hidden line-clamp-2 text-xs text-muted-foreground sm:mt-1 sm:block">
+                  <p className="mt-0.5 line-clamp-2 text-[11px] text-muted-foreground">
                     {card.description}
                   </p>
                 </div>
@@ -127,9 +127,9 @@ export function PromotionsBanner() {
 function ValueIcon({ index }: { index: number }) {
   // Iconos lucide por posición (promos / medios de pago / agente).
   const icons = [
-    <Package key="0" className="h-5 w-5" />,
-    <CreditCard key="1" className="h-5 w-5" />,
-    <Headset key="2" className="h-5 w-5" />,
+    <Package key="0" className="h-4 w-4" />,
+    <CreditCard key="1" className="h-4 w-4" />,
+    <Headset key="2" className="h-4 w-4" />,
   ];
   return icons[index] ?? icons[0];
 }

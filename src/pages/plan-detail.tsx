@@ -40,6 +40,10 @@ import {
   buildPlanQuoteMessage,
   type PlanQuoteData,
 } from "@/lib/whatsapp";
+import { useReviews } from "@/hooks/use-reviews";
+import { ReviewForm } from "@/components/reviews/review-form";
+import { ReviewList } from "@/components/reviews/review-list";
+import { StarRating } from "@/components/reviews/star-rating";
 
 /**
  * PlanDetailPage — detalle de un plan/experiencia.
@@ -58,6 +62,12 @@ export function PlanDetailPage() {
   const [guests, setGuests] = useState(2);
   const [selectedDate, setSelectedDate] = useState<string>("");
   const [originCity, setOriginCity] = useState("");
+
+  // Reseñas reales del plan (D1 vía Pages Function).
+  const { reviews, avg, count, loading: reviewsLoading, submit } = useReviews(
+    plan ? "plan" : null,
+    plan?.id
+  );
 
   // Detecta la ciudad del usuario por IP (no bloqueante). Si el usuario ya
   // escribió algo manualmente, no se sobreescribe (bandera touched).
@@ -149,11 +159,18 @@ export function PlanDetailPage() {
                 <span className="rounded-full bg-neutral-900/90 px-3 py-1 text-xs font-semibold text-white">
                   {plan.category}
                 </span>
-                {plan.rating > 0 && (
-                  <span className="text-sm text-muted-foreground">
-                    ★ {plan.rating.toFixed(1)} ({plan.reviewCount})
-                  </span>
-                )}
+                {/* Rating real de reseñas (D1); fallback al del JSON si no hay reseñas reales aún */}
+                {(() => {
+                  const displayAvg = count > 0 ? avg : plan.rating;
+                  const displayCount = count > 0 ? count : plan.reviewCount;
+                  if (displayAvg <= 0) return null;
+                  return (
+                    <span className="flex items-center gap-1 text-sm text-muted-foreground">
+                      <StarRating value={displayAvg} size="sm" />
+                      <span>{displayAvg.toFixed(1)} ({displayCount})</span>
+                    </span>
+                  );
+                })()}
               </div>
               <h1 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
                 {plan.name}
@@ -317,6 +334,26 @@ export function PlanDetailPage() {
               </div>
             </section>
           )}
+
+          {/* Reseñas reales (D1 + Turnstile) */}
+          <section className="mt-8">
+            <div className="mb-4 flex items-baseline justify-between">
+              <h2 className="text-lg font-bold text-foreground">Reseñas de viajeros</h2>
+              {!reviewsLoading && count > 0 && (
+                <span className="text-sm text-muted-foreground">
+                  {avg.toFixed(1)} de 5 · {count} reseña{count !== 1 ? "s" : ""}
+                </span>
+              )}
+            </div>
+            <div className="space-y-4">
+              <ReviewForm onSubmit={submit} />
+              {reviewsLoading ? (
+                <p className="text-center text-sm text-muted-foreground">Cargando reseñas…</p>
+              ) : (
+                <ReviewList reviews={reviews} />
+              )}
+            </div>
+          </section>
         </div>
 
         {/* Cotizador (desktop sticky) — formulario directo en el sidebar */}

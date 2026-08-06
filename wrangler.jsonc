@@ -2,5 +2,12 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "vive-travel-web",
   "compatibility_date": "2025-01-01",
-  "pages_build_output_dir": "./dist"
+  "pages_build_output_dir": "./dist",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "vive-travel-reviews",
+      "database_id": "YOUR_DATABASE_ID"
+    }
+  ]
 }

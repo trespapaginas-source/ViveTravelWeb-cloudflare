@@ -23,6 +23,10 @@ import {
   openWhatsApp,
   buildCabinQuoteMessage,
 } from "@/lib/whatsapp";
+import { useReviews } from "@/hooks/use-reviews";
+import { ReviewForm } from "@/components/reviews/review-form";
+import { ReviewList } from "@/components/reviews/review-list";
+import { StarRating } from "@/components/reviews/star-rating";
 
 /**
  * CabinDetailPage — detalle de una cabaña/alojamiento.
@@ -36,6 +40,12 @@ export function CabinDetailPage() {
   const [guests, setGuests] = useState(2);
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
+
+  // Reseñas reales de la cabaña (D1 vía Pages Function).
+  const { reviews, avg, count, loading: reviewsLoading, submit } = useReviews(
+    cabin ? "cabin" : null,
+    cabin?.id
+  );
 
   if (notFound) {
     return (
@@ -114,6 +124,18 @@ export function CabinDetailPage() {
               <p className="mt-1 flex items-center gap-1 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4" /> {cabin.location}
               </p>
+              {/* Rating real de reseñas (D1); fallback al del JSON si no hay reseñas reales aún */}
+              {(() => {
+                const displayAvg = count > 0 ? avg : cabin.rating;
+                const displayCount = count > 0 ? count : cabin.reviewCount;
+                if (displayAvg <= 0) return null;
+                return (
+                  <span className="mt-1 flex items-center gap-1 text-sm text-muted-foreground">
+                    <StarRating value={displayAvg} size="sm" />
+                    <span>{displayAvg.toFixed(1)} ({displayCount})</span>
+                  </span>
+                );
+              })()}
             </div>
           </div>
 
@@ -226,9 +248,29 @@ export function CabinDetailPage() {
                 rel="noopener noreferrer"
                 className="mt-2 inline-block text-xs font-medium text-neutral-900 hover:underline"
               >
-                Ver ubicación exacta en Google Maps
+                Ver ubicación en Google Maps
               </a>
             )}
+          </section>
+
+          {/* Reseñas reales (D1 + Turnstile) */}
+          <section className="mt-8">
+            <div className="mb-4 flex items-baseline justify-between">
+              <h2 className="text-lg font-bold text-foreground">Reseñas de huéspedes</h2>
+              {!reviewsLoading && count > 0 && (
+                <span className="text-sm text-muted-foreground">
+                  {avg.toFixed(1)} de 5 · {count} reseña{count !== 1 ? "s" : ""}
+                </span>
+              )}
+            </div>
+            <div className="space-y-4">
+              <ReviewForm onSubmit={submit} />
+              {reviewsLoading ? (
+                <p className="text-center text-sm text-muted-foreground">Cargando reseñas…</p>
+              ) : (
+                <ReviewList reviews={reviews} />
+              )}
+            </div>
           </section>
         </div>
 

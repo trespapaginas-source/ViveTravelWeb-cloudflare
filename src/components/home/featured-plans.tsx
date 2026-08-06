@@ -54,7 +54,7 @@ export function FeaturedPlans() {
                     "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop";
                 }}
               />
-              <span className="absolute right-2 top-2 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur-sm">
+              <span className="absolute right-2 top-2 rounded-full border border-white/15 bg-black/30 px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm backdrop-blur-md">
                 {formatShortDuration(plan.duration)}
               </span>
             </div>

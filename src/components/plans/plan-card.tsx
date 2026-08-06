@@ -25,11 +25,8 @@ export function PlanCard({ plan }: { plan: NormalizedPlan }) {
           <CardImageCarousel images={plan.images} alt={plan.name} />
         </div>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-        <span className="absolute left-2.5 top-2.5 z-10 rounded-full bg-white/95 px-2 py-1 text-[11px] font-semibold text-slate-700 backdrop-blur-md">
-          {plan.category}
-        </span>
         {plan.is_featured && (
-          <span className="absolute right-2.5 top-2.5 z-10 rounded-md bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-md border border-white/10">
+          <span className="absolute right-2.5 top-2.5 z-10 rounded-md border border-white/15 bg-black/30 px-3 py-1 text-xs font-medium text-white shadow-sm backdrop-blur-md">
             ★ Destacado
           </span>
         )}
@@ -109,9 +106,6 @@ export function PlanCardHorizontal({ plan }: { plan: NormalizedPlan }) {
           <CardImageCarousel images={plan.images} alt={plan.name} />
         </div>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent to-black/10" />
-        <span className="absolute left-2.5 top-2.5 z-10 rounded-full bg-white/95 px-2 py-1 text-[11px] font-semibold text-slate-700 backdrop-blur-md">
-          {plan.category}
-        </span>
       </div>
 
       {/* Contenido */}
