@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Star, MapPin, ArrowRight } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
 import { usePlanes } from "@/hooks/use-plans";
 import { useSiteContent } from "@/lib/use-site-content";
 import { ROUTES } from "@/lib/routes";
@@ -65,12 +65,6 @@ export function FeaturedPlans() {
                 {plan.name}
               </h3>
               <div className="mt-1 flex items-center gap-2 text-xs text-muted-foreground">
-                {plan.rating > 0 && (
-                  <span className="flex items-center gap-0.5">
-                    <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
-                    {plan.rating.toFixed(1)}
-                  </span>
-                )}
                 <span className="flex items-center gap-0.5">
                   <MapPin className="h-3 w-3" />
                   {formatShortLocation(plan.location)}

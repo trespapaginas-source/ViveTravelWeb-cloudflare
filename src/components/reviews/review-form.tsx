@@ -1,36 +1,58 @@
 import { useEffect, useRef, useState } from "react";
 import { Check, Loader2 } from "lucide-react";
-import { StarRating } from "./star-rating";
+import { StarRating, ratingLabel } from "./star-rating";
 import { TURNSTILE_SITEKEY } from "@/lib/reviews-api";
 import { cn } from "@/lib/utils";
 
+const MAX_COMMENT_WORDS = 20;
+
+/**
+ * Cuenta las palabras del textarea en tiempo real.
+ */
+function countWords(text: string): number {
+  const t = text.trim();
+  if (!t) return 0;
+  return t.split(/\s+/).filter(Boolean).length;
+}
+
 /**
  * ReviewForm — formulario público para dejar una reseña.
- * Campos: nombre, destino, estrellas (1-5). Sin comentarios.
- * Anti-spam: widget Cloudflare Turnstile embebido.
+ * Campos:
+ *   · Nombre del cliente (input)
+ *   · Valoración por estrellas (1-5) con etiqueta en vivo
+ *   · Comentario (textarea opcional, máx 20 palabras)
  *
- * El `onSubmit` recibe { reviewerName, destination, rating, turnstileToken }
+ * `serviceId` y `serviceType` se inyectan implícitamente desde el contexto
+ * (route/estado), por eso no se piden aquí. Anti-spam: Turnstile embebido.
+ *
+ * El `onSubmit` recibe { reviewerName, rating, comment?, turnstileToken }
  * y debe devolver una Promise (la petición al backend).
  */
 export function ReviewForm({
   onSubmit,
+  formId,
 }: {
   onSubmit: (data: {
     reviewerName: string;
-    destination: string;
     rating: number;
+    comment?: string;
     turnstileToken: string;
   }) => Promise<unknown>;
+  /** id del elemento scroll-target (para que la página pueda apuntar aquí). */
+  formId?: string;
 }) {
   const [name, setName] = useState("");
-  const [destination, setDestination] = useState("");
   const [rating, setRating] = useState(5);
+  const [comment, setComment] = useState("");
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
   const turnstileRef = useRef<HTMLDivElement>(null);
   const widgetId = useRef<string | null>(null);
+
+  const commentWords = countWords(comment);
+  const commentTooLong = commentWords > MAX_COMMENT_WORDS;
 
   // Renderiza el widget de Turnstile cuando hay sitekey y el contenedor existe.
   useEffect(() => {
@@ -79,8 +101,8 @@ export function ReviewForm({
       setStatus("error");
       return;
     }
-    if (destination.trim().length < 2) {
-      setErrorMsg("Escribe el destino (mínimo 2 caracteres).");
+    if (commentTooLong) {
+      setErrorMsg(`El comentario no puede exceder ${MAX_COMMENT_WORDS} palabras.`);
       setStatus("error");
       return;
     }
@@ -95,13 +117,13 @@ export function ReviewForm({
     try {
       await onSubmit({
         reviewerName: name.trim(),
-        destination: destination.trim(),
         rating,
+        comment: comment.trim() ? comment.trim() : undefined,
         turnstileToken: turnstileToken ?? "",
       });
       setStatus("success");
       setName("");
-      setDestination("");
+      setComment("");
       setRating(5);
       resetTurnstile();
     } catch (err) {
@@ -131,47 +153,68 @@ export function ReviewForm({
 
   return (
     <form
+      id={formId}
       onSubmit={handleSubmit}
-      className="space-y-3 rounded-xl border border-border bg-card p-4 sm:p-5"
+      className="scroll-mt-24 space-y-3 rounded-xl border border-border bg-card p-4 sm:p-5"
     >
       <h3 className="text-sm font-bold text-foreground">Califica esta experiencia</h3>
 
-      <div className="grid gap-3 sm:grid-cols-2">
-        <div>
-          <label htmlFor="rev-name" className="mb-1 block text-xs font-medium text-gray-600">
-            Tu nombre
-          </label>
-          <input
-            id="rev-name"
-            type="text"
-            value={name}
-            maxLength={60}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Ej: María González"
-            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-neutral-900"
-            disabled={status === "loading"}
-          />
-        </div>
-        <div>
-          <label htmlFor="rev-dest" className="mb-1 block text-xs font-medium text-gray-600">
-            Destino al que fuiste
-          </label>
-          <input
-            id="rev-dest"
-            type="text"
-            value={destination}
-            maxLength={80}
-            onChange={(e) => setDestination(e.target.value)}
-            placeholder="Ej: Cancún, México"
-            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-neutral-900"
-            disabled={status === "loading"}
-          />
+      {/* Nombre */}
+      <div>
+        <label htmlFor="rev-name" className="mb-1 block text-xs font-medium text-gray-600">
+          Tu nombre
+        </label>
+        <input
+          id="rev-name"
+          type="text"
+          value={name}
+          maxLength={60}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Ej: María González"
+          className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-neutral-900"
+          disabled={status === "loading"}
+        />
+      </div>
+
+      {/* Estrellas + etiqueta en vivo */}
+      <div>
+        <span className="mb-1 block text-xs font-medium text-gray-600">Tu calificación</span>
+        <div className="flex flex-wrap items-center gap-3">
+          <StarRating value={rating} onChange={setRating} size="lg" />
+          <span className="text-sm font-semibold text-foreground">
+            {ratingLabel(rating)}
+          </span>
         </div>
       </div>
 
+      {/* Comentario opcional (máx 20 palabras) */}
       <div>
-        <span className="mb-1 block text-xs font-medium text-gray-600">Tu calificación</span>
-        <StarRating value={rating} onChange={setRating} size="lg" />
+        <label htmlFor="rev-comment" className="mb-1 block text-xs font-medium text-gray-600">
+          Comentario <span className="font-normal text-gray-400">(opcional)</span>
+        </label>
+        <textarea
+          id="rev-comment"
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          rows={3}
+          maxLength={200}
+          placeholder="Cuéntanos en pocas palabras cómo fue tu experiencia (máx. 20 palabras)"
+          className={cn(
+            "w-full resize-none rounded-lg border bg-background px-3 py-2 text-sm outline-none focus:border-neutral-900",
+            commentTooLong ? "border-red-400" : "border-border"
+          )}
+          disabled={status === "loading"}
+        />
+        <div className="mt-1 flex justify-end">
+          <span
+            className={cn(
+              "text-[11px]",
+              commentTooLong ? "font-semibold text-red-500" : "text-muted-foreground"
+            )}
+          >
+            {commentWords}/{MAX_COMMENT_WORDS} palabras
+          </span>
+        </div>
       </div>
 
       {/* Widget Turnstile (solo si hay sitekey configurado) */}

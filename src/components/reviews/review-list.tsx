@@ -3,7 +3,8 @@ import type { ReviewRow } from "@/lib/reviews-api";
 
 /**
  * ReviewList — renderiza la lista de reseñas reales de un servicio.
- * Cada ítem muestra: iniciales, nombre, destino, estrellas, fecha relativa.
+ * Cada ítem muestra: iniciales, nombre, estrellas, etiqueta y, si la hay, el
+ * comentario dejado por el usuario, junto con la fecha relativa.
  */
 export function ReviewList({ reviews }: { reviews: ReviewRow[] }) {
   if (reviews.length === 0) {
@@ -31,15 +32,38 @@ export function ReviewList({ reviews }: { reviews: ReviewRow[] }) {
                 {formatRelative(rev.created_at)}
               </span>
             </div>
-            <p className="mt-0.5 truncate text-xs text-muted-foreground">
-              {rev.destination}
-            </p>
-            <StarRating value={rev.rating} size="sm" className="mt-1" />
+            <div className="mt-0.5 flex items-center gap-2">
+              <StarRating value={rev.rating} size="sm" />
+              <span className="text-[11px] font-medium text-muted-foreground">
+                {labelFor(rev.rating)}
+              </span>
+            </div>
+            {rev.comment && (
+              <p className="mt-1.5 text-xs leading-relaxed text-foreground">
+                {rev.comment}
+              </p>
+            )}
           </div>
         </article>
       ))}
     </div>
   );
+}
+
+/** Etiqueta corta para el detalle de cada reseña. */
+function labelFor(rating: number): string {
+  switch (rating) {
+    case 5:
+      return "Excelente";
+    case 4:
+      return "Muy bueno";
+    case 3:
+      return "Bueno";
+    case 2:
+      return "Regular";
+    default:
+      return "Malo";
+  }
 }
 
 /** Burbuja con las iniciales del nombre (sin avatar real). */

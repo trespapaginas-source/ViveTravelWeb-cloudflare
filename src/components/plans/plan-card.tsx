@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Star, MapPin, Clock, Users, ArrowRight } from "lucide-react";
+import { MapPin, Clock, Users, ArrowRight } from "lucide-react";
 import { ROUTES } from "@/lib/routes";
 import { formatPrice, formatShortLocation, cn } from "@/lib/utils";
 import { CardImageCarousel } from "@/components/shared/card-image-carousel";
@@ -38,12 +38,6 @@ export function PlanCard({ plan }: { plan: NormalizedPlan }) {
           {plan.name}
         </h3>
         <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-muted-foreground sm:text-xs">
-          {plan.rating > 0 && (
-            <span className="flex items-center gap-0.5">
-              <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
-              {plan.rating.toFixed(1)}
-            </span>
-          )}
           <span className="flex items-center gap-0.5">
             <MapPin className="h-3 w-3" />
             {formatShortLocation(plan.location)}
@@ -115,12 +109,6 @@ export function PlanCardHorizontal({ plan }: { plan: NormalizedPlan }) {
             {plan.name}
           </h3>
           <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
-            {plan.rating > 0 && (
-              <span className="flex items-center gap-0.5">
-                <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                {plan.rating.toFixed(1)} ({plan.reviewCount})
-              </span>
-            )}
             <span className="flex items-center gap-0.5">
               <MapPin className="h-3.5 w-3.5" /> {plan.location}
             </span>

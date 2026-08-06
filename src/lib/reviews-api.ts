@@ -10,8 +10,9 @@ export interface ReviewRow {
   service_type: string;
   service_id: string;
   reviewer_name: string;
-  destination: string;
+  destination: string | null;
   rating: number;
+  comment: string | null;
   created_at: string;
 }
 
@@ -25,8 +26,9 @@ export interface SubmitReviewPayload {
   serviceType: ServiceType;
   serviceId: string;
   reviewerName: string;
-  destination: string;
   rating: number;
+  /** Comentario opcional (máx 20 palabras / 200 chars, validado en backend). */
+  comment?: string;
   turnstileToken: string;
 }
 

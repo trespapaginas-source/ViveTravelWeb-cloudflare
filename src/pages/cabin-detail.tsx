@@ -13,6 +13,7 @@ import {
   AlertCircle,
   Sparkles,
   Maximize2,
+  Star,
 } from "lucide-react";
 import { useCabinDetail } from "@/hooks/use-detail";
 import { ROUTES } from "@/lib/routes";
@@ -86,6 +87,12 @@ export function CabinDetailPage() {
     );
   };
 
+  // Scroll suave hacia el formulario de reseñas (usado por el badge "Sin reseñas").
+  const scrollToReviews = () => {
+    const el = document.getElementById("review-form");
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   // Habitaciones activas ordenadas.
   const rooms = (cabin.bedroomDetails ?? [])
     .filter((r) => r.active !== false)
@@ -124,18 +131,25 @@ export function CabinDetailPage() {
               <p className="mt-1 flex items-center gap-1 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4" /> {cabin.location}
               </p>
-              {/* Rating real de reseñas (D1); fallback al del JSON si no hay reseñas reales aún */}
-              {(() => {
-                const displayAvg = count > 0 ? avg : cabin.rating;
-                const displayCount = count > 0 ? count : cabin.reviewCount;
-                if (displayAvg <= 0) return null;
-                return (
-                  <span className="mt-1 flex items-center gap-1 text-sm text-muted-foreground">
-                    <StarRating value={displayAvg} size="sm" />
-                    <span>{displayAvg.toFixed(1)} ({displayCount})</span>
+              {/* Rating real desde D1. Si no hay reseñas, estado neutral + CTA. */}
+              {reviewsLoading ? null : count > 0 ? (
+                <span className="mt-1 flex items-center gap-1 text-sm text-muted-foreground">
+                  <StarRating value={avg} size="sm" />
+                  <span>{avg.toFixed(1)} ({count})</span>
+                </span>
+              ) : (
+                <button
+                  type="button"
+                  onClick={scrollToReviews}
+                  className="mt-1 flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                >
+                  <Star className="h-3.5 w-3.5 fill-neutral-300 text-neutral-300" />
+                  <span>Sin reseñas</span>
+                  <span className="text-neutral-900 underline-offset-2 hover:underline">
+                    · Sé el primero en opinar
                   </span>
-                );
-              })()}
+                </button>
+              )}
             </div>
           </div>
 
@@ -254,7 +268,7 @@ export function CabinDetailPage() {
           </section>
 
           {/* Reseñas reales (D1 + Turnstile) */}
-          <section className="mt-8">
+          <section id="resenas" className="mt-8 scroll-mt-24">
             <div className="mb-4 flex items-baseline justify-between">
               <h2 className="text-lg font-bold text-foreground">Reseñas de huéspedes</h2>
               {!reviewsLoading && count > 0 && (
@@ -264,7 +278,7 @@ export function CabinDetailPage() {
               )}
             </div>
             <div className="space-y-4">
-              <ReviewForm onSubmit={submit} />
+              <ReviewForm onSubmit={submit} formId="review-form" />
               {reviewsLoading ? (
                 <p className="text-center text-sm text-muted-foreground">Cargando reseñas…</p>
               ) : (

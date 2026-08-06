@@ -5,8 +5,14 @@
  *      → { reviews: ReviewRow[], avg: number, count: number }
  *
  * POST /api/reviews
- *      body: { serviceType, serviceId, reviewerName, destination, rating, turnstileToken }
+ *      body: { serviceType, serviceId, reviewerName, rating, comment?, turnstileToken }
  *      → valida Turnstile → inserta en D1 → { ok: true, review: ReviewRow }
+ *
+ * Campos:
+ *   - reviewerName (obligatorio, 2-60 chars)
+ *   - rating       (obligatorio, entero 1-5)
+ *   - comment      (OPCIONAL, máximo 20 palabras, máx 200 chars)
+ *   - destination  (obsoleto — se ignora si llega; ya no se pide en el form)
  *
  * Protección anti-spam: Cloudflare Turnstile (token validado server-side)
  * + rate-limit suave por hash de IP (máx 3 reseñas por IP cada 10 min).
@@ -22,8 +28,9 @@ interface ReviewRow {
   service_type: string;
   service_id: string;
   reviewer_name: string;
-  destination: string;
+  destination: string | null;
   rating: number;
+  comment: string | null;
   created_at: string;
 }
 
@@ -36,6 +43,8 @@ const CORS_HEADERS = {
 
 const MAX_REVIEWS_PER_WINDOW = 3;
 const RATE_LIMIT_WINDOW_MINUTES = 10;
+const MAX_COMMENT_WORDS = 20;
+const MAX_COMMENT_CHARS = 200;
 
 /** Hash SHA-256 de un string (para hashear la IP sin almacenarla en claro). */
 async function sha256(text: string): Promise<string> {
@@ -75,6 +84,12 @@ async function verifyTurnstile(
   }
 }
 
+/** Cuenta palabras de un texto (split por espacios, sin huecos). */
+function countWords(text: string): number {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  return words.length;
+}
+
 export const onRequest: PagesFunction<Env> = async (context) => {
   const { request, env } = context;
 
@@ -109,7 +124,7 @@ async function handleGet(request: Request, env: Env): Promise<Response> {
   }
 
   const rows = await env.DB.prepare(
-    "SELECT id, service_type, service_id, reviewer_name, destination, rating, created_at FROM reviews WHERE service_type = ? AND service_id = ? ORDER BY created_at DESC LIMIT 100"
+    "SELECT id, service_type, service_id, reviewer_name, destination, rating, comment, created_at FROM reviews WHERE service_type = ? AND service_id = ? ORDER BY created_at DESC LIMIT 100"
   )
     .bind(serviceType, serviceId)
     .all<ReviewRow>();
@@ -133,8 +148,8 @@ async function handlePost(request: Request, env: Env): Promise<Response> {
     serviceType?: string;
     serviceId?: string;
     reviewerName?: string;
-    destination?: string;
     rating?: number;
+    comment?: string;
     turnstileToken?: string;
   };
 
@@ -145,7 +160,7 @@ async function handlePost(request: Request, env: Env): Promise<Response> {
   }
 
   // Validación de campos.
-  const { serviceType, serviceId, reviewerName, destination, rating, turnstileToken } = body;
+  const { serviceType, serviceId, reviewerName, rating, comment, turnstileToken } = body;
   if (!serviceType || !["plan", "cabin"].includes(serviceType)) {
     return jsonError("serviceType inválido", 400);
   }
@@ -155,12 +170,15 @@ async function handlePost(request: Request, env: Env): Promise<Response> {
   if (!reviewerName || reviewerName.trim().length < 2 || reviewerName.trim().length > 60) {
     return jsonError("Nombre inválido (2-60 caracteres)", 400);
   }
-  if (!destination || destination.trim().length < 2 || destination.trim().length > 80) {
-    return jsonError("Destino inválido (2-80 caracteres)", 400);
-  }
   const ratingNum = Number(rating);
   if (!Number.isInteger(ratingNum) || ratingNum < 1 || ratingNum > 5) {
     return jsonError("Rating debe ser un entero entre 1 y 5", 400);
+  }
+  // Comment opcional: si viene, máx 20 palabras y 200 caracteres.
+  const cleanComment =
+    typeof comment === "string" ? comment.trim().slice(0, MAX_COMMENT_CHARS) : "";
+  if (cleanComment && countWords(cleanComment) > MAX_COMMENT_WORDS) {
+    return jsonError(`El comentario no puede exceder ${MAX_COMMENT_WORDS} palabras`, 400);
   }
   if (!turnstileToken || typeof turnstileToken !== "string") {
     return jsonError("Token de Turnstile requerido", 400);
@@ -193,16 +211,16 @@ async function handlePost(request: Request, env: Env): Promise<Response> {
     }
   }
 
-  // Insertar.
+  // Insertar. (destination queda NULL: no se pide al usuario.)
   const result = await env.DB.prepare(
-    "INSERT INTO reviews (service_type, service_id, reviewer_name, destination, rating, ip_hash) VALUES (?, ?, ?, ?, ?, ?) RETURNING id, service_type, service_id, reviewer_name, destination, rating, created_at"
+    "INSERT INTO reviews (service_type, service_id, reviewer_name, destination, rating, comment, ip_hash) VALUES (?, ?, ?, NULL, ?, ?, ?) RETURNING id, service_type, service_id, reviewer_name, destination, rating, comment, created_at"
   )
     .bind(
       serviceType,
       serviceId,
       reviewerName.trim(),
-      destination.trim(),
       ratingNum,
+      cleanComment || null,
       ipHash
     )
     .first<ReviewRow>();

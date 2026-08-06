@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Star, MapPin, Users, BedDouble, Bath, ArrowRight } from "lucide-react";
+import { MapPin, Users, BedDouble, Bath, ArrowRight } from "lucide-react";
 import { ROUTES } from "@/lib/routes";
 import { formatPrice, formatShortLocation } from "@/lib/utils";
 import { CardImageCarousel } from "@/components/shared/card-image-carousel";
@@ -35,12 +35,6 @@ export function CabinCard({ cabin }: { cabin: NormalizedCabin }) {
           {cabin.name}
         </h3>
         <div className="mt-1 flex items-center gap-2 text-xs text-muted-foreground">
-          {cabin.rating > 0 && (
-            <span className="flex items-center gap-0.5">
-              <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
-              {cabin.rating.toFixed(1)}
-            </span>
-          )}
           <span className="flex items-center gap-0.5">
             <MapPin className="h-3 w-3" />
             {formatShortLocation(cabin.location)}
@@ -118,12 +112,6 @@ export function CabinCardHorizontal({ cabin }: { cabin: NormalizedCabin }) {
             {cabin.name}
           </h3>
           <div className="mt-1 flex items-center gap-2 text-xs text-muted-foreground">
-            {cabin.rating > 0 && (
-              <span className="flex items-center gap-0.5">
-                <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                {cabin.rating.toFixed(1)}
-              </span>
-            )}
             <span className="flex items-center gap-0.5">
               <MapPin className="h-3.5 w-3.5" /> {cabin.location}
             </span>

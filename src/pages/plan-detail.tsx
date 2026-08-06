@@ -14,6 +14,7 @@ import {
   ChevronLeft,
   ChevronRight,
   ChevronDown,
+  Star,
 } from "lucide-react";
 import { usePlanDetail } from "@/hooks/use-detail";
 import { useGoBack } from "@/hooks/use-go-back";
@@ -131,6 +132,12 @@ export function PlanDetailPage() {
     window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
+  // Scroll suave hacia el formulario de reseñas (usado por el badge "Sin reseñas").
+  const scrollToReviews = () => {
+    const el = document.getElementById("review-form");
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <div className="mx-auto max-w-7xl px-4 pb-32 pt-6 sm:px-6 lg:px-8 lg:pb-12">
       {/* Volver */}
@@ -155,22 +162,29 @@ export function PlanDetailPage() {
           {/* Título */}
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <span className="rounded-full bg-neutral-900/90 px-3 py-1 text-xs font-semibold text-white">
                   {plan.category}
                 </span>
-                {/* Rating real de reseñas (D1); fallback al del JSON si no hay reseñas reales aún */}
-                {(() => {
-                  const displayAvg = count > 0 ? avg : plan.rating;
-                  const displayCount = count > 0 ? count : plan.reviewCount;
-                  if (displayAvg <= 0) return null;
-                  return (
-                    <span className="flex items-center gap-1 text-sm text-muted-foreground">
-                      <StarRating value={displayAvg} size="sm" />
-                      <span>{displayAvg.toFixed(1)} ({displayCount})</span>
+                {/* Rating real desde D1. Si no hay reseñas, estado neutral + CTA. */}
+                {reviewsLoading ? null : count > 0 ? (
+                  <span className="flex items-center gap-1 text-sm text-muted-foreground">
+                    <StarRating value={avg} size="sm" />
+                    <span>{avg.toFixed(1)} ({count})</span>
+                  </span>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={scrollToReviews}
+                    className="flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                  >
+                    <Star className="h-3.5 w-3.5 fill-neutral-300 text-neutral-300" />
+                    <span>Sin reseñas</span>
+                    <span className="text-neutral-900 underline-offset-2 hover:underline">
+                      · Sé el primero en opinar
                     </span>
-                  );
-                })()}
+                  </button>
+                )}
               </div>
               <h1 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
                 {plan.name}
@@ -336,7 +350,7 @@ export function PlanDetailPage() {
           )}
 
           {/* Reseñas reales (D1 + Turnstile) */}
-          <section className="mt-8">
+          <section id="resenas" className="mt-8 scroll-mt-24">
             <div className="mb-4 flex items-baseline justify-between">
               <h2 className="text-lg font-bold text-foreground">Reseñas de viajeros</h2>
               {!reviewsLoading && count > 0 && (
@@ -346,7 +360,7 @@ export function PlanDetailPage() {
               )}
             </div>
             <div className="space-y-4">
-              <ReviewForm onSubmit={submit} />
+              <ReviewForm onSubmit={submit} formId="review-form" />
               {reviewsLoading ? (
                 <p className="text-center text-sm text-muted-foreground">Cargando reseñas…</p>
               ) : (

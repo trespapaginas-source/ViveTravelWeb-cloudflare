@@ -2,6 +2,11 @@
 -- Tabla única para planes y cabañas (service_type distingue).
 -- Aplicar con: npx wrangler d1 execute vive-travel-reviews --remote --file=migrations/0001_reviews.sql
 
+-- NOTA: este archivo crea el schema original (sin `comment`, con `destination` obligatorio).
+-- Para el estado actual tras el refactor, usa 0002_reviews_comment.sql, que reconstruye
+-- la tabla con `destination` opcional y `comment` nullable. Ambas migraciones son
+-- idempotentes y se aplican en orden.
+
 CREATE TABLE IF NOT EXISTS reviews (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   service_type TEXT NOT NULL CHECK(service_type IN ('plan', 'cabin')),

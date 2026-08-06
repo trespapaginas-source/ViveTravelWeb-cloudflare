@@ -1,6 +1,24 @@
 import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+/** Etiquetas legibles según el número de estrellas (1-5). */
+export function ratingLabel(rating: number): string {
+  switch (rating) {
+    case 5:
+      return "Excelente";
+    case 4:
+      return "Muy bueno";
+    case 3:
+      return "Bueno";
+    case 2:
+      return "Regular";
+    case 1:
+      return "Malo";
+    default:
+      return "";
+  }
+}
+
 /**
  * StarRating — muestra O permite seleccionar una calificación de 1-5.
  *
