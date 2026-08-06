@@ -15,6 +15,9 @@ import { useDragScroll } from "@/hooks/use-drag-scroll";
 import { useNavigation } from "@/lib/store";
 import { useSiteContent } from "@/lib/use-site-content";
 import { useGeoCity } from "@/hooks/use-geo-city";
+import { usePlanes } from "@/hooks/use-plans";
+import { getPlanExperienceSection } from "@/hooks/use-plan-filters";
+import { formatDateLong } from "@/lib/utils";
 import { ROUTES } from "@/lib/routes";
 import {
   SEARCH_TABS,
@@ -22,7 +25,6 @@ import {
   CITIES,
   POPULAR_DESTINATIONS,
   ROOM_TABS,
-  TRAVELER_TYPES,
   getDestinationPlaceholder,
   type SearchTab,
 } from "@/lib/hero-data";
@@ -96,9 +98,9 @@ function layoutCols(tab: SearchTab): {
     // Destino + Fecha + Viajeros + Buscar = 4+3+4+1 = 12
     case "pasadias":
       return { origen: 0, destino: 4, actividad: 0, entrada: 0, salida: 0, fecha: 3, travelers: 4, buscar: 1 };
-    // Tipo viajero + Viajeros + Buscar = 6+5+1 = 12
+    // Fechas disponibles + Pasajeros + Buscar = 7+4+1 = 12
     case "grupales":
-      return { origen: 0, destino: 0, actividad: 0, entrada: 0, salida: 0, fecha: 0, travelers: 5, buscar: 1 };
+      return { origen: 0, destino: 0, actividad: 0, entrada: 0, salida: 0, fecha: 7, travelers: 4, buscar: 1 };
     default:
       return { origen: 0, destino: 4, actividad: 0, entrada: 0, salida: 0, fecha: 3, travelers: 4, buscar: 1 };
   }
@@ -108,6 +110,31 @@ export function HeroSection() {
   const { content } = useSiteContent();
   const navigate = useNavigate();
   const { setSearchPayload } = useNavigation();
+  const { data: allPlans } = usePlanes();
+
+  // Viajes grupales con fechas de salida programadas, para el selector
+  // "Fechas disponibles" de la pestaña grupales.
+  const groupTripsWithDates = useMemo(() => {
+    const today = new Date().toISOString().split("T")[0];
+    return allPlans
+      .filter(
+        (p) =>
+          getPlanExperienceSection(p) === "grupales" &&
+          p.is_active &&
+          p.departureDates?.some((d) => d.end >= today)
+      )
+      .flatMap((p) =>
+        (p.departureDates ?? [])
+          .filter((d) => d.end >= today)
+          .map((d) => ({
+            planId: p.id,
+            planName: p.name,
+            start: d.start,
+            end: d.end,
+          }))
+      )
+      .sort((a, b) => a.start.localeCompare(b.start));
+  }, [allPlans]);
 
   const [activeTab, setActiveTab] = useState<SearchTab>(DEFAULT_TAB);
   // Switch "Todavía no he decidido la fecha" (solo pestañas con habitaciones).
@@ -413,48 +440,62 @@ export function HeroSection() {
               </Field>
             ) : null}
 
-            {/* Tipo de viajero (solo grupales) */}
+            {/* Fechas disponibles (solo grupales) — selector de viajes con salida programada */}
             {activeTab === "grupales" && (
               <Field
-                className="md:col-span-5"
-                icon={<Users className="h-4 w-4 text-muted-foreground" />}
-                label="Tipo de grupo"
+                className={COL[cols.fecha > 0 ? cols.fecha : 6]}
+                icon={<CalendarIcon className="h-4 w-4 text-muted-foreground" />}
+                label="Fechas disponibles"
               >
                 <select
-                  value={params.tipoViajero ?? "Cualquiera"}
-                  onChange={(e) => update({ tipoViajero: e.target.value })}
+                  value={
+                    params.fecha && params.destino
+                      ? `${params.destino}|${params.fecha}`
+                      : ""
+                  }
+                  onChange={(e) => {
+                    const [destino, fecha] = e.target.value.split("|");
+                    update({ destino, fecha });
+                  }}
                   className="w-full bg-transparent text-sm font-medium text-foreground outline-none"
                 >
-                  {TRAVELER_TYPES.map((t) => (
-                    <option key={t} value={t}>{t}</option>
+                  <option value="">Elige un viaje con fecha…</option>
+                  {groupTripsWithDates.map((trip) => (
+                    <option
+                      key={`${trip.planId}-${trip.start}`}
+                      value={`${trip.planName}|${trip.start}`}
+                    >
+                      {trip.planName} — {formatDateLong(trip.start)}
+                    </option>
                   ))}
                 </select>
               </Field>
             )}
 
-            {/* Pasajeros y habitaciones */}
+            {/* Pasajeros (y habitaciones salvo en grupales) */}
             <Field
               className={COL[cols.travelers]}
               icon={<Users className="h-4 w-4 text-muted-foreground" />}
-              label="Pasajeros y habitaciones"
+              label={activeTab === "grupales" ? "Pasajeros" : "Pasajeros y habitaciones"}
             >
               <TravelersPopover
                 adults={params.adultos}
                 children={params.ninos}
                 rooms={params.rooms}
-                hasRooms={hasRooms}
+                hasRooms={activeTab === "grupales" ? false : hasRooms}
                 onChange={(patch) => update(patch)}
               />
             </Field>
 
-            {/* Botón buscar — cuadrado compacto desktop / full-width móvil.
+            {/* Botón buscar — circular perfecto en desktop (con animación hover
+                de escala+rotación sobre el icono) / full-width en móvil.
                 Único acento de color del Hero (5% rule). */}
             <button
               onClick={handleSearch}
               aria-label="Buscar"
-              className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-ocean text-white shadow-md transition-all hover:bg-ocean-dark md:h-14 md:w-14 md:flex-shrink-0 md:self-center md:justify-self-end"
+              className="group/btn flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-ocean text-white shadow-md transition-colors hover:bg-ocean-dark md:h-14 md:w-14 md:flex-shrink-0 md:self-center md:justify-self-end md:rounded-full"
             >
-              <Search className="h-5 w-5 shrink-0" />
+              <Search className="h-5 w-5 shrink-0 transition-transform duration-300 group-hover/btn:scale-110 group-hover/btn:rotate-6" />
               <span className="text-sm font-semibold md:hidden">Buscar</span>
             </button>
           </div>
