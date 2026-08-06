@@ -82,25 +82,25 @@ function layoutCols(tab: SearchTab): {
   buscar: number;
 } {
   switch (tab) {
-    // Origen + Destino + Entrada + Salida + Pasajeros + Buscar = 2+3+2+2+1+2 = 12
+    // Origen + Destino + Entrada/Salida + Pasajeros + Buscar = 2+4+4+1+1 = 12
     case "internacionales":
     case "nacionales":
     case "circuitos":
-      return { origen: 2, destino: 3, actividad: 0, entrada: 2, salida: 2, fecha: 0, travelers: 1, buscar: 2 };
-    // Destino + Entrada + Salida + Hab + Buscar = 3+2+2+3+2 = 12
+      return { origen: 2, destino: 4, actividad: 0, entrada: 2, salida: 2, fecha: 0, travelers: 1, buscar: 1 };
+    // Destino + Entrada/Salida + Hab + Buscar = 4+4+3+1 = 12
     case "alojamientos":
-      return { origen: 0, destino: 3, actividad: 0, entrada: 2, salida: 2, fecha: 0, travelers: 3, buscar: 2 };
-    // Destino + Actividad + Fecha + Viajeros + Buscar = 2+2+3+2+3 = 12
+      return { origen: 0, destino: 4, actividad: 0, entrada: 2, salida: 2, fecha: 0, travelers: 3, buscar: 1 };
+    // Destino + Actividad + Fecha + Viajeros + Buscar = 3+2+3+3+1 = 12
     case "tours":
-      return { origen: 0, destino: 2, actividad: 2, entrada: 0, salida: 0, fecha: 3, travelers: 2, buscar: 3 };
-    // Destino + Fecha + Viajeros + Buscar = 3+3+3+3 = 12
+      return { origen: 0, destino: 3, actividad: 2, entrada: 0, salida: 0, fecha: 3, travelers: 3, buscar: 1 };
+    // Destino + Fecha + Viajeros + Buscar = 4+3+4+1 = 12
     case "pasadias":
-      return { origen: 0, destino: 3, actividad: 0, entrada: 0, salida: 0, fecha: 3, travelers: 3, buscar: 3 };
-    // Tipo viajero + Viajeros + Buscar = 5+3+4 = 12
+      return { origen: 0, destino: 4, actividad: 0, entrada: 0, salida: 0, fecha: 3, travelers: 4, buscar: 1 };
+    // Tipo viajero + Viajeros + Buscar = 6+5+1 = 12
     case "grupales":
-      return { origen: 0, destino: 0, actividad: 0, entrada: 0, salida: 0, fecha: 0, travelers: 3, buscar: 4 };
+      return { origen: 0, destino: 0, actividad: 0, entrada: 0, salida: 0, fecha: 0, travelers: 5, buscar: 1 };
     default:
-      return { origen: 0, destino: 3, actividad: 0, entrada: 0, salida: 0, fecha: 3, travelers: 3, buscar: 3 };
+      return { origen: 0, destino: 4, actividad: 0, entrada: 0, salida: 0, fecha: 3, travelers: 4, buscar: 1 };
   }
 }
 
@@ -447,13 +447,15 @@ export function HeroSection() {
               />
             </Field>
 
-            {/* Botón buscar — circular, solo icono. Único acento de color del Hero. */}
+            {/* Botón buscar — cuadrado compacto desktop / full-width móvil.
+                Único acento de color del Hero (5% rule). */}
             <button
               onClick={handleSearch}
               aria-label="Buscar"
-              className="flex items-center justify-center rounded-full bg-ocean p-0 text-white shadow-md transition-all hover:scale-105 md:col-span-1 md:h-full"
+              className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-ocean text-white shadow-md transition-all hover:bg-ocean-dark md:h-14 md:w-14 md:flex-shrink-0 md:self-center md:justify-self-end"
             >
-              <Search className="h-5 w-5 text-white" />
+              <Search className="h-5 w-5 shrink-0" />
+              <span className="text-sm font-semibold md:hidden">Buscar</span>
             </button>
           </div>
               </>
