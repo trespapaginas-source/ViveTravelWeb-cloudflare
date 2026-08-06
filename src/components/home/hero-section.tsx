@@ -494,13 +494,13 @@ export function HeroSection() {
                 Field contiguos, alineando la base del botón con las cajas. */}
             <div className={cn("flex flex-col", COL[cols.buscar])}>
               {/* Spacer que ocupa el mismo espacio que el label de los Field */}
-              <span className="mb-1 hidden text-xs md:block">&nbsp;</span>
+              <span className="mb-1 hidden text-xs leading-4 md:block">&nbsp;</span>
               <button
                 onClick={handleSearch}
                 aria-label="Buscar"
-                className="group/btn flex h-10 w-full items-center justify-center gap-2 rounded-xl bg-ocean text-white shadow-md transition-colors hover:bg-ocean-dark md:w-10 md:flex-shrink-0 md:justify-self-end md:rounded-full"
+                className="group/btn flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-ocean text-white shadow-md transition-colors hover:bg-ocean-dark md:h-9 md:w-9 md:flex-shrink-0 md:justify-self-end md:rounded-full"
               >
-                <Search className="h-5 w-5 shrink-0 transition-transform duration-300 group-hover/btn:scale-110 group-hover/btn:rotate-6" />
+                <Search className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover/btn:scale-110 group-hover/btn:rotate-6 md:h-[18px] md:w-[18px]" />
                 <span className="text-sm font-semibold md:hidden">Buscar</span>
               </button>
             </div>
