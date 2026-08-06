@@ -64,7 +64,10 @@ function makeInitial(tab: SearchTab): TabParams {
     base.origen = "";
   }
   if (tab === "tours") base.actividad = "";
-  if (tab === "grupales") base.tipoViajero = "";
+  if (tab === "grupales") {
+    base.tipoViajero = "";
+    base.origen = "";
+  }
   return base;
 }
 
@@ -98,9 +101,9 @@ function layoutCols(tab: SearchTab): {
     // Destino + Fecha + Viajeros + Buscar = 4+3+4+1 = 12
     case "pasadias":
       return { origen: 0, destino: 4, actividad: 0, entrada: 0, salida: 0, fecha: 4, travelers: 3, buscar: 1 };
-    // Fechas disponibles + Pasajeros + Buscar = 8+3+1 = 12
+    // Ciudad de origen + Fechas disponibles + Pasajeros + Buscar = 3+5+3+1 = 12
     case "grupales":
-      return { origen: 0, destino: 0, actividad: 0, entrada: 0, salida: 0, fecha: 8, travelers: 3, buscar: 1 };
+      return { origen: 3, destino: 0, actividad: 0, entrada: 0, salida: 0, fecha: 5, travelers: 3, buscar: 1 };
     default:
       return { origen: 0, destino: 4, actividad: 0, entrada: 0, salida: 0, fecha: 4, travelers: 3, buscar: 1 };
   }
@@ -158,7 +161,7 @@ export function HeroSection() {
     if (geoCity) {
       setTabParams((prev) => {
         const next = { ...prev };
-        (["internacionales", "nacionales", "circuitos"] as SearchTab[]).forEach(
+        (["internacionales", "nacionales", "circuitos", "grupales"] as SearchTab[]).forEach(
           (tab) => {
             next[tab] = { ...next[tab], origen: geoCity };
           }
@@ -296,12 +299,12 @@ export function HeroSection() {
               6: "md:col-span-6",
             };
             // Anchos por pestaña, siempre sumando 12.
-            const hasOrigin = ["internacionales", "nacionales", "circuitos"].includes(activeTab);
+            const hasOrigin = ["internacionales", "nacionales", "circuitos", "grupales"].includes(activeTab);
             const hasDestino = activeTab !== "grupales";
             const cols = layoutCols(activeTab);
             return (
               <>
-          <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-12 md:items-end">
+          <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-12 md:items-start">
             {/* Origen (solo internacionales/nacionales/circuitos) — autodetectado por IP */}
             {hasOrigin && (
               <Field
@@ -424,7 +427,7 @@ export function HeroSection() {
                   onChange={handleNoDecididoChange}
                 />
               </div>
-            ) : cols.fecha > 0 ? (
+            ) : cols.fecha > 0 && activeTab !== "grupales" ? (
               <Field
                 className={COL[cols.fecha]}
                 icon={<CalendarIcon className="h-4 w-4 text-muted-foreground" />}
@@ -443,7 +446,7 @@ export function HeroSection() {
             {/* Fechas disponibles (solo grupales) — selector de viajes con salida programada */}
             {activeTab === "grupales" && (
               <Field
-                className={COL[cols.fecha > 0 ? cols.fecha : 6]}
+                className={COL[cols.fecha]}
                 icon={<CalendarIcon className="h-4 w-4 text-muted-foreground" />}
                 label="Fechas disponibles"
               >
