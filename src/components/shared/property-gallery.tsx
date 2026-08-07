@@ -351,11 +351,11 @@ export function Lightbox({
       </div>
 
       {/* Imagen */}
-      <div className="relative flex flex-1 items-center justify-center px-4">
+      <div className="relative flex flex-1 items-center justify-center p-4 sm:p-10">
         <img
           src={images[index]}
           alt={`Foto ${index + 1}`}
-          className="max-h-full max-w-full object-contain"
+          className="max-h-[80vh] max-w-full object-contain"
         />
         {len > 1 && (
           <>
