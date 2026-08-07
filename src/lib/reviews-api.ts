@@ -13,6 +13,7 @@ export interface ReviewRow {
   destination: string | null;
   rating: number;
   comment: string | null;
+  country: string | null;
   created_at: string;
 }
 
@@ -71,6 +72,21 @@ export async function submitReview(
     throw new Error(data.error ?? `Error al enviar (${res.status})`);
   }
   return data.review!;
+}
+
+/**
+ * Normaliza un código ISO 3166-1 alpha-2 (ej. "co", "US") a minúsculas para
+ * usar como clase de `flag-icons` (ej. "fi-co"). No se usa el emoji de
+ * bandera Unicode porque Windows no lo renderiza (muestra las dos letras
+ * sueltas en vez de la banderita). Devuelve null si el código no es válido.
+ */
+export function normalizeCountryCode(
+  code: string | null | undefined
+): string | null {
+  if (!code || code.length !== 2) return null;
+  const lower = code.toLowerCase();
+  if (!/^[a-z]{2}$/.test(lower)) return null;
+  return lower;
 }
 
 /**

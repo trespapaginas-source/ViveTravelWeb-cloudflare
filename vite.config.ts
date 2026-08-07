@@ -13,5 +13,14 @@ export default defineConfig({
   server: {
     host: true,
     port: 5173,
+    proxy: {
+      // Las Cloudflare Pages Functions (/functions/api/*) no las sirve Vite.
+      // En local, levanta aparte `npx wrangler pages dev dist --port 8788`
+      // (o el proxy equivalente) y Vite reenvía /api hacia ahí.
+      "/api": {
+        target: "http://localhost:8788",
+        changeOrigin: true,
+      },
+    },
   },
 });

@@ -83,6 +83,9 @@ export function ScheduledDepartures() {
                       {formatPrice(plan.price)}
                     </span>
                     <span className="text-[11px] text-muted-foreground"> / persona</span>
+                    <span className="block text-[10px] font-normal normal-case text-muted-foreground/70">
+                      Impuestos y cargos incluidos
+                    </span>
                   </div>
                   <span className="flex items-center gap-1 rounded-lg bg-zinc-900 px-3 py-1.5 text-xs font-semibold text-white">
                     Ver plan <ArrowRight className="h-3.5 w-3.5" />

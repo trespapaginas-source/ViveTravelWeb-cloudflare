@@ -49,6 +49,8 @@ export interface TourPlan {
   notes?: string[];
   featuredOrder?: number;
   fecha_salida?: string;
+  /** Cupos restantes visibles en la tarjeta (solo viajes grupales). */
+  spotsLeft?: number;
 }
 
 export interface RoomDetail {

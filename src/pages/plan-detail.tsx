@@ -22,6 +22,7 @@ import { useGeoCity } from "@/hooks/use-geo-city";
 import { ROUTES } from "@/lib/routes";
 import { formatPrice, formatDateLong, cn } from "@/lib/utils";
 import { PropertyGallery } from "@/components/shared/property-gallery";
+import { GallerySidebar } from "@/components/shared/gallery-sidebar";
 import { EmptyState } from "@/components/shared/empty-state";
 import { LugaresCarousel } from "@/components/plans/lugares-carousel";
 import {
@@ -148,13 +149,23 @@ export function PlanDetailPage() {
         <ChevronLeft className="h-4 w-4" /> Volver
       </button>
 
-      {/* Galería */}
-      <PropertyGallery
-        images={plan.images}
-        title={plan.name}
-        variant="booking"
-        className="mb-4"
-      />
+      {/* Galería + sidebar de reseñas/mapa (solo desktop; móvil sin cambios) */}
+      <div className="mb-4 flex flex-col gap-4 lg:flex-row lg:items-stretch">
+        <PropertyGallery
+          images={plan.images}
+          title={plan.name}
+          variant="booking"
+          className="lg:min-w-0 lg:flex-1"
+        />
+        <GallerySidebar
+          avg={avg}
+          count={count}
+          reviews={reviews}
+          location={plan.location}
+          onWriteReview={scrollToReviews}
+          className="hidden lg:flex lg:w-[260px] lg:shrink-0"
+        />
+      </div>
 
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_380px]">
         {/* Contenido principal */}
@@ -380,6 +391,9 @@ export function PlanDetailPage() {
                   {guests === 1 ? "Desde" : `Total (${guests} personas)`}
                 </span>
                 <p className="text-2xl font-extrabold text-foreground">{total}</p>
+                <p className="text-[10px] font-normal normal-case text-muted-foreground/70">
+                  Impuestos y cargos incluidos
+                </p>
               </div>
               <span className="text-xs text-muted-foreground">{plan.priceRange}</span>
             </div>
@@ -486,6 +500,9 @@ export function PlanDetailPage() {
               {guests === 1 ? "Desde" : `Total · ${guests} pers.`}
             </span>
             <p className="text-lg font-extrabold text-foreground">{total}</p>
+            <p className="text-[10px] font-normal normal-case text-muted-foreground/70">
+              Impuestos y cargos incluidos
+            </p>
           </div>
           <button
             onClick={() => setReserveOpen(true)}

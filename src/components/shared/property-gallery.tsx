@@ -10,12 +10,12 @@ interface PropertyGalleryProps {
   images: string[];
   title?: string;
   className?: string;
-  variant?: "default" | "cabin" | "booking";
+  variant?: "default" | "booking";
 }
 
 /**
  * PropertyGallery — galería de imágenes responsive con visor (lightbox).
- * Variantes: default (grid simple), cabin (grid 2-col), booking (hero + thumbs).
+ * Variantes: default (grid simple para 1-2 fotos), booking (hero + thumbs).
  */
 export function PropertyGallery({
   images,
@@ -23,26 +23,37 @@ export function PropertyGallery({
   className,
   variant = "default",
 }: PropertyGalleryProps) {
+  const [showAll, setShowAll] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const safeImages = images.length > 0 ? images : [FALLBACK];
+
+  const openAll = () => setShowAll(true);
 
   return (
     <div className={cn("w-full", className)}>
       {/* Desktop */}
       <div className="hidden sm:block">
-        {variant === "cabin" ? (
-          <CabinDesktopGallery images={safeImages} onOpen={setLightboxIndex} />
-        ) : variant === "booking" ? (
-          <BookingDesktopGallery images={safeImages} onOpen={setLightboxIndex} />
+        {variant === "booking" ? (
+          <BookingDesktopGallery images={safeImages} onOpen={openAll} />
         ) : (
-          <DefaultDesktopGallery images={safeImages} onOpen={setLightboxIndex} />
+          <DefaultDesktopGallery images={safeImages} onOpen={openAll} />
         )}
       </div>
 
       {/* Mobile */}
       <div className="sm:hidden">
-        <MobileGallery images={safeImages} onOpen={setLightboxIndex} />
+        <MobileGallery images={safeImages} onOpen={openAll} />
       </div>
+
+      {/* Todas las fotos */}
+      {showAll && (
+        <AllPhotosOverlay
+          images={safeImages}
+          title={title}
+          onClose={() => setShowAll(false)}
+          onSelect={(i) => setLightboxIndex(i)}
+        />
+      )}
 
       {/* Lightbox */}
       {lightboxIndex !== null && (
@@ -126,32 +137,31 @@ function BookingDesktopGallery({
   onOpen: (i: number) => void;
 }) {
   const main = images[0];
-  const rightCol = images.slice(1, 3);
-  const thumbs = images.slice(3, 8);
-  const extra = Math.max(0, images.length - 7);
+  const rightImage = images[1];
+  const thumbs = images.slice(2, 7);
+  const shown = (rightImage ? 2 : 1) + thumbs.length;
+  const extra = Math.max(0, images.length - shown);
 
   return (
     <div className="space-y-2">
       <div className="grid h-[360px] grid-cols-12 gap-2 overflow-hidden rounded-2xl">
-        <div className="col-span-7" onClick={() => onOpen(0)}>
+        <div
+          className={cn(
+            "h-full overflow-hidden",
+            rightImage ? "col-span-7" : "col-span-12"
+          )}
+          onClick={() => onOpen(0)}
+        >
           <GalleryImage src={main} alt="Foto principal" priority />
         </div>
-        <div className="col-span-5 grid gap-2">
-          {rightCol.map((img, i) => (
-            <div
-              key={i}
-              className="flex-1 overflow-hidden"
-              onClick={() => onOpen(i + 1)}
-            >
-              <GalleryImage src={img} alt={`Foto ${i + 2}`} />
-            </div>
-          ))}
-          {rightCol.length === 1 && (
-            <div className="flex-1 bg-muted" onClick={() => onOpen(2)}>
-              {images[2] && <GalleryImage src={images[2]} alt="Foto 3" />}
-            </div>
-          )}
-        </div>
+        {rightImage && (
+          <div
+            className="col-span-5 h-full overflow-hidden"
+            onClick={() => onOpen(1)}
+          >
+            <GalleryImage src={rightImage} alt="Foto 2" />
+          </div>
+        )}
       </div>
       {thumbs.length > 0 && (
         <div
@@ -162,9 +172,9 @@ function BookingDesktopGallery({
             <div
               key={i}
               className="relative h-24 overflow-hidden rounded-lg"
-              onClick={() => onOpen(i + 3)}
+              onClick={() => onOpen(i + 2)}
             >
-              <GalleryImage src={img} alt={`Foto ${i + 4}`} />
+              <GalleryImage src={img} alt={`Foto ${i + 3}`} />
               {i === thumbs.length - 1 && extra > 0 && (
                 <div className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/60 text-sm font-semibold text-white">
                   +{extra} fotos
@@ -172,47 +182,6 @@ function BookingDesktopGallery({
               )}
             </div>
           ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
-function CabinDesktopGallery({
-  images,
-  onOpen,
-}: {
-  images: string[];
-  onOpen: (i: number) => void;
-}) {
-  const extra = Math.max(0, images.length - 4);
-  return (
-    <div className="grid h-[420px] grid-cols-[2fr_1.35fr] gap-2 overflow-hidden rounded-2xl lg:h-[480px]">
-      <div onClick={() => onOpen(0)}>
-        <GalleryImage src={images[0]} alt="Foto principal" priority />
-      </div>
-      <div className="grid grid-rows-2 gap-2">
-        {[1, 2].map((idx) =>
-          images[idx] ? (
-            <div key={idx} className="overflow-hidden" onClick={() => onOpen(idx)}>
-              <GalleryImage src={images[idx]} alt={`Foto ${idx + 1}`} />
-            </div>
-          ) : (
-            <div key={idx} className="bg-muted" />
-          )
-        )}
-      </div>
-      {images[3] && (
-        <div
-          className="relative col-span-2 h-32 overflow-hidden rounded-b-2xl"
-          onClick={() => onOpen(3)}
-        >
-          <GalleryImage src={images[3]} alt="Foto 4" />
-          {extra > 0 && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/60 text-sm font-semibold text-white">
-              +{extra} fotos
-            </div>
-          )}
         </div>
       )}
     </div>
@@ -254,6 +223,79 @@ function MobileGallery({
         );
       })}
     </div>
+  );
+}
+
+/* ─────────────────────── Todas las fotos (grid completo) ─────────────────────── */
+
+function AllPhotosOverlay({
+  images,
+  title,
+  onClose,
+  onSelect,
+}: {
+  images: string[];
+  title?: string;
+  onClose: () => void;
+  onSelect: (i: number) => void;
+}) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [onClose]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[190] flex flex-col bg-background">
+      <div className="flex items-center gap-3 border-b border-border px-4 py-3 sm:px-6">
+        <button
+          onClick={onClose}
+          className="flex items-center gap-1 text-sm font-medium text-foreground hover:opacity-70"
+          aria-label="Volver"
+        >
+          <ChevronLeft className="h-5 w-5" /> Galería
+        </button>
+        {title && (
+          <span className="truncate text-sm text-muted-foreground">{title}</span>
+        )}
+        <button
+          onClick={onClose}
+          className="ml-auto rounded-full p-1.5 hover:bg-muted"
+          aria-label="Cerrar"
+        >
+          <X className="h-5 w-5" />
+        </button>
+      </div>
+      <div className="flex-1 overflow-y-auto p-3 sm:p-6">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4">
+          {images.map((img, i) => (
+            <button
+              key={i}
+              onClick={() => onSelect(i)}
+              className="aspect-[4/3] overflow-hidden rounded-xl"
+            >
+              <img
+                src={img}
+                alt={`Foto ${i + 1}`}
+                loading="lazy"
+                decoding="async"
+                onError={(e) => {
+                  e.currentTarget.src = FALLBACK;
+                }}
+                className="h-full w-full cursor-pointer object-cover transition-transform hover:scale-105"
+              />
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>,
+    document.body
   );
 }
 

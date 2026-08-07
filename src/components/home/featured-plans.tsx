@@ -83,6 +83,9 @@ export function FeaturedPlans() {
                   <span className="text-base font-extrabold text-foreground">
                     {formatPrice(plan.price)}
                   </span>
+                  <span className="block text-[10px] font-normal normal-case text-muted-foreground/70">
+                    Impuestos y cargos incluidos
+                  </span>
                 </div>
                 <span className="flex items-center gap-1 text-xs font-semibold text-neutral-900">
                   {fp.viewMore} <ArrowRight className="h-3.5 w-3.5" />

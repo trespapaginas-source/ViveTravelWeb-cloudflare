@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { MapPin, Users, BedDouble, Bath, ArrowRight } from "lucide-react";
+import { MapPin, Users, BedDouble, Bath } from "lucide-react";
 import { ROUTES } from "@/lib/routes";
 import { formatPrice, formatShortLocation } from "@/lib/utils";
 import { CardImageCarousel } from "@/components/shared/card-image-carousel";
+import { RatingBadge } from "@/components/reviews/rating-badge";
 import type { NormalizedCabin } from "@/lib/data-access";
 
 /* ───────────── Tarjeta VERTICAL (grid 2/3 columnas) ───────────── */
@@ -58,7 +59,8 @@ export function CabinCard({ cabin }: { cabin: NormalizedCabin }) {
         </div>
       </div>
 
-      <div className="space-y-2.5 border-t border-border/30 p-3.5 pt-2.5 sm:p-4">
+      <div className="flex items-center justify-between gap-2 border-t border-border/30 p-3.5 pt-2.5 sm:p-4">
+        <RatingBadge serviceType="cabin" serviceId={cabin.id} />
         <div className="text-right">
           <span className="block text-[10px] uppercase tracking-wide text-muted-foreground sm:mr-1 sm:inline">
             Desde
@@ -67,16 +69,10 @@ export function CabinCard({ cabin }: { cabin: NormalizedCabin }) {
             {formatPrice(cabin.pricePerNight)}
             <span className="text-xs font-normal text-muted-foreground"> / noche</span>
           </span>
+          <span className="block text-[10px] font-normal normal-case text-muted-foreground/70">
+            Impuestos y cargos incluidos
+          </span>
         </div>
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            navigate(ROUTES.cabinDetail(cabin.id));
-          }}
-          className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-zinc-900 py-2 text-xs font-semibold text-white hover:bg-black"
-        >
-          Ver disponibilidad <ArrowRight className="h-3.5 w-3.5" />
-        </button>
       </div>
     </article>
   );
@@ -133,6 +129,7 @@ export function CabinCardHorizontal({ cabin }: { cabin: NormalizedCabin }) {
         </div>
 
         <div className="mt-4 flex flex-col gap-3 border-t border-border/30 pt-3 sm:flex-row sm:items-center sm:justify-between">
+          <RatingBadge serviceType="cabin" serviceId={cabin.id} />
           <div className="sm:text-right">
             <span className="block text-[10px] uppercase tracking-wide text-muted-foreground sm:mr-1 sm:inline">
               Desde
@@ -141,16 +138,10 @@ export function CabinCardHorizontal({ cabin }: { cabin: NormalizedCabin }) {
               {formatPrice(cabin.pricePerNight)}
               <span className="text-xs font-normal text-muted-foreground"> / noche</span>
             </span>
+            <span className="block text-[10px] font-normal normal-case text-muted-foreground/70">
+              Impuestos y cargos incluidos
+            </span>
           </div>
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              navigate(ROUTES.cabinDetail(cabin.id));
-            }}
-            className="flex items-center justify-center gap-1.5 rounded-lg bg-zinc-900 px-5 py-2 text-xs font-semibold text-white hover:bg-black"
-          >
-            Ver disponibilidad <ArrowRight className="h-3.5 w-3.5" />
-          </button>
         </div>
       </div>
     </article>

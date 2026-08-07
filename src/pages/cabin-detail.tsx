@@ -12,13 +12,13 @@ import {
   Shield,
   AlertCircle,
   Sparkles,
-  Maximize2,
   Star,
 } from "lucide-react";
 import { useCabinDetail } from "@/hooks/use-detail";
 import { ROUTES } from "@/lib/routes";
 import { formatPrice } from "@/lib/utils";
-import { PropertyGallery } from "@/components/shared/property-gallery";
+import { PropertyGallery, Lightbox } from "@/components/shared/property-gallery";
+import { GallerySidebar } from "@/components/shared/gallery-sidebar";
 import { EmptyState } from "@/components/shared/empty-state";
 import {
   openWhatsApp,
@@ -41,6 +41,10 @@ export function CabinDetailPage() {
   const [guests, setGuests] = useState(2);
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
+  const [roomLightbox, setRoomLightbox] = useState<{
+    title: string;
+    images: string[];
+  } | null>(null);
 
   // Reseñas reales de la cabaña (D1 vía Pages Function).
   const { reviews, avg, count, loading: reviewsLoading, submit } = useReviews(
@@ -108,13 +112,23 @@ export function CabinDetailPage() {
         <ArrowLeft className="h-4 w-4" /> Volver
       </button>
 
-      {/* Galería */}
-      <PropertyGallery
-        images={cabin.images}
-        title={cabin.name}
-        variant="cabin"
-        className="mb-6"
-      />
+      {/* Galería + sidebar de reseñas/mapa (solo desktop; móvil sin cambios) */}
+      <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-stretch">
+        <PropertyGallery
+          images={cabin.images}
+          title={cabin.name}
+          variant="booking"
+          className="lg:min-w-0 lg:flex-1"
+        />
+        <GallerySidebar
+          avg={avg}
+          count={count}
+          reviews={reviews}
+          location={cabin.location}
+          onWriteReview={scrollToReviews}
+          className="hidden lg:flex lg:w-[260px] lg:shrink-0"
+        />
+      </div>
 
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_380px]">
         {/* Contenido principal */}
@@ -184,7 +198,13 @@ export function CabinDetailPage() {
                 {rooms.map((room) => {
                   const imgs = room.images?.length ? room.images : [room.image];
                   return (
-                    <RoomCard key={room.id} title={room.title} beds={room.beds} image={imgs[0]} />
+                    <RoomCard
+                      key={room.id}
+                      title={room.title}
+                      beds={room.beds}
+                      image={imgs[0]}
+                      onClick={() => setRoomLightbox({ title: room.title, images: imgs })}
+                    />
                   );
                 })}
               </div>
@@ -300,6 +320,9 @@ export function CabinDetailPage() {
               </div>
             </div>
             <p className="mt-1 text-xs text-muted-foreground">{cabin.priceRange}</p>
+            <p className="mt-0.5 text-[10px] font-normal normal-case text-muted-foreground/70">
+              Impuestos y cargos incluidos
+            </p>
 
             {/* Fechas */}
             <div className="mt-4 grid grid-cols-2 gap-2">
@@ -402,6 +425,9 @@ export function CabinDetailPage() {
               {formatPrice(cabin.pricePerNight)}
               <span className="text-xs font-normal text-muted-foreground"> / noche</span>
             </p>
+            <p className="text-[10px] font-normal normal-case text-muted-foreground/70">
+              Impuestos y cargos incluidos
+            </p>
           </div>
           <button
             onClick={handleInquiry}
@@ -411,6 +437,16 @@ export function CabinDetailPage() {
           </button>
         </div>
       </div>
+
+      {/* Visor de fotos de la habitación seleccionada */}
+      {roomLightbox && (
+        <Lightbox
+          images={roomLightbox.images}
+          initialIndex={0}
+          title={roomLightbox.title}
+          onClose={() => setRoomLightbox(null)}
+        />
+      )}
     </div>
   );
 }
@@ -439,14 +475,20 @@ function RoomCard({
   title,
   beds,
   image,
+  onClick,
 }: {
   title: string;
   beds: string;
   image: string;
+  onClick: () => void;
 }) {
   return (
-    <div className="w-[160px] shrink-0 overflow-hidden rounded-xl border border-border">
-      <div className="relative h-[110px]">
+    <button
+      type="button"
+      onClick={onClick}
+      className="w-[160px] shrink-0 overflow-hidden rounded-xl border border-border text-left"
+    >
+      <div className="h-[110px]">
         <img
           src={image}
           alt={title}
@@ -457,15 +499,12 @@ function RoomCard({
               "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&h=300&fit=crop";
           }}
         />
-        <div className="absolute right-1.5 top-1.5 rounded-full bg-black/50 p-1 text-white">
-          <Maximize2 className="h-3 w-3" />
-        </div>
       </div>
       <div className="p-2">
         <p className="text-xs font-bold text-foreground">{title}</p>
         <p className="text-[11px] text-muted-foreground">{beds}</p>
       </div>
-    </div>
+    </button>
   );
 }
 

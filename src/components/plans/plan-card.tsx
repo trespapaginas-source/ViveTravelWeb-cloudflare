@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { MapPin, Clock, Users, ArrowRight } from "lucide-react";
+import { MapPin, Clock, Users } from "lucide-react";
 import { ROUTES } from "@/lib/routes";
-import { formatPrice, formatShortLocation, cn } from "@/lib/utils";
+import { formatPrice, formatShortLocation } from "@/lib/utils";
 import { CardImageCarousel } from "@/components/shared/card-image-carousel";
+import { RatingBadge } from "@/components/reviews/rating-badge";
 import type { NormalizedPlan } from "@/lib/data-access";
 
 /* ───────────── Tarjeta VERTICAL (grid 2/3 columnas) ───────────── */
@@ -50,14 +51,23 @@ export function PlanCard({ plan }: { plan: NormalizedPlan }) {
           <span className="flex items-center gap-0.5">
             <Clock className="h-3 w-3" /> {plan.duration}
           </span>
-          <span className="flex items-center gap-0.5">
-            <Users className="h-3 w-3" /> {plan.maxGuests} máx.
-          </span>
+          {plan.category === "Grupal" ? (
+            plan.spotsLeft !== undefined && (
+              <span className="flex items-center gap-0.5 font-semibold text-amber-700">
+                <Users className="h-3 w-3" /> Quedan {plan.spotsLeft} cupos
+              </span>
+            )
+          ) : (
+            <span className="flex items-center gap-0.5">
+              <Users className="h-3 w-3" /> {plan.maxGuests} máx.
+            </span>
+          )}
         </div>
       </div>
 
       {/* Pie */}
-      <div className="space-y-2.5 border-t border-border/30 p-3.5 pt-2.5 sm:p-4">
+      <div className="flex items-center justify-between gap-2 border-t border-border/30 p-3.5 pt-2.5 sm:p-4">
+        <RatingBadge serviceType="plan" serviceId={plan.id} />
         <div className="text-right">
           <span className="block text-[10px] uppercase tracking-wide text-muted-foreground">
             Desde
@@ -65,16 +75,10 @@ export function PlanCard({ plan }: { plan: NormalizedPlan }) {
           <span className="text-base font-extrabold text-foreground sm:text-[17px]">
             {formatPrice(plan.price)}
           </span>
+          <span className="block text-[10px] font-normal normal-case text-muted-foreground/70">
+            Impuestos y cargos incluidos
+          </span>
         </div>
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            navigate(ROUTES.planDetail(plan.id));
-          }}
-          className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-zinc-900 py-2 text-xs font-semibold text-white hover:bg-black"
-        >
-          Ver detalle <ArrowRight className="h-3.5 w-3.5" />
-        </button>
       </div>
     </article>
   );
@@ -120,9 +124,17 @@ export function PlanCardHorizontal({ plan }: { plan: NormalizedPlan }) {
             {plan.shortDescription}
           </p>
           <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
-            <span className="flex items-center gap-0.5">
-              <Users className="h-3.5 w-3.5" /> Máx. {plan.maxGuests} personas
-            </span>
+            {plan.category === "Grupal" ? (
+              plan.spotsLeft !== undefined && (
+                <span className="flex items-center gap-0.5 font-semibold text-amber-700">
+                  <Users className="h-3.5 w-3.5" /> Quedan {plan.spotsLeft} cupos
+                </span>
+              )
+            ) : (
+              <span className="flex items-center gap-0.5">
+                <Users className="h-3.5 w-3.5" /> Máx. {plan.maxGuests} personas
+              </span>
+            )}
             <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-[11px] font-medium text-neutral-900">
               {plan.difficulty}
             </span>
@@ -131,6 +143,7 @@ export function PlanCardHorizontal({ plan }: { plan: NormalizedPlan }) {
 
         {/* Pie */}
         <div className="mt-4 flex flex-col gap-3 border-t border-border/30 pt-3 sm:flex-row sm:items-center sm:justify-between">
+          <RatingBadge serviceType="plan" serviceId={plan.id} />
           <div className="sm:text-right">
             <span className="block text-[10px] uppercase tracking-wide text-muted-foreground">
               Desde
@@ -138,18 +151,10 @@ export function PlanCardHorizontal({ plan }: { plan: NormalizedPlan }) {
             <span className="text-lg font-extrabold text-foreground">
               {formatPrice(plan.price)}
             </span>
+            <span className="block text-[10px] font-normal normal-case text-muted-foreground/70">
+              Impuestos y cargos incluidos
+            </span>
           </div>
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              navigate(ROUTES.planDetail(plan.id));
-            }}
-            className={cn(
-              "flex items-center justify-center gap-1.5 rounded-lg bg-zinc-900 px-5 py-2 text-xs font-semibold text-white hover:bg-black"
-            )}
-          >
-            Ver detalle <ArrowRight className="h-3.5 w-3.5" />
-          </button>
         </div>
       </div>
     </article>

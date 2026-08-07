@@ -8,7 +8,11 @@
     "images": [
       "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&h=600&fit=crop"
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800&h=600&fit=crop"
     ],
     "price": 6500000,
     "priceRange": "$6.500.000 - $7.800.000 COP",
@@ -52,7 +56,11 @@
     "images": [
       "https://images.unsplash.com/photo-1527838832700-50592524df7e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&h=600&fit=crop"
+      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1527838832700-50592524df7e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1527838832700-50592524df7e?w=800&h=600&fit=crop"
     ],
     "price": 5900000,
     "priceRange": "$5.900.000 - $6.900.000 COP",
@@ -96,7 +104,11 @@
     "images": [
       "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&h=600&fit=crop"
+      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop"
     ],
     "price": 8200000,
     "priceRange": "$8.200.000 - $9.500.000 COP",
@@ -141,7 +153,10 @@
       "/static-media/plan-circuito-machu-picchu.jpg",
       "https://images.unsplash.com/photo-1586105251261-72a756497a11?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "/static-media/plan-circuito-machu-picchu.jpg",
+      "https://images.unsplash.com/photo-1586105251261-72a756497a11?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop"
     ],
     "price": 90000,
     "priceRange": "$85.000 - $120.000 COP",
@@ -214,6 +229,12 @@
     "published": true,
     "order": 1,
     "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
     ]
   },
@@ -226,7 +247,11 @@
     "images": [
       "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&h=600&fit=crop"
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&h=600&fit=crop"
     ],
     "price": 95000,
     "priceRange": "$95.000 - $130.000 COP",
@@ -270,13 +295,17 @@
     "images": [
       "https://images.unsplash.com/photo-1475274047050-1d0c55b0033b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&h=600&fit=crop"
+      "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1475274047050-1d0c55b0033b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1475274047050-1d0c55b0033b?w=800&h=600&fit=crop"
     ],
     "price": 180000,
     "priceRange": "$180.000 - $250.000 COP",
-    "duration": "Noche completa (6 horas)",
+    "duration": "4 días, 3 noches",
     "location": "Mirador Costero, Juan de Acosta",
-    "category": "Experiencia",
+    "category": "Grupal",
     "includes": [
       "Transporte ida y vuelta",
       "Cena gourmet frente al mar",
@@ -300,7 +329,7 @@
     ],
     "rating": 4.9,
     "reviewCount": 67,
-    "maxGuests": 8,
+    "maxGuests": 500,
     "difficulty": "Fácil",
     "schedule": "6:00 PM - 12:00 AM",
     "meeting": "Hotel lobby zona norte, Barranquilla",
@@ -316,7 +345,11 @@
     "images": [
       "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1568702846914-96b305d2ced1?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=800&h=600&fit=crop"
+      "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1568702846914-96b305d2ced1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=600&fit=crop"
     ],
     "price": 75000,
     "priceRange": "$75.000 - $100.000 COP",
@@ -1725,7 +1758,12 @@
     "fullDescription": "Relájate en las playas de arena blanca y aguas cristalinas de República Dominicana con este viaje de 5 días y 4 noches. Alójate en un resort 5 estrellas con sistema todo incluido (comidas y bebidas ilimitadas). Disfruta de shows nocturnos, deportes acuáticos no motorizados y acceso a piscinas exclusivas. El plan perfecto para descansar sin preocupaciones.",
     "images": [
       "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1582294406180-2c40b82bc0e3?w=800&h=600&fit=crop"
+      "https://images.unsplash.com/photo-1582294406180-2c40b82bc0e3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582294406180-2c40b82bc0e3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582294406180-2c40b82bc0e3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?w=800&h=600&fit=crop"
     ],
     "price": 3500000,
     "priceRange": "$3.500.000 - $4.200.000 COP",
@@ -1766,7 +1804,12 @@
     "fullDescription": "Descubre la belleza del Caribe colombiano en este viaje internacionalmente reconocido de 4 días y 3 noches. Disfruta de las playas de arena blanca, recorre la isla en un carrito de golf, visita el Acuario y Johnny Cay. Incluye alojamiento en hotel frente al mar, alimentación y tours emblemáticos para vivir la isla al máximo.",
     "images": [
       "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1580228373356-820875298a00?w=800&h=600&fit=crop"
+      "https://images.unsplash.com/photo-1580228373356-820875298a00?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1580228373356-820875298a00?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1580228373356-820875298a00?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&h=600&fit=crop"
     ],
     "price": 1800000,
     "priceRange": "$1.800.000 - $2.100.000 COP",
@@ -1806,7 +1849,12 @@
     "fullDescription": "Un espectacular viaje de 6 días y 5 noches al corazón del Caribe mexicano. Hospédate en un excelente resort en la zona hotelera con sistema todo incluido. Opcionalmente podrás visitar Chichén Itzá, cenotes cristalinos o parques temáticos como Xcaret. Un destino vibrante que lo tiene todo: relax, fiesta y cultura milenaria.",
     "images": [
       "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1552074284-5e88ef1aef18?w=800&h=600&fit=crop"
+      "https://images.unsplash.com/photo-1552074284-5e88ef1aef18?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1552074284-5e88ef1aef18?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1552074284-5e88ef1aef18?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800&h=600&fit=crop"
     ],
     "price": 4200000,
     "priceRange": "$4.200.000 - $5.500.000 COP",
@@ -1877,6 +1925,12 @@
     "published": true,
     "order": 11,
     "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
     ]
   },
@@ -1888,12 +1942,17 @@
     "fullDescription": "Forma parte de esta expedición de un día pensada para grupos. Caminaremos por senderos ecológicos hasta llegar a las impresionantes cascadas de Sierra Limón. Un plan perfecto para team building o grupos de amigos que buscan aventura y naturaleza. Terminaremos con un almuerzo tradicional preparado por la comunidad local.",
     "images": [
       "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop"
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop"
     ],
     "price": 180000,
     "priceRange": "$180.000 - $220.000 COP",
     "duration": "Día completo (8 horas)",
-    "location": "Sierra Limón",
+    "location": "Santa Marta",
     "category": "Grupal",
     "includes": [
       "Transporte en bus",
@@ -1911,7 +1970,8 @@
     ],
     "rating": 4.6,
     "reviewCount": 88,
-    "maxGuests": 35,
+    "maxGuests": 500,
+    "spotsLeft": 7,
     "difficulty": "Moderado",
     "schedule": "6:00 AM - 4:00 PM",
     "meeting": "Plaza Central",
@@ -1933,7 +1993,12 @@
     "fullDescription": "Para los amantes de la adrenalina pura. Una experiencia corta pero indefinida donde realizarás un salto en paracaídas tipo tandem junto a un instructor certificado. Disfruta de una caída libre a más de 200 km/h y luego planea suavemente admirando un paisaje inigualable desde el aire.",
     "images": [
       "https://images.unsplash.com/photo-1520114757270-b1836a0fb494?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1521685360661-04ba71a06288?w=800&h=600&fit=crop"
+      "https://images.unsplash.com/photo-1521685360661-04ba71a06288?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1520114757270-b1836a0fb494?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1521685360661-04ba71a06288?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1520114757270-b1836a0fb494?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1521685360661-04ba71a06288?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1520114757270-b1836a0fb494?w=800&h=600&fit=crop"
     ],
     "price": 650000,
     "priceRange": "$650.000 - $800.000 COP",
@@ -1971,7 +2036,12 @@
     "fullDescription": "Descubre el maravilloso mundo submarino del mar de los siete colores en un tour corto de buceo. Diseñado especialmente para principiantes (no necesitas certificación). Incluye una clase teórica, práctica en aguas poco profundas y una inmersión guiada en el arrecife de coral, donde podrás ver peces tropicales, mantarrayas y vida marina colorida.",
     "images": [
       "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1582967177931-50e82c5f1cd3?w=800&h=600&fit=crop"
+      "https://images.unsplash.com/photo-1582967177931-50e82c5f1cd3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582967177931-50e82c5f1cd3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582967177931-50e82c5f1cd3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop"
     ],
     "price": 250000,
     "priceRange": "$250.000 - $300.000 COP",
@@ -2044,6 +2114,12 @@
     "published": true,
     "order": 15,
     "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
     ]
   },
@@ -2087,6 +2163,12 @@
     "published": true,
     "order": 16,
     "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
     ]
   },
@@ -2132,6 +2214,12 @@
     "published": true,
     "order": 17,
     "images": [
+      "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=800&h=600&fit=crop"
     ]
   },
@@ -2177,6 +2265,12 @@
     "published": true,
     "order": 18,
     "images": [
+      "https://images.unsplash.com/photo-1589979481223-deb893043163?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1589979481223-deb893043163?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1589979481223-deb893043163?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1589979481223-deb893043163?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1589979481223-deb893043163?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1589979481223-deb893043163?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1589979481223-deb893043163?w=800&h=600&fit=crop"
     ]
   },
@@ -2219,6 +2313,12 @@
     "published": true,
     "order": 19,
     "images": [
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&h=600&fit=crop"
     ]
   },

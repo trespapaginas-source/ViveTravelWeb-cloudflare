@@ -31,6 +31,7 @@ interface ReviewRow {
   destination: string | null;
   rating: number;
   comment: string | null;
+  country: string | null;
   created_at: string;
 }
 
@@ -124,7 +125,7 @@ async function handleGet(request: Request, env: Env): Promise<Response> {
   }
 
   const rows = await env.DB.prepare(
-    "SELECT id, service_type, service_id, reviewer_name, destination, rating, comment, created_at FROM reviews WHERE service_type = ? AND service_id = ? ORDER BY created_at DESC LIMIT 100"
+    "SELECT id, service_type, service_id, reviewer_name, destination, rating, comment, country, created_at FROM reviews WHERE service_type = ? AND service_id = ? ORDER BY created_at DESC LIMIT 100"
   )
     .bind(serviceType, serviceId)
     .all<ReviewRow>();
@@ -184,6 +185,11 @@ async function handlePost(request: Request, env: Env): Promise<Response> {
     return jsonError("Token de Turnstile requerido", 400);
   }
 
+  // País del comentarista, geolocalizado por Cloudflare a partir de la IP
+  // (sin servicios externos). Puede venir undefined en desarrollo local.
+  const country =
+    (request as Request & { cf?: { country?: string } }).cf?.country ?? null;
+
   // Validar Turnstile.
   const remoteIp = request.headers.get("CF-Connecting-IP");
   const turnstileOk = await verifyTurnstile(
@@ -213,7 +219,7 @@ async function handlePost(request: Request, env: Env): Promise<Response> {
 
   // Insertar. (destination queda NULL: no se pide al usuario.)
   const result = await env.DB.prepare(
-    "INSERT INTO reviews (service_type, service_id, reviewer_name, destination, rating, comment, ip_hash) VALUES (?, ?, ?, NULL, ?, ?, ?) RETURNING id, service_type, service_id, reviewer_name, destination, rating, comment, created_at"
+    "INSERT INTO reviews (service_type, service_id, reviewer_name, destination, rating, comment, country, ip_hash) VALUES (?, ?, ?, NULL, ?, ?, ?, ?) RETURNING id, service_type, service_id, reviewer_name, destination, rating, comment, country, created_at"
   )
     .bind(
       serviceType,
@@ -221,6 +227,7 @@ async function handlePost(request: Request, env: Env): Promise<Response> {
       reviewerName.trim(),
       ratingNum,
       cleanComment || null,
+      country,
       ipHash
     )
     .first<ReviewRow>();

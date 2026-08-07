@@ -178,6 +178,9 @@ function FavCard({
             {priceSuffix}
           </span>
         </p>
+        <p className="text-[10px] font-normal normal-case text-muted-foreground/70">
+          Impuestos y cargos incluidos
+        </p>
       </div>
     </div>
   );
