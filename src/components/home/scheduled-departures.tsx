@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Clock, CalendarDays, ArrowRight } from "lucide-react";
+import { Clock, CalendarDays, ArrowRight, MapPin } from "lucide-react";
 import { usePlanes } from "@/hooks/use-plans";
 import { ROUTES } from "@/lib/routes";
 import { formatPrice } from "@/lib/utils";
@@ -57,7 +57,9 @@ export function ScheduledDepartures() {
                 <h3 className="line-clamp-1 text-sm font-bold text-card-foreground">
                   {plan.name}
                 </h3>
-                <p className="mt-0.5 text-xs text-muted-foreground">{plan.location}</p>
+                <p className="mt-0.5 flex items-center gap-0.5 text-xs text-muted-foreground">
+                  <MapPin className="h-3 w-3" /> {plan.location}
+                </p>
                 <p className="mt-2 line-clamp-2 text-xs text-muted-foreground">
                   {plan.shortDescription}
                 </p>

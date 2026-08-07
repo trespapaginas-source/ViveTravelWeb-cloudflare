@@ -24,14 +24,13 @@ export function InternationalDestinations() {
         subtitle={intl.subtitle}
       />
 
-      {/* Grid idéntico al de Salidas Programadas: sm:grid-cols-2 lg:grid-cols-3,
-          mismo gap-4, items-stretch para que todas las tarjetas midan lo alto. */}
+      {/* Grid de tarjetas verticales formato 4:5 */}
       <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {intl.destinations.map((dest) => (
           <article
             key={dest.name}
             onClick={() => navigate(ROUTES.plansByCategory("internacionales"))}
-            className="group relative flex h-[300px] w-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-border shadow-sm transition-all hover:-translate-y-1 hover:shadow-md sm:h-[340px] lg:h-[380px]"
+            className="group relative flex aspect-[4/5] w-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-border shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
           >
             {/* Imagen: llena el 100% del contenedor sin distorsionarse */}
             <img
