@@ -7,9 +7,10 @@ import { RatingBadge } from "@/components/reviews/rating-badge";
 import type { NormalizedPlan } from "@/lib/data-access";
 
 /* ───────────── Iconografía "Todo Incluido" ───────────── */
-// 4 iconos (hospedaje, vuelos, alimentación, traslados) al doble del tamaño
-// estándar de la tarjeta (w-4 → w-8) y con trazo más grueso (stroke-[2.5]).
-// Sin texto: comunican por sí solos un paquete completo.
+// 4 iconos (hospedaje, vuelos, alimentación, traslados), sin texto.
+// Móvil: w-5 (20px) — compactos pero definidos.
+// Desktop: reducción adicional → sutiles y limpios (estética Booking.com).
+// Trazo fino en escritorio para evitar la apariencia pesada.
 const ALL_INCLUSIVE_ICONS = [
   { Icon: Hotel, label: "Hospedaje" },
   { Icon: Plane, label: "Vuelos" },
@@ -19,13 +20,13 @@ const ALL_INCLUSIVE_ICONS = [
 
 function AllInclusiveIcons() {
   return (
-    <div className="flex items-center gap-2.5">
+    <div className="flex items-center gap-2 lg:gap-1.5">
       {ALL_INCLUSIVE_ICONS.map(({ Icon, label }) => (
         <Icon
           key={label}
           aria-label={label}
-          className="h-8 w-8 shrink-0 text-neutral-700"
-          strokeWidth={2.5}
+          className="h-5 w-5 shrink-0 text-neutral-700 lg:h-[18px] lg:w-[18px]"
+          strokeWidth={1.5}
         />
       ))}
     </div>
@@ -70,7 +71,7 @@ export function PlanCard({ plan }: { plan: NormalizedPlan }) {
             {formatPlanLocation(plan)}
           </span>
         </div>
-        <p className="mt-2 line-clamp-2 text-xs text-muted-foreground">
+        <p className="mt-2 line-clamp-2 text-sm text-gray-700">
           {plan.shortDescription}
         </p>
         <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-muted-foreground sm:text-xs">
@@ -78,7 +79,7 @@ export function PlanCard({ plan }: { plan: NormalizedPlan }) {
             <Clock className="h-3 w-3" /> {plan.duration}
           </span>
         </div>
-        {/* Iconografía "Todo Incluido" — 4 iconos grandes, sin texto */}
+        {/* Iconografía "Todo Incluido" — 4 iconos compactos, sin texto */}
         <div className="mt-3">
           <AllInclusiveIcons />
         </div>
@@ -91,7 +92,7 @@ export function PlanCard({ plan }: { plan: NormalizedPlan }) {
           <span className="block text-[10px] uppercase tracking-wide text-muted-foreground">
             Desde
           </span>
-          <span className="text-base font-extrabold text-foreground sm:text-[17px]">
+          <span className="text-xl font-extrabold text-foreground sm:text-[17px]">
             {formatPrice(plan.price)}
           </span>
           <span className="block text-[10px] font-normal normal-case text-muted-foreground/70">
@@ -139,10 +140,10 @@ export function PlanCardHorizontal({ plan }: { plan: NormalizedPlan }) {
               <Clock className="h-3.5 w-3.5" /> {plan.duration}
             </span>
           </div>
-          <p className="mt-2 line-clamp-2 text-xs text-muted-foreground sm:text-sm">
+          <p className="mt-2 line-clamp-2 text-sm text-gray-700">
             {plan.shortDescription}
           </p>
-          {/* Iconografía "Todo Incluido" — 4 iconos grandes, sin texto */}
+          {/* Iconografía "Todo Incluido" — 4 iconos compactos, sin texto */}
           <div className="mt-3">
             <AllInclusiveIcons />
           </div>
@@ -155,7 +156,7 @@ export function PlanCardHorizontal({ plan }: { plan: NormalizedPlan }) {
             <span className="block text-[10px] uppercase tracking-wide text-muted-foreground">
               Desde
             </span>
-            <span className="text-lg font-extrabold text-foreground">
+            <span className="text-xl font-extrabold text-foreground sm:text-lg">
               {formatPrice(plan.price)}
             </span>
             <span className="block text-[10px] font-normal normal-case text-muted-foreground/70">
