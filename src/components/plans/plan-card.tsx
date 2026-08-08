@@ -32,7 +32,7 @@ const ICON_COMPONENTS: Record<string, LucideIcon> = {
  * Si `servicios` es undefined o vacío, NO renderiza nada (container absent
  * del DOM, no un contenedor vacío).
  */
-function PlanServices({ servicios }: { servicios?: PlanService[] }) {
+export function PlanServices({ servicios }: { servicios?: PlanService[] }) {
   if (!servicios || servicios.length === 0) return null;
   return (
     <div className="flex flex-wrap items-center gap-x-3 gap-y-1">

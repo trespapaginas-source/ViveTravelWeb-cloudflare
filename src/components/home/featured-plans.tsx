@@ -1,11 +1,13 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { MapPin, ArrowRight } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { usePlanes } from "@/hooks/use-plans";
 import { useSiteContent } from "@/lib/use-site-content";
 import { ROUTES } from "@/lib/routes";
 import { formatPrice, formatShortDuration, formatPlanLocation } from "@/lib/utils";
 import { SectionHeader } from "@/components/shared/section-header";
+import { RatingBadge } from "@/components/reviews/rating-badge";
+import { PlanServices } from "@/components/plans/plan-card";
 
 /**
  * FeaturedPlans — muestra hasta 6 planes destacados (ordenados por
@@ -74,9 +76,17 @@ export function FeaturedPlans() {
                 {plan.shortDescription}
               </p>
 
-              {/* Pie */}
-              <div className="mt-auto flex items-end justify-between pt-4">
-                <div>
+              {/* Servicios incluidos — dinámico, coherente con las tarjetas del catálogo */}
+              {plan.servicios_incluidos && plan.servicios_incluidos.length > 0 && (
+                <div className="mt-2">
+                  <PlanServices servicios={plan.servicios_incluidos} />
+                </div>
+              )}
+
+              {/* Pie — rating (izq) + precio (der), alineados a la misma altura */}
+              <div className="mt-auto flex items-center justify-between gap-2 pt-4">
+                <RatingBadge serviceType="plan" serviceId={plan.id} />
+                <div className="text-right">
                   <span className="block text-[10px] uppercase tracking-wide text-muted-foreground">
                     {fp.priceLabel}
                   </span>
@@ -87,9 +97,6 @@ export function FeaturedPlans() {
                     Impuestos y cargos incluidos
                   </span>
                 </div>
-                <span className="flex items-center gap-1 text-xs font-semibold text-neutral-900">
-                  {fp.viewMore} <ArrowRight className="h-3.5 w-3.5" />
-                </span>
               </div>
             </div>
           </article>

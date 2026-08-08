@@ -1,10 +1,12 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Clock, CalendarDays, ArrowRight, MapPin } from "lucide-react";
+import { Clock, CalendarDays, MapPin } from "lucide-react";
 import { usePlanes } from "@/hooks/use-plans";
 import { ROUTES } from "@/lib/routes";
 import { formatPrice, formatDepartureRange } from "@/lib/utils";
 import { SectionHeader } from "@/components/shared/section-header";
+import { RatingBadge } from "@/components/reviews/rating-badge";
+import { PlanServices } from "@/components/plans/plan-card";
 
 /**
  * ScheduledDepartures — destinos nacionales con salidas programadas fijas
@@ -63,6 +65,14 @@ export function ScheduledDepartures() {
                 <p className="mt-2 line-clamp-2 text-xs text-muted-foreground">
                   {plan.shortDescription}
                 </p>
+
+                {/* Servicios incluidos — dinámico, coherente con el catálogo */}
+                {plan.servicios_incluidos && plan.servicios_incluidos.length > 0 && (
+                  <div className="mt-2">
+                    <PlanServices servicios={plan.servicios_incluidos} />
+                  </div>
+                )}
+
                 <div className="mt-3 flex flex-col gap-1 text-[11px] text-muted-foreground">
                   <span className="flex items-center gap-1">
                     <Clock className="h-3 w-3" /> {plan.duration}
@@ -90,8 +100,10 @@ export function ScheduledDepartures() {
                   })()}
                 </div>
 
-                <div className="mt-auto flex items-end justify-between pt-4">
-                  <div>
+                {/* Pie — rating (izq) + precio (der), alineados a la misma altura */}
+                <div className="mt-auto flex items-center justify-between gap-2 pt-4">
+                  <RatingBadge serviceType="plan" serviceId={plan.id} />
+                  <div className="text-right">
                     <span className="block text-[10px] uppercase tracking-wide text-muted-foreground">
                       Desde
                     </span>
@@ -103,9 +115,6 @@ export function ScheduledDepartures() {
                       Impuestos y cargos incluidos
                     </span>
                   </div>
-                  <span className="flex items-center gap-1 rounded-lg bg-zinc-900 px-3 py-1.5 text-xs font-semibold text-white">
-                    Ver plan <ArrowRight className="h-3.5 w-3.5" />
-                  </span>
                 </div>
               </div>
             </article>
