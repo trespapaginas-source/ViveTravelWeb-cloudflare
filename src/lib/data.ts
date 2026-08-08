@@ -29,6 +29,14 @@ export interface TourPlan {
   priceRange: string;
   duration: string;
   location: string;
+  /**
+   * Ubicación estructurada (planes internacionales).
+   * - ubicacion_principal: País (obligatorio cuando se usa este modelo).
+   * - ubicacion_secundaria: Destino/Ciudad (opcional).
+   * Si ambos faltan, el renderizado cae al campo `location` legacy.
+   */
+  ubicacion_principal?: string;
+  ubicacion_secundaria?: string;
   category: string;
   includes: string[];
   excludes: string[];

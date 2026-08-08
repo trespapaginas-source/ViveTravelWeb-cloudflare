@@ -44,6 +44,55 @@ export function formatShortLocation(location: string | undefined): string {
   return parts[parts.length - 1] || location;
 }
 
+/**
+ * Construye la etiqueta de ubicación priorizando el modelo estructurado
+ * (ubicacion_principal + ubicacion_secundaria opcional). Si el plan no usa
+ * ese modelo (planes legacy), cae a `location` plano.
+ *
+ * - Con ciudad:  "México, Cancún"
+ * - Solo país:   "México"
+ * - Legacy:      el valor de `location` (ej: "Madrid, París y Roma")
+ */
+export function formatPlanLocation(plan: {
+  ubicacion_principal?: string;
+  ubicacion_secundaria?: string;
+  location: string;
+}): string {
+  const { ubicacion_principal, ubicacion_secundaria, location } = plan;
+  if (ubicacion_principal && ubicacion_principal.trim()) {
+    const ciudad = ubicacion_secundaria?.trim();
+    return ciudad ? `${ubicacion_principal}, ${ciudad}` : ubicacion_principal;
+  }
+  return location;
+}
+
+const MESES_ES = [
+  "enero", "febrero", "marzo", "abril", "mayo", "junio",
+  "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
+];
+
+/**
+ * Genera el rango dinámico de salidas programadas:
+ * "Salidas programadas de [mes actual] a [mes última fecha]".
+ *
+ * - `mes actual`: mes de la fecha del sistema (cuando visita el usuario).
+ * - `mes final`: mes del último elemento de `departureDates`.
+ *
+ * Devuelve "" si no hay fechas, para que el render condicional lo omita.
+ */
+export function formatDepartureRange(
+  departureDates?: { start: string; end: string }[]
+): string {
+  if (!departureDates || departureDates.length === 0) return "";
+  const last = departureDates[departureDates.length - 1];
+  const lastDate = new Date(last.start + "T00:00:00");
+  if (isNaN(lastDate.getTime())) return "";
+  const now = new Date();
+  const mesActual = MESES_ES[now.getMonth()];
+  const mesFinal = MESES_ES[lastDate.getMonth()];
+  return `Salidas programadas de ${mesActual} a ${mesFinal}`;
+}
+
 /** Convierte "2026-07-31" → "31 jul 2026" (locale es). */
 export function formatDateLong(iso: string | null | undefined): string {
   if (!iso) return "";

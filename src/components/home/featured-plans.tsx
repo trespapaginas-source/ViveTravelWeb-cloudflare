@@ -4,7 +4,7 @@ import { MapPin, ArrowRight } from "lucide-react";
 import { usePlanes } from "@/hooks/use-plans";
 import { useSiteContent } from "@/lib/use-site-content";
 import { ROUTES } from "@/lib/routes";
-import { formatPrice, formatShortDuration, formatShortLocation } from "@/lib/utils";
+import { formatPrice, formatShortDuration, formatPlanLocation } from "@/lib/utils";
 import { SectionHeader } from "@/components/shared/section-header";
 
 /**
@@ -67,7 +67,7 @@ export function FeaturedPlans() {
               <div className="mt-1 flex items-center gap-2 text-xs text-muted-foreground">
                 <span className="flex items-center gap-0.5">
                   <MapPin className="h-3 w-3" />
-                  {formatShortLocation(plan.location)}
+                  {formatPlanLocation(plan)}
                 </span>
               </div>
               <p className="mt-2 line-clamp-2 text-xs text-muted-foreground">

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Clock, CalendarDays, ArrowRight, MapPin } from "lucide-react";
 import { usePlanes } from "@/hooks/use-plans";
 import { ROUTES } from "@/lib/routes";
-import { formatPrice } from "@/lib/utils";
+import { formatPrice, formatDepartureRange } from "@/lib/utils";
 import { SectionHeader } from "@/components/shared/section-header";
 
 /**
@@ -67,11 +67,27 @@ export function ScheduledDepartures() {
                   <span className="flex items-center gap-1">
                     <Clock className="h-3 w-3" /> {plan.duration}
                   </span>
-                  {plan.schedule && (
-                    <span className="flex items-center gap-1">
-                      <CalendarDays className="h-3 w-3" /> {plan.schedule}
-                    </span>
-                  )}
+                  {/* Rango de salidas dinámico (mes actual → mes última fecha). */}
+                  {(() => {
+                    const range = formatDepartureRange(plan.departureDates);
+                    if (range) {
+                      return (
+                        <span className="flex items-center gap-1">
+                          <CalendarDays className="h-3 w-3" /> {range}
+                        </span>
+                      );
+                    }
+                    // Fallback: horario real si existe y no es texto de salidas quemado.
+                    const sched = plan.schedule;
+                    if (sched && !/^salidas programadas/i.test(sched)) {
+                      return (
+                        <span className="flex items-center gap-1">
+                          <CalendarDays className="h-3 w-3" /> {sched}
+                        </span>
+                      );
+                    }
+                    return null;
+                  })()}
                 </div>
 
                 <div className="mt-auto flex items-end justify-between pt-4">
