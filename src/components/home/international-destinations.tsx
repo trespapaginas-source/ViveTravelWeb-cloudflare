@@ -29,7 +29,9 @@ export function InternationalDestinations() {
         {intl.destinations.map((dest) => (
           <article
             key={dest.name}
-            onClick={() => navigate(ROUTES.plansByCategory("internacionales"))}
+            onClick={() =>
+              navigate(ROUTES.plansByDestination("internacionales", dest.name))
+            }
             className="group relative flex aspect-[4/5] w-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-border shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
           >
             {/* Imagen: llena el 100% del contenedor sin distorsionarse */}

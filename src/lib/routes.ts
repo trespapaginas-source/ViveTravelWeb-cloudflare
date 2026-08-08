@@ -18,6 +18,9 @@ export const ROUTES = {
   policies: "/politicas",
   legalDoc: (slug: string) => `/politicas/${slug}`,
   plansByCategory: (categoria: string) => `/planes?categoria=${categoria}`,
+  /** Navega al catálogo en una sección y con un destino pre-filtrado. */
+  plansByDestination: (categoria: string, destino: string) =>
+    `/planes?categoria=${categoria}&destino=${encodeURIComponent(destino)}`,
 } as const;
 
 /** Documentos legales referenciados en el footer (slugs del legal-docs.json). */

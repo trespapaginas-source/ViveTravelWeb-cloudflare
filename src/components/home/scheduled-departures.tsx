@@ -49,7 +49,7 @@ export function ScheduledDepartures() {
                       "https://images.unsplash.com/photo-1501785888041-af3cff28a5ee?w=800&h=600&fit=crop";
                   }}
                 />
-                <span className="absolute left-2 top-2 flex items-center gap-1 rounded-full border border-white/40 bg-white/25 px-2.5 py-1 text-[11px] font-semibold text-zinc-800 shadow-sm backdrop-blur-md">
+                <span className="absolute left-2 top-2 flex items-center gap-1 rounded-full border border-white/15 bg-black/30 px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm backdrop-blur-md">
                   <CalendarDays className="h-3 w-3" />
                   Fechas fijas
                 </span>
