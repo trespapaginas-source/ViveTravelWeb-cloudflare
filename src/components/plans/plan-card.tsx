@@ -7,27 +7,29 @@ import { RatingBadge } from "@/components/reviews/rating-badge";
 import type { NormalizedPlan } from "@/lib/data-access";
 
 /* ───────────── Iconografía "Todo Incluido" ───────────── */
-// 4 iconos (hospedaje, vuelos, alimentación, traslados), sin texto.
-// Móvil: w-5 (20px) — compactos pero definidos.
-// Desktop: reducción adicional → sutiles y limpios (estética Booking.com).
-// Trazo fino en escritorio para evitar la apariencia pesada.
+// 4 servicios (icono + micro-label) que comunican un paquete completo.
+// Contenedor flex-wrap para adaptarse al ancho disponible.
 const ALL_INCLUSIVE_ICONS = [
-  { Icon: Hotel, label: "Hospedaje" },
+  { Icon: Hotel, label: "Hotel" },
   { Icon: Plane, label: "Vuelos" },
-  { Icon: UtensilsCrossed, label: "Alimentación" },
+  { Icon: UtensilsCrossed, label: "Comidas" },
   { Icon: Car, label: "Traslados" },
 ];
 
 function AllInclusiveIcons() {
   return (
-    <div className="flex items-center gap-2 lg:gap-1.5">
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
       {ALL_INCLUSIVE_ICONS.map(({ Icon, label }) => (
-        <Icon
-          key={label}
-          aria-label={label}
-          className="h-5 w-5 shrink-0 text-neutral-700 lg:h-[18px] lg:w-[18px]"
-          strokeWidth={1.5}
-        />
+        <span key={label} className="flex items-center gap-1">
+          <Icon
+            aria-hidden="true"
+            className="h-[18px] w-[18px] shrink-0 text-neutral-600"
+            strokeWidth={1.5}
+          />
+          <span className="text-[10px] font-medium text-gray-600">
+            {label}
+          </span>
+        </span>
       ))}
     </div>
   );
@@ -65,18 +67,18 @@ export function PlanCard({ plan }: { plan: NormalizedPlan }) {
         <h3 className="line-clamp-1 text-[17px] font-bold leading-snug text-card-foreground">
           {plan.name}
         </h3>
-        <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-muted-foreground sm:text-xs">
+        <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
           <span className="flex items-center gap-0.5">
-            <MapPin className="h-3 w-3" />
+            <MapPin className="h-3.5 w-3.5" />
             {formatPlanLocation(plan)}
           </span>
         </div>
         <p className="mt-2 line-clamp-2 text-sm text-gray-700">
           {plan.shortDescription}
         </p>
-        <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-muted-foreground sm:text-xs">
+        <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
           <span className="flex items-center gap-0.5">
-            <Clock className="h-3 w-3" /> {plan.duration}
+            <Clock className="h-3.5 w-3.5" /> {plan.duration}
           </span>
         </div>
         {/* Iconografía "Todo Incluido" — 4 iconos compactos, sin texto */}
@@ -132,7 +134,7 @@ export function PlanCardHorizontal({ plan }: { plan: NormalizedPlan }) {
           <h3 className="line-clamp-1 text-lg font-bold text-card-foreground sm:text-[20px]">
             {plan.name}
           </h3>
-          <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
+          <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
             <span className="flex items-center gap-0.5">
               <MapPin className="h-3.5 w-3.5" /> {formatPlanLocation(plan)}
             </span>

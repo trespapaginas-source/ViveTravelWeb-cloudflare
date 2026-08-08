@@ -30,14 +30,14 @@ export function RatingBadge({
 
   return (
     <span className="flex items-center gap-1.5">
-      <span className="flex h-7 min-w-7 items-center justify-center rounded-md bg-neutral-900 px-1.5 text-xs font-bold text-white">
+      <span className="flex h-8 min-w-8 items-center justify-center rounded-md bg-neutral-900 px-2.5 py-1 text-sm font-bold text-white">
         {avg.toFixed(1)}
       </span>
       <span className="flex flex-col leading-tight">
-        <span className="text-[11px] font-semibold text-foreground">
+        <span className="text-xs font-semibold text-foreground">
           {ratingLabel(Math.round(avg))}
         </span>
-        <span className="text-[10px] text-muted-foreground">
+        <span className="text-[11px] text-gray-500">
           {count} reseña{count !== 1 ? "s" : ""}
         </span>
       </span>
