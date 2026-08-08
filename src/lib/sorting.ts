@@ -74,7 +74,10 @@ export function sortPlans(plans: NormalizedPlan[], option: SortOption): Normaliz
   const arr = [...plans];
   switch (option) {
     case "popular":
-      return arr.sort((a, b) => b.reviewCount - a.reviewCount);
+      // Más popular = mayor número de reseñas; en empate, mayor rating.
+      return arr.sort(
+        (a, b) => b.reviewCount - a.reviewCount || b.rating - a.rating
+      );
     case "price-asc":
       return arr.sort((a, b) => a.price - b.price);
     case "price-desc":

@@ -1,10 +1,36 @@
 import { useNavigate } from "react-router-dom";
-import { MapPin, Clock } from "lucide-react";
+import { MapPin, Clock, Hotel, Plane, UtensilsCrossed, Car } from "lucide-react";
 import { ROUTES } from "@/lib/routes";
 import { formatPrice, formatPlanLocation } from "@/lib/utils";
 import { CardImageCarousel } from "@/components/shared/card-image-carousel";
 import { RatingBadge } from "@/components/reviews/rating-badge";
 import type { NormalizedPlan } from "@/lib/data-access";
+
+/* ───────────── Iconografía "Todo Incluido" ───────────── */
+// 4 iconos (hospedaje, vuelos, alimentación, traslados) al doble del tamaño
+// estándar de la tarjeta (w-4 → w-8) y con trazo más grueso (stroke-[2.5]).
+// Sin texto: comunican por sí solos un paquete completo.
+const ALL_INCLUSIVE_ICONS = [
+  { Icon: Hotel, label: "Hospedaje" },
+  { Icon: Plane, label: "Vuelos" },
+  { Icon: UtensilsCrossed, label: "Alimentación" },
+  { Icon: Car, label: "Traslados" },
+];
+
+function AllInclusiveIcons() {
+  return (
+    <div className="flex items-center gap-2.5">
+      {ALL_INCLUSIVE_ICONS.map(({ Icon, label }) => (
+        <Icon
+          key={label}
+          aria-label={label}
+          className="h-8 w-8 shrink-0 text-neutral-700"
+          strokeWidth={2.5}
+        />
+      ))}
+    </div>
+  );
+}
 
 /* ───────────── Tarjeta VERTICAL (grid 2/3 columnas) ───────────── */
 
@@ -51,6 +77,10 @@ export function PlanCard({ plan }: { plan: NormalizedPlan }) {
           <span className="flex items-center gap-0.5">
             <Clock className="h-3 w-3" /> {plan.duration}
           </span>
+        </div>
+        {/* Iconografía "Todo Incluido" — 4 iconos grandes, sin texto */}
+        <div className="mt-3">
+          <AllInclusiveIcons />
         </div>
       </div>
 
@@ -112,10 +142,9 @@ export function PlanCardHorizontal({ plan }: { plan: NormalizedPlan }) {
           <p className="mt-2 line-clamp-2 text-xs text-muted-foreground sm:text-sm">
             {plan.shortDescription}
           </p>
-          <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
-            <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-[11px] font-medium text-neutral-900">
-              {plan.difficulty}
-            </span>
+          {/* Iconografía "Todo Incluido" — 4 iconos grandes, sin texto */}
+          <div className="mt-3">
+            <AllInclusiveIcons />
           </div>
         </div>
 

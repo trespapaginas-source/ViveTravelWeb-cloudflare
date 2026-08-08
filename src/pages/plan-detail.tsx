@@ -220,11 +220,6 @@ export function PlanDetailPage() {
             <span className="flex items-center gap-1.5">
               <Users className="h-4 w-4 text-neutral-900" /> Máx. {plan.maxGuests} personas
             </span>
-            {plan.difficulty && (
-              <span className="flex items-center gap-1.5">
-                <Sparkles className="h-4 w-4 text-neutral-900" /> {plan.difficulty}
-              </span>
-            )}
           </div>
 
           {/* Descripción — Acerca de este plan */}

@@ -57,7 +57,7 @@ export function PlansPage() {
     setSearchParams(next, { replace: true });
   }, [filters.section, filters.search, setSearchParams]);
 
-  const { filtered, priceBounds, availableCountries, availableCategories } =
+  const { filtered, priceBounds, availableCountries } =
     usePlanFilters(plans, filters);
 
   // Ordenar resultados.
@@ -69,7 +69,7 @@ export function PlansPage() {
   // Reset de paginación al cambiar filtros/orden/sección.
   useEffect(
     () => setCurrentPage(1),
-    [filters.section, filters.search, filters.country, filters.category, sortOption]
+    [filters.section, filters.search, filters.country, sortOption]
   );
 
   // Paginación.
@@ -104,7 +104,7 @@ export function PlansPage() {
           <button
             key={section.id}
             onClick={() =>
-              update({ section: section.id, country: undefined, category: undefined })
+              update({ section: section.id, country: undefined })
             }
             className={cn(
               "whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition-colors",
@@ -125,7 +125,6 @@ export function PlansPage() {
             filters={filters}
             priceBounds={priceBounds}
             availableCountries={availableCountries}
-            availableCategories={availableCategories}
             onUpdate={update}
             onReset={resetFilters}
           />
@@ -232,7 +231,6 @@ export function PlansPage() {
               filters={filters}
               priceBounds={priceBounds}
               availableCountries={availableCountries}
-              availableCategories={availableCategories}
               onUpdate={update}
               onReset={resetFilters}
             />
@@ -255,14 +253,12 @@ function FiltersPanel({
   filters,
   priceBounds,
   availableCountries,
-  availableCategories,
   onUpdate,
   onReset,
 }: {
   filters: PlanFilters;
   priceBounds: { min: number; max: number };
   availableCountries: (PlanRegion & { matched?: boolean })[];
-  availableCategories: string[];
   onUpdate: (patch: Partial<PlanFilters>) => void;
   onReset: () => void;
 }) {
@@ -328,29 +324,6 @@ function FiltersPanel({
                 ))}
               </optgroup>
             )}
-          </select>
-        </div>
-      )}
-
-      {/* Categoría específica */}
-      {availableCategories.length > 0 && (
-        <div>
-          <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Tipo de experiencia
-          </label>
-          <select
-            value={filters.category ?? ""}
-            onChange={(e) =>
-              onUpdate({ category: e.target.value || undefined })
-            }
-            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-neutral-900"
-          >
-            <option value="">Todas las categorías</option>
-            {availableCategories.map((cat) => (
-              <option key={cat} value={cat}>
-                {cat}
-              </option>
-            ))}
           </select>
         </div>
       )}

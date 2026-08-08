@@ -76,8 +76,6 @@ export interface PlanFilters {
   maxDays: number | null;
   /** País/región (id de PLAN_REGIONS). undefined = todos. */
   country: string | undefined;
-  /** Categoría específica del plan (campo `category`). undefined = todas. */
-  category: string | undefined;
 }
 
 export const DEFAULT_FILTERS: PlanFilters = {
@@ -87,7 +85,6 @@ export const DEFAULT_FILTERS: PlanFilters = {
   priceMax: null,
   maxDays: null,
   country: undefined,
-  category: undefined,
 };
 
 /** Extrae los días numéricos de una cadena de duración ("5 días" → 5). */
@@ -119,10 +116,7 @@ export function usePlanFilters(
         if (region.id !== filters.country) return false;
       }
 
-      // 2. Categoría específica
-      if (filters.category && plan.category !== filters.category) return false;
-
-      // 3. Búsqueda por destino/nombre (case-insensitive, coincide parcial)
+      // 2. Búsqueda por destino/nombre (case-insensitive, coincide parcial)
       if (filters.search.trim()) {
         const q = filters.search.trim().toLowerCase();
         const haystack = [
@@ -136,13 +130,13 @@ export function usePlanFilters(
         if (!haystack.includes(q)) return false;
       }
 
-      // 4. Rango de precio
+      // 3. Rango de precio
       if (filters.priceMin !== null && plan.price < filters.priceMin)
         return false;
       if (filters.priceMax !== null && plan.price > filters.priceMax)
         return false;
 
-      // 5. Duración máxima
+      // 4. Duración máxima
       if (filters.maxDays !== null) {
         const days = parseDays(plan.duration);
         if (days > filters.maxDays) return false;
@@ -163,8 +157,6 @@ export function usePlanFilters(
       priceBounds,
       /** Regiones/países disponibles en la sección activa, agrupadas. */
       availableCountries: getAvailableCountries(sectionPlans),
-      /** Categorías disponibles en la sección activa. */
-      availableCategories: getAvailableCategories(sectionPlans),
     };
   }, [allPlans, filters]);
 }
@@ -180,16 +172,4 @@ export function getAvailableCountries(plans: NormalizedPlan[]) {
   }
   // Filtrar PLAN_REGIONS por los ids presentes, manteniendo el orden definido.
   return PLAN_REGIONS.filter((r) => seenIds.has(r.id));
-}
-
-/**
- * Devuelve las categorías (campo `category`) presentes en una lista de planes,
- * ordenadas alfabéticamente.
- */
-export function getAvailableCategories(plans: NormalizedPlan[]): string[] {
-  const set = new Set<string>();
-  for (const p of plans) {
-    if (p.category) set.add(p.category);
-  }
-  return Array.from(set).sort((a, b) => a.localeCompare(b, "es"));
 }

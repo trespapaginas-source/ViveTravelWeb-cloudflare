@@ -44,7 +44,6 @@ export interface TourPlan {
   rating: number;
   reviewCount: number;
   maxGuests: number;
-  difficulty: string;
   schedule: string;
   meeting: string;
   published: boolean;
