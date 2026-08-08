@@ -1,37 +1,82 @@
 import { useNavigate } from "react-router-dom";
-import { MapPin, Clock, Hotel, Plane, UtensilsCrossed, Car } from "lucide-react";
+import {
+  MapPin,
+  Clock,
+  BedDouble,
+  Plane,
+  UtensilsCrossed,
+  Car,
+  Check,
+  type LucideIcon,
+} from "lucide-react";
 import { ROUTES } from "@/lib/routes";
-import { formatPrice, formatPlanLocation } from "@/lib/utils";
+import { formatPrice, formatPlanLocation, resolveServiceIcon } from "@/lib/utils";
 import { CardImageCarousel } from "@/components/shared/card-image-carousel";
 import { RatingBadge } from "@/components/reviews/rating-badge";
 import type { NormalizedPlan } from "@/lib/data-access";
+import type { PlanService } from "@/lib/data";
 
-/* ───────────── Iconografía "Todo Incluido" ───────────── */
-// 4 servicios (icono + micro-label) que comunican un paquete completo.
-// Contenedor flex-wrap para adaptarse al ancho disponible.
-const ALL_INCLUSIVE_ICONS = [
-  { Icon: Hotel, label: "Hotel" },
-  { Icon: Plane, label: "Vuelos" },
-  { Icon: UtensilsCrossed, label: "Comidas" },
-  { Icon: Car, label: "Traslados" },
-];
+/* ───────────── Resolución dinámica de iconos de servicios ───────────── */
+// Mapa nombre-de-icono-Lucide → componente. Permite que el CMS envíe un
+// identificador de icono y el frontend lo resuelva sin acoplamiento.
+const ICON_COMPONENTS: Record<string, LucideIcon> = {
+  "bed-double": BedDouble,
+  plane: Plane,
+  "utensils-crossed": UtensilsCrossed,
+  car: Car,
+  check: Check,
+};
 
-function AllInclusiveIcons() {
+/**
+ * PlanServices — renderiza la lista dinámica de servicios incluidos.
+ * Si `servicios` es undefined o vacío, NO renderiza nada (container absent
+ * del DOM, no un contenedor vacío).
+ */
+function PlanServices({ servicios }: { servicios?: PlanService[] }) {
+  if (!servicios || servicios.length === 0) return null;
   return (
     <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-      {ALL_INCLUSIVE_ICONS.map(({ Icon, label }) => (
-        <span key={label} className="flex items-center gap-1">
-          <Icon
-            aria-hidden="true"
-            className="h-[18px] w-[18px] shrink-0 text-neutral-600"
-            strokeWidth={1.5}
-          />
-          <span className="text-[10px] font-medium text-gray-600">
-            {label}
+      {servicios.map(({ id, label, icon }) => {
+        const iconName = resolveServiceIcon(icon || id);
+        const Icon = ICON_COMPONENTS[iconName] ?? Check;
+        return (
+          <span key={id} className="flex items-center gap-1">
+            <Icon
+              aria-hidden="true"
+              className="h-[18px] w-[18px] shrink-0 text-neutral-600"
+              strokeWidth={1.5}
+            />
+            <span className="text-[10px] font-medium text-gray-600">
+              {label}
+            </span>
           </span>
-        </span>
-      ))}
+        );
+      })}
     </div>
+  );
+}
+
+/**
+ * ImageBadge — badge flotante sobre la esquina superior izquierda de la foto.
+ * Sólo se renderiza si el plan trae `badge_imagen`.
+ */
+function ImageBadge({ text }: { text: string }) {
+  return (
+    <span className="absolute left-3 top-3 z-10 rounded-full bg-black/70 px-2.5 py-1 text-xs font-bold text-white shadow-sm backdrop-blur-sm">
+      {text}
+    </span>
+  );
+}
+
+/**
+ * PriceBadge — badge promocional inmediatamente encima del bloque de precio.
+ * Sólo se renderiza si el plan trae `badge_precio`.
+ */
+function PriceBadge({ text }: { text: string }) {
+  return (
+    <span className="mb-0.5 block text-xs font-bold text-emerald-600">
+      {text}
+    </span>
   );
 }
 
@@ -55,6 +100,7 @@ export function PlanCard({ plan }: { plan: NormalizedPlan }) {
           <CardImageCarousel images={plan.images} alt={plan.name} />
         </div>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        {plan.badge_imagen && <ImageBadge text={plan.badge_imagen} />}
         {plan.is_featured && (
           <span className="absolute right-2.5 top-2.5 z-10 rounded-md border border-white/15 bg-black/30 px-3 py-1 text-xs font-medium text-white shadow-sm backdrop-blur-md">
             ★ Destacado
@@ -81,16 +127,19 @@ export function PlanCard({ plan }: { plan: NormalizedPlan }) {
             <Clock className="h-3.5 w-3.5" /> {plan.duration}
           </span>
         </div>
-        {/* Iconografía "Todo Incluido" — 4 iconos compactos, sin texto */}
-        <div className="mt-3">
-          <AllInclusiveIcons />
-        </div>
+        {/* Servicios incluidos — dinámico, no renderiza si está vacío */}
+        {plan.servicios_incluidos && plan.servicios_incluidos.length > 0 && (
+          <div className="mt-3">
+            <PlanServices servicios={plan.servicios_incluidos} />
+          </div>
+        )}
       </div>
 
       {/* Pie */}
       <div className="flex items-center justify-between gap-2 border-t border-border/30 p-3.5 pt-2.5 sm:p-4">
         <RatingBadge serviceType="plan" serviceId={plan.id} />
         <div className="text-right">
+          {plan.badge_precio && <PriceBadge text={plan.badge_precio} />}
           <span className="block text-[10px] uppercase tracking-wide text-muted-foreground">
             Desde
           </span>
@@ -126,6 +175,7 @@ export function PlanCardHorizontal({ plan }: { plan: NormalizedPlan }) {
           <CardImageCarousel images={plan.images} alt={plan.name} />
         </div>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent to-black/10" />
+        {plan.badge_imagen && <ImageBadge text={plan.badge_imagen} />}
       </div>
 
       {/* Contenido */}
@@ -145,16 +195,19 @@ export function PlanCardHorizontal({ plan }: { plan: NormalizedPlan }) {
           <p className="mt-2 line-clamp-2 text-sm text-gray-700">
             {plan.shortDescription}
           </p>
-          {/* Iconografía "Todo Incluido" — 4 iconos compactos, sin texto */}
-          <div className="mt-3">
-            <AllInclusiveIcons />
-          </div>
+          {/* Servicios incluidos — dinámico, no renderiza si está vacío */}
+          {plan.servicios_incluidos && plan.servicios_incluidos.length > 0 && (
+            <div className="mt-3">
+              <PlanServices servicios={plan.servicios_incluidos} />
+            </div>
+          )}
         </div>
 
         {/* Pie */}
         <div className="mt-4 flex flex-col gap-3 border-t border-border/30 pt-3 sm:flex-row sm:items-center sm:justify-between">
           <RatingBadge serviceType="plan" serviceId={plan.id} />
           <div className="sm:text-right">
+            {plan.badge_precio && <PriceBadge text={plan.badge_precio} />}
             <span className="block text-[10px] uppercase tracking-wide text-muted-foreground">
               Desde
             </span>

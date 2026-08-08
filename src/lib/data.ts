@@ -18,6 +18,20 @@ export interface Lugar {
   image: string;
 }
 
+/**
+ * Servicio incluido en un plan (paquete "Todo Incluido").
+ * Pensado para ser dinámico y administrable desde un CMS: el CMS envía el
+ * id del icono y el frontend lo resuelve a un componente Lucide.
+ */
+export interface PlanService {
+  /** Identificador del servicio (ej: 'hotel', 'vuelos', 'comidas', 'traslados'). */
+  id: string;
+  /** Etiqueta visible (ej: "Hotel", "Vuelos"). */
+  label: string;
+  /** Identificador del icono a renderizar (resuelto vía SERVICE_ICON_MAP). */
+  icon: string;
+}
+
 export interface TourPlan {
   id: string;
   slug: string;
@@ -58,6 +72,13 @@ export interface TourPlan {
   fecha_salida?: string;
   /** Cupos restantes visibles en la tarjeta (solo viajes grupales). */
   spotsLeft?: number;
+  // ── Campos CMS-ready (opcionales) ──
+  /** Badge flotante sobre la imagen (ej: "Quedan 5 cupos", "Cupos limitados"). */
+  badge_imagen?: string;
+  /** Badge promocional sobre el precio (ej: "10% OFF", "2x1", "Oferta especial"). */
+  badge_precio?: string;
+  /** Arreglo dinámico de servicios incluidos. Si falta/vacío, no se renderiza. */
+  servicios_incluidos?: PlanService[];
 }
 
 export interface RoomDetail {

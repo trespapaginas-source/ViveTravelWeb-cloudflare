@@ -9,6 +9,28 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+/**
+ * Mapa de ids de servicio → nombre de icono Lucide.
+ * Usado por el sistema CMS-ready de servicios incluidos en las tarjetas.
+ * Si el CMS envía un id desconocido, cae a 'check' como fallback genérico.
+ */
+export const SERVICE_ICON_MAP: Record<string, string> = {
+  hotel: "bed-double",
+  hospedaje: "bed-double",
+  vuelos: "plane",
+  avion: "plane",
+  comidas: "utensils-crossed",
+  alimentacion: "utensils-crossed",
+  traslados: "car",
+  transporte: "car",
+};
+
+/** Resuelve el id/icon de un PlanService a un nombre de icono Lucide válido. */
+export function resolveServiceIcon(iconOrId: string): string {
+  const key = iconOrId.toLowerCase().trim();
+  return SERVICE_ICON_MAP[key] ?? "check";
+}
+
 /** Formatea un número como moneda COP sin decimales (es-CO). */
 export function formatPrice(value: number): string {
   return new Intl.NumberFormat("es-CO", {

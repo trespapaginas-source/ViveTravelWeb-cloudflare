@@ -45,7 +45,12 @@
     "schedule": "Salidas el primer sábado de cada mes",
     "meeting": "Aeropuerto Internacional El Dorado, Bogotá",
     "published": true,
-    "order": 0
+    "order": 0,
+    "badge_precio": "Precio 2x1",
+    "servicios_incluidos": [
+      { "id": "hotel", "label": "Hotel", "icon": "hotel" },
+      { "id": "vuelos", "label": "Vuelos", "icon": "vuelos" }
+    ]
   },
   {
     "id": "plan-18",
@@ -334,7 +339,15 @@
     "schedule": "6:00 PM - 12:00 AM",
     "meeting": "Hotel lobby zona norte, Barranquilla",
     "published": true,
-    "order": 4
+    "order": 4,
+    "badge_imagen": "Últimos 5 cupos",
+    "badge_precio": "10% OFF",
+    "servicios_incluidos": [
+      { "id": "hotel", "label": "Hotel", "icon": "hotel" },
+      { "id": "vuelos", "label": "Vuelos", "icon": "vuelos" },
+      { "id": "comidas", "label": "Comidas", "icon": "comidas" },
+      { "id": "traslados", "label": "Traslados", "icon": "traslados" }
+    ]
   },
   {
     "id": "0318f1eb-bf17-4215-98a1-76b6d6859e6d",
