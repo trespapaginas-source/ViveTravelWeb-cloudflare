@@ -69,12 +69,13 @@ function ImageBadge({ text }: { text: string }) {
 }
 
 /**
- * PriceBadge — badge promocional inmediatamente encima del bloque de precio.
+ * PriceBadge — badge promocional flotante en la esquina superior derecha de la
+ * foto. Fondo esmeralda brillante para destacar sobre la imagen.
  * Sólo se renderiza si el plan trae `badge_precio`.
  */
 function PriceBadge({ text }: { text: string }) {
   return (
-    <span className="mb-0.5 block text-xs font-bold text-emerald-600">
+    <span className="absolute right-3 top-3 z-10 rounded-full bg-emerald-600 px-2.5 py-1 text-xs font-bold text-white shadow-sm">
       {text}
     </span>
   );
@@ -92,7 +93,7 @@ export function PlanCard({ plan }: { plan: NormalizedPlan }) {
   return (
     <article
       onClick={() => navigate(ROUTES.planDetail(plan.id))}
-      className="group flex cursor-pointer flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card py-0 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+      className="group flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card py-0 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
     >
       {/* Imagen */}
       <div className="relative aspect-[16/10] overflow-hidden">
@@ -101,14 +102,15 @@ export function PlanCard({ plan }: { plan: NormalizedPlan }) {
         </div>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         {plan.badge_imagen && <ImageBadge text={plan.badge_imagen} />}
-        {plan.is_featured && (
+        {plan.badge_precio && <PriceBadge text={plan.badge_precio} />}
+        {plan.is_featured && !plan.badge_precio && (
           <span className="absolute right-2.5 top-2.5 z-10 rounded-md border border-white/15 bg-black/30 px-3 py-1 text-xs font-medium text-white shadow-sm backdrop-blur-md">
             ★ Destacado
           </span>
         )}
       </div>
 
-      {/* Contenido */}
+      {/* Contenido — flex-1 ocupa el espacio restante */}
       <div className="flex flex-1 flex-col p-3.5 sm:p-4">
         <h3 className="line-clamp-1 text-[17px] font-bold leading-snug text-card-foreground">
           {plan.name}
@@ -135,11 +137,10 @@ export function PlanCard({ plan }: { plan: NormalizedPlan }) {
         )}
       </div>
 
-      {/* Pie */}
-      <div className="flex items-center justify-between gap-2 border-t border-border/30 p-3.5 pt-2.5 sm:p-4">
+      {/* Pie — anclado al fondo con mt-auto */}
+      <div className="mt-auto flex items-center justify-between gap-2 border-t border-gray-100 p-3.5 pt-3 sm:p-4">
         <RatingBadge serviceType="plan" serviceId={plan.id} />
         <div className="text-right">
-          {plan.badge_precio && <PriceBadge text={plan.badge_precio} />}
           <span className="block text-[10px] uppercase tracking-wide text-muted-foreground">
             Desde
           </span>
@@ -167,7 +168,7 @@ export function PlanCardHorizontal({ plan }: { plan: NormalizedPlan }) {
   return (
     <article
       onClick={() => navigate(ROUTES.planDetail(plan.id))}
-      className="group flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:shadow-md sm:flex-row"
+      className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:shadow-md sm:flex-row"
     >
       {/* Imagen */}
       <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden sm:aspect-none sm:min-h-[220px] sm:w-[320px] sm:self-stretch">
@@ -176,11 +177,12 @@ export function PlanCardHorizontal({ plan }: { plan: NormalizedPlan }) {
         </div>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent to-black/10" />
         {plan.badge_imagen && <ImageBadge text={plan.badge_imagen} />}
+        {plan.badge_precio && <PriceBadge text={plan.badge_precio} />}
       </div>
 
-      {/* Contenido */}
+      {/* Contenido — flex flex-col justify-between para anclar pie */}
       <div className="flex min-w-0 flex-1 flex-col justify-between p-4 sm:p-5">
-        <div>
+        <div className="flex-1">
           <h3 className="line-clamp-1 text-lg font-bold text-card-foreground sm:text-[20px]">
             {plan.name}
           </h3>
@@ -203,11 +205,10 @@ export function PlanCardHorizontal({ plan }: { plan: NormalizedPlan }) {
           )}
         </div>
 
-        {/* Pie */}
-        <div className="mt-4 flex flex-col gap-3 border-t border-border/30 pt-3 sm:flex-row sm:items-center sm:justify-between">
+        {/* Pie — anclado al fondo con mt-auto */}
+        <div className="mt-auto flex flex-col gap-3 border-t border-gray-100 pt-3 sm:flex-row sm:items-center sm:justify-between">
           <RatingBadge serviceType="plan" serviceId={plan.id} />
           <div className="sm:text-right">
-            {plan.badge_precio && <PriceBadge text={plan.badge_precio} />}
             <span className="block text-[10px] uppercase tracking-wide text-muted-foreground">
               Desde
             </span>
