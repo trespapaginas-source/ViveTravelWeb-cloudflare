@@ -40,7 +40,6 @@
     ],
     "rating": 4.9,
     "reviewCount": 148,
-    "maxGuests": 25,
     "difficulty": "Fácil",
     "schedule": "Salidas el primer sábado de cada mes",
     "meeting": "Aeropuerto Internacional El Dorado, Bogotá",
@@ -48,8 +47,16 @@
     "order": 0,
     "badge_precio": "Precio 2x1",
     "servicios_incluidos": [
-      { "id": "hotel", "label": "Hotel", "icon": "hotel" },
-      { "id": "vuelos", "label": "Vuelos", "icon": "vuelos" }
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      }
     ]
   },
   {
@@ -93,7 +100,6 @@
     ],
     "rating": 4.8,
     "reviewCount": 112,
-    "maxGuests": 20,
     "difficulty": "Fácil",
     "schedule": "Salidas grupales los días 15 de cada mes",
     "meeting": "Aeropuerto Internacional El Dorado, Bogotá",
@@ -141,7 +147,6 @@
     ],
     "rating": 4.9,
     "reviewCount": 94,
-    "maxGuests": 15,
     "difficulty": "Moderado",
     "schedule": "Salidas programadas en época de cerezos (Abril) y otoño (Octubre)",
     "meeting": "Aeropuerto Internacional El Dorado, Bogotá",
@@ -189,7 +194,6 @@
     ],
     "rating": 4.8,
     "reviewCount": 124,
-    "maxGuests": 12,
     "difficulty": "Fácil",
     "schedule": "7:00 AM - 11:00 AM / 2:00 PM - 6:00 PM",
     "meeting": "Parque principal de Puerto Colombia",
@@ -227,7 +231,6 @@
     ],
     "rating": 0,
     "reviewCount": 0,
-    "maxGuests": 20,
     "difficulty": "Fácil",
     "schedule": "7:30 AM - 4:30 PM",
     "meeting": "Muelle La Bodeguita, Puerta #3, Cartagena",
@@ -284,7 +287,6 @@
     ],
     "rating": 4.7,
     "reviewCount": 89,
-    "maxGuests": 10,
     "difficulty": "Moderado",
     "schedule": "5:30 AM - 10:30 AM",
     "meeting": "Parque principal de Luruaco",
@@ -334,7 +336,6 @@
     ],
     "rating": 4.9,
     "reviewCount": 67,
-    "maxGuests": 500,
     "difficulty": "Fácil",
     "schedule": "6:00 PM - 12:00 AM",
     "meeting": "Hotel lobby zona norte, Barranquilla",
@@ -343,11 +344,29 @@
     "badge_imagen": "Últimos 5 cupos",
     "badge_precio": "10% OFF",
     "servicios_incluidos": [
-      { "id": "hotel", "label": "Hotel", "icon": "hotel" },
-      { "id": "vuelos", "label": "Vuelos", "icon": "vuelos" },
-      { "id": "comidas", "label": "Comidas", "icon": "comidas" },
-      { "id": "traslados", "label": "Traslados", "icon": "traslados" }
-    ]
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      },
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
+    ],
+    "mostrar_limite_personas": true,
+    "max_personas": 35
   },
   {
     "id": "0318f1eb-bf17-4215-98a1-76b6d6859e6d",
@@ -390,7 +409,6 @@
     ],
     "rating": 4.5,
     "reviewCount": 43,
-    "maxGuests": 20,
     "difficulty": "Fácil",
     "schedule": "9:00 AM - 1:00 PM",
     "meeting": "Museo Bolivariano, Barranquilla",
@@ -463,7 +481,6 @@
     ],
     "rating": 0,
     "reviewCount": 0,
-    "maxGuests": 30,
     "difficulty": "Fácil",
     "schedule": "Salidas programadas de julio a enero",
     "meeting": "Aeropuerto Palonegro, Bucaramanga (llegada antes de las 9:00 a.m.; vuelos de regreso después de las 4:00 p.m.)",
@@ -654,7 +671,6 @@
     ],
     "rating": 0,
     "reviewCount": 0,
-    "maxGuests": 30,
     "difficulty": "Fácil",
     "schedule": "Salidas programadas de junio a enero",
     "meeting": "Aeropuerto El Dorado, Bogotá (llegada antes de las 8:00 a.m.; vuelos de regreso después de las 6:00 p.m.)",
@@ -893,7 +909,6 @@
     ],
     "rating": 0,
     "reviewCount": 0,
-    "maxGuests": 30,
     "difficulty": "Fácil",
     "schedule": "Salidas programadas de julio a febrero",
     "meeting": "Aeropuerto Matecaña, Pereira (llegada antes de las 9:00 a.m.; vuelos de regreso después de las 5:00 p.m.)",
@@ -1224,7 +1239,6 @@
     ],
     "rating": 0,
     "reviewCount": 0,
-    "maxGuests": 30,
     "difficulty": "Fácil",
     "schedule": "Salidas programadas de junio a enero",
     "meeting": "Aeropuerto Benito Salas, Neiva (llegada a partir de las 9:00 a.m.; vuelos de regreso después de las 12:00 m.)",
@@ -1424,7 +1438,6 @@
     ],
     "rating": 0,
     "reviewCount": 0,
-    "maxGuests": 30,
     "difficulty": "Fácil",
     "schedule": "Salidas programadas todo el año",
     "meeting": "Aeropuerto Benito Salas, Neiva (llegada después de las 9:00 a.m.; vuelos de regreso después de las 12:00 m.)",
@@ -1640,7 +1653,6 @@
     ],
     "rating": 0,
     "reviewCount": 0,
-    "maxGuests": 30,
     "difficulty": "Fácil",
     "schedule": "Salidas programadas de agosto a enero",
     "meeting": "Aeropuerto Alfonso Bonilla Aragón, Cali (llegada antes de las 8:00 a.m.; vuelos de regreso después de las 4:00 p.m.)",
@@ -1800,7 +1812,6 @@
     ],
     "rating": 4.9,
     "reviewCount": 342,
-    "maxGuests": 30,
     "difficulty": "Fácil",
     "schedule": "Salidas diarias",
     "meeting": "Aeropuerto Internacional",
@@ -1846,7 +1857,6 @@
     ],
     "rating": 4.7,
     "reviewCount": 421,
-    "maxGuests": 25,
     "difficulty": "Fácil",
     "schedule": "Salidas diarias",
     "meeting": "Aeropuerto",
@@ -1891,7 +1901,6 @@
     ],
     "rating": 4.9,
     "reviewCount": 512,
-    "maxGuests": 40,
     "difficulty": "Fácil",
     "schedule": "Salidas diarias",
     "meeting": "Aeropuerto Internacional",
@@ -1931,7 +1940,6 @@
     ],
     "rating": 0,
     "reviewCount": 0,
-    "maxGuests": 20,
     "difficulty": "Fácil",
     "schedule": "7:30 AM - 4:30 PM",
     "meeting": "Muelle La Bodeguita, Puerta #3, Cartagena",
@@ -1983,8 +1991,6 @@
     ],
     "rating": 4.6,
     "reviewCount": 88,
-    "maxGuests": 500,
-    "spotsLeft": 7,
     "difficulty": "Moderado",
     "schedule": "6:00 AM - 4:00 PM",
     "meeting": "Plaza Central",
@@ -1996,7 +2002,8 @@
         "start": "2026-09-17",
         "end": "2026-09-17"
       }
-    ]
+    ],
+    "mostrar_limite_personas": false
   },
   {
     "id": "656270f5-2d91-4751-8959-694c845d4852",
@@ -2034,7 +2041,6 @@
     ],
     "rating": 4.9,
     "reviewCount": 205,
-    "maxGuests": 2,
     "difficulty": "Fácil",
     "schedule": "Varios horarios disponibles",
     "meeting": "Aeródromo",
@@ -2077,7 +2083,6 @@
     ],
     "rating": 4.8,
     "reviewCount": 310,
-    "maxGuests": 6,
     "difficulty": "Moderado",
     "schedule": "8:00 AM o 2:00 PM",
     "meeting": "Centro de Buceo",
@@ -2120,7 +2125,6 @@
     ],
     "rating": 0,
     "reviewCount": 0,
-    "maxGuests": 20,
     "difficulty": "Fácil",
     "schedule": "7:30 AM - 4:30 PM",
     "meeting": "Muelle La Bodeguita, Puerta #3, Cartagena",
@@ -2169,7 +2173,6 @@
     ],
     "rating": 0,
     "reviewCount": 0,
-    "maxGuests": 20,
     "difficulty": "Fácil",
     "schedule": "8:00 AM - 4:30 PM",
     "meeting": "Muelle La Bodeguita, Puerta #3, Cartagena",
@@ -2220,7 +2223,6 @@
     ],
     "rating": 0,
     "reviewCount": 0,
-    "maxGuests": 20,
     "difficulty": "Fácil",
     "schedule": "Según itinerario",
     "meeting": "Medellín",
@@ -2271,7 +2273,6 @@
     ],
     "rating": 0,
     "reviewCount": 0,
-    "maxGuests": 20,
     "difficulty": "Fácil",
     "schedule": "Según itinerario",
     "meeting": "Aeropuerto de salida según ciudad seleccionada",
@@ -2319,7 +2320,6 @@
     ],
     "rating": 0,
     "reviewCount": 0,
-    "maxGuests": 20,
     "difficulty": "Fácil",
     "schedule": "Según itinerario",
     "meeting": "Aeropuerto de salida según la ciudad seleccionada",
@@ -2394,7 +2394,6 @@
     ],
     "rating": 0,
     "reviewCount": 0,
-    "maxGuests": 30,
     "difficulty": "Fácil",
     "schedule": "Salidas todo el año",
     "meeting": "Aeropuerto Internacional Rafael Núñez, Cartagena",

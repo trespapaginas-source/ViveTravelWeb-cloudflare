@@ -57,7 +57,12 @@ export interface TourPlan {
   highlights: string[];
   rating: number;
   reviewCount: number;
-  maxGuests: number;
+  /**
+   * @deprecated Usar `mostrar_limite_personas` + `max_personas` (CMS-ready).
+   * Mantenido solo para compatibilidad con datos legacy; se ignora en el
+   * render salvo en Viajes Grupales con el flag activo.
+   */
+  maxGuests?: number;
   schedule: string;
   meeting: string;
   published: boolean;
@@ -70,8 +75,14 @@ export interface TourPlan {
   notes?: string[];
   featuredOrder?: number;
   fecha_salida?: string;
-  /** Cupos restantes visibles en la tarjeta (solo viajes grupales). */
-  spotsLeft?: number;
+  /**
+   * Configuración opcional exclusiva para Viajes Grupales (CMS-ready).
+   * - mostrar_limite_personas: si true, la tarjeta/detalle muestra el límite.
+   * - max_personas: valor numérico del límite (ej: 35).
+   * Si el flag es false/undefined, el indicador NO se renderiza.
+   */
+  mostrar_limite_personas?: boolean;
+  max_personas?: number;
   // ── Campos CMS-ready (opcionales) ──
   /** Badge flotante sobre la imagen (ej: "Quedan 5 cupos", "Cupos limitados"). */
   badge_imagen?: string;

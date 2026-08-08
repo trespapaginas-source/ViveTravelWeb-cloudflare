@@ -102,7 +102,9 @@ export function PlanDetailPage() {
 
   const total = formatPrice(guests * plan.price);
   const isFixedDeparture = plan.fixedDeparture === true;
-  const maxGuests = plan.maxGuests || 30;
+  // Tope del stepper: si el plan define explícitamente max_personas (grupales),
+  // lo respeta; si no, un tope genérico amplio para el selector.
+  const maxGuests = plan.max_personas ?? plan.maxGuests ?? 50;
   const selectedDeparture = upcomingDepartures.find((d) => d.start === selectedDate);
 
   // Etiqueta de fecha para el mensaje de WhatsApp.
@@ -217,9 +219,12 @@ export function PlanDetailPage() {
             <span className="flex items-center gap-1.5">
               <Clock className="h-4 w-4 text-neutral-900" /> {plan.duration}
             </span>
-            <span className="flex items-center gap-1.5">
-              <Users className="h-4 w-4 text-neutral-900" /> Máx. {plan.maxGuests} personas
-            </span>
+            {/* Límite de personas: solo en grupales con flag explícito activo */}
+            {plan.mostrar_limite_personas && plan.max_personas && (
+              <span className="flex items-center gap-1.5">
+                <Users className="h-4 w-4 text-neutral-900" /> Máx. {plan.max_personas} personas
+              </span>
+            )}
           </div>
 
           {/* Descripción — Acerca de este plan */}
@@ -516,7 +521,7 @@ export function PlanDetailPage() {
         total={total}
         guests={guests}
         onGuestsChange={setGuests}
-        maxGuests={plan.maxGuests || 30}
+        maxGuests={maxGuests}
         isFixedDeparture={isFixedDeparture}
         upcomingDepartures={upcomingDepartures}
         selectedDate={selectedDate}
