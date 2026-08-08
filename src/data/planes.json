@@ -56,6 +56,16 @@
         "id": "vuelos",
         "label": "Vuelos",
         "icon": "vuelos"
+      },
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
       }
     ]
   },
@@ -104,7 +114,24 @@
     "schedule": "Salidas grupales los días 15 de cada mes",
     "meeting": "Aeropuerto Internacional El Dorado, Bogotá",
     "published": true,
-    "order": 0
+    "order": 0,
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      },
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      }
+    ]
   },
   {
     "id": "plan-17",
@@ -151,7 +178,24 @@
     "schedule": "Salidas programadas en época de cerezos (Abril) y otoño (Octubre)",
     "meeting": "Aeropuerto Internacional El Dorado, Bogotá",
     "published": true,
-    "order": 0
+    "order": 0,
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      },
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      }
+    ]
   },
   {
     "id": "f041da2d-b267-4d59-882b-48c31c14f43a",
@@ -198,7 +242,19 @@
     "schedule": "7:00 AM - 11:00 AM / 2:00 PM - 6:00 PM",
     "meeting": "Parque principal de Puerto Colombia",
     "published": true,
-    "order": 0
+    "order": 0,
+    "servicios_incluidos": [
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
+    ]
   },
   {
     "id": "8ef0f18b-cdd3-4cb6-a83d-8656b7d8a7cf",
@@ -244,6 +300,18 @@
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
+    ],
+    "servicios_incluidos": [
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
     ]
   },
   {
@@ -291,7 +359,19 @@
     "schedule": "5:30 AM - 10:30 AM",
     "meeting": "Parque principal de Luruaco",
     "published": true,
-    "order": 2
+    "order": 2,
+    "servicios_incluidos": [
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
+    ]
   },
   {
     "id": "efc65d75-2595-40b7-be35-2d160163049e",
@@ -344,16 +424,6 @@
     "badge_imagen": "Últimos 5 cupos",
     "badge_precio": "10% OFF",
     "servicios_incluidos": [
-      {
-        "id": "hotel",
-        "label": "Hotel",
-        "icon": "hotel"
-      },
-      {
-        "id": "vuelos",
-        "label": "Vuelos",
-        "icon": "vuelos"
-      },
       {
         "id": "comidas",
         "label": "Comidas",
@@ -413,7 +483,19 @@
     "schedule": "9:00 AM - 1:00 PM",
     "meeting": "Museo Bolivariano, Barranquilla",
     "published": true,
-    "order": 5
+    "order": 5,
+    "servicios_incluidos": [
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
+    ]
   },
   {
     "id": "plan-santander-inolvidable",
@@ -603,6 +685,28 @@
       {
         "name": "Parque del Agua",
         "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80"
+      }
+    ],
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      },
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
       }
     ]
   },
@@ -838,6 +942,28 @@
       {
         "name": "Tunja",
         "image": "/images/lugares/tunja.webp"
+      }
+    ],
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      },
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
       }
     ]
   },
@@ -1165,6 +1291,28 @@
         "name": "Armenia",
         "image": "https://images.unsplash.com/photo-1572507007728-39ef5113bdc2?w=600&h=400&fit=crop&q=80"
       }
+    ],
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      },
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
     ]
   },
   {
@@ -1372,6 +1520,28 @@
         "name": "Termales de Rivera",
         "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80"
       }
+    ],
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      },
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
     ]
   },
   {
@@ -1578,6 +1748,28 @@
         "name": "Observatorio Astronómico",
         "image": "https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=600&h=400&fit=crop&q=80"
       }
+    ],
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      },
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
     ]
   },
   {
@@ -1769,6 +1961,28 @@
         "name": "Santuario de Las Lajas",
         "image": "https://images.unsplash.com/photo-1572507007728-39ef5113bdc2?w=600&h=400&fit=crop&q=80"
       }
+    ],
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      },
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
     ]
   },
   {
@@ -1813,7 +2027,29 @@
     "meeting": "Aeropuerto Internacional",
     "published": true,
     "order": 8,
-    "featuredOrder": 2
+    "featuredOrder": 2,
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      },
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
+    ]
   },
   {
     "id": "56c6ff56-febf-406c-9c34-2c914dbd619f",
@@ -1858,7 +2094,24 @@
     "meeting": "Aeropuerto",
     "published": true,
     "order": 9,
-    "featuredOrder": 1
+    "featuredOrder": 1,
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      },
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      }
+    ]
   },
   {
     "id": "f6065674-9ae8-4c29-a121-e3213d6e0c9b",
@@ -1902,7 +2155,29 @@
     "meeting": "Aeropuerto Internacional",
     "published": true,
     "order": 10,
-    "featuredOrder": 4
+    "featuredOrder": 4,
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      },
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
+    ]
   },
   {
     "id": "53c8a10d-9a62-4fe3-aad5-96fc0d756735",
@@ -1949,6 +2224,18 @@
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
+    ],
+    "servicios_incluidos": [
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
     ]
   },
   {
@@ -1999,7 +2286,19 @@
         "end": "2026-09-17"
       }
     ],
-    "mostrar_limite_personas": false
+    "mostrar_limite_personas": false,
+    "servicios_incluidos": [
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
+    ]
   },
   {
     "id": "656270f5-2d91-4751-8959-694c845d4852",
@@ -2134,6 +2433,18 @@
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
+    ],
+    "servicios_incluidos": [
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
     ]
   },
   {
@@ -2182,6 +2493,18 @@
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
+    ],
+    "servicios_incluidos": [
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
     ]
   },
   {
@@ -2232,6 +2555,18 @@
       "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=800&h=600&fit=crop"
+    ],
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
     ]
   },
   {
@@ -2282,6 +2617,23 @@
       "https://images.unsplash.com/photo-1589979481223-deb893043163?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1589979481223-deb893043163?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1589979481223-deb893043163?w=800&h=600&fit=crop"
+    ],
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
     ]
   },
   {
@@ -2329,6 +2681,23 @@
       "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&h=600&fit=crop"
+    ],
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
     ]
   },
   {
@@ -2402,6 +2771,28 @@
     "featuredOrder": 6,
     "published": true,
     "order": 20,
-    "fixedDeparture": false
+    "fixedDeparture": false,
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "label": "Hotel",
+        "icon": "hotel"
+      },
+      {
+        "id": "vuelos",
+        "label": "Vuelos",
+        "icon": "vuelos"
+      },
+      {
+        "id": "comidas",
+        "label": "Comidas",
+        "icon": "comidas"
+      },
+      {
+        "id": "traslados",
+        "label": "Traslados",
+        "icon": "traslados"
+      }
+    ]
   }
 ]
