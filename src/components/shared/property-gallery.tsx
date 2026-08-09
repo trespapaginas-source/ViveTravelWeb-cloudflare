@@ -332,7 +332,13 @@ export function Lightbox({
   const go = (delta: number) => setIndex((i) => (i + delta + len) % len);
 
   return createPortal(
-    <div className="fixed inset-0 z-[200] flex flex-col bg-black/95">
+    <div
+      className="fixed inset-0 z-[200] flex flex-col bg-black/95"
+      onClick={(e) => {
+        // Cierre al clicar el backdrop (no cuando el clic cae en contenido interno).
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
       {/* Header */}
       <div className="flex items-center justify-between p-4 text-white">
         <span className="truncate text-sm font-medium">{title}</span>
@@ -350,8 +356,11 @@ export function Lightbox({
         </div>
       </div>
 
-      {/* Imagen */}
-      <div className="relative flex flex-1 items-center justify-center p-4 sm:p-10">
+      {/* Imagen — detiene la propagación para no cerrar al clicar la foto */}
+      <div
+        className="relative flex flex-1 items-center justify-center p-4 sm:p-10"
+        onClick={(e) => e.stopPropagation()}
+      >
         <img
           src={images[index]}
           alt={`Foto ${index + 1}`}
