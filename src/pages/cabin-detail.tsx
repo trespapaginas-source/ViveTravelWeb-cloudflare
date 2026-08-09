@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { format } from "date-fns";
+import { es } from "date-fns/locale";
 import { useGoBack } from "@/hooks/use-go-back";
 import {
   ArrowLeft,
@@ -13,13 +15,24 @@ import {
   AlertCircle,
   Sparkles,
   Star,
+  Calendar,
+  Minus,
+  Plus,
 } from "lucide-react";
 import { useCabinDetail } from "@/hooks/use-detail";
+import { useIcalBlockedDates } from "@/hooks/use-ical-blocked-dates";
 import { ROUTES } from "@/lib/routes";
-import { formatPrice } from "@/lib/utils";
+import { formatPrice, cn } from "@/lib/utils";
 import { PropertyGallery, Lightbox } from "@/components/shared/property-gallery";
 import { GallerySidebar } from "@/components/shared/gallery-sidebar";
 import { EmptyState } from "@/components/shared/empty-state";
+import { AvailabilityCalendar } from "@/components/cabins/availability-calendar";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import {
   openWhatsApp,
   buildCabinQuoteMessage,
@@ -28,6 +41,10 @@ import { useReviews } from "@/hooks/use-reviews";
 import { ReviewForm } from "@/components/reviews/review-form";
 import { ReviewList } from "@/components/reviews/review-list";
 import { StarRating } from "@/components/reviews/star-rating";
+
+/** Feed iCal público que sincroniza la disponibilidad de la cabaña. */
+const CABIN_ICAL_URL =
+  "https://calendar.google.com/calendar/ical/canaguates228%40gmail.com/public/basic.ics";
 
 /**
  * CabinDetailPage — detalle de una cabaña/alojamiento.
@@ -45,6 +62,21 @@ export function CabinDetailPage() {
     title: string;
     images: string[];
   } | null>(null);
+
+  // Disponibilidad iCal + selección de rango + modal de cotización.
+  const { blockedDates, loading: icalLoading, error: icalError } =
+    useIcalBlockedDates(CABIN_ICAL_URL);
+  const [calendarRange, setCalendarRange] = useState<{
+    checkIn: Date | null;
+    checkOut: Date | null;
+  }>({ checkIn: null, checkOut: null });
+  const [quoteOpen, setQuoteOpen] = useState(false);
+
+  // Datos del modal de cotización.
+  const [quoteAdults, setQuoteAdults] = useState(2);
+  const [quoteChildren, setQuoteChildren] = useState(0);
+  const [quoteName, setQuoteName] = useState("");
+  const [quotePhone, setQuotePhone] = useState("");
 
   // Reseñas reales de la cabaña (D1 vía Pages Function).
   const { reviews, avg, count, loading: reviewsLoading, submit } = useReviews(
@@ -89,6 +121,33 @@ export function CabinDetailPage() {
     openWhatsApp(
       `Hola, me interesa la ${cabin.name} en ${cabin.location}. ¿Podrían darme más información?`
     );
+  };
+
+  // Rango seleccionado válido: hay checkIn y checkOut del calendario.
+  const hasValidRange =
+    !!calendarRange.checkIn && !!calendarRange.checkOut && cabin !== null;
+  const rangeNights =
+    calendarRange.checkIn && calendarRange.checkOut
+      ? Math.round(
+          (calendarRange.checkOut.getTime() - calendarRange.checkIn.getTime()) /
+            86400000
+        )
+      : 0;
+
+  // Abre el modal de cotización si hay rango válido.
+  const handleOpenQuote = () => {
+    if (!hasValidRange) return;
+    setQuoteOpen(true);
+  };
+
+  // Envía la cotización por WhatsApp con todos los datos del modal.
+  const handleSubmitQuote = () => {
+    if (!cabin || !calendarRange.checkIn || !calendarRange.checkOut) return;
+    const ci = format(calendarRange.checkIn, "d MMM", { locale: es });
+    const co = format(calendarRange.checkOut, "d MMM", { locale: es });
+    const msg = `¡Hola! Quisiera cotizar mi estancia en ${cabin.name} del ${ci} al ${co} (${rangeNights} noches) para ${quoteAdults} adultos y ${quoteChildren} niños. Mi nombre es ${quoteName}.`;
+    openWhatsApp(msg);
+    setQuoteOpen(false);
   };
 
   // Scroll suave hacia el formulario de reseñas (usado por el badge "Sin reseñas").
@@ -210,6 +269,29 @@ export function CabinDetailPage() {
               </div>
             </section>
           )}
+
+          {/* Disponibilidad en tiempo real (iCal) */}
+          <section className="mt-8">
+            <h2 className="flex items-center gap-2 text-lg font-bold text-foreground">
+              <Calendar className="h-5 w-5 text-neutral-900" />
+              Disponibilidad en tiempo real
+            </h2>
+            <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
+              Consulta las fechas disponibles para esta cabaña. La disponibilidad se actualiza en tiempo real para garantizar tu reserva.
+            </p>
+            {icalError && (
+              <p className="mt-2 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-700">
+                No pudimos sincronizar el calendario en este momento. Las fechas mostradas pueden no reflejar la disponibilidad exacta — confirma tu reserva por WhatsApp.
+              </p>
+            )}
+            <div className="mt-4 max-w-md">
+              <AvailabilityCalendar
+                blockedDates={blockedDates}
+                loading={icalLoading}
+                onChange={setCalendarRange}
+              />
+            </div>
+          </section>
 
           {/* Puntos destacados */}
           {cabin.highlights.length > 0 && (
@@ -419,7 +501,7 @@ export function CabinDetailPage() {
       {/* CTA flotante móvil */}
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 p-3 backdrop-blur lg:hidden">
         <div className="flex items-center justify-between gap-3">
-          <div>
+          <div className="min-w-0">
             <span className="text-[11px] uppercase text-muted-foreground">Desde</span>
             <p className="text-lg font-extrabold text-foreground">
               {formatPrice(cabin.pricePerNight)}
@@ -430,10 +512,21 @@ export function CabinDetailPage() {
             </p>
           </div>
           <button
-            onClick={handleInquiry}
-            className="rounded-xl bg-[#1DA851] px-5 py-2.5 text-sm font-semibold text-white"
+            onClick={hasValidRange ? handleOpenQuote : handleInquiry}
+            className={cn(
+              "flex shrink-0 items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white transition-colors",
+              hasValidRange
+                ? "animate-pulse bg-[#1DA851] hover:bg-[#17943e]"
+                : "bg-[#1DA851] hover:bg-[#17943e]"
+            )}
           >
-            Consultar
+            {hasValidRange ? (
+              <>
+                Cotizar <span className="text-xs opacity-90">· {rangeNights} noches</span>
+              </>
+            ) : (
+              "Consultar"
+            )}
           </button>
         </div>
       </div>
@@ -447,6 +540,106 @@ export function CabinDetailPage() {
           onClose={() => setRoomLightbox(null)}
         />
       )}
+
+      {/* Modal de cotización (rango seleccionado en el calendario) */}
+      <Dialog open={quoteOpen} onOpenChange={setQuoteOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Cotiza tu estancia</DialogTitle>
+            <p className="mt-0.5 text-xs text-muted-foreground">{cabin.name}</p>
+          </DialogHeader>
+
+          <div className="space-y-5">
+            {/* Resumen de la reserva */}
+            <div className="rounded-xl border border-border bg-muted/30 p-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 text-sm">
+                <div>
+                  <span className="block text-[11px] uppercase tracking-wide text-muted-foreground">
+                    Fechas
+                  </span>
+                  <span className="font-semibold text-foreground">
+                    {calendarRange.checkIn &&
+                      format(calendarRange.checkIn, "d MMM", { locale: es })}
+                    {calendarRange.checkOut &&
+                      " - " + format(calendarRange.checkOut, "d MMM", { locale: es })}
+                  </span>
+                </div>
+                <div className="text-right">
+                  <span className="block text-[11px] uppercase tracking-wide text-muted-foreground">
+                    Estadía
+                  </span>
+                  <span className="font-semibold text-foreground">
+                    {rangeNights} {rangeNights === 1 ? "noche" : "noches"}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Huéspedes: adultos y niños */}
+            <div className="grid grid-cols-2 gap-3">
+              <GuestStepper
+                label="Adultos"
+                value={quoteAdults}
+                onChange={setQuoteAdults}
+                min={1}
+                max={cabin.capacity}
+              />
+              <GuestStepper
+                label="Niños"
+                value={quoteChildren}
+                onChange={setQuoteChildren}
+                min={0}
+                max={Math.max(0, cabin.capacity - quoteAdults)}
+              />
+            </div>
+
+            {/* Datos de contacto */}
+            <div className="space-y-3">
+              <div>
+                <label htmlFor="quote-name" className="mb-1 block text-xs font-medium text-gray-600">
+                  Nombre completo
+                </label>
+                <input
+                  id="quote-name"
+                  type="text"
+                  value={quoteName}
+                  maxLength={60}
+                  onChange={(e) => setQuoteName(e.target.value)}
+                  placeholder="Ej: María González"
+                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-neutral-900"
+                />
+              </div>
+              <div>
+                <label htmlFor="quote-phone" className="mb-1 block text-xs font-medium text-gray-600">
+                  Teléfono / WhatsApp
+                </label>
+                <input
+                  id="quote-phone"
+                  type="tel"
+                  value={quotePhone}
+                  maxLength={20}
+                  onChange={(e) => setQuotePhone(e.target.value)}
+                  placeholder="Ej: 300 123 4567"
+                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-neutral-900"
+                />
+              </div>
+            </div>
+
+            {/* Botón de envío */}
+            <button
+              type="button"
+              onClick={handleSubmitQuote}
+              disabled={quoteName.trim().length < 2}
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#1DA851] py-3 text-sm font-semibold text-white transition-colors hover:bg-[#17943e] disabled:opacity-50"
+            >
+              <WhatsAppGlyph /> Enviar cotización por WhatsApp
+            </button>
+            <p className="text-center text-[11px] text-muted-foreground">
+              Sin cargos por ahora · Cotización inmediata
+            </p>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
@@ -526,6 +719,54 @@ function StepperBtn({
     >
       {children}
     </button>
+  );
+}
+
+/** Stepper numérico para adultos/niños en el modal de cotización. */
+function GuestStepper({
+  label,
+  value,
+  onChange,
+  min,
+  max,
+}: {
+  label: string;
+  value: number;
+  onChange: (n: number) => void;
+  min: number;
+  max: number;
+}) {
+  return (
+    <div>
+      <span className="mb-1 block text-xs font-medium text-gray-600">{label}</span>
+      <div className="flex items-center justify-between rounded-lg border border-border px-3 py-2">
+        <span className="text-sm">{value}</span>
+        <div className="flex items-center gap-2">
+          <StepperBtn
+            onClick={() => onChange(Math.max(min, value - 1))}
+            disabled={value <= min}
+          >
+            <Minus className="h-3.5 w-3.5" />
+          </StepperBtn>
+          <StepperBtn
+            onClick={() => onChange(Math.min(max, value + 1))}
+            disabled={value >= max}
+          >
+            <Plus className="h-3.5 w-3.5" />
+          </StepperBtn>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Glyph de WhatsApp para botones (SVG inline). */
+function WhatsAppGlyph() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+      <path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.2 0 1.3.9 2.5 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z" />
+      <path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.9.9-2.8-.2-.3A8.3 8.3 0 1 1 12 20.3z" />
+    </svg>
   );
 }
 
