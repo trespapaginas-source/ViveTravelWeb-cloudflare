@@ -4,23 +4,14 @@ import { StarRating, ratingLabel } from "./star-rating";
 import { TURNSTILE_SITEKEY } from "@/lib/reviews-api";
 import { cn } from "@/lib/utils";
 
-const MAX_COMMENT_WORDS = 20;
-
-/**
- * Cuenta las palabras del textarea en tiempo real.
- */
-function countWords(text: string): number {
-  const t = text.trim();
-  if (!t) return 0;
-  return t.split(/\s+/).filter(Boolean).length;
-}
+const MAX_COMMENT_CHARS = 300;
 
 /**
  * ReviewForm — formulario público para dejar una reseña.
  * Campos:
  *   · Nombre del cliente (input)
  *   · Valoración por estrellas (1-5) con etiqueta en vivo
- *   · Comentario (textarea opcional, máx 20 palabras)
+ *   · Comentario (textarea opcional, máx 300 caracteres)
  *
  * `serviceId` y `serviceType` se inyectan implícitamente desde el contexto
  * (route/estado), por eso no se piden aquí. Anti-spam: Turnstile embebido.
@@ -51,8 +42,8 @@ export function ReviewForm({
   const turnstileRef = useRef<HTMLDivElement>(null);
   const widgetId = useRef<string | null>(null);
 
-  const commentWords = countWords(comment);
-  const commentTooLong = commentWords > MAX_COMMENT_WORDS;
+  const commentChars = comment.length;
+  const commentTooLong = commentChars > MAX_COMMENT_CHARS;
 
   // Renderiza el widget de Turnstile cuando hay sitekey y el contenedor existe.
   useEffect(() => {
@@ -102,7 +93,7 @@ export function ReviewForm({
       return;
     }
     if (commentTooLong) {
-      setErrorMsg(`El comentario no puede exceder ${MAX_COMMENT_WORDS} palabras.`);
+      setErrorMsg("El comentario no puede superar los 300 caracteres.");
       setStatus("error");
       return;
     }
@@ -187,7 +178,7 @@ export function ReviewForm({
         </div>
       </div>
 
-      {/* Comentario opcional (máx 20 palabras) */}
+      {/* Comentario opcional (máx 300 caracteres) */}
       <div>
         <label htmlFor="rev-comment" className="mb-1 block text-xs font-medium text-gray-600">
           Comentario <span className="font-normal text-gray-400">(opcional)</span>
@@ -197,8 +188,8 @@ export function ReviewForm({
           value={comment}
           onChange={(e) => setComment(e.target.value)}
           rows={3}
-          maxLength={200}
-          placeholder="Cuéntanos en pocas palabras cómo fue tu experiencia (máx. 20 palabras)"
+          maxLength={MAX_COMMENT_CHARS}
+          placeholder="Cuéntanos en pocas palabras cómo fue tu experiencia (máx. 300 caracteres)"
           className={cn(
             "w-full resize-none rounded-lg border bg-background px-3 py-2 text-sm outline-none focus:border-neutral-900",
             commentTooLong ? "border-red-400" : "border-border"
@@ -212,7 +203,7 @@ export function ReviewForm({
               commentTooLong ? "font-semibold text-red-500" : "text-muted-foreground"
             )}
           >
-            {commentWords}/{MAX_COMMENT_WORDS} palabras
+            {commentChars}/{MAX_COMMENT_CHARS} caracteres
           </span>
         </div>
       </div>

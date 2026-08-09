@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { StarRating } from "./star-rating";
 import type { ReviewRow } from "@/lib/reviews-api";
+import { cn } from "@/lib/utils";
 
 /**
  * ReviewList — renderiza la lista de reseñas reales de un servicio.
@@ -18,35 +20,64 @@ export function ReviewList({ reviews }: { reviews: ReviewRow[] }) {
   return (
     <div className="space-y-3">
       {reviews.map((rev) => (
-        <article
-          key={rev.id}
-          className="flex gap-3 rounded-xl border border-border bg-card p-4"
-        >
-          <Avatar name={rev.reviewer_name} />
-          <div className="min-w-0 flex-1">
-            <div className="flex flex-wrap items-baseline justify-between gap-x-2">
-              <span className="truncate text-sm font-semibold text-foreground">
-                {rev.reviewer_name}
-              </span>
-              <span className="text-[11px] text-muted-foreground">
-                {formatRelative(rev.created_at)}
-              </span>
-            </div>
-            <div className="mt-0.5 flex items-center gap-2">
-              <StarRating value={rev.rating} size="sm" />
-              <span className="text-[11px] font-medium text-muted-foreground">
-                {labelFor(rev.rating)}
-              </span>
-            </div>
-            {rev.comment && (
-              <p className="mt-1.5 text-xs leading-relaxed text-foreground">
-                {rev.comment}
-              </p>
-            )}
-          </div>
-        </article>
+        <ReviewItem key={rev.id} rev={rev} />
       ))}
     </div>
+  );
+}
+
+/**
+ * ReviewItem — reseña individual con truncado inteligente del comentario.
+ * Si el comentario supera las 3 líneas visibles, muestra un botón "Ver más"
+ * que despliega el texto completo sin alterar el layout general.
+ */
+function ReviewItem({ rev }: { rev: ReviewRow }) {
+  const [expanded, setExpanded] = useState(false);
+  // Heurística: si el comentario supera ~140 caracteres probablemente ocupa
+  // más de 3 líneas y necesita el toggle. Es conservador y visualmente seguro.
+  const isLong = !!rev.comment && rev.comment.length > 140;
+
+  return (
+    <article className="flex gap-3 rounded-xl border border-border bg-card p-4">
+      <Avatar name={rev.reviewer_name} />
+      <div className="min-w-0 flex-1">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-2">
+          <span className="truncate text-sm font-semibold text-foreground">
+            {rev.reviewer_name}
+          </span>
+          <span className="text-[11px] text-muted-foreground">
+            {formatRelative(rev.created_at)}
+          </span>
+        </div>
+        <div className="mt-0.5 flex items-center gap-2">
+          <StarRating value={rev.rating} size="sm" />
+          <span className="text-[11px] font-medium text-muted-foreground">
+            {labelFor(rev.rating)}
+          </span>
+        </div>
+        {rev.comment && (
+          <div className="mt-1.5">
+            <p
+              className={cn(
+                "text-xs leading-relaxed text-foreground",
+                !expanded && isLong && "line-clamp-3"
+              )}
+            >
+              {rev.comment}
+            </p>
+            {isLong && (
+              <button
+                type="button"
+                onClick={() => setExpanded((v) => !v)}
+                className="mt-1 text-[11px] font-semibold text-neutral-700 underline-offset-2 hover:underline"
+              >
+                {expanded ? "Ver menos" : "Ver más"}
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+    </article>
   );
 }
 

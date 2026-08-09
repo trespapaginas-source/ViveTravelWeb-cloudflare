@@ -11,7 +11,7 @@
  * Campos:
  *   - reviewerName (obligatorio, 2-60 chars)
  *   - rating       (obligatorio, entero 1-5)
- *   - comment      (OPCIONAL, máximo 20 palabras, máx 200 chars)
+ *   - comment      (OPCIONAL, máximo 300 caracteres)
  *   - destination  (obsoleto — se ignora si llega; ya no se pide en el form)
  *
  * Protección anti-spam: Cloudflare Turnstile (token validado server-side)
@@ -44,8 +44,7 @@ const CORS_HEADERS = {
 
 const MAX_REVIEWS_PER_WINDOW = 3;
 const RATE_LIMIT_WINDOW_MINUTES = 10;
-const MAX_COMMENT_WORDS = 20;
-const MAX_COMMENT_CHARS = 200;
+const MAX_COMMENT_CHARS = 300;
 
 /** Hash SHA-256 de un string (para hashear la IP sin almacenarla en claro). */
 async function sha256(text: string): Promise<string> {
@@ -83,12 +82,6 @@ async function verifyTurnstile(
   } catch {
     return false;
   }
-}
-
-/** Cuenta palabras de un texto (split por espacios, sin huecos). */
-function countWords(text: string): number {
-  const words = text.trim().split(/\s+/).filter(Boolean);
-  return words.length;
 }
 
 export const onRequest: PagesFunction<Env> = async (context) => {
@@ -175,11 +168,11 @@ async function handlePost(request: Request, env: Env): Promise<Response> {
   if (!Number.isInteger(ratingNum) || ratingNum < 1 || ratingNum > 5) {
     return jsonError("Rating debe ser un entero entre 1 y 5", 400);
   }
-  // Comment opcional: si viene, máx 20 palabras y 200 caracteres.
+  // Comment opcional: si viene, máx 300 caracteres.
   const cleanComment =
     typeof comment === "string" ? comment.trim().slice(0, MAX_COMMENT_CHARS) : "";
-  if (cleanComment && countWords(cleanComment) > MAX_COMMENT_WORDS) {
-    return jsonError(`El comentario no puede exceder ${MAX_COMMENT_WORDS} palabras`, 400);
+  if (typeof comment === "string" && comment.trim().length > MAX_COMMENT_CHARS) {
+    return jsonError("El comentario no puede superar los 300 caracteres", 400);
   }
   if (!turnstileToken || typeof turnstileToken !== "string") {
     return jsonError("Token de Turnstile requerido", 400);
