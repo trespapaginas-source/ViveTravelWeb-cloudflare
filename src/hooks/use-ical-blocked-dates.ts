@@ -34,7 +34,7 @@ export function useIcalBlockedDates(icalUrl: string | undefined): IcalState {
     let cancelled = false;
     setState({ blockedDates: new Set(), loading: true, error: null });
 
-    fetch(icalUrl, { cache: "no-store" })
+    fetch(`/api/ical?url=${encodeURIComponent(icalUrl)}`, { cache: "no-store" })
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.text();
