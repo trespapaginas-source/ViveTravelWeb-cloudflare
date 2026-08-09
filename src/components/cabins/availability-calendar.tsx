@@ -16,17 +16,17 @@ import { es } from "date-fns/locale";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const WEEKDAYS = ["L", "M", "X", "J", "V", "S", "D"];
+// Días de la semana en mayúsculas sostenidas, abreviados a 2 letras (estilominimalista).
+const WEEKDAYS = ["LU", "MA", "MI", "JU", "VI", "SÁ", "DO"];
 
 /**
- * AvailabilityCalendar — calendario de disponibilidad con selección de rango.
+ * AvailabilityCalendar — calendario minimalista de disponibilidad con selección
+ * de rango. Estética limpia: fondo crema, tipografía serif para el mes, grilla
+ * aireada, círculos sutiles para selección.
  *
  * - Las fechas en `blockedDates` se marcan como no seleccionables (ocupadas).
  * - El usuario elige un Check-in y un Check-out; no se permite que el rango
  *   cruce sobre una fecha bloqueada.
- * - Muestra 1 mes en móvil y 2 meses en desktop.
- *
- * Recibe callbacks para que el padre conozca la selección.
  */
 export function AvailabilityCalendar({
   blockedDates,
@@ -60,7 +60,6 @@ export function AvailabilityCalendar({
   const handleSelect = (day: Date) => {
     if (isPast(day) || isBlocked(day)) return;
 
-    // Sin check-in, o con check-in+check-out ya completos: empezar nuevo rango.
     if (!checkIn || (checkIn && checkOut)) {
       setCheckIn(day);
       setCheckOut(null);
@@ -68,22 +67,17 @@ export function AvailabilityCalendar({
       return;
     }
 
-    // Tenemos check-in, elegimos check-out.
     if (checkIn) {
-      // Si el día es anterior al check-in, reiniciar desde ese día.
       if (isBefore(day, checkIn)) {
         setCheckIn(day);
         setCheckOut(null);
         onChange({ checkIn: day, checkOut: null });
         return;
       }
-      // Mismo día = no permitido como checkout (mínimo 1 noche).
       if (isSameDay(day, checkIn)) return;
-      // Validar que no haya bloqueos en el rango [checkIn, day previo al checkout].
       const rangeEnd = new Date(day);
       rangeEnd.setDate(rangeEnd.getDate() - 1);
       if (rangeHasBlocked(checkIn, rangeEnd)) {
-        // Hay bloqueo en medio: reiniciar selección desde este día.
         setCheckIn(day);
         setCheckOut(null);
         onChange({ checkIn: day, checkOut: null });
@@ -96,36 +90,39 @@ export function AvailabilityCalendar({
 
   if (loading) {
     return (
-      <div className="flex items-center gap-3 rounded-xl border border-border bg-muted/30 p-6 text-sm text-muted-foreground">
-        <span className="h-4 w-4 animate-spin rounded-full border-2 border-neutral-900/30 border-t-neutral-900" />
+      <div className="flex items-center gap-3 rounded-lg bg-[#FDFBF7] p-6 text-sm text-neutral-500">
+        <span className="h-4 w-4 animate-spin rounded-full border-2 border-neutral-400/40 border-t-neutral-700" />
         Sincronizando disponibilidad…
       </div>
     );
   }
 
   return (
-    <div>
-      {/* Navegación entre meses */}
-      <div className="mb-3 flex items-center justify-between">
+    <div className="rounded-lg bg-[#FDFBF7] p-4 sm:p-6">
+      {/* Encabezado + navegación de meses */}
+      <div className="mb-4 flex items-center justify-between">
         <button
           type="button"
           onClick={() => setCursor((c) => subMonths(c, 1))}
-          className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground hover:bg-muted"
+          className="flex h-8 w-8 items-center justify-center rounded-sm border border-gray-300 bg-transparent text-gray-700 transition-colors hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-30"
           aria-label="Mes anterior"
           disabled={isBefore(cursor, startOfMonth(today))}
         >
-          <ChevronLeft className="h-4 w-4" />
+          <ChevronLeft className="h-4 w-4" strokeWidth={1.5} />
         </button>
-        <span className="text-sm font-semibold text-foreground">
+        <h3
+          className="text-lg font-normal text-neutral-800"
+          style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
+        >
           {format(cursor, "MMMM yyyy", { locale: es })}
-        </span>
+        </h3>
         <button
           type="button"
           onClick={() => setCursor((c) => addMonths(c, 1))}
-          className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground hover:bg-muted"
+          className="flex h-8 w-8 items-center justify-center rounded-sm border border-gray-300 bg-transparent text-gray-700 transition-colors hover:bg-gray-100"
           aria-label="Mes siguiente"
         >
-          <ChevronRight className="h-4 w-4" />
+          <ChevronRight className="h-4 w-4" strokeWidth={1.5} />
         </button>
       </div>
 
@@ -138,36 +135,36 @@ export function AvailabilityCalendar({
         onSelect={handleSelect}
       />
 
-      {/* Leyenda */}
-      <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11px] text-muted-foreground">
+      {/* Leyenda minimalista */}
+      <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-[11px] font-sans text-neutral-500">
         <span className="flex items-center gap-1.5">
-          <span className="h-3 w-3 rounded-full bg-neutral-900" /> Seleccionado
+          <span className="h-2.5 w-2.5 rounded-full bg-neutral-800" /> Seleccionado
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-3 w-3 rounded-full bg-neutral-200" /> Disponible
+          <span className="h-2.5 w-2.5 rounded-full border border-gray-300 bg-transparent" /> Disponible
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-3 w-3 rounded-full bg-red-100" /> Ocupado
+          <span className="h-2.5 w-2.5 rounded-full bg-gray-200" /> Ocupado
         </span>
       </div>
 
       {/* Resumen selección */}
       {(checkIn || checkOut) && (
-        <div className="mt-3 flex flex-wrap items-center gap-2 rounded-lg border border-border bg-muted/30 px-3 py-2 text-xs">
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-2 border-t border-gray-200/70 pt-3 text-xs font-sans">
           {checkIn && (
             <span>
-              <span className="text-muted-foreground">Ingreso:</span>{" "}
-              <span className="font-semibold text-foreground">
+              <span className="text-neutral-500">Ingreso:</span>{" "}
+              <span className="font-medium text-neutral-800">
                 {format(checkIn, "d MMM yyyy", { locale: es })}
               </span>
             </span>
           )}
           {checkOut && (
             <>
-              <span className="text-muted-foreground">→</span>
+              <span className="text-neutral-400">→</span>
               <span>
-                <span className="text-muted-foreground">Salida:</span>{" "}
-                <span className="font-semibold text-foreground">
+                <span className="text-neutral-500">Salida:</span>{" "}
+                <span className="font-medium text-neutral-800">
                   {format(checkOut, "d MMM yyyy", { locale: es })}
                 </span>
               </span>
@@ -202,16 +199,18 @@ function MonthGrid({
 
   return (
     <div>
-      <div className="mb-1 grid grid-cols-7 gap-1">
+      {/* Días de la semana: mayúsculas sostenidas, micro, gris medio */}
+      <div className="mb-2 grid grid-cols-7 gap-1">
         {WEEKDAYS.map((d) => (
           <div
             key={d}
-            className="py-1 text-center text-[11px] font-semibold uppercase text-muted-foreground"
+            className="py-1 text-center font-sans text-[10px] font-medium uppercase tracking-wide text-neutral-400"
           >
             {d}
           </div>
         ))}
       </div>
+      {/* Días del mes */}
       <div className="grid grid-cols-7 gap-1">
         {days.map((day) => {
           const inMonth = day.getMonth() === monthStart.getMonth();
@@ -232,14 +231,18 @@ function MonthGrid({
               disabled={disabled}
               onClick={() => onSelect(day)}
               className={cn(
-                "relative aspect-square rounded-md text-xs font-medium transition-colors",
-                !inMonth && "opacity-0",
-                inMonth && !disabled && "text-foreground hover:bg-neutral-100",
-                past && inMonth && "text-neutral-300 line-through cursor-not-allowed",
-                blocked && inMonth && "bg-red-50 text-red-300 line-through cursor-not-allowed",
-                isStart && "bg-neutral-900 text-white hover:bg-neutral-900",
-                isEnd && "bg-neutral-900 text-white hover:bg-neutral-900",
-                inRange && !isStart && !isEnd && "bg-neutral-100 text-neutral-700"
+                "relative flex aspect-square items-center justify-center rounded-full font-sans text-xs font-light transition-colors",
+                !inMonth && "pointer-events-none opacity-0",
+                // Disponible (default): texto oscuro, hover sutil
+                inMonth && !disabled && "text-neutral-700 hover:bg-neutral-200/60",
+                // Pasado: muy claro, tachado
+                past && inMonth && "text-neutral-300 line-through",
+                // Ocupado: gris claro neutro + tachado (sin rojo)
+                blocked && inMonth && "bg-gray-200/70 text-neutral-400 line-through",
+                // Selección: círculo sólido oscuro
+                (isStart || isEnd) && "bg-neutral-800 font-medium text-white hover:bg-neutral-800",
+                // Rango intermedio: fondo claro sutil
+                inRange && !isStart && !isEnd && "bg-neutral-200/50 text-neutral-600"
               )}
             >
               {format(day, "d")}
