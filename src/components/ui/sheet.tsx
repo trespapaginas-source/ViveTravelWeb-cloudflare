@@ -133,12 +133,8 @@ export function SheetContent({
         className={cn(
           "absolute top-0 h-full w-72 bg-white shadow-xl transition-transform duration-300 ease-out",
           side === "right"
-            ? ctx.open
-              ? "translate-x-0"
-              : "translate-x-full"
-            : ctx.open
-            ? "translate-x-0"
-            : "-translate-x-full",
+            ? "right-0 " + (ctx.open ? "translate-x-0" : "translate-x-full")
+            : "left-0 " + (ctx.open ? "translate-x-0" : "-translate-x-full"),
           className
         )}
         role="dialog"

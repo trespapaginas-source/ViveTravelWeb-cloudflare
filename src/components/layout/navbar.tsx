@@ -17,7 +17,7 @@ import { EXPERIENCE_SECTIONS } from "@/lib/experience-sections";
 import { ROUTES } from "@/lib/routes";
 import { cn } from "@/lib/utils";
 import { useSiteContent } from "@/lib/use-site-content";
-import { ChevronDown, Menu, Phone, Heart } from "lucide-react";
+import { ChevronDown, Menu, Phone, Heart, X } from "lucide-react";
 
 const LOGO_FALLBACK =
   "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop&q=80";
@@ -283,6 +283,13 @@ export function Navbar() {
                         e.currentTarget.onerror = null;
                       }}
                     />
+                    <button
+                      onClick={closeMobile}
+                      aria-label="Cerrar menú"
+                      className="flex h-9 w-9 items-center justify-center rounded-lg text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-neutral-900"
+                    >
+                      <X className="h-5 w-5" />
+                    </button>
                   </div>
                   <nav className="flex flex-col p-4 gap-1 overflow-y-auto">
                     {content.navbar.navItems.map((item) => {
