@@ -22,6 +22,7 @@ const ALLOWED_HOSTS = [
   "www.airbnb.com",
   "calendar.booking.com",
   "secure.booking.com",
+  "cabanalamartina.co",
 ];
 
 const CORS_HEADERS = {

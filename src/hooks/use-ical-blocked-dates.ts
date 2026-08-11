@@ -101,8 +101,13 @@ function parseIcalBlockedDates(raw: string): Set<string> {
     } else if (trimmed === "END:VEVENT") {
       if (inEvent && dtStart) {
         // Si no hay DTEND, el evento dura 1 día (bloquea solo ese día).
-        const end = dtEnd ?? new Date(dtStart.getTime() + 86400000);
-        // Marcar todos los días del rango [dtStart, end) — DTEND exclusivo.
+        // Regla de negocio: DTEND se trata como inclusivo (se bloquea también
+        // el día de salida), no exclusivo como marca RFC 5545 — así lo pidió
+        // el cliente para que el día de checkout también aparezca ocupado.
+        const end = dtEnd
+          ? new Date(dtEnd.getTime() + 86400000)
+          : new Date(dtStart.getTime() + 86400000);
+        // Marcar todos los días del rango [dtStart, end) con end ya desplazado +1.
         const cursor = new Date(dtStart);
         let safety = 0;
         while (cursor < end && safety < 400) {

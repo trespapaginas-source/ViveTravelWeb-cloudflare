@@ -42,10 +42,6 @@ import { ReviewForm } from "@/components/reviews/review-form";
 import { ReviewList } from "@/components/reviews/review-list";
 import { StarRating } from "@/components/reviews/star-rating";
 
-/** Feed iCal público que sincroniza la disponibilidad de la cabaña. */
-const CABIN_ICAL_URL =
-  "https://calendar.google.com/calendar/ical/canaguates228%40gmail.com/public/basic.ics";
-
 /**
  * CabinDetailPage — detalle de una cabaña/alojamiento.
  * Consume los datos vía `useCabinDetail(id)`.
@@ -65,7 +61,7 @@ export function CabinDetailPage() {
 
   // Disponibilidad iCal + selección de rango + modal de cotización.
   const { blockedDates, loading: icalLoading, error: icalError } =
-    useIcalBlockedDates(CABIN_ICAL_URL);
+    useIcalBlockedDates(cabin?.icsUrl);
   const [calendarRange, setCalendarRange] = useState<{
     checkIn: Date | null;
     checkOut: Date | null;

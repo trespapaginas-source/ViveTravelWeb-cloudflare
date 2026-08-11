@@ -48,8 +48,10 @@ export function AvailabilityCalendar({
   const [checkOut, setCheckOut] = useState<Date | null>(null);
 
   const toKey = (d: Date) => format(d, "yyyy-MM-dd");
-  const isBlocked = (d: Date) => blockedDates.has(toKey(d));
   const isPast = (d: Date) => isBefore(d, today);
+  // Los días pasados nunca se marcan como "ocupado": solo se distingue
+  // visualmente que ya pasaron, sin importar si el feed tenía una reserva ahí.
+  const isBlocked = (d: Date) => !isPast(d) && blockedDates.has(toKey(d));
 
   /** Verifica que no haya fechas bloqueadas entre dos fechas (inclusive inicio). */
   const rangeHasBlocked = (start: Date, end: Date): boolean => {
