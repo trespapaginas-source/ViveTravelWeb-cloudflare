@@ -3,63 +3,14 @@ import { EXPERIENCE_SECTIONS } from "@/lib/experience-sections";
 import { getPlanRegion, PLAN_REGIONS } from "@/lib/plan-regions";
 import type { NormalizedPlan } from "@/lib/data-access";
 
-/* ────────────────── Clasificador de sección de experiencia ────────────── */
-// Réplica del getPlanExperienceSection del proyecto de referencia: asigna
-// cada plan a una de las 6 categorías de experiencia según su contenido.
+/* ────────────────── Sección de experiencia del plan ────────────── */
+// Campo explícito (plan.experienceSection, CMS-ready) — ya no se adivina
+// por keywords en el texto. Ver TourPlan.experienceSection en lib/data.ts.
 
 export type ExperienceId = (typeof EXPERIENCE_SECTIONS)[number]["id"];
 
 export function getPlanExperienceSection(plan: NormalizedPlan): ExperienceId {
-  const category = plan.category?.toLowerCase() ?? "";
-  const searchable = [
-    plan.name,
-    plan.category,
-    plan.duration,
-    plan.location,
-    plan.shortDescription,
-    plan.fullDescription,
-  ]
-    .join(" ")
-    .toLowerCase();
-
-  if (category.includes("circuito") || searchable.includes("circuito"))
-    return "circuitos";
-  if (
-    category.includes("internacional") ||
-    searchable.includes("internacional") ||
-    searchable.includes("cancún") ||
-    searchable.includes("cancun") ||
-    searchable.includes("punta cana") ||
-    searchable.includes("san andrés") ||
-    searchable.includes("río de janeiro") ||
-    searchable.includes("rio de janeiro") ||
-    searchable.includes("brasil")
-  )
-    return "internacionales";
-  if (
-    category.includes("grupal") ||
-    searchable.includes("grupal") ||
-    searchable.includes("grupo") ||
-    searchable.includes("sierra limón")
-  )
-    return "grupales";
-  if (
-    category.includes("nacional") ||
-    searchable.includes("nacional") ||
-    /\b[2-9]\s*d[ií]as\b/.test(searchable) ||
-    searchable.includes("eje cafetero") ||
-    searchable.includes("tayrona")
-  )
-    return "nacionales";
-  if (
-    category.includes("tour") ||
-    (searchable.includes("tour") &&
-      (searchable.includes("paracaidismo") ||
-        searchable.includes("buceo") ||
-        searchable.includes("corto")))
-  )
-    return "tours";
-  return "pasadias";
+  return plan.experienceSection as ExperienceId;
 }
 
 /* ──────────────────────── Estado de filtros ───────────────────────────── */

@@ -51,6 +51,10 @@ export interface TourPlan {
    */
   ubicacion_principal?: string;
   ubicacion_secundaria?: string;
+  /** Categoría/pestaña explícita (CMS-ready) — reemplaza la heurística por keywords. */
+  experienceSection: string;
+  /** Región/país explícito (CMS-ready) — reemplaza la heurística por keywords. */
+  regionId: string;
   category: string;
   includes: string[];
   excludes: string[];
@@ -170,6 +174,13 @@ export interface Visa {
   };
   documents?: string[];
   specialNotes?: string[];
+}
+
+export interface HeroImage {
+  id: string;
+  url: string;
+  mobileUrl: string;
+  caption: string;
 }
 
 export interface Testimonial {

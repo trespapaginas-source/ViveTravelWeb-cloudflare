@@ -6,12 +6,14 @@
   "description": "Vive Travel — Web pública migrada a Vite + React + Tailwind (FASE 0: auditoría y estructura base)",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/generate-content.mjs",
     "build": "tsc --noEmit && vite build",
     "postbuild": "node -e \"const fs=require('fs');fs.copyFileSync('dist/index.html','dist/404.html')\"",
     "preview": "vite preview",
     "lint": "eslint ."
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.112.3",
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
     "lucide-react": "^0.460.0",

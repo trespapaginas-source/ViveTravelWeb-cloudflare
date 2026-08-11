@@ -9,7 +9,8 @@ export type SortOption =
   | "price-asc"
   | "price-desc"
   | "duration-asc"
-  | "duration-desc";
+  | "duration-desc"
+  | "custom";
 
 export const ITEMS_PER_PAGE = 12;
 
@@ -19,6 +20,7 @@ export const sortLabels: Record<SortOption, string> = {
   "price-desc": "Mayor precio primero",
   "duration-asc": "Menor duración primero",
   "duration-desc": "Mayor duración primero",
+  custom: "Personalizado",
 };
 
 /** Opciones de orden para planes (incluye duración). */
@@ -28,10 +30,11 @@ export const planSortOptions: SortOption[] = [
   "price-desc",
   "duration-asc",
   "duration-desc",
+  "custom",
 ];
 
 /** Opciones de orden para cabañas (sin duración). */
-export const cabinSortOptions: SortOption[] = ["popular", "price-asc", "price-desc"];
+export const cabinSortOptions: SortOption[] = ["popular", "price-asc", "price-desc", "custom"];
 
 /* ──────────────────── Helpers de grid ──────────────────── */
 
@@ -86,6 +89,9 @@ export function sortPlans(plans: NormalizedPlan[], option: SortOption): Normaliz
       return arr.sort((a, b) => durationScore(a.duration) - durationScore(b.duration));
     case "duration-desc":
       return arr.sort((a, b) => durationScore(b.duration) - durationScore(a.duration));
+    case "custom":
+      // Orden manual definido en el CMS (campo `order`).
+      return arr.sort((a, b) => a.order - b.order);
     default:
       return arr;
   }
@@ -103,6 +109,8 @@ export function sortCabins(
       return arr.sort((a, b) => a.pricePerNight - b.pricePerNight);
     case "price-desc":
       return arr.sort((a, b) => b.pricePerNight - a.pricePerNight);
+    case "custom":
+      return arr.sort((a, b) => a.order - b.order);
     default:
       return arr.sort((a, b) => b.reviewCount - a.reviewCount);
   }

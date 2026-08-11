@@ -17,6 +17,7 @@ import { useSiteContent } from "@/lib/use-site-content";
 import { useGeoCity } from "@/hooks/use-geo-city";
 import { usePlanes } from "@/hooks/use-plans";
 import { getPlanExperienceSection } from "@/hooks/use-plan-filters";
+import { getHeroImages } from "@/lib/data-access";
 import { formatDateLong } from "@/lib/utils";
 import { ROUTES } from "@/lib/routes";
 import {
@@ -173,8 +174,9 @@ export function HeroSection() {
   }, [geoCity, originTouched]);
 
   const hero = content.hero;
-  const backgroundImage = "/images/hero/desktop.jpg";
-  const mobileImage = "/images/hero/mobile.jpg";
+  const heroImages = useMemo(() => getHeroImages(), []);
+  const backgroundImage = heroImages[0]?.url ?? "/images/hero/desktop.jpg";
+  const mobileImage = heroImages[0]?.mobileUrl ?? "/images/hero/mobile.jpg";
 
   const hasRooms = ROOM_TABS.includes(activeTab);
   const params = tabParams[activeTab];
@@ -478,9 +480,7 @@ export function HeroSection() {
 /** Devuelve la lista combinada de destinos sugeridos para una pestaña. */
 function destinationOptions(tab: SearchTab): string[] {
   if (tab === "grupales") return [];
-  const cfg = POPULAR_DESTINATIONS[tab as Exclude<SearchTab, "grupales">];
-  if (!cfg) return [];
-  return [...cfg.featured, ...cfg.optional].slice(0, 10);
+  return (POPULAR_DESTINATIONS[tab as Exclude<SearchTab, "grupales">] ?? []).slice(0, 10);
 }
 
 function todayStr(): string {

@@ -67,7 +67,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "circuitos",
+    "regionId": "europa"
   },
   {
     "id": "plan-18",
@@ -131,7 +133,9 @@
         "label": "Comidas",
         "icon": "comidas"
       }
-    ]
+    ],
+    "experienceSection": "circuitos",
+    "regionId": "turquia-emiratos"
   },
   {
     "id": "plan-17",
@@ -195,7 +199,9 @@
         "label": "Comidas",
         "icon": "comidas"
       }
-    ]
+    ],
+    "experienceSection": "circuitos",
+    "regionId": "japon"
   },
   {
     "id": "f041da2d-b267-4d59-882b-48c31c14f43a",
@@ -254,7 +260,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "pasadias",
+    "regionId": "atlantico"
   },
   {
     "id": "8ef0f18b-cdd3-4cb6-a83d-8656b7d8a7cf",
@@ -312,7 +320,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "pasadias",
+    "regionId": "bolivar"
   },
   {
     "id": "48598e12-26ef-4130-a373-337cb4746fa1",
@@ -371,7 +381,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "pasadias",
+    "regionId": "bolivar"
   },
   {
     "id": "efc65d75-2595-40b7-be35-2d160163049e",
@@ -436,7 +448,9 @@
       }
     ],
     "mostrar_limite_personas": true,
-    "max_personas": 35
+    "max_personas": 35,
+    "experienceSection": "grupales",
+    "regionId": "atlantico"
   },
   {
     "id": "0318f1eb-bf17-4215-98a1-76b6d6859e6d",
@@ -495,7 +509,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "pasadias",
+    "regionId": "magdalena"
   },
   {
     "id": "plan-santander-inolvidable",
@@ -708,7 +724,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "nacionales",
+    "regionId": "santander"
   },
   {
     "id": "plan-boyaca-inolvidable",
@@ -965,7 +983,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "nacionales",
+    "regionId": "boyaca"
   },
   {
     "id": "plan-eje-cafetero-programado",
@@ -1313,7 +1333,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "nacionales",
+    "regionId": "eje-cafetero"
   },
   {
     "id": "plan-huila-inolvidable",
@@ -1542,7 +1564,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "nacionales",
+    "regionId": "huila"
   },
   {
     "id": "plan-tatacoa-inolvidable",
@@ -1770,7 +1794,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "nacionales",
+    "regionId": "huila"
   },
   {
     "id": "plan-sur-colombia-inolvidable",
@@ -1983,7 +2009,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "nacionales",
+    "regionId": "valle-cauca"
   },
   {
     "id": "3e7dd645-73f2-45e9-ac75-1fb05f7ad900",
@@ -2049,7 +2077,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "internacionales",
+    "regionId": "rep-dominicana"
   },
   {
     "id": "56c6ff56-febf-406c-9c34-2c914dbd619f",
@@ -2111,7 +2141,9 @@
         "label": "Comidas",
         "icon": "comidas"
       }
-    ]
+    ],
+    "experienceSection": "internacionales",
+    "regionId": "san-andres"
   },
   {
     "id": "f6065674-9ae8-4c29-a121-e3213d6e0c9b",
@@ -2177,7 +2209,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "internacionales",
+    "regionId": "mexico"
   },
   {
     "id": "53c8a10d-9a62-4fe3-aad5-96fc0d756735",
@@ -2236,7 +2270,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "pasadias",
+    "regionId": "bolivar"
   },
   {
     "id": "ac658a12-c3bc-4073-b700-e3fb7efde724",
@@ -2298,7 +2334,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "grupales",
+    "regionId": "magdalena"
   },
   {
     "id": "656270f5-2d91-4751-8959-694c845d4852",
@@ -2340,7 +2378,9 @@
     "schedule": "Varios horarios disponibles",
     "meeting": "Aeródromo",
     "published": true,
-    "order": 13
+    "order": 13,
+    "experienceSection": "tours",
+    "regionId": "colombia-generico"
   },
   {
     "id": "3887d0c7-36d8-4784-8bce-1a044fdf5a36",
@@ -2382,7 +2422,9 @@
     "schedule": "8:00 AM o 2:00 PM",
     "meeting": "Centro de Buceo",
     "published": true,
-    "order": 14
+    "order": 14,
+    "experienceSection": "internacionales",
+    "regionId": "san-andres"
   },
   {
     "id": "0ef84479-8a9d-49d2-a6ee-1fb672595c5d",
@@ -2445,7 +2487,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "pasadias",
+    "regionId": "bolivar"
   },
   {
     "id": "5b6b47b9-d2fc-49c5-9fe6-21a816ea4676",
@@ -2505,7 +2549,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "pasadias",
+    "regionId": "bolivar"
   },
   {
     "id": "f0cf0b55-3d92-4a89-a5ca-4d32d0d8672e",
@@ -2567,7 +2613,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "nacionales",
+    "regionId": "eje-cafetero"
   },
   {
     "id": "75eb63c8-bde5-4514-8e8e-524b6a44bdf8",
@@ -2634,7 +2682,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "internacionales",
+    "regionId": "rep-dominicana"
   },
   {
     "id": "a9c94f2b-6729-4c4c-bd52-2d9e3f15e54c",
@@ -2698,7 +2748,9 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "internacionales",
+    "regionId": "brasil"
   },
   {
     "id": "plan-cartagena-destacado",
@@ -2793,6 +2845,8 @@
         "label": "Traslados",
         "icon": "traslados"
       }
-    ]
+    ],
+    "experienceSection": "nacionales",
+    "regionId": "bolivar"
   }
 ]

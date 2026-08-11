@@ -1,51 +1,28 @@
 /**
- * Secciones de experiencias — las 6 categorías del megamenú y las pestañas
- * del listado de planes. Extraído 1:1 del proyecto de referencia.
+ * Secciones de experiencias — las categorías del megamenú y las pestañas del
+ * listado de planes. CMS-ready: se derivan de service-categories.json
+ * (generado desde Supabase, ver scripts/generate-content.mjs), filtradas a
+ * las que deben aparecer en el menú de navegación (showInNav).
  */
-export const EXPERIENCE_SECTIONS = [
-  {
-    id: "internacionales",
-    label: "Planes Internacionales",
-    title: "Planes Internacionales",
-    subtitle:
-      "Escapadas fuera de Colombia con enfoque en descanso, playa y experiencias memorables.",
-  },
-  {
-    id: "nacionales",
-    label: "Planes Nacionales",
-    title: "Planes Nacionales",
-    subtitle:
-      "Viajes de varios días por Colombia, organizados para descubrir nuevos destinos.",
-  },
-  {
-    id: "circuitos",
-    label: "Circuitos",
-    title: "Circuitos",
-    subtitle:
-      "Grandes recorridos y circuitos turísticos organizados para vivir múltiples destinos.",
-  },
-  {
-    id: "pasadias",
-    label: "Pasadías",
-    title: "Pasadías",
-    subtitle:
-      "Experiencias de un día para disfrutar playas, naturaleza, aventura y cultura.",
-  },
-  {
-    id: "grupales",
-    label: "Viajes Grupales",
-    title: "Viajes Grupales",
-    subtitle: "Viajes de un día para grupos, equipos, familias y comunidades.",
-  },
-  {
-    id: "tours",
-    label: "Actividades",
-    title: "Actividades",
-    subtitle:
-      "Experiencias y actividades cortas para complementar tu estadía en la ciudad.",
-  },
-] as const;
+import serviceCategoriesData from "@/data/service-categories.json";
+
+interface ServiceCategoryRow {
+  id: string;
+  label: string;
+  subtitle: string;
+  showInNav: boolean;
+}
+
+export const EXPERIENCE_SECTIONS = (serviceCategoriesData as ServiceCategoryRow[])
+  .filter((c) => c.showInNav)
+  .map((c) => ({
+    id: c.id,
+    label: c.label,
+    title: c.label,
+    subtitle: c.subtitle,
+  }));
 
 export type ExperienceSectionId = (typeof EXPERIENCE_SECTIONS)[number]["id"];
 
-export const DEFAULT_EXPERIENCE_SECTION: ExperienceSectionId = "internacionales";
+export const DEFAULT_EXPERIENCE_SECTION: ExperienceSectionId =
+  (EXPERIENCE_SECTIONS[0]?.id as ExperienceSectionId) ?? "internacionales";

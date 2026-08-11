@@ -1,0 +1,132 @@
+[
+  {
+    "id": "boyaca",
+    "label": "Boyacá",
+    "group": "colombia"
+  },
+  {
+    "id": "santander",
+    "label": "Santander",
+    "group": "colombia"
+  },
+  {
+    "id": "huila",
+    "label": "Huila",
+    "group": "colombia"
+  },
+  {
+    "id": "eje-cafetero",
+    "label": "Eje Cafetero",
+    "group": "colombia"
+  },
+  {
+    "id": "san-andres",
+    "label": "San Andrés",
+    "group": "colombia"
+  },
+  {
+    "id": "bolivar",
+    "label": "Bolívar (Cartagena)",
+    "group": "colombia"
+  },
+  {
+    "id": "magdalena",
+    "label": "Magdalena (Santa Marta)",
+    "group": "colombia"
+  },
+  {
+    "id": "atlantico",
+    "label": "Atlántico",
+    "group": "colombia"
+  },
+  {
+    "id": "valle-cauca",
+    "label": "Valle / Cauca / Nariño",
+    "group": "colombia"
+  },
+  {
+    "id": "guajira",
+    "label": "La Guajira",
+    "group": "colombia"
+  },
+  {
+    "id": "amazonas",
+    "label": "Amazonas",
+    "group": "colombia"
+  },
+  {
+    "id": "mexico",
+    "label": "México",
+    "group": "internacional"
+  },
+  {
+    "id": "rep-dominicana",
+    "label": "Rep. Dominicana",
+    "group": "internacional"
+  },
+  {
+    "id": "panama",
+    "label": "Panamá",
+    "group": "internacional"
+  },
+  {
+    "id": "caribe-norte",
+    "label": "Caribe (Aruba/Curazao)",
+    "group": "internacional"
+  },
+  {
+    "id": "eeuu",
+    "label": "Estados Unidos",
+    "group": "internacional"
+  },
+  {
+    "id": "brasil",
+    "label": "Brasil",
+    "group": "internacional"
+  },
+  {
+    "id": "ecuador",
+    "label": "Ecuador",
+    "group": "internacional"
+  },
+  {
+    "id": "peru",
+    "label": "Perú",
+    "group": "internacional"
+  },
+  {
+    "id": "japon",
+    "label": "Japón",
+    "group": "internacional"
+  },
+  {
+    "id": "europa",
+    "label": "Europa",
+    "group": "internacional"
+  },
+  {
+    "id": "turquia-emiratos",
+    "label": "Turquía y Emiratos",
+    "group": "internacional"
+  },
+  {
+    "id": "asia-sudeste",
+    "label": "Sudeste Asiático",
+    "group": "internacional"
+  },
+  {
+    "id": "africa",
+    "label": "África",
+    "group": "internacional"
+  },
+  {
+    "id": "colombia-generico",
+    "label": "Colombia (otras zonas)",
+    "group": "colombia"
+  },
+  {
+    "id": "otro",
+    "label": "Sin región definida",
+    "group": "internacional"
+  }
+]

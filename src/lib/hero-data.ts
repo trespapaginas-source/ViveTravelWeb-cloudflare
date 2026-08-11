@@ -1,7 +1,10 @@
 /**
- * Datos del buscador del Hero — extraídos del componente de referencia.
- * Define las pestañas, listas de ciudades y destinos sugeridos por categoría.
+ * Datos del buscador del Hero — CMS-ready: las pestañas y los destinos
+ * sugeridos se generan desde Supabase (ver scripts/generate-content.mjs) en
+ * service-categories.json / popular-destinations.json, no están hardcodeados.
  */
+import serviceCategoriesData from "@/data/service-categories.json";
+import popularDestinationsData from "@/data/popular-destinations.json";
 
 export type SearchTab =
   | "internacionales"
@@ -17,18 +20,20 @@ export interface SearchTabDef {
   label: string;
 }
 
-/** Pestañas del buscador (orden y etiquetas exactas del original). */
-export const SEARCH_TABS: SearchTabDef[] = [
-  { id: "internacionales", label: "Planes Internacionales" },
-  { id: "nacionales", label: "Planes Nacionales" },
-  { id: "circuitos", label: "Circuitos" },
-  { id: "pasadias", label: "Pasadías" },
-  { id: "grupales", label: "Viajes Grupales" },
-  { id: "alojamientos", label: "Cabañas" },
-  { id: "tours", label: "Actividades" },
-];
+interface ServiceCategoryRow {
+  id: string;
+  label: string;
+  showInHero: boolean;
+}
 
-export const DEFAULT_TAB: SearchTab = "internacionales";
+/** Pestañas del buscador — orden y visibilidad definidos en el CMS. */
+export const SEARCH_TABS: SearchTabDef[] = (
+  serviceCategoriesData as ServiceCategoryRow[]
+)
+  .filter((c) => c.showInHero)
+  .map((c) => ({ id: c.id as SearchTab, label: c.label }));
+
+export const DEFAULT_TAB: SearchTab = SEARCH_TABS[0]?.id ?? "internacionales";
 
 /** Ciudades origen para el autocompletado. */
 export const CITIES = [
@@ -41,54 +46,15 @@ export const CITIES = [
   "Punta Cana",
 ];
 
-/** Destinos sugeridos por pestaña (featured + optional). */
-export const POPULAR_DESTINATIONS: Record<
-  Exclude<SearchTab, "grupales">,
-  { featured: string[]; optional: string[] }
-> = {
-  internacionales: {
-    featured: ["Punta Cana", "Cancún", "Panamá", "Brasil", "Curazao"],
-    optional: ["Aruba", "Miami", "Orlando", "Madrid", "París"],
-  },
-  nacionales: {
-    featured: ["San Andrés", "Cartagena", "Eje Cafetero", "Santa Marta", "Medellín"],
-    optional: ["Guatapé", "Barichara", "Caño Cristales", "Amazonas", "Nuquí"],
-  },
-  circuitos: {
-    featured: [
-      "Eurotrip Clásico",
-      "España y Portugal",
-      "Italia Completa",
-      "Japón Esencial",
-      "Turquía y Dubái",
-    ],
-    optional: [
-      "Egipto y Turquía",
-      "Grecia e Islas Griegas",
-      "Sudeste Asiático",
-      "Reino Unido e Irlanda",
-      "Escandinavia",
-    ],
-  },
-  pasadias: {
-    featured: ["Playa Blanca", "Barú", "Islas del Rosario", "Santa Verónica", "Minca"],
-    optional: ["Tayrona", "Luruaco", "Sabanilla", "Puerto Colombia", "Cabo de la Vela"],
-  },
-  alojamientos: {
-    featured: ["Santa Verónica", "Puerto Colombia", "Minca", "Tayrona", "Barú"],
-    optional: ["Palomino", "Coveñas", "San Andrés", "Cartagena", "Eje Cafetero"],
-  },
-  tours: {
-    featured: ["Paracaidismo", "Buceo", "Tour del Café", "Parque Tayrona", "Ciudad Perdida"],
-    optional: [
-      "Snorkel en Barú",
-      "Kayak en Mallorquín",
-      "Tour Histórico",
-      "Cabalgata",
-      "Kitesurf",
-    ],
-  },
-};
+/** Destinos sugeridos por pestaña — orden definido en el CMS. */
+export const POPULAR_DESTINATIONS: Record<Exclude<SearchTab, "grupales">, string[]> = (() => {
+  const grouped = {} as Record<Exclude<SearchTab, "grupales">, string[]>;
+  for (const { categoryId, name } of popularDestinationsData as { categoryId: string; name: string }[]) {
+    const key = categoryId as Exclude<SearchTab, "grupales">;
+    (grouped[key] ??= []).push(name);
+  }
+  return grouped;
+})();
 
 /** Placeholder del input de destino según la pestaña activa. */
 export function getDestinationPlaceholder(tab: SearchTab): string {

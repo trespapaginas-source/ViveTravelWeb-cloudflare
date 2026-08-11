@@ -1,0 +1,51 @@
+[
+  {
+    "id": "internacionales",
+    "label": "Planes Internacionales",
+    "subtitle": "Escapadas fuera de Colombia con enfoque en descanso, playa y experiencias memorables.",
+    "showInHero": true,
+    "showInNav": true
+  },
+  {
+    "id": "nacionales",
+    "label": "Planes Nacionales",
+    "subtitle": "Viajes de varios días por Colombia, organizados para descubrir nuevos destinos.",
+    "showInHero": true,
+    "showInNav": true
+  },
+  {
+    "id": "circuitos",
+    "label": "Circuitos",
+    "subtitle": "Grandes recorridos y circuitos turísticos organizados para vivir múltiples destinos.",
+    "showInHero": true,
+    "showInNav": true
+  },
+  {
+    "id": "pasadias",
+    "label": "Pasadías",
+    "subtitle": "Experiencias de un día para disfrutar playas, naturaleza, aventura y cultura.",
+    "showInHero": true,
+    "showInNav": true
+  },
+  {
+    "id": "grupales",
+    "label": "Viajes Grupales",
+    "subtitle": "Viajes de un día para grupos, equipos, familias y comunidades.",
+    "showInHero": true,
+    "showInNav": true
+  },
+  {
+    "id": "alojamientos",
+    "label": "Cabañas",
+    "subtitle": "Cabañas y fincas para hospedarte en el Atlántico y alrededores.",
+    "showInHero": true,
+    "showInNav": false
+  },
+  {
+    "id": "tours",
+    "label": "Actividades",
+    "subtitle": "Experiencias y actividades cortas para complementar tu estadía en la ciudad.",
+    "showInHero": true,
+    "showInNav": true
+  }
+]

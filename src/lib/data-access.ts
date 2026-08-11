@@ -17,12 +17,14 @@ import cabinsRaw from "@/data/cabins.json";
 import transportsRaw from "@/data/transports.json";
 import visasRaw from "@/data/visas.json";
 import testimonialsRaw from "@/data/testimonials.json";
+import heroImagesRaw from "@/data/hero-images.json";
 import type {
   TourPlan,
   Cabin,
   Transport,
   Visa,
   Testimonial,
+  HeroImage,
 } from "@/lib/data";
 
 /* ─────────────────────── Helpers de normalización ─────────────────────── */
@@ -132,4 +134,10 @@ export function getVisasByCategory(): Record<string, NormalizedVisa[]> {
 
 export function getAllTestimonials(): Testimonial[] {
   return testimonialsRaw as Testimonial[];
+}
+
+/* ─────────────────────────── Hero images ──────────────────────────────── */
+
+export function getHeroImages(): HeroImage[] {
+  return heroImagesRaw as HeroImage[];
 }

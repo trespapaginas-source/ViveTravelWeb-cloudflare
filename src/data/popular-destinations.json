@@ -1,0 +1,202 @@
+[
+  {
+    "categoryId": "internacionales",
+    "name": "Punta Cana"
+  },
+  {
+    "categoryId": "internacionales",
+    "name": "Cancún"
+  },
+  {
+    "categoryId": "internacionales",
+    "name": "Panamá"
+  },
+  {
+    "categoryId": "internacionales",
+    "name": "Brasil"
+  },
+  {
+    "categoryId": "internacionales",
+    "name": "Curazao"
+  },
+  {
+    "categoryId": "internacionales",
+    "name": "Aruba"
+  },
+  {
+    "categoryId": "internacionales",
+    "name": "Miami"
+  },
+  {
+    "categoryId": "internacionales",
+    "name": "Orlando"
+  },
+  {
+    "categoryId": "internacionales",
+    "name": "Madrid"
+  },
+  {
+    "categoryId": "internacionales",
+    "name": "París"
+  },
+  {
+    "categoryId": "nacionales",
+    "name": "San Andrés"
+  },
+  {
+    "categoryId": "nacionales",
+    "name": "Cartagena"
+  },
+  {
+    "categoryId": "nacionales",
+    "name": "Eje Cafetero"
+  },
+  {
+    "categoryId": "nacionales",
+    "name": "Santa Marta"
+  },
+  {
+    "categoryId": "nacionales",
+    "name": "Medellín"
+  },
+  {
+    "categoryId": "nacionales",
+    "name": "Guatapé"
+  },
+  {
+    "categoryId": "nacionales",
+    "name": "Barichara"
+  },
+  {
+    "categoryId": "nacionales",
+    "name": "Caño Cristales"
+  },
+  {
+    "categoryId": "nacionales",
+    "name": "Amazonas"
+  },
+  {
+    "categoryId": "nacionales",
+    "name": "Nuquí"
+  },
+  {
+    "categoryId": "circuitos",
+    "name": "Eurotrip Clásico"
+  },
+  {
+    "categoryId": "circuitos",
+    "name": "España y Portugal"
+  },
+  {
+    "categoryId": "circuitos",
+    "name": "Italia Completa"
+  },
+  {
+    "categoryId": "circuitos",
+    "name": "Japón Esencial"
+  },
+  {
+    "categoryId": "circuitos",
+    "name": "Turquía y Dubái"
+  },
+  {
+    "categoryId": "circuitos",
+    "name": "Egipto y Turquía"
+  },
+  {
+    "categoryId": "circuitos",
+    "name": "Grecia e Islas Griegas"
+  },
+  {
+    "categoryId": "circuitos",
+    "name": "Sudeste Asiático"
+  },
+  {
+    "categoryId": "circuitos",
+    "name": "Reino Unido e Irlanda"
+  },
+  {
+    "categoryId": "circuitos",
+    "name": "Escandinavia"
+  },
+  {
+    "categoryId": "pasadias",
+    "name": "Playa Blanca"
+  },
+  {
+    "categoryId": "pasadias",
+    "name": "Barú"
+  },
+  {
+    "categoryId": "pasadias",
+    "name": "Islas del Rosario"
+  },
+  {
+    "categoryId": "pasadias",
+    "name": "Santa Verónica"
+  },
+  {
+    "categoryId": "pasadias",
+    "name": "Minca"
+  },
+  {
+    "categoryId": "pasadias",
+    "name": "Tayrona"
+  },
+  {
+    "categoryId": "pasadias",
+    "name": "Luruaco"
+  },
+  {
+    "categoryId": "pasadias",
+    "name": "Sabanilla"
+  },
+  {
+    "categoryId": "pasadias",
+    "name": "Puerto Colombia"
+  },
+  {
+    "categoryId": "pasadias",
+    "name": "Cabo de la Vela"
+  },
+  {
+    "categoryId": "alojamientos",
+    "name": "Santa Verónica"
+  },
+  {
+    "categoryId": "alojamientos",
+    "name": "Puerto Colombia"
+  },
+  {
+    "categoryId": "alojamientos",
+    "name": "Minca"
+  },
+  {
+    "categoryId": "alojamientos",
+    "name": "Tayrona"
+  },
+  {
+    "categoryId": "alojamientos",
+    "name": "Barú"
+  },
+  {
+    "categoryId": "alojamientos",
+    "name": "Palomino"
+  },
+  {
+    "categoryId": "alojamientos",
+    "name": "Coveñas"
+  },
+  {
+    "categoryId": "alojamientos",
+    "name": "San Andrés"
+  },
+  {
+    "categoryId": "alojamientos",
+    "name": "Cartagena"
+  },
+  {
+    "categoryId": "alojamientos",
+    "name": "Eje Cafetero"
+  }
+]
