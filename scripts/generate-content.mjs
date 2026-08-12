@@ -32,6 +32,65 @@ const DATA_DIR = path.resolve(
   "../src/data"
 );
 
+/** Igual que formatPrice() en src/lib/utils.ts — duplicado aquí porque este script corre en Node, fuera del bundle del sitio. */
+function formatCOP(value) {
+  return new Intl.NumberFormat("es-CO", {
+    style: "currency",
+    currency: "COP",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(value);
+}
+
+// Rating/reseñas ya no se editan a mano: se calculan a partir de las reseñas
+// reales en D1 (misma tabla que usa /api/reviews). Requiere estas 3 env vars
+// de build en Cloudflare Pages; si faltan, se omite sin romper el build y
+// mapPlan/mapCabin caen de vuelta a las columnas viejas de Supabase.
+const CF_ACCOUNT_ID = process.env.CF_ACCOUNT_ID;
+const CF_API_TOKEN = process.env.CF_API_TOKEN;
+const CF_D1_DATABASE_ID = process.env.CF_D1_DATABASE_ID;
+
+async function fetchReviewAggregates() {
+  if (!CF_ACCOUNT_ID || !CF_API_TOKEN || !CF_D1_DATABASE_ID) {
+    console.log(
+      "[generate-content] CF_ACCOUNT_ID/CF_API_TOKEN/CF_D1_DATABASE_ID no configuradas — rating/reseñas usan el último valor guardado en Supabase."
+    );
+    return new Map();
+  }
+  try {
+    const res = await fetch(
+      `https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/d1/database/${CF_D1_DATABASE_ID}/query`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${CF_API_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          sql: "SELECT service_type, service_id, COUNT(*) as count, AVG(rating) as avg FROM reviews GROUP BY service_type, service_id",
+        }),
+      }
+    );
+    const body = await res.json();
+    if (!res.ok || !body.success) {
+      throw new Error(JSON.stringify(body.errors ?? body));
+    }
+    const rows = body.result?.[0]?.results ?? [];
+    const map = new Map();
+    for (const row of rows) {
+      map.set(`${row.service_type}:${row.service_id}`, {
+        avg: Math.round(Number(row.avg) * 10) / 10,
+        count: Number(row.count),
+      });
+    }
+    console.log(`[generate-content] rating/reseñas sincronizados desde D1 (${map.size} servicios con reseñas)`);
+    return map;
+  } catch (err) {
+    console.warn("[generate-content] No se pudo sincronizar rating desde D1:", err.message);
+    return new Map();
+  }
+}
+
 function writeJson(filename, data) {
   writeFileSync(
     path.join(DATA_DIR, filename),
@@ -50,7 +109,8 @@ async function fetchAll(table, orderCol = "display_order") {
   return data ?? [];
 }
 
-function mapPlan(r) {
+function mapPlan(r, reviewAggregates) {
+  const agg = reviewAggregates.get(`plan:${r.id}`);
   return {
     id: r.id,
     slug: r.slug ?? undefined,
@@ -59,7 +119,6 @@ function mapPlan(r) {
     fullDescription: r.full_description ?? "",
     images: r.images ?? [],
     price: r.price === null ? 0 : Number(r.price),
-    priceRange: r.price_range ?? "",
     duration: r.duration ?? "",
     location: r.location ?? "",
     ubicacion_principal: r.ubicacion_principal ?? undefined,
@@ -70,17 +129,15 @@ function mapPlan(r) {
     includes: r.includes ?? [],
     excludes: r.excludes ?? [],
     highlights: r.highlights ?? [],
-    rating: r.rating === null ? 5 : Number(r.rating),
-    reviewCount: r.review_count ?? 0,
-    schedule: r.schedule ?? "",
-    meeting: r.meeting ?? "",
+    importantInfo: r.important_info ?? undefined,
+    rating: agg ? agg.avg : r.rating === null ? 5 : Number(r.rating),
+    reviewCount: agg ? agg.count : r.review_count ?? 0,
     published: r.published,
     order: r.display_order ?? 0,
     itinerary: r.itinerary?.length ? r.itinerary : undefined,
     departureDates: r.departure_dates?.length ? r.departure_dates : undefined,
     fixedDeparture: r.fixed_departure || undefined,
     lugares: r.lugares?.length ? r.lugares : undefined,
-    notes: r.notes?.length ? r.notes : undefined,
     featuredOrder: r.featured_order === null ? undefined : r.featured_order,
     fecha_salida: r.fecha_salida ?? undefined,
     mostrar_limite_personas: r.mostrar_limite_personas || undefined,
@@ -92,7 +149,12 @@ function mapPlan(r) {
   };
 }
 
-function mapCabin(r) {
+function mapCabin(r, reviewAggregates) {
+  const agg = reviewAggregates.get(`cabin:${r.id}`);
+  const priceRange =
+    r.price_min != null && r.price_max != null
+      ? `${formatCOP(r.price_min)} - ${formatCOP(r.price_max)} COP / noche`
+      : "";
   return {
     id: r.id,
     slug: r.slug ?? undefined,
@@ -101,7 +163,7 @@ function mapCabin(r) {
     fullDescription: r.full_description ?? "",
     images: r.images ?? [],
     pricePerNight: r.price_per_night === null ? 0 : Number(r.price_per_night),
-    priceRange: r.price_range ?? "",
+    priceRange,
     location: r.location ?? "",
     capacity: r.capacity ?? 0,
     bedrooms: r.bedrooms ?? 0,
@@ -109,8 +171,8 @@ function mapCabin(r) {
     amenities: r.amenities ?? [],
     highlights: r.highlights ?? [],
     rules: r.rules ?? [],
-    rating: r.rating === null ? 5 : Number(r.rating),
-    reviewCount: r.review_count ?? 0,
+    rating: agg ? agg.avg : r.rating === null ? 5 : Number(r.rating),
+    reviewCount: agg ? agg.count : r.review_count ?? 0,
     coordinates: { lat: Number(r.lat ?? 0), lng: Number(r.lng ?? 0) },
     checkIn: r.check_in ?? "",
     checkOut: r.check_out ?? "",
@@ -127,7 +189,7 @@ function mapCabin(r) {
 }
 
 async function main() {
-  const [plans, cabins, heroImages, serviceCategories, planRegions, popularDestinations, siteContentRows] =
+  const [plans, cabins, heroImages, serviceCategories, planRegions, popularDestinations, siteContentRows, reviewAggregates] =
     await Promise.all([
       fetchAll("plans"),
       fetchAll("cabins"),
@@ -136,10 +198,11 @@ async function main() {
       fetchAll("plan_regions"),
       fetchAll("popular_destinations"),
       supabase.from("site_content").select("*").eq("id", "main").limit(1),
+      fetchReviewAggregates(),
     ]);
 
-  writeJson("planes.json", plans.map(mapPlan));
-  writeJson("cabins.json", cabins.map(mapCabin));
+  writeJson("planes.json", plans.map((r) => mapPlan(r, reviewAggregates)));
+  writeJson("cabins.json", cabins.map((r) => mapCabin(r, reviewAggregates)));
 
   writeJson(
     "hero-images.json",

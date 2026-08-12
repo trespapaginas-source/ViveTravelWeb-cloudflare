@@ -20,6 +20,7 @@ export function useAdminAuth(): AdminAuthState {
 
   useEffect(() => {
     let cancelled = false;
+    let firstCheckDone = false;
 
     async function checkAdmin(currentSession: Session | null) {
       if (!currentSession) {
@@ -43,12 +44,23 @@ export function useAdminAuth(): AdminAuthState {
     supabase.auth.getSession().then(({ data }) => {
       if (cancelled) return;
       setSession(data.session);
-      checkAdmin(data.session);
+      checkAdmin(data.session).finally(() => {
+        firstCheckDone = true;
+      });
     });
 
+    // Supabase dispara onAuthStateChange no solo al iniciar/cerrar sesión,
+    // sino también en refrescos silenciosos de token (ej. al recuperar el
+    // foco de la ventana). Volver a poner loading=true ahí desmontaría todo
+    // AdminLayout — incluida la vista de edición con cambios sin guardar —
+    // por eso solo se muestra el loader de pantalla completa en la carga
+    // inicial; después, un cierre de sesión real (next === null) es la
+    // única razón para volver a bloquear la UI.
     const { data: sub } = supabase.auth.onAuthStateChange((_event, next) => {
       setSession(next);
-      setLoading(true);
+      if (!firstCheckDone || !next) {
+        setLoading(true);
+      }
       checkAdmin(next);
     });
 

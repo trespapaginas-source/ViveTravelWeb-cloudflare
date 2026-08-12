@@ -40,7 +40,8 @@ export interface TourPlan {
   fullDescription: string;
   images: string[];
   price: number;
-  priceRange: string;
+  /** @deprecated El rango de precio ya no se muestra — solo queda el precio único ("Desde $X"). */
+  priceRange?: string;
   duration: string;
   location: string;
   /**
@@ -67,8 +68,12 @@ export interface TourPlan {
    * render salvo en Viajes Grupales con el flag activo.
    */
   maxGuests?: number;
-  schedule: string;
-  meeting: string;
+  /** @deprecated Fusionado en `importantInfo`. */
+  schedule?: string;
+  /** @deprecated Fusionado en `importantInfo`. */
+  meeting?: string;
+  /** Horario, punto de encuentro y notas — un solo texto libre. */
+  importantInfo?: string;
   published: boolean;
   order: number;
   // Campos opcionales (planes de varios días)

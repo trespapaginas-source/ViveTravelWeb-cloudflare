@@ -57,7 +57,6 @@ export interface PlanRow {
   full_description: string | null;
   images: string[];
   price: number | null;
-  price_range: string | null;
   duration: string | null;
   location: string | null;
   experience_section: string | null;
@@ -66,15 +65,15 @@ export interface PlanRow {
   includes: string[];
   excludes: string[];
   highlights: string[];
-  rating: number | null;
-  review_count: number | null;
-  schedule: string | null;
-  meeting: string | null;
+  important_info: string | null;
   published: boolean;
   display_order: number;
   featured_order: number | null;
   servicios_incluidos: { id: string; label: string; icon: string }[];
   section_titles: Record<string, string>;
+  lugares: { name: string; image: string }[];
+  fixed_departure: boolean;
+  departure_dates: { start: string; end: string }[];
 }
 
 export async function listPlans(): Promise<PlanRow[]> {
@@ -103,7 +102,8 @@ export interface CabinRow {
   full_description: string | null;
   images: string[];
   price_per_night: number | null;
-  price_range: string | null;
+  price_min: number | null;
+  price_max: number | null;
   location: string | null;
   capacity: number | null;
   bedrooms: number | null;
@@ -117,6 +117,14 @@ export interface CabinRow {
   maps_url: string | null;
   section_titles: Record<string, string>;
   section_visibility: Record<string, boolean>;
+  bedroom_details: {
+    id: string;
+    title: string;
+    beds: string;
+    images: string[];
+    order: number;
+    active: boolean;
+  }[];
 }
 
 export async function listCabins(): Promise<CabinRow[]> {

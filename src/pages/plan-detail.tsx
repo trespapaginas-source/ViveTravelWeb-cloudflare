@@ -7,8 +7,6 @@ import {
   Check,
   X,
   Sparkles,
-  Navigation,
-  Calendar as CalendarIcon,
   Minus,
   Plus,
   ChevronLeft,
@@ -328,41 +326,17 @@ export function PlanDetailPage() {
             </section>
           )}
 
-          {/* Información importante (horario + punto de encuentro + notas) */}
-          {(!isFixedDeparture && (plan.schedule || plan.meeting)) ||
-            (plan.notes && plan.notes.length > 0) ? (
+          {/* Información importante — un solo párrafo libre */}
+          {plan.importantInfo && (
             <section id="condiciones" className="mt-8 scroll-mt-24">
               <h2 className="text-lg font-bold text-foreground">
                 {sectionTitle("info", "Información importante")}
               </h2>
-              <div className="mt-3 space-y-2">
-                {!isFixedDeparture && plan.schedule && (
-                  <div className="flex items-start gap-2 rounded-lg bg-muted/50 p-3 text-sm">
-                    <CalendarIcon className="mt-0.5 h-4 w-4 text-neutral-900" />
-                    <div>
-                      <strong>Horario:</strong> {plan.schedule}
-                    </div>
-                  </div>
-                )}
-                {!isFixedDeparture && plan.meeting && (
-                  <div className="flex items-start gap-2 rounded-lg bg-muted/50 p-3 text-sm">
-                    <Navigation className="mt-0.5 h-4 w-4 text-neutral-900" />
-                    <div>
-                      <strong>Punto de encuentro:</strong> {plan.meeting}
-                    </div>
-                  </div>
-                )}
-                {plan.notes?.map((note, i) => (
-                  <div
-                    key={i}
-                    className="rounded-lg bg-muted/50 p-3 text-xs text-muted-foreground"
-                  >
-                    {note}
-                  </div>
-                ))}
-              </div>
+              <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
+                {plan.importantInfo}
+              </p>
             </section>
-          ) : null}
+          )}
 
           {/* Reseñas reales (D1 + Turnstile) */}
           <section id="resenas" className="mt-8 scroll-mt-24">
@@ -401,7 +375,6 @@ export function PlanDetailPage() {
                   Impuestos y cargos incluidos
                 </p>
               </div>
-              <span className="text-xs text-muted-foreground">{plan.priceRange}</span>
             </div>
 
             {/* Campos de reserva directos (sin modal en desktop) */}

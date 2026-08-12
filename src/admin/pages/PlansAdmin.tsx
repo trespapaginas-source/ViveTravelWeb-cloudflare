@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Plus, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
+import { Plus, X, ChevronLeft, ChevronRight, GripVertical } from "lucide-react";
 import {
   listPlans,
   upsertPlan,
@@ -15,7 +16,13 @@ import {
 import { ReorderButtons } from "../components/ReorderButtons";
 import { SectionHeading } from "../components/SectionTitlesEditor";
 import { ImageReorderList } from "../components/ImageReorderList";
+import { Field } from "../components/Field";
+import { RatingIndicator } from "../components/RatingIndicator";
+import { slugify } from "../lib/slugify";
+import { useDragReorder } from "../lib/useDragReorder";
+import { useUnsavedChangesWarning } from "../lib/useUnsavedChangesWarning";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const SERVICE_OPTIONS = [
   { id: "hotel", label: "Hotel" },
@@ -33,7 +40,6 @@ function emptyPlan(order: number): PlanRow {
     full_description: "",
     images: [],
     price: 0,
-    price_range: "",
     duration: "",
     location: "",
     experience_section: "nacionales",
@@ -42,15 +48,15 @@ function emptyPlan(order: number): PlanRow {
     includes: [],
     excludes: [],
     highlights: [],
-    rating: 5,
-    review_count: 0,
-    schedule: "",
-    meeting: "",
+    important_info: "",
     published: true,
     display_order: order,
     featured_order: null,
     servicios_incluidos: [],
     section_titles: {},
+    lugares: [],
+    fixed_departure: false,
+    departure_dates: [],
   };
 }
 
@@ -58,16 +64,35 @@ const lines = (arr: string[] | undefined) => (arr ?? []).join("\n");
 const toLines = (text: string) => text.split("\n").map((l) => l.trim()).filter(Boolean);
 
 export function PlansAdmin() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const selectedCategory = searchParams.get("categoria");
+  const editParam = searchParams.get("edit");
+  const isNew = editParam === "new";
+
   const [rows, setRows] = useState<PlanRow[]>([]);
   const [categories, setCategories] = useState<ServiceCategoryRow[]>([]);
   const [regions, setRegions] = useState<PlanRegionRow[]>([]);
   const [editing, setEditing] = useState<PlanRow | null>(null);
-  const [isNew, setIsNew] = useState(false);
+  const [originalEditing, setOriginalEditing] = useState<PlanRow | null>(null);
+  const [slugTouched, setSlugTouched] = useState(false);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [uploadingLugarIndex, setUploadingLugarIndex] = useState<number | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+  const lugarFileRefs = useRef<Record<number, HTMLInputElement | null>>({});
+  const initializedForRef = useRef<string | null>(null);
+
+  const hasUnsavedChanges =
+    editing !== null && JSON.stringify(editing) !== JSON.stringify(originalEditing);
+  useUnsavedChangesWarning(hasUnsavedChanges);
+
+  // Se llama en cada render (nunca condicionalmente — Rules of Hooks) aunque
+  // no haya nada en edición todavía; con `editing` null simplemente opera
+  // sobre un array vacío sin efecto.
+  const lugaresDrag = useDragReorder(editing?.lugares ?? [], (next) => {
+    if (editing) setEditing({ ...editing, lugares: next });
+  });
 
   const reload = () => listPlans().then(setRows);
 
@@ -80,6 +105,43 @@ export function PlansAdmin() {
       })
       .finally(() => setLoading(false));
   }, []);
+
+  // El borrador de edición se deriva del parámetro `edit` de la URL — así
+  // recargar la página, compartir el link o que el navegador restaure la
+  // pestaña en frío reabre exactamente el mismo formulario. Un ref evita que
+  // un `rows` refrescado en segundo plano pise un borrador ya en curso.
+  useEffect(() => {
+    if (loading) return;
+    if (!editParam) {
+      initializedForRef.current = null;
+      setEditing(null);
+      setOriginalEditing(null);
+      return;
+    }
+    if (initializedForRef.current === editParam) return;
+    initializedForRef.current = editParam;
+
+    if (editParam === "new") {
+      const maxOrder = rows.reduce((m, r) => Math.max(m, r.display_order), -1);
+      const plan = emptyPlan(maxOrder + 1);
+      if (selectedCategory) plan.experience_section = selectedCategory;
+      setEditing(plan);
+      setOriginalEditing(plan);
+      setSlugTouched(false);
+      return;
+    }
+
+    const found = rows.find((r) => r.id === editParam);
+    if (found) {
+      setEditing({ ...found });
+      setOriginalEditing({ ...found });
+      // Ya tiene un slug deliberado — no lo pisamos solo porque cambie el nombre.
+      setSlugTouched(true);
+    } else {
+      // Link roto o el plan ya no existe — vuelve al listado de la categoría.
+      setSearchParams(selectedCategory ? { categoria: selectedCategory } : {}, { replace: true });
+    }
+  }, [editParam, loading, rows, selectedCategory, setSearchParams]);
 
   // Recibe el array ya filtrado por categoría para que subir/bajar reordene
   // solo dentro de esa categoría, no contra el listado global de planes.
@@ -100,16 +162,15 @@ export function PlansAdmin() {
   };
 
   const openNew = () => {
-    const maxOrder = rows.reduce((m, r) => Math.max(m, r.display_order), -1);
-    const plan = emptyPlan(maxOrder + 1);
-    if (selectedCategory) plan.experience_section = selectedCategory;
-    setEditing(plan);
-    setIsNew(true);
+    setSearchParams(selectedCategory ? { categoria: selectedCategory, edit: "new" } : { edit: "new" });
   };
 
   const openEdit = (row: PlanRow) => {
-    setEditing({ ...row });
-    setIsNew(false);
+    setSearchParams(selectedCategory ? { categoria: selectedCategory, edit: row.id } : { edit: row.id });
+  };
+
+  const closeEditing = () => {
+    setSearchParams(selectedCategory ? { categoria: selectedCategory } : {});
   };
 
   const handleSave = async () => {
@@ -121,7 +182,7 @@ export function PlansAdmin() {
       alert(`Error al guardar: ${err}`);
       return;
     }
-    setEditing(null);
+    closeEditing();
     reload();
   };
 
@@ -144,13 +205,40 @@ export function PlansAdmin() {
     const setTitle = (key: string, v: string) =>
       setEditing({ ...plan, section_titles: { ...plan.section_titles, [key]: v } });
 
+    const addLugar = () =>
+      setEditing({ ...plan, lugares: [...(plan.lugares ?? []), { name: "", image: "" }] });
+    const removeLugar = (i: number) =>
+      setEditing({ ...plan, lugares: (plan.lugares ?? []).filter((_, idx) => idx !== i) });
+    const patchLugar = (i: number, patch: Partial<{ name: string; image: string }>) => {
+      const next = [...(plan.lugares ?? [])];
+      next[i] = { ...next[i], ...patch };
+      setEditing({ ...plan, lugares: next });
+    };
+    const handleUploadLugarImage = async (i: number, file: File) => {
+      setUploadingLugarIndex(i);
+      const { url, error } = await uploadImage(file, "lugares");
+      if (url) patchLugar(i, { image: url });
+      else if (error) alert(`Error al subir imagen: ${error}`);
+      setUploadingLugarIndex(null);
+    };
+
+    const addDepartureDate = () =>
+      setEditing({ ...plan, departure_dates: [...(plan.departure_dates ?? []), { start: "", end: "" }] });
+    const removeDepartureDate = (i: number) =>
+      setEditing({ ...plan, departure_dates: (plan.departure_dates ?? []).filter((_, idx) => idx !== i) });
+    const patchDepartureDate = (i: number, patch: Partial<{ start: string; end: string }>) => {
+      const next = [...(plan.departure_dates ?? [])];
+      next[i] = { ...next[i], ...patch };
+      setEditing({ ...plan, departure_dates: next });
+    };
+
     return (
       <div className="max-w-2xl">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <h1 className="min-w-0 break-words text-xl font-bold text-foreground">
             {isNew ? "Nuevo plan" : `Editar: ${plan.name || "(sin nombre)"}`}
           </h1>
-          <Button variant="ghost" onClick={() => setEditing(null)} className="shrink-0">
+          <Button variant="ghost" onClick={closeEditing} className="shrink-0">
             Cancelar
           </Button>
         </div>
@@ -167,9 +255,28 @@ export function PlansAdmin() {
             onChange={(v) => setTitle("about", v)}
           />
 
+          <RatingIndicator serviceType="plan" serviceId={plan.id} />
+
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <Field label="Nombre" value={plan.name} onChange={(v) => setEditing({ ...plan, name: v })} />
-            <Field label="Slug (url)" value={plan.slug ?? ""} onChange={(v) => setEditing({ ...plan, slug: v })} />
+            <Field
+              label="Nombre"
+              value={plan.name}
+              onChange={(v) =>
+                setEditing({
+                  ...plan,
+                  name: v,
+                  slug: slugTouched ? plan.slug : slugify(v),
+                })
+              }
+            />
+            <Field
+              label="Slug (url)"
+              value={plan.slug ?? ""}
+              onChange={(v) => {
+                setSlugTouched(v.trim().length > 0);
+                setEditing({ ...plan, slug: v });
+              }}
+            />
           </div>
 
           <Field
@@ -186,23 +293,61 @@ export function PlansAdmin() {
             rows={5}
           />
 
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <Field
-              label="Precio (COP)"
+              label="Precio desde (COP)"
               type="number"
               value={String(plan.price ?? 0)}
               onChange={(v) => setEditing({ ...plan, price: Number(v) || 0 })}
-            />
-            <Field
-              label="Rango de precio (texto)"
-              value={plan.price_range ?? ""}
-              onChange={(v) => setEditing({ ...plan, price_range: v })}
             />
             <Field
               label="Duración"
               value={plan.duration ?? ""}
               onChange={(v) => setEditing({ ...plan, duration: v })}
             />
+          </div>
+
+          <div className="space-y-3 rounded-lg border border-border p-3">
+            <label className="flex items-center gap-1.5 text-sm font-medium text-foreground">
+              <input
+                type="checkbox"
+                checked={plan.fixed_departure ?? false}
+                onChange={(e) => setEditing({ ...plan, fixed_departure: e.target.checked })}
+              />
+              ¿Tiene salida programada?
+            </label>
+            {plan.fixed_departure && (
+              <div className="space-y-2">
+                {(plan.departure_dates ?? []).map((d, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <input
+                      type="date"
+                      value={d.start}
+                      onChange={(e) => patchDepartureDate(i, { start: e.target.value })}
+                      className="min-w-0 flex-1 rounded-md border border-input px-2 py-1.5 text-sm outline-none focus:ring-2 focus:ring-ring"
+                    />
+                    <span className="shrink-0 text-xs text-muted-foreground">al</span>
+                    <input
+                      type="date"
+                      value={d.end}
+                      onChange={(e) => patchDepartureDate(i, { end: e.target.value })}
+                      className="min-w-0 flex-1 rounded-md border border-input px-2 py-1.5 text-sm outline-none focus:ring-2 focus:ring-ring"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => removeDepartureDate(i)}
+                      className="-m-2 shrink-0 rounded-md p-2 text-muted-foreground hover:text-red-600"
+                      aria-label="Eliminar fecha"
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
+                  </div>
+                ))}
+                <Button type="button" variant="outline" size="sm" onClick={addDepartureDate}>
+                  <Plus className="h-4 w-4" /> Agregar fecha
+                </Button>
+              </div>
+            )}
           </div>
 
           <Field label="Ubicación" value={plan.location ?? ""} onChange={(v) => setEditing({ ...plan, location: v })} />
@@ -245,21 +390,6 @@ export function PlansAdmin() {
             value={plan.category ?? ""}
             onChange={(v) => setEditing({ ...plan, category: v })}
           />
-
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <Field
-              label="Rating (0-5)"
-              type="number"
-              value={String(plan.rating ?? 5)}
-              onChange={(v) => setEditing({ ...plan, rating: Number(v) || 0 })}
-            />
-            <Field
-              label="Número de reseñas"
-              type="number"
-              value={String(plan.review_count ?? 0)}
-              onChange={(v) => setEditing({ ...plan, review_count: Number(v) || 0 })}
-            />
-          </div>
 
           <div>
             <label className="text-xs font-medium text-muted-foreground">Servicios incluidos (íconos)</label>
@@ -334,10 +464,75 @@ export function PlansAdmin() {
 
           <SectionHeading
             defaultLabel="Lugares a conocer"
-            hint="Solo aparece si el plan tiene lugares cargados (se administran en Supabase, todavía no hay campo aquí)."
+            hint="Arrástralos para cambiar el orden en que aparecen en el carrusel."
             value={plan.section_titles?.places ?? ""}
             onChange={(v) => setTitle("places", v)}
           />
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {(plan.lugares ?? []).map((lugar, i) => (
+              <div
+                key={i}
+                {...lugaresDrag.dropTargetProps(i)}
+                className={cn(
+                  "relative overflow-hidden rounded-lg border border-border bg-white transition-opacity",
+                  lugaresDrag.isDragging(i) && "opacity-40",
+                  lugaresDrag.isOver(i) && "ring-2 ring-teal-500"
+                )}
+              >
+                {lugar.image ? (
+                  <img src={lugar.image} alt="" className="aspect-video w-full object-cover" />
+                ) : (
+                  <div className="flex aspect-video w-full items-center justify-center bg-neutral-100 text-xs text-muted-foreground">
+                    Sin imagen
+                  </div>
+                )}
+                <span
+                  {...lugaresDrag.handleProps(i)}
+                  className="absolute left-1.5 top-1.5 flex h-7 w-7 cursor-grab items-center justify-center rounded-md bg-black/50 text-white active:cursor-grabbing"
+                >
+                  <GripVertical className="h-4 w-4" />
+                </span>
+                <button
+                  type="button"
+                  onClick={() => removeLugar(i)}
+                  className="absolute right-1.5 top-1.5 flex h-7 w-7 items-center justify-center rounded-md bg-black/50 text-white hover:bg-red-600"
+                  aria-label="Eliminar lugar"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+                <div className="space-y-1.5 p-2">
+                  <input
+                    value={lugar.name}
+                    onChange={(e) => patchLugar(i, { name: e.target.value })}
+                    placeholder="Nombre (ej. Villa de Leyva)"
+                    className="w-full rounded-md border border-input px-2 py-1 text-xs outline-none focus:ring-2 focus:ring-ring"
+                  />
+                  <input
+                    ref={(el) => {
+                      lugarFileRefs.current[i] = el;
+                    }}
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={(e) => e.target.files?.[0] && handleUploadLugarImage(i, e.target.files[0])}
+                  />
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    className="w-full text-xs"
+                    disabled={uploadingLugarIndex === i}
+                    onClick={() => lugarFileRefs.current[i]?.click()}
+                  >
+                    {uploadingLugarIndex === i ? "Subiendo…" : lugar.image ? "Cambiar foto" : "Subir foto"}
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+          <Button type="button" variant="outline" size="sm" onClick={addLugar}>
+            <Plus className="h-4 w-4" /> Agregar lugar
+          </Button>
 
           <SectionHeading
             defaultLabel="Qué incluye este plan"
@@ -378,18 +573,17 @@ export function PlansAdmin() {
 
           <SectionHeading
             defaultLabel="Información importante"
-            hint="Horario, punto de encuentro y notas."
+            hint="Horario, punto de encuentro y cualquier otra nota, todo en un solo texto."
             value={plan.section_titles?.info ?? ""}
             onChange={(v) => setTitle("info", v)}
           />
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <Field label="Horario" value={plan.schedule ?? ""} onChange={(v) => setEditing({ ...plan, schedule: v })} />
-            <Field
-              label="Punto de encuentro"
-              value={plan.meeting ?? ""}
-              onChange={(v) => setEditing({ ...plan, meeting: v })}
-            />
-          </div>
+          <Field
+            label="Información importante"
+            value={plan.important_info ?? ""}
+            onChange={(v) => setEditing({ ...plan, important_info: v })}
+            textarea
+            rows={4}
+          />
 
           <SectionHeading
             defaultLabel="Reseñas de viajeros"
@@ -423,7 +617,7 @@ export function PlansAdmin() {
               <button
                 key={c.id}
                 type="button"
-                onClick={() => setSelectedCategory(c.id)}
+                onClick={() => setSearchParams({ categoria: c.id })}
                 className="flex items-center justify-between rounded-lg border border-border bg-white px-4 py-4 text-left transition hover:border-foreground/30 hover:shadow-sm"
               >
                 <div>
@@ -450,7 +644,7 @@ export function PlansAdmin() {
     <div>
       <button
         type="button"
-        onClick={() => setSelectedCategory(null)}
+        onClick={() => setSearchParams({})}
         className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
       >
         <ChevronLeft className="h-4 w-4" /> Categorías
@@ -504,43 +698,6 @@ export function PlansAdmin() {
             </div>
           ))}
         </div>
-      )}
-    </div>
-  );
-}
-
-function Field({
-  label,
-  value,
-  onChange,
-  textarea,
-  rows = 2,
-  type = "text",
-}: {
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  textarea?: boolean;
-  rows?: number;
-  type?: string;
-}) {
-  return (
-    <div>
-      <label className="text-xs font-medium text-muted-foreground">{label}</label>
-      {textarea ? (
-        <textarea
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          rows={rows}
-          className="mt-1 w-full rounded-md border border-input px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
-        />
-      ) : (
-        <input
-          type={type}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          className="mt-1 w-full rounded-md border border-input px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
-        />
       )}
     </div>
   );

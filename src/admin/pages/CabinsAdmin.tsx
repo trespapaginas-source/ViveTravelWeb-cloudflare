@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Plus, X } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
+import { Plus, X, GripVertical } from "lucide-react";
 import {
   listCabins,
   upsertCabin,
@@ -11,7 +12,14 @@ import {
 import { ReorderButtons } from "../components/ReorderButtons";
 import { SectionHeading } from "../components/SectionTitlesEditor";
 import { ImageReorderList } from "../components/ImageReorderList";
+import { Field } from "../components/Field";
+import { RatingIndicator } from "../components/RatingIndicator";
+import { slugify } from "../lib/slugify";
+import { isValidUrl } from "../lib/validation";
+import { useDragReorder } from "../lib/useDragReorder";
+import { useUnsavedChangesWarning } from "../lib/useUnsavedChangesWarning";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 function emptyCabin(order: number): CabinRow {
   return {
@@ -22,7 +30,8 @@ function emptyCabin(order: number): CabinRow {
     full_description: "",
     images: [],
     price_per_night: 0,
-    price_range: "",
+    price_min: 0,
+    price_max: 0,
     location: "",
     capacity: 2,
     bedrooms: 1,
@@ -36,6 +45,7 @@ function emptyCabin(order: number): CabinRow {
     maps_url: "",
     section_titles: {},
     section_visibility: {},
+    bedroom_details: [],
   };
 }
 
@@ -43,19 +53,70 @@ const lines = (arr: string[] | undefined) => (arr ?? []).join("\n");
 const toLines = (text: string) => text.split("\n").map((l) => l.trim()).filter(Boolean);
 
 export function CabinsAdmin() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const editParam = searchParams.get("edit");
+  const isNew = editParam === "new";
+
   const [rows, setRows] = useState<CabinRow[]>([]);
   const [editing, setEditing] = useState<CabinRow | null>(null);
-  const [isNew, setIsNew] = useState(false);
+  const [originalEditing, setOriginalEditing] = useState<CabinRow | null>(null);
+  const [slugTouched, setSlugTouched] = useState(false);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [uploadingRoomIndex, setUploadingRoomIndex] = useState<number | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+  const roomFileRefs = useRef<Record<number, HTMLInputElement | null>>({});
+  const initializedForRef = useRef<string | null>(null);
+
+  const hasUnsavedChanges =
+    editing !== null && JSON.stringify(editing) !== JSON.stringify(originalEditing);
+  useUnsavedChangesWarning(hasUnsavedChanges);
+
+  // Se llama en cada render (nunca condicionalmente — Rules of Hooks) aunque
+  // no haya nada en edición todavía; con `editing` null simplemente opera
+  // sobre un array vacío sin efecto.
+  const roomsDrag = useDragReorder(editing?.bedroom_details ?? [], (next) => {
+    if (editing) setEditing({ ...editing, bedroom_details: next.map((r, i) => ({ ...r, order: i })) });
+  });
 
   const reload = () => listCabins().then(setRows);
 
   useEffect(() => {
     reload().finally(() => setLoading(false));
   }, []);
+
+  // El borrador de edición se deriva del parámetro `edit` de la URL — ver la
+  // misma lógica y motivo en PlansAdmin.tsx.
+  useEffect(() => {
+    if (loading) return;
+    if (!editParam) {
+      initializedForRef.current = null;
+      setEditing(null);
+      setOriginalEditing(null);
+      return;
+    }
+    if (initializedForRef.current === editParam) return;
+    initializedForRef.current = editParam;
+
+    if (editParam === "new") {
+      const maxOrder = rows.reduce((m, r) => Math.max(m, r.display_order), -1);
+      const fresh = emptyCabin(maxOrder + 1);
+      setEditing(fresh);
+      setOriginalEditing(fresh);
+      setSlugTouched(false);
+      return;
+    }
+
+    const found = rows.find((r) => r.id === editParam);
+    if (found) {
+      setEditing({ ...found });
+      setOriginalEditing({ ...found });
+      setSlugTouched(true);
+    } else {
+      setSearchParams({}, { replace: true });
+    }
+  }, [editParam, loading, rows, setSearchParams]);
 
   const move = async (id: string, dir: "up" | "down") => {
     await moveItem("cabins", rows, id, dir);
@@ -73,16 +134,11 @@ export function CabinsAdmin() {
     reload();
   };
 
-  const openNew = () => {
-    const maxOrder = rows.reduce((m, r) => Math.max(m, r.display_order), -1);
-    setEditing(emptyCabin(maxOrder + 1));
-    setIsNew(true);
-  };
+  const openNew = () => setSearchParams({ edit: "new" });
 
-  const openEdit = (row: CabinRow) => {
-    setEditing({ ...row });
-    setIsNew(false);
-  };
+  const openEdit = (row: CabinRow) => setSearchParams({ edit: row.id });
+
+  const closeEditing = () => setSearchParams({});
 
   const handleSave = async () => {
     if (!editing) return;
@@ -93,7 +149,7 @@ export function CabinsAdmin() {
       alert(`Error al guardar: ${err}`);
       return;
     }
-    setEditing(null);
+    closeEditing();
     reload();
   };
 
@@ -117,6 +173,36 @@ export function CabinsAdmin() {
       setEditing({ ...cabin, section_titles: { ...cabin.section_titles, [key]: v } });
     const setVisible = (key: string, v: boolean) =>
       setEditing({ ...cabin, section_visibility: { ...cabin.section_visibility, [key]: v } });
+    const hasFieldErrors =
+      !isValidUrl(cabin.ics_url ?? "") || !isValidUrl(cabin.maps_url ?? "");
+    const addRoom = () => {
+      const rooms = cabin.bedroom_details ?? [];
+      setEditing({
+        ...cabin,
+        bedroom_details: [
+          ...rooms,
+          { id: crypto.randomUUID(), title: `Habitación ${rooms.length + 1}`, beds: "", images: [], order: rooms.length, active: true },
+        ],
+      });
+    };
+    const removeRoom = (i: number) =>
+      setEditing({ ...cabin, bedroom_details: (cabin.bedroom_details ?? []).filter((_, idx) => idx !== i) });
+    const patchRoom = (i: number, patch: Partial<CabinRow["bedroom_details"][number]>) => {
+      const next = [...(cabin.bedroom_details ?? [])];
+      next[i] = { ...next[i], ...patch };
+      setEditing({ ...cabin, bedroom_details: next });
+    };
+    const handleUploadRoomImage = async (i: number, file: File) => {
+      setUploadingRoomIndex(i);
+      const { url, error } = await uploadImage(file, "habitaciones");
+      if (url) {
+        const room = (cabin.bedroom_details ?? [])[i];
+        patchRoom(i, { images: [...(room?.images ?? []), url] });
+      } else if (error) {
+        alert(`Error al subir imagen: ${error}`);
+      }
+      setUploadingRoomIndex(null);
+    };
 
     return (
       <div className="max-w-2xl">
@@ -124,7 +210,7 @@ export function CabinsAdmin() {
           <h1 className="min-w-0 break-words text-xl font-bold text-foreground">
             {isNew ? "Nueva cabaña" : `Editar: ${cabin.name || "(sin nombre)"}`}
           </h1>
-          <Button variant="ghost" onClick={() => setEditing(null)} className="shrink-0">
+          <Button variant="ghost" onClick={closeEditing} className="shrink-0">
             Cancelar
           </Button>
         </div>
@@ -143,9 +229,28 @@ export function CabinsAdmin() {
             onVisibleChange={(v) => setVisible("about", v)}
           />
 
+          <RatingIndicator serviceType="cabin" serviceId={cabin.id} />
+
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <Field label="Nombre" value={cabin.name} onChange={(v) => setEditing({ ...cabin, name: v })} />
-            <Field label="Slug (url)" value={cabin.slug ?? ""} onChange={(v) => setEditing({ ...cabin, slug: v })} />
+            <Field
+              label="Nombre"
+              value={cabin.name}
+              onChange={(v) =>
+                setEditing({
+                  ...cabin,
+                  name: v,
+                  slug: slugTouched ? cabin.slug : slugify(v),
+                })
+              }
+            />
+            <Field
+              label="Slug (url)"
+              value={cabin.slug ?? ""}
+              onChange={(v) => {
+                setSlugTouched(v.trim().length > 0);
+                setEditing({ ...cabin, slug: v });
+              }}
+            />
           </div>
 
           <Field
@@ -162,7 +267,7 @@ export function CabinsAdmin() {
             rows={5}
           />
 
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             <Field
               label="Precio por noche (COP)"
               type="number"
@@ -170,9 +275,16 @@ export function CabinsAdmin() {
               onChange={(v) => setEditing({ ...cabin, price_per_night: Number(v) || 0 })}
             />
             <Field
-              label="Rango de precio (texto)"
-              value={cabin.price_range ?? ""}
-              onChange={(v) => setEditing({ ...cabin, price_range: v })}
+              label="Precio mínimo (COP)"
+              type="number"
+              value={String(cabin.price_min ?? 0)}
+              onChange={(v) => setEditing({ ...cabin, price_min: Number(v) || 0 })}
+            />
+            <Field
+              label="Precio máximo (COP)"
+              type="number"
+              value={String(cabin.price_max ?? 0)}
+              onChange={(v) => setEditing({ ...cabin, price_max: Number(v) || 0 })}
             />
           </div>
 
@@ -201,11 +313,13 @@ export function CabinsAdmin() {
 
           <Field
             label="Link ICS de Google Calendar (disponibilidad en tiempo real)"
+            type="url"
             value={cabin.ics_url ?? ""}
             onChange={(v) => setEditing({ ...cabin, ics_url: v })}
           />
           <Field
             label="Link de Google Maps (opcional)"
+            type="url"
             value={cabin.maps_url ?? ""}
             onChange={(v) => setEditing({ ...cabin, maps_url: v })}
           />
@@ -244,6 +358,93 @@ export function CabinsAdmin() {
             />
             Publicada (visible en el sitio)
           </label>
+
+          <div className="border-t border-border pt-4">
+            <p className="text-lg font-bold text-foreground">¿Dónde vas a dormir?</p>
+            <p className="mt-0.5 text-xs text-muted-foreground">
+              Una tarjeta por habitación — arrástralas para cambiar el orden.
+            </p>
+            <div className="mt-3 space-y-3">
+              {(cabin.bedroom_details ?? []).map((room, i) => (
+                <div
+                  key={room.id}
+                  {...roomsDrag.dropTargetProps(i)}
+                  className={cn(
+                    "rounded-lg border border-border p-3 transition-opacity",
+                    roomsDrag.isDragging(i) && "opacity-40",
+                    roomsDrag.isOver(i) && "ring-2 ring-teal-500"
+                  )}
+                >
+                  <div className="flex items-center gap-2">
+                    <span
+                      {...roomsDrag.handleProps(i)}
+                      className="flex h-8 w-8 shrink-0 cursor-grab items-center justify-center text-muted-foreground active:cursor-grabbing"
+                    >
+                      <GripVertical className="h-4 w-4" />
+                    </span>
+                    <input
+                      value={room.title}
+                      onChange={(e) => patchRoom(i, { title: e.target.value })}
+                      placeholder="Título (ej. Habitación 01)"
+                      className="min-w-0 flex-1 rounded-md border border-input px-2 py-1.5 text-sm font-medium outline-none focus:ring-2 focus:ring-ring"
+                    />
+                    <label className="flex shrink-0 items-center gap-1.5 text-xs text-muted-foreground">
+                      <input
+                        type="checkbox"
+                        checked={room.active}
+                        onChange={(e) => patchRoom(i, { active: e.target.checked })}
+                      />
+                      Activa
+                    </label>
+                    <button
+                      type="button"
+                      onClick={() => removeRoom(i)}
+                      className="-m-2 shrink-0 rounded-md p-2 text-muted-foreground hover:text-red-600"
+                      aria-label="Eliminar habitación"
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
+                  </div>
+
+                  <input
+                    value={room.beds}
+                    onChange={(e) => patchRoom(i, { beds: e.target.value })}
+                    placeholder="Distribución de camas (ej. 1 cama doble)"
+                    className="mt-2 w-full rounded-md border border-input px-2 py-1.5 text-sm outline-none focus:ring-2 focus:ring-ring"
+                  />
+
+                  <div className="mt-3">
+                    <ImageReorderList
+                      images={room.images ?? []}
+                      onChange={(v) => patchRoom(i, { images: v })}
+                    />
+                    <input
+                      ref={(el) => {
+                        roomFileRefs.current[i] = el;
+                      }}
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      onChange={(e) => e.target.files?.[0] && handleUploadRoomImage(i, e.target.files[0])}
+                    />
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      className="mt-2"
+                      disabled={uploadingRoomIndex === i}
+                      onClick={() => roomFileRefs.current[i]?.click()}
+                    >
+                      {uploadingRoomIndex === i ? "Subiendo…" : "Subir foto"}
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <Button type="button" variant="outline" size="sm" className="mt-3" onClick={addRoom}>
+              <Plus className="h-4 w-4" /> Agregar habitación
+            </Button>
+          </div>
 
           <SectionHeading
             defaultLabel="Puntos destacados"
@@ -296,7 +497,12 @@ export function CabinsAdmin() {
             onVisibleChange={(v) => setVisible("location", v)}
           />
 
-          <Button onClick={handleSave} disabled={saving} className="w-full">
+          {hasFieldErrors && (
+            <p className="text-xs text-red-600">
+              Corrige los campos marcados en rojo antes de guardar.
+            </p>
+          )}
+          <Button onClick={handleSave} disabled={saving || hasFieldErrors} className="w-full">
             {saving ? "Guardando…" : "Guardar cabaña"}
           </Button>
         </div>
@@ -347,43 +553,6 @@ export function CabinsAdmin() {
           </div>
         ))}
       </div>
-    </div>
-  );
-}
-
-function Field({
-  label,
-  value,
-  onChange,
-  textarea,
-  rows = 2,
-  type = "text",
-}: {
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  textarea?: boolean;
-  rows?: number;
-  type?: string;
-}) {
-  return (
-    <div>
-      <label className="text-xs font-medium text-muted-foreground">{label}</label>
-      {textarea ? (
-        <textarea
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          rows={rows}
-          className="mt-1 w-full rounded-md border border-input px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
-        />
-      ) : (
-        <input
-          type={type}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          className="mt-1 w-full rounded-md border border-input px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
-        />
-      )}
     </div>
   );
 }

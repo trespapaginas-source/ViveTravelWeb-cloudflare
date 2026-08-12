@@ -9,16 +9,7 @@ import {
 } from "../lib/admin-data";
 import { ReorderButtons } from "../components/ReorderButtons";
 import { Button } from "@/components/ui/button";
-
-function slugify(text: string): string {
-  return text
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
+import { slugify } from "../lib/slugify";
 
 /**
  * Controla el orden y la visibilidad de las pestañas del buscador del hero

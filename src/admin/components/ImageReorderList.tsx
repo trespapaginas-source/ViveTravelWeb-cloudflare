@@ -2,7 +2,7 @@ import { X, GripVertical } from "lucide-react";
 import { useDragReorder } from "../lib/useDragReorder";
 import { cn } from "@/lib/utils";
 
-/** Lista de imágenes ya subidas — arrástralas para cambiar su posición. */
+/** Grid de imágenes ya subidas — arrástralas para cambiar su posición. */
 export function ImageReorderList({
   images,
   onChange,
@@ -15,35 +15,39 @@ export function ImageReorderList({
   if (images.length === 0) return null;
 
   return (
-    <div className="mt-1 divide-y divide-border rounded-md border border-border">
+    <div className="mt-1 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
       {images.map((url, i) => (
         <div
           key={i}
           {...dropTargetProps(i)}
           className={cn(
-            "flex items-center gap-2 bg-white px-2 py-1.5 transition-opacity",
+            "group relative overflow-hidden rounded-lg border border-border bg-white transition-opacity",
             isDragging(i) && "opacity-40",
-            isOver(i) && "border-t-2 border-t-teal-500"
+            isOver(i) && "ring-2 ring-teal-500"
           )}
         >
+          <img src={url} alt="" className="aspect-square w-full object-cover" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
           <span
             {...handleProps(i)}
-            className="-m-2 flex shrink-0 cursor-grab items-center justify-center p-2 text-muted-foreground active:cursor-grabbing"
+            className="pointer-events-auto absolute left-1.5 top-1.5 flex h-7 w-7 cursor-grab items-center justify-center rounded-md bg-black/50 text-white active:cursor-grabbing"
           >
             <GripVertical className="h-4 w-4" />
           </span>
-          <img src={url} alt="" className="h-14 w-20 shrink-0 rounded object-cover" />
-          <span className="min-w-0 flex-1 truncate text-xs text-muted-foreground">
-            {i === 0 ? "Portada (posición 1)" : `Posición ${i + 1}`}
-          </span>
+
           <button
             type="button"
             onClick={() => onChange(images.filter((_, idx) => idx !== i))}
-            className="-m-2 shrink-0 rounded-md p-2 text-muted-foreground hover:text-red-600"
+            className="pointer-events-auto absolute right-1.5 top-1.5 flex h-7 w-7 items-center justify-center rounded-md bg-black/50 text-white hover:bg-red-600"
             aria-label="Eliminar imagen"
           >
             <X className="h-4 w-4" />
           </button>
+
+          <span className="pointer-events-none absolute inset-x-0 bottom-0 truncate bg-black/50 px-2 py-1 text-[11px] font-medium text-white">
+            {i === 0 ? "Portada" : `Posición ${i + 1}`}
+          </span>
         </div>
       ))}
     </div>
