@@ -18,7 +18,7 @@ export function ReorderButtons({
         onClick={onUp}
         disabled={disabledUp}
         aria-label="Subir"
-        className="flex h-5 w-6 items-center justify-center text-neutral-500 hover:text-neutral-900 disabled:opacity-25"
+        className="flex h-9 w-9 items-center justify-center text-neutral-500 hover:text-neutral-900 disabled:opacity-25"
       >
         <ChevronUp className="h-4 w-4" />
       </button>
@@ -27,7 +27,7 @@ export function ReorderButtons({
         onClick={onDown}
         disabled={disabledDown}
         aria-label="Bajar"
-        className="flex h-5 w-6 items-center justify-center text-neutral-500 hover:text-neutral-900 disabled:opacity-25"
+        className="flex h-9 w-9 items-center justify-center text-neutral-500 hover:text-neutral-900 disabled:opacity-25"
       >
         <ChevronDown className="h-4 w-4" />
       </button>

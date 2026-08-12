@@ -7,9 +7,14 @@ import { useSiteContent } from "@/lib/use-site-content";
  * propio navegador hace el reemplazo en cuanto arranca la reproducción, sin
  * necesitar una segunda capa <img> con transición de opacidad manejada por JS.
  */
+const DEFAULT_TITLE = "Tu próximo viaje ya tiene fecha confirmada";
+const DEFAULT_SUBTITLE =
+  "Viaja en grupo con itinerario 100% organizado, guías acompañantes y fechas de salida garantizadas por todo Colombia.";
+
 export function ScheduledDeparturesBanner() {
   const { content } = useSiteContent();
-  void content; // textos hardcodeados como en el original
+  const title = content.scheduledDeparturesBanner?.title || DEFAULT_TITLE;
+  const subtitle = content.scheduledDeparturesBanner?.subtitle || DEFAULT_SUBTITLE;
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const tryPlay = () => {
@@ -63,14 +68,13 @@ export function ScheduledDeparturesBanner() {
           className="text-2xl font-extrabold leading-tight drop-shadow-lg sm:text-3xl lg:text-4xl"
           style={{ textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}
         >
-          Tu próximo viaje ya tiene fecha confirmada
+          {title}
         </h2>
         <p
           className="mx-auto mt-3 max-w-xl text-sm text-white/90 drop-shadow sm:text-base"
           style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
         >
-          Viaja en grupo con itinerario 100% organizado, guías acompañantes y
-          fechas de salida garantizadas por todo Colombia.
+          {subtitle}
         </p>
       </div>
     </section>

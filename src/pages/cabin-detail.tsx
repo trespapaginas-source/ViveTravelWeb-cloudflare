@@ -157,6 +157,11 @@ export function CabinDetailPage() {
     .filter((r) => r.active !== false)
     .sort((a, b) => a.order - b.order);
 
+  // Títulos/visibilidad de secciones personalizables desde el admin (CMS).
+  const sectionTitle = (key: string, fallback: string) =>
+    cabin.sectionTitles?.[key] || fallback;
+  const sectionVisible = (key: string) => cabin.sectionVisibility?.[key] ?? true;
+
   return (
     <div className="mx-auto max-w-7xl px-4 pb-32 pt-6 sm:px-6 lg:px-8 lg:pb-12">
       {/* Volver */}
@@ -231,14 +236,16 @@ export function CabinDetailPage() {
           </div>
 
           {/* Descripción */}
-          <section className="mt-6">
-            <h2 className="text-lg font-bold text-foreground">
-              Acerca de esta cabaña
-            </h2>
-            <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
-              {cabin.fullDescription}
-            </p>
-          </section>
+          {sectionVisible("about") && (
+            <section className="mt-6">
+              <h2 className="text-lg font-bold text-foreground">
+                {sectionTitle("about", "Acerca de esta cabaña")}
+              </h2>
+              <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
+                {cabin.fullDescription}
+              </p>
+            </section>
+          )}
 
           {/* Habitaciones */}
           {rooms.length > 0 && (
@@ -290,9 +297,11 @@ export function CabinDetailPage() {
           </section>
 
           {/* Puntos destacados */}
-          {cabin.highlights.length > 0 && (
+          {cabin.highlights.length > 0 && sectionVisible("highlights") && (
             <section className="mt-8">
-              <h2 className="text-lg font-bold text-foreground">Puntos destacados</h2>
+              <h2 className="text-lg font-bold text-foreground">
+                {sectionTitle("highlights", "Puntos destacados")}
+              </h2>
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
                 {cabin.highlights.map((h, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm">
@@ -305,9 +314,11 @@ export function CabinDetailPage() {
           )}
 
           {/* Comodidades */}
-          {cabin.amenities.length > 0 && (
+          {cabin.amenities.length > 0 && sectionVisible("amenities") && (
             <section className="mt-8">
-              <h2 className="text-lg font-bold text-foreground">Comodidades</h2>
+              <h2 className="text-lg font-bold text-foreground">
+                {sectionTitle("amenities", "Comodidades")}
+              </h2>
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
                 {cabin.amenities.map((a, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm">
@@ -320,10 +331,11 @@ export function CabinDetailPage() {
           )}
 
           {/* Reglas */}
-          {cabin.rules.length > 0 && (
+          {cabin.rules.length > 0 && sectionVisible("rules") && (
             <section className="mt-8">
               <h2 className="flex items-center gap-2 text-lg font-bold text-foreground">
-                <Shield className="h-5 w-5 text-neutral-900" /> Reglas de la cabaña
+                <Shield className="h-5 w-5 text-neutral-900" />{" "}
+                {sectionTitle("rules", "Reglas de la cabaña")}
               </h2>
               <div className="mt-3 space-y-2">
                 {cabin.rules.map((r, i) => (
@@ -340,30 +352,34 @@ export function CabinDetailPage() {
           )}
 
           {/* Ubicación */}
-          <section className="mt-8">
-            <h2 className="text-lg font-bold text-foreground">A dónde irás</h2>
-            <p className="mt-1 text-sm text-muted-foreground">{cabin.location}</p>
-            <div className="mt-3 overflow-hidden rounded-2xl border border-border">
-              <iframe
-                title={`Mapa de ${cabin.name}`}
-                src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                  cabin.location
-                )}&z=14&output=embed`}
-                className="h-[280px] w-full"
-                loading="lazy"
-              />
-            </div>
-            {cabin.mapsUrl && (
-              <a
-                href={cabin.mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 inline-block text-xs font-medium text-neutral-900 hover:underline"
-              >
-                Ver ubicación en Google Maps
-              </a>
-            )}
-          </section>
+          {sectionVisible("location") && (
+            <section className="mt-8">
+              <h2 className="text-lg font-bold text-foreground">
+                {sectionTitle("location", "A dónde irás")}
+              </h2>
+              <p className="mt-1 text-sm text-muted-foreground">{cabin.location}</p>
+              <div className="mt-3 overflow-hidden rounded-2xl border border-border">
+                <iframe
+                  title={`Mapa de ${cabin.name}`}
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(
+                    cabin.location
+                  )}&z=14&output=embed`}
+                  className="h-[280px] w-full"
+                  loading="lazy"
+                />
+              </div>
+              {cabin.mapsUrl && (
+                <a
+                  href={cabin.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-block text-xs font-medium text-neutral-900 hover:underline"
+                >
+                  Ver ubicación en Google Maps
+                </a>
+              )}
+            </section>
+          )}
 
           {/* Reseñas reales (D1 + Turnstile) */}
           <section id="resenas" className="mt-8 scroll-mt-24">

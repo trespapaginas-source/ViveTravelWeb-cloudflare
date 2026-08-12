@@ -16,7 +16,13 @@ const FALLBACK_IMG =
  * - Las flechas solo se muestran si hay más de 3 lugares (como el gemelo).
  * - Las imágenes NO abren lightbox: clic no hace nada (solo decorativas).
  */
-export function LugaresCarousel({ lugares }: { lugares: Lugar[] }) {
+export function LugaresCarousel({
+  lugares,
+  title = "Lugares a conocer",
+}: {
+  lugares: Lugar[];
+  title?: string;
+}) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(false);
@@ -60,7 +66,7 @@ export function LugaresCarousel({ lugares }: { lugares: Lugar[] }) {
   return (
     <section id="lugares" className="mt-8 scroll-mt-24">
       <h2 className="text-lg font-bold tracking-tight text-foreground sm:text-xl">
-        Lugares a conocer
+        {title}
       </h2>
 
       <div className="relative mt-4">

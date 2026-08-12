@@ -74,6 +74,7 @@ export interface PlanRow {
   display_order: number;
   featured_order: number | null;
   servicios_incluidos: { id: string; label: string; icon: string }[];
+  section_titles: Record<string, string>;
 }
 
 export async function listPlans(): Promise<PlanRow[]> {
@@ -114,6 +115,8 @@ export interface CabinRow {
   display_order: number;
   ics_url: string | null;
   maps_url: string | null;
+  section_titles: Record<string, string>;
+  section_visibility: Record<string, boolean>;
 }
 
 export async function listCabins(): Promise<CabinRow[]> {
@@ -158,6 +161,23 @@ export async function updateServiceCategory(
   patch: Partial<ServiceCategoryRow>
 ): Promise<string | null> {
   const { error } = await supabase.from("service_categories").update(patch).eq("id", id);
+  return error?.message ?? null;
+}
+
+export async function insertServiceCategory(
+  row: Omit<ServiceCategoryRow, "display_order"> & { display_order?: number }
+): Promise<string | null> {
+  const { data: existing, error: readError } = await supabase
+    .from("service_categories")
+    .select("display_order")
+    .order("display_order", { ascending: false })
+    .limit(1);
+  if (readError) return readError.message;
+  const nextOrder = row.display_order ?? ((existing?.[0]?.display_order ?? -1) + 1);
+
+  const { error } = await supabase
+    .from("service_categories")
+    .insert({ ...row, display_order: nextOrder });
   return error?.message ?? null;
 }
 

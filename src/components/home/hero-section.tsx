@@ -144,15 +144,13 @@ export function HeroSection() {
   // Ref al input de "Salida" para abrir su selector automáticamente en
   // cuanto el usuario elige la fecha de "Entrada" (ahorra un clic).
   const salidaInputRef = useRef<HTMLInputElement>(null);
-  const [tabParams, setTabParams] = useState<Record<SearchTab, TabParams>>({
-    internacionales: makeInitial("internacionales"),
-    nacionales: makeInitial("nacionales"),
-    circuitos: makeInitial("circuitos"),
-    pasadias: makeInitial("pasadias"),
-    grupales: makeInitial("grupales"),
-    alojamientos: makeInitial("alojamientos"),
-    tours: makeInitial("tours"),
-  });
+  // Se construye a partir de SEARCH_TABS (CMS) en vez de un objeto literal
+  // con las 7 pestañas originales — si se agrega una categoría nueva desde
+  // el admin, su entrada en tabParams se genera sola y el buscador no se
+  // rompe al seleccionarla.
+  const [tabParams, setTabParams] = useState<Record<string, TabParams>>(() =>
+    Object.fromEntries(SEARCH_TABS.map((tab) => [tab.id, makeInitial(tab.id)]))
+  );
 
   // Autodetección de la ciudad de origen por IP (no bloqueante). Si el
   // usuario ya escribió manualmente, no se sobreescribe.

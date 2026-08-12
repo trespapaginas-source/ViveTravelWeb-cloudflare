@@ -9,6 +9,8 @@ import {
   type CabinRow,
 } from "../lib/admin-data";
 import { ReorderButtons } from "../components/ReorderButtons";
+import { SectionHeading } from "../components/SectionTitlesEditor";
+import { ImageReorderList } from "../components/ImageReorderList";
 import { Button } from "@/components/ui/button";
 
 function emptyCabin(order: number): CabinRow {
@@ -32,6 +34,8 @@ function emptyCabin(order: number): CabinRow {
     display_order: order,
     ics_url: "",
     maps_url: "",
+    section_titles: {},
+    section_visibility: {},
   };
 }
 
@@ -108,122 +112,112 @@ export function CabinsAdmin() {
   if (loading) return <p className="text-sm text-muted-foreground">Cargando…</p>;
 
   if (editing) {
+    const cabin = editing;
+    const setTitle = (key: string, v: string) =>
+      setEditing({ ...cabin, section_titles: { ...cabin.section_titles, [key]: v } });
+    const setVisible = (key: string, v: boolean) =>
+      setEditing({ ...cabin, section_visibility: { ...cabin.section_visibility, [key]: v } });
+
     return (
       <div className="max-w-2xl">
-        <div className="flex items-center justify-between">
-          <h1 className="text-xl font-bold text-foreground">
-            {isNew ? "Nueva cabaña" : `Editar: ${editing.name || "(sin nombre)"}`}
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h1 className="min-w-0 break-words text-xl font-bold text-foreground">
+            {isNew ? "Nueva cabaña" : `Editar: ${cabin.name || "(sin nombre)"}`}
           </h1>
-          <Button variant="ghost" onClick={() => setEditing(null)}>
+          <Button variant="ghost" onClick={() => setEditing(null)} className="shrink-0">
             Cancelar
           </Button>
         </div>
+        <p className="mt-1 text-xs text-muted-foreground">
+          Cada título en negrita es el nombre real de esa sección en la página de la cabaña —
+          cámbialo aquí mismo. Los campos debajo son lo que se muestra en ella.
+        </p>
 
         <div className="mt-4 space-y-4 rounded-lg border border-border bg-white p-4">
-          <div className="grid grid-cols-2 gap-3">
-            <Field label="Nombre" value={editing.name} onChange={(v) => setEditing({ ...editing, name: v })} />
-            <Field label="Slug (url)" value={editing.slug ?? ""} onChange={(v) => setEditing({ ...editing, slug: v })} />
+          <SectionHeading
+            first
+            defaultLabel="Acerca de esta cabaña"
+            value={cabin.section_titles?.about ?? ""}
+            onChange={(v) => setTitle("about", v)}
+            visible={cabin.section_visibility?.about ?? true}
+            onVisibleChange={(v) => setVisible("about", v)}
+          />
+
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <Field label="Nombre" value={cabin.name} onChange={(v) => setEditing({ ...cabin, name: v })} />
+            <Field label="Slug (url)" value={cabin.slug ?? ""} onChange={(v) => setEditing({ ...cabin, slug: v })} />
           </div>
 
           <Field
             label="Descripción corta"
-            value={editing.short_description ?? ""}
-            onChange={(v) => setEditing({ ...editing, short_description: v })}
+            value={cabin.short_description ?? ""}
+            onChange={(v) => setEditing({ ...cabin, short_description: v })}
             textarea
           />
           <Field
-            label="Descripción completa"
-            value={editing.full_description ?? ""}
-            onChange={(v) => setEditing({ ...editing, full_description: v })}
+            label="Descripción completa (texto de esta sección)"
+            value={cabin.full_description ?? ""}
+            onChange={(v) => setEditing({ ...cabin, full_description: v })}
             textarea
             rows={5}
           />
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <Field
               label="Precio por noche (COP)"
               type="number"
-              value={String(editing.price_per_night ?? 0)}
-              onChange={(v) => setEditing({ ...editing, price_per_night: Number(v) || 0 })}
+              value={String(cabin.price_per_night ?? 0)}
+              onChange={(v) => setEditing({ ...cabin, price_per_night: Number(v) || 0 })}
             />
             <Field
               label="Rango de precio (texto)"
-              value={editing.price_range ?? ""}
-              onChange={(v) => setEditing({ ...editing, price_range: v })}
+              value={cabin.price_range ?? ""}
+              onChange={(v) => setEditing({ ...cabin, price_range: v })}
             />
           </div>
 
-          <Field label="Ubicación" value={editing.location ?? ""} onChange={(v) => setEditing({ ...editing, location: v })} />
+          <Field label="Ubicación" value={cabin.location ?? ""} onChange={(v) => setEditing({ ...cabin, location: v })} />
 
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             <Field
               label="Huéspedes (capacidad)"
               type="number"
-              value={String(editing.capacity ?? 0)}
-              onChange={(v) => setEditing({ ...editing, capacity: Number(v) || 0 })}
+              value={String(cabin.capacity ?? 0)}
+              onChange={(v) => setEditing({ ...cabin, capacity: Number(v) || 0 })}
             />
             <Field
               label="Habitaciones"
               type="number"
-              value={String(editing.bedrooms ?? 0)}
-              onChange={(v) => setEditing({ ...editing, bedrooms: Number(v) || 0 })}
+              value={String(cabin.bedrooms ?? 0)}
+              onChange={(v) => setEditing({ ...cabin, bedrooms: Number(v) || 0 })}
             />
             <Field
               label="Baños"
               type="number"
-              value={String(editing.bathrooms ?? 0)}
-              onChange={(v) => setEditing({ ...editing, bathrooms: Number(v) || 0 })}
+              value={String(cabin.bathrooms ?? 0)}
+              onChange={(v) => setEditing({ ...cabin, bathrooms: Number(v) || 0 })}
             />
           </div>
 
           <Field
-            label="Comodidades (una línea por ítem)"
-            value={lines(editing.amenities)}
-            onChange={(v) => setEditing({ ...editing, amenities: toLines(v) })}
-            textarea
-          />
-          <Field
-            label="Puntos destacados (una línea por ítem)"
-            value={lines(editing.highlights)}
-            onChange={(v) => setEditing({ ...editing, highlights: toLines(v) })}
-            textarea
-          />
-          <Field
-            label="Reglas (una línea por ítem)"
-            value={lines(editing.rules)}
-            onChange={(v) => setEditing({ ...editing, rules: toLines(v) })}
-            textarea
-          />
-
-          <Field
             label="Link ICS de Google Calendar (disponibilidad en tiempo real)"
-            value={editing.ics_url ?? ""}
-            onChange={(v) => setEditing({ ...editing, ics_url: v })}
+            value={cabin.ics_url ?? ""}
+            onChange={(v) => setEditing({ ...cabin, ics_url: v })}
           />
           <Field
             label="Link de Google Maps (opcional)"
-            value={editing.maps_url ?? ""}
-            onChange={(v) => setEditing({ ...editing, maps_url: v })}
+            value={cabin.maps_url ?? ""}
+            onChange={(v) => setEditing({ ...cabin, maps_url: v })}
           />
 
           <div>
-            <label className="text-xs font-medium text-muted-foreground">Imágenes</label>
-            <div className="mt-1 flex flex-wrap gap-2">
-              {editing.images.map((url, i) => (
-                <div key={i} className="relative">
-                  <img src={url} alt="" className="h-16 w-24 rounded object-cover" />
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setEditing({ ...editing, images: editing.images.filter((_, idx) => idx !== i) })
-                    }
-                    className="absolute -right-1 -top-1 rounded-full bg-white p-0.5 text-red-600 shadow"
-                  >
-                    <X className="h-3 w-3" />
-                  </button>
-                </div>
-              ))}
-            </div>
+            <label className="text-xs font-medium text-muted-foreground">
+              Imágenes (arrástralas para cambiar el orden en que aparecen)
+            </label>
+            <ImageReorderList
+              images={cabin.images}
+              onChange={(v) => setEditing({ ...cabin, images: v })}
+            />
             <input
               ref={fileRef}
               type="file"
@@ -242,14 +236,65 @@ export function CabinsAdmin() {
             </Button>
           </div>
 
-          <label className="flex items-center gap-1.5 border-t border-border pt-3 text-sm text-foreground">
+          <label className="flex items-center gap-1.5 text-sm text-foreground">
             <input
               type="checkbox"
-              checked={editing.published}
-              onChange={(e) => setEditing({ ...editing, published: e.target.checked })}
+              checked={cabin.published}
+              onChange={(e) => setEditing({ ...cabin, published: e.target.checked })}
             />
             Publicada (visible en el sitio)
           </label>
+
+          <SectionHeading
+            defaultLabel="Puntos destacados"
+            value={cabin.section_titles?.highlights ?? ""}
+            onChange={(v) => setTitle("highlights", v)}
+            visible={cabin.section_visibility?.highlights ?? true}
+            onVisibleChange={(v) => setVisible("highlights", v)}
+          />
+          <Field
+            label="Puntos destacados (una línea por ítem)"
+            value={lines(cabin.highlights)}
+            onChange={(v) => setEditing({ ...cabin, highlights: toLines(v) })}
+            textarea
+          />
+
+          <SectionHeading
+            defaultLabel="Comodidades"
+            value={cabin.section_titles?.amenities ?? ""}
+            onChange={(v) => setTitle("amenities", v)}
+            visible={cabin.section_visibility?.amenities ?? true}
+            onVisibleChange={(v) => setVisible("amenities", v)}
+          />
+          <Field
+            label="Comodidades (una línea por ítem)"
+            value={lines(cabin.amenities)}
+            onChange={(v) => setEditing({ ...cabin, amenities: toLines(v) })}
+            textarea
+          />
+
+          <SectionHeading
+            defaultLabel="Reglas de la cabaña"
+            value={cabin.section_titles?.rules ?? ""}
+            onChange={(v) => setTitle("rules", v)}
+            visible={cabin.section_visibility?.rules ?? true}
+            onVisibleChange={(v) => setVisible("rules", v)}
+          />
+          <Field
+            label="Reglas (una línea por ítem)"
+            value={lines(cabin.rules)}
+            onChange={(v) => setEditing({ ...cabin, rules: toLines(v) })}
+            textarea
+          />
+
+          <SectionHeading
+            defaultLabel="A dónde irás"
+            hint='Usa el campo "Ubicación" de la sección "Acerca de esta cabaña" de arriba.'
+            value={cabin.section_titles?.location ?? ""}
+            onChange={(v) => setTitle("location", v)}
+            visible={cabin.section_visibility?.location ?? true}
+            onVisibleChange={(v) => setVisible("location", v)}
+          />
 
           <Button onClick={handleSave} disabled={saving} className="w-full">
             {saving ? "Guardando…" : "Guardar cabaña"}
@@ -261,7 +306,7 @@ export function CabinsAdmin() {
 
   return (
     <div>
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <h1 className="text-xl font-bold text-foreground">Cabañas ({rows.length})</h1>
         <Button onClick={openNew}>
           <Plus className="h-4 w-4" /> Nueva cabaña
@@ -270,33 +315,35 @@ export function CabinsAdmin() {
 
       <div className="mt-4 divide-y divide-border rounded-lg border border-border bg-white">
         {rows.map((r, i) => (
-          <div key={r.id} className="flex items-center gap-3 px-4 py-3">
+          <div key={r.id} className="flex flex-wrap items-center gap-x-3 gap-y-2 px-3 py-3 sm:flex-nowrap sm:px-4">
             <ReorderButtons
               onUp={() => move(r.id, "up")}
               onDown={() => move(r.id, "down")}
               disabledUp={i === 0}
               disabledDown={i === rows.length - 1}
             />
-            {r.images[0] && <img src={r.images[0]} alt="" className="h-10 w-14 rounded object-cover" />}
-            <div className="flex-1">
-              <p className="text-sm font-medium text-foreground">{r.name || "(sin nombre)"}</p>
-              <p className="text-xs text-muted-foreground">{r.location}</p>
+            {r.images[0] && <img src={r.images[0]} alt="" className="h-10 w-14 shrink-0 rounded object-cover" />}
+            <div className="min-w-[96px] flex-1">
+              <p className="truncate text-sm font-medium text-foreground">{r.name || "(sin nombre)"}</p>
+              <p className="truncate text-xs text-muted-foreground">{r.location}</p>
             </div>
-            <label className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <input type="checkbox" checked={r.published} onChange={() => togglePublished(r)} />
-              Publicada
-            </label>
-            <Button variant="outline" size="sm" onClick={() => openEdit(r)}>
-              Editar
-            </Button>
-            <button
-              type="button"
-              onClick={() => handleDelete(r)}
-              className="text-muted-foreground hover:text-red-600"
-              aria-label="Eliminar"
-            >
-              <X className="h-4 w-4" />
-            </button>
+            <div className="flex w-full basis-full items-center justify-end gap-3 sm:w-auto sm:basis-auto sm:justify-start">
+              <label className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                <input type="checkbox" checked={r.published} onChange={() => togglePublished(r)} />
+                Publicada
+              </label>
+              <Button variant="outline" size="sm" onClick={() => openEdit(r)}>
+                Editar
+              </Button>
+              <button
+                type="button"
+                onClick={() => handleDelete(r)}
+                className="-m-2 shrink-0 rounded-md p-2 text-muted-foreground hover:text-red-600"
+                aria-label="Eliminar"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
           </div>
         ))}
       </div>

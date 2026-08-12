@@ -375,6 +375,22 @@
     "ctaText": "Ver Planes",
     "ctaUrl": "#"
   },
+  "ticker": {
+    "items": [
+      "PAQUETES TODO INCLUIDO",
+      "VIAJES 2x1",
+      "VIAJES GRUPALES INCREÍBLES",
+      "ARMA TU COMBO"
+    ]
+  },
+  "scheduledDeparturesBanner": {
+    "title": "Tu próximo viaje ya tiene fecha confirmada",
+    "subtitle": "Viaja en grupo con itinerario 100% organizado, guías acompañantes y fechas de salida garantizadas por todo Colombia."
+  },
+  "scheduledDepartures": {
+    "title": "Salidas Programadas",
+    "subtitle": "Destinos nacionales con calendario de salidas definido. Reserva tu fecha con anticipación."
+  },
   "seo": {
     "metaTitle": "Vive Travel Atlántico",
     "metaDescription": "Tu agencia de viajes en el Caribe colombiano",

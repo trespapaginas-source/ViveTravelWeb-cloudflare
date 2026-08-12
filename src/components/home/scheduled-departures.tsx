@@ -2,11 +2,16 @@ import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Clock, CalendarDays, MapPin } from "lucide-react";
 import { usePlanes } from "@/hooks/use-plans";
+import { useSiteContent } from "@/lib/use-site-content";
 import { ROUTES } from "@/lib/routes";
 import { formatPrice, formatDepartureRange } from "@/lib/utils";
 import { SectionHeader } from "@/components/shared/section-header";
 import { RatingBadge } from "@/components/reviews/rating-badge";
 import { PlanServices } from "@/components/plans/plan-card";
+
+const DEFAULT_TITLE = "Salidas Programadas";
+const DEFAULT_SUBTITLE =
+  "Destinos nacionales con calendario de salidas definido. Reserva tu fecha con anticipación.";
 
 /**
  * ScheduledDepartures — destinos nacionales con salidas programadas fijas
@@ -15,6 +20,7 @@ import { PlanServices } from "@/components/plans/plan-card";
  */
 export function ScheduledDepartures() {
   const { data: allPlans } = usePlanes();
+  const { content } = useSiteContent();
   const navigate = useNavigate();
 
   const departures = useMemo(
@@ -28,8 +34,8 @@ export function ScheduledDepartures() {
     <section id="salidas-programadas" className="border-y border-border bg-zinc-50/60 py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          title="Salidas Programadas"
-          subtitle="Destinos nacionales con calendario de salidas definido. Reserva tu fecha con anticipación."
+          title={content.scheduledDepartures?.title || DEFAULT_TITLE}
+          subtitle={content.scheduledDepartures?.subtitle || DEFAULT_SUBTITLE}
         />
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

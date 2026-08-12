@@ -88,6 +88,7 @@ function mapPlan(r) {
     badge_imagen: r.badge_imagen ?? undefined,
     badge_precio: r.badge_precio ?? undefined,
     servicios_incluidos: r.servicios_incluidos?.length ? r.servicios_incluidos : undefined,
+    sectionTitles: r.section_titles ?? {},
   };
 }
 
@@ -120,6 +121,8 @@ function mapCabin(r) {
     order: r.display_order ?? 0,
     icsUrl: r.ics_url ?? undefined,
     mapsUrl: r.maps_url ?? undefined,
+    sectionTitles: r.section_titles ?? {},
+    sectionVisibility: r.section_visibility ?? {},
   };
 }
 
@@ -199,6 +202,9 @@ async function main() {
       international: sc.international,
       homeConfig: sc.home_config,
       campaign: sc.campaign,
+      ticker: sc.ticker,
+      scheduledDeparturesBanner: sc.scheduled_departures_banner,
+      scheduledDepartures: sc.scheduled_departures,
       seo: sc.seo,
     });
   }

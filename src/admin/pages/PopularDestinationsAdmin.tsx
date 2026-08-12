@@ -75,11 +75,11 @@ export function PopularDestinationsAdmin() {
                       disabledUp={i === 0}
                       disabledDown={i === items.length - 1}
                     />
-                    <span className="flex-1 text-sm text-foreground">{r.name}</span>
+                    <span className="min-w-0 flex-1 truncate text-sm text-foreground">{r.name}</span>
                     <button
                       type="button"
                       onClick={() => handleDelete(r.id)}
-                      className="text-muted-foreground hover:text-red-600"
+                      className="-m-2 shrink-0 rounded-md p-2 text-muted-foreground hover:text-red-600"
                       aria-label="Eliminar"
                     >
                       <X className="h-3.5 w-3.5" />

@@ -141,6 +141,11 @@ export function PlanDetailPage() {
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  // Título personalizable de cada sección desde el admin (CMS) — sin toggle
+  // de visibilidad en planes, solo renombrar.
+  const sectionTitle = (key: string, fallback: string) =>
+    plan.sectionTitles?.[key] || fallback;
+
   return (
     <div className="mx-auto max-w-7xl px-4 pb-32 pt-6 sm:px-6 lg:px-8 lg:pb-12">
       {/* Volver */}
@@ -229,7 +234,9 @@ export function PlanDetailPage() {
 
           {/* Descripción — Acerca de este plan */}
           <section id="general" className="mt-6 scroll-mt-24">
-            <h2 className="text-lg font-bold text-foreground">Acerca de este plan</h2>
+            <h2 className="text-lg font-bold text-foreground">
+              {sectionTitle("about", "Acerca de este plan")}
+            </h2>
             <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
               {plan.fullDescription}
             </p>
@@ -237,12 +244,17 @@ export function PlanDetailPage() {
 
           {/* Lugares a conocer — carrusel (movido aquí, antes de Incluye) */}
           {plan.lugares && plan.lugares.length > 0 && (
-            <LugaresCarousel lugares={plan.lugares} />
+            <LugaresCarousel
+              lugares={plan.lugares}
+              title={sectionTitle("places", "Lugares a conocer")}
+            />
           )}
 
           {/* Incluye / No incluye */}
           <section id="incluye" className="mt-8 scroll-mt-24">
-            <h2 className="text-lg font-bold text-foreground">Qué incluye este plan</h2>
+            <h2 className="text-lg font-bold text-foreground">
+              {sectionTitle("includes", "Qué incluye este plan")}
+            </h2>
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
               {plan.includes.map((item, i) => (
                 <div key={i} className="flex items-start gap-2 text-sm">
@@ -272,7 +284,7 @@ export function PlanDetailPage() {
           {plan.highlights.length > 0 && (
             <section className="mt-8">
               <h2 className="text-lg font-bold text-foreground">
-                Actividades incluidas
+                {sectionTitle("highlights", "Actividades incluidas")}
               </h2>
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
                 {plan.highlights.map((h, i) => (
@@ -288,7 +300,9 @@ export function PlanDetailPage() {
           {/* Itinerario — acordeón interactivo */}
           {plan.itinerary && plan.itinerary.length > 0 && (
             <section id="itinerario" className="mt-8 scroll-mt-24">
-              <h2 className="text-lg font-bold text-foreground">Itinerario día a día</h2>
+              <h2 className="text-lg font-bold text-foreground">
+                {sectionTitle("itinerary", "Itinerario día a día")}
+              </h2>
               <Accordion
                 type="single"
                 collapsible
@@ -319,7 +333,7 @@ export function PlanDetailPage() {
             (plan.notes && plan.notes.length > 0) ? (
             <section id="condiciones" className="mt-8 scroll-mt-24">
               <h2 className="text-lg font-bold text-foreground">
-                Información importante
+                {sectionTitle("info", "Información importante")}
               </h2>
               <div className="mt-3 space-y-2">
                 {!isFixedDeparture && plan.schedule && (
@@ -353,7 +367,9 @@ export function PlanDetailPage() {
           {/* Reseñas reales (D1 + Turnstile) */}
           <section id="resenas" className="mt-8 scroll-mt-24">
             <div className="mb-4 flex items-baseline justify-between">
-              <h2 className="text-lg font-bold text-foreground">Reseñas de viajeros</h2>
+              <h2 className="text-lg font-bold text-foreground">
+                {sectionTitle("reviews", "Reseñas de viajeros")}
+              </h2>
               {!reviewsLoading && count > 0 && (
                 <span className="text-sm text-muted-foreground">
                   {avg.toFixed(1)} de 5 · {count} reseña{count !== 1 ? "s" : ""}

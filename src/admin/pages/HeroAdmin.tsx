@@ -117,14 +117,14 @@ export function HeroAdmin() {
       </p>
       <div className="mt-2 divide-y divide-border rounded-lg border border-border bg-white">
         {images.map((img, i) => (
-          <div key={img.id} className="flex items-center gap-3 px-4 py-3">
+          <div key={img.id} className="flex flex-wrap items-center gap-x-3 gap-y-2 px-3 py-3 sm:flex-nowrap sm:px-4">
             <ReorderButtons
               onUp={() => move(img.id, "up")}
               onDown={() => move(img.id, "down")}
               disabledUp={i === 0}
               disabledDown={i === images.length - 1}
             />
-            <img src={img.url} alt="" className="h-12 w-20 rounded object-cover" />
+            <img src={img.url} alt="" className="h-12 w-20 shrink-0 rounded object-cover" />
             <label className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <input
                 type="checkbox"
@@ -142,7 +142,7 @@ export function HeroAdmin() {
                 deleteHeroImage(img.id);
                 reloadImages();
               }}
-              className="ml-auto text-muted-foreground hover:text-red-600"
+              className="-m-2 ml-auto shrink-0 rounded-md p-2 text-muted-foreground hover:text-red-600"
               aria-label="Eliminar"
             >
               <X className="h-4 w-4" />

@@ -85,3 +85,19 @@ body {
     @apply w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-neutral-900;
   }
 }
+
+/* Panel de administración: los inputs a 16px evitan el auto-zoom de iOS
+   Safari al enfocar un campo en pantallas angostas; en sm:+ (donde el zoom
+   automático no ocurre) vuelven al tamaño de texto normal del panel. */
+.admin-shell input,
+.admin-shell textarea,
+.admin-shell select {
+  font-size: 16px;
+}
+@media (min-width: 640px) {
+  .admin-shell input,
+  .admin-shell textarea,
+  .admin-shell select {
+    font-size: 0.875rem;
+  }
+}

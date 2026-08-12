@@ -94,6 +94,8 @@ export interface TourPlan {
   badge_precio?: string;
   /** Arreglo dinámico de servicios incluidos. Si falta/vacío, no se renderiza. */
   servicios_incluidos?: PlanService[];
+  /** Títulos personalizados de las secciones de la ficha (CMS), por clave de sección. */
+  sectionTitles?: Record<string, string>;
 }
 
 export interface RoomDetail {
@@ -134,6 +136,10 @@ export interface Cabin {
   order: number;
   icsUrl?: string;
   mapsUrl?: string;
+  /** Títulos personalizados de las secciones de la ficha (CMS), por clave de sección. */
+  sectionTitles?: Record<string, string>;
+  /** Visibilidad de secciones ocultables de la ficha (CMS), por clave de sección. */
+  sectionVisibility?: Record<string, boolean>;
 }
 
 export interface Transport {

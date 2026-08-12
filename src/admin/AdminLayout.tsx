@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useAdminAuth, signOutAdmin } from "./lib/use-admin-auth";
@@ -12,13 +13,20 @@ const NAV_ITEMS = [
   { to: "/admin/categorias", label: "Categorías del buscador" },
   { to: "/admin/destinos", label: "Destinos sugeridos" },
   { to: "/admin/hero", label: "Hero (portada)" },
-  { to: "/admin/secciones", label: "Secciones del home" },
+  { to: "/admin/secciones", label: "Inicio" },
 ];
 
 export function AdminLayout() {
   const { session, isAdmin, loading } = useAdminAuth();
   const [publishing, setPublishing] = useState(false);
   const [publishMsg, setPublishMsg] = useState<string | null>(null);
+  const [navOpen, setNavOpen] = useState(false);
+  const location = useLocation();
+
+  // Cierra el cajón de navegación móvil automáticamente al cambiar de página.
+  useEffect(() => {
+    setNavOpen(false);
+  }, [location.pathname]);
 
   if (loading) {
     return (
@@ -68,19 +76,43 @@ export function AdminLayout() {
 
   return (
     <div className="flex min-h-screen bg-neutral-50">
-      <aside className="flex w-60 shrink-0 flex-col border-r border-border bg-white">
-        <div className="border-b border-border px-4 py-4">
-          <p className="text-sm font-bold text-foreground">Vive Travel</p>
-          <p className="text-xs text-muted-foreground">Panel de administración</p>
+      {/* Overlay móvil — toca fuera del cajón para cerrarlo */}
+      {navOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black/40 md:hidden"
+          onClick={() => setNavOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      <aside
+        className={cn(
+          "fixed inset-y-0 left-0 z-50 flex w-64 shrink-0 flex-col border-r border-border bg-white transition-transform duration-200 md:static md:z-auto md:w-60 md:translate-x-0",
+          navOpen ? "translate-x-0" : "-translate-x-full"
+        )}
+      >
+        <div className="flex items-center justify-between border-b border-border px-4 py-4">
+          <div>
+            <p className="text-sm font-bold text-foreground">Vive Travel</p>
+            <p className="text-xs text-muted-foreground">Panel de administración</p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setNavOpen(false)}
+            className="rounded-md p-2 text-muted-foreground hover:bg-neutral-100 md:hidden"
+            aria-label="Cerrar menú"
+          >
+            <X className="h-5 w-5" />
+          </button>
         </div>
-        <nav className="flex-1 space-y-1 p-3">
+        <nav className="flex-1 space-y-1 overflow-y-auto p-3">
           {NAV_ITEMS.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
                 cn(
-                  "block rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                  "block rounded-md px-3 py-2.5 text-sm font-medium transition-colors",
                   isActive
                     ? "bg-neutral-900 text-white"
                     : "text-foreground hover:bg-neutral-100"
@@ -99,19 +131,29 @@ export function AdminLayout() {
         </div>
       </aside>
 
-      <div className="flex flex-1 flex-col">
-        <header className="flex items-center justify-between border-b border-border bg-white px-6 py-3">
-          <p className="text-sm text-muted-foreground">
-            Los cambios se guardan al instante. Presiona <strong>Publicar</strong> para que salgan al sitio en vivo.
-          </p>
-          <div className="flex items-center gap-3">
+      <div className="flex min-w-0 flex-1 flex-col">
+        <header className="flex flex-col gap-2 border-b border-border bg-white px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setNavOpen(true)}
+              className="-ml-1 shrink-0 rounded-md p-2 text-foreground hover:bg-neutral-100 md:hidden"
+              aria-label="Abrir menú"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+            <p className="text-xs text-muted-foreground sm:text-sm">
+              Los cambios se guardan al instante. Presiona <strong>Publicar</strong> para que salgan al sitio en vivo.
+            </p>
+          </div>
+          <div className="flex shrink-0 items-center gap-3">
             {publishMsg && <span className="text-xs text-muted-foreground">{publishMsg}</span>}
-            <Button onClick={handlePublish} disabled={publishing}>
+            <Button onClick={handlePublish} disabled={publishing} className="shrink-0">
               {publishing ? "Publicando…" : "Publicar"}
             </Button>
           </div>
         </header>
-        <main className="flex-1 overflow-y-auto p-6">
+        <main className="min-w-0 flex-1 overflow-x-hidden overflow-y-auto p-4 sm:p-6">
           <Outlet />
         </main>
       </div>
