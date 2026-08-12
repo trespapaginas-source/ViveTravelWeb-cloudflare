@@ -41,6 +41,9 @@ const FavoritesPage = lazy(() =>
 const NotFoundPage = lazy(() =>
   import("@/pages/index").then((m) => ({ default: m.NotFoundPage }))
 );
+const AdminApp = lazy(() =>
+  import("@/admin/AdminApp").then((m) => ({ default: m.AdminApp }))
+);
 
 /** Loader mostrado mientras carga una página bajo demanda. */
 function PageLoader() {
@@ -55,6 +58,16 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Panel de administración — layout propio (sin navbar/footer públicos) */}
+        <Route
+          path="/admin/*"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <AdminApp />
+            </Suspense>
+          }
+        />
+
         <Route element={<PublicLayout />}>
           {/* Rutas críticas (eager) */}
           <Route path="/" element={<HomePage />} />
