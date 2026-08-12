@@ -13,7 +13,7 @@
 export interface Env {
   CF_PAGES_DEPLOY_HOOK_URL: string;
   SUPABASE_URL: string;
-  SUPABASE_ANON_KEY: string;
+  VITE_SUPABASE_ANON_KEY: string;
 }
 
 const CORS_HEADERS = {
@@ -46,7 +46,7 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     const verifyRes = await fetch(`${env.SUPABASE_URL}/rest/v1/admins?select=id`, {
       headers: {
         Authorization: authHeader,
-        apikey: env.SUPABASE_ANON_KEY,
+        apikey: env.VITE_SUPABASE_ANON_KEY,
       },
     });
     if (!verifyRes.ok) {
