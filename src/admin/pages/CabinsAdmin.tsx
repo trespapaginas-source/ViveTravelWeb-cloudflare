@@ -346,7 +346,7 @@ export function CabinsAdmin() {
               disabled={uploading}
               onClick={() => fileRef.current?.click()}
             >
-              {uploading ? "Subiendo…" : "Subir imagen"}
+              {uploading ? "Optimizando…" : "Subir imagen"}
             </Button>
           </div>
 
@@ -435,7 +435,7 @@ export function CabinsAdmin() {
                       disabled={uploadingRoomIndex === i}
                       onClick={() => roomFileRefs.current[i]?.click()}
                     >
-                      {uploadingRoomIndex === i ? "Subiendo…" : "Subir foto"}
+                      {uploadingRoomIndex === i ? "Optimizando…" : "Subir foto"}
                     </Button>
                   </div>
                 </div>

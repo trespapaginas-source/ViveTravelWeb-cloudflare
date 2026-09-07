@@ -1,4 +1,5 @@
 import { supabase } from "./supabase-client";
+import { optimizeImage } from "./optimize-image";
 
 /* ─────────────────────────── Reorder genérico ──────────────────────────── */
 // Todas las tablas ordenables tienen una columna `display_order` (int).
@@ -35,14 +36,24 @@ export async function moveItem(
 
 /* ────────────────────────────── Storage ─────────────────────────────────── */
 
+/**
+ * Sube una imagen a Supabase Storage optimizándola antes: JPG/PNG/TIFF/BMP
+ * se convierten a WebP y se redimensionan (hero hasta 2560px, resto 1920px).
+ * Todos los puntos de subida del CMS pasan por aquí.
+ */
 export async function uploadImage(file: File, folder: string): Promise<{ url: string | null; error: string | null }> {
-  const ext = file.name.split(".").pop() || "jpg";
+  const { file: listo, formatoOriginal, ahorro } = await optimizeImage(file, {
+    maxAncho: folder === "hero" ? 2560 : 1920,
+  });
+  const ext = listo.name.split(".").pop() || (listo.type === "image/webp" ? "webp" : "jpg");
   const path = `${folder}/${crypto.randomUUID()}.${ext}`;
-  const { error } = await supabase.storage.from("site-images").upload(path, file, {
+  const { error } = await supabase.storage.from("site-images").upload(path, listo, {
     cacheControl: "3600",
     upsert: false,
   });
   if (error) return { url: null, error: error.message };
+  // eslint-disable-next-line no-console
+  console.info(`[admin] imagen subida (${folder}): ${formatoOriginal} — ${ahorro} → ${path}`);
   const { data } = supabase.storage.from("site-images").getPublicUrl(path);
   return { url: data.publicUrl, error: null };
 }

@@ -152,7 +152,7 @@ export function PromotionsForm({
           disabled={uploading}
           onClick={() => fileRef.current?.click()}
         >
-          <Plus className="h-4 w-4" /> {uploading ? "Subiendo…" : "Agregar banner"}
+          <Plus className="h-4 w-4" /> {uploading ? "Optimizando…" : "Agregar banner"}
         </Button>
       </div>
     </div>
@@ -288,7 +288,7 @@ export function InternationalForm({
           disabled={uploading}
           onClick={() => fileRef.current?.click()}
         >
-          <Plus className="h-4 w-4" /> {uploading ? "Subiendo…" : "Agregar destino"}
+          <Plus className="h-4 w-4" /> {uploading ? "Optimizando…" : "Agregar destino"}
         </Button>
       </div>
     </div>

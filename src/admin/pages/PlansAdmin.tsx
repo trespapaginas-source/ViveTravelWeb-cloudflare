@@ -437,7 +437,7 @@ export function PlansAdmin() {
               disabled={uploading}
               onClick={() => fileRef.current?.click()}
             >
-              {uploading ? "Subiendo…" : "Subir imagen"}
+              {uploading ? "Optimizando…" : "Subir imagen"}
             </Button>
           </div>
 
@@ -524,7 +524,7 @@ export function PlansAdmin() {
                     disabled={uploadingLugarIndex === i}
                     onClick={() => lugarFileRefs.current[i]?.click()}
                   >
-                    {uploadingLugarIndex === i ? "Subiendo…" : lugar.image ? "Cambiar foto" : "Subir foto"}
+                    {uploadingLugarIndex === i ? "Optimizando…" : lugar.image ? "Cambiar foto" : "Subir foto"}
                   </Button>
                 </div>
               </div>

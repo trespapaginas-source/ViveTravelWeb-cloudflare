@@ -164,7 +164,7 @@ export function HeroAdmin() {
         disabled={uploading}
         onClick={() => fileRef.current?.click()}
       >
-        {uploading ? "Subiendo…" : "Subir imagen"}
+        {uploading ? "Optimizando…" : "Subir imagen"}
       </Button>
     </div>
   );
