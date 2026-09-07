@@ -48,7 +48,8 @@ export async function uploadImage(file: File, folder: string): Promise<{ url: st
   const ext = listo.name.split(".").pop() || (listo.type === "image/webp" ? "webp" : "jpg");
   const path = `${folder}/${crypto.randomUUID()}.${ext}`;
   const { error } = await supabase.storage.from("site-images").upload(path, listo, {
-    cacheControl: "3600",
+    // URLs inmutables (UUID por subida): caché de un año sin riesgo.
+    cacheControl: "public, max-age=31536000, immutable",
     upsert: false,
   });
   if (error) return { url: null, error: error.message };

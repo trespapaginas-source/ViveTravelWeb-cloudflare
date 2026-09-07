@@ -1,0 +1,15 @@
+# Assets con hash en el nombre: inmutables, caché de 1 año
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fuente selfhosteada e imágenes estáticas del repo: también inmutables
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# El HTML siempre se revalida para que un deploy nuevo se vea de inmediato
+/index.html
+  Cache-Control: no-cache
+/
+  Cache-Control: no-cache
