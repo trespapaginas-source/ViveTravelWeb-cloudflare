@@ -28,8 +28,8 @@ export function PromotionsBanner() {
 
   return (
     <section className="mx-auto max-w-7xl px-4 pt-6 sm:px-6 lg:px-8 lg:pt-8">
-      {/* Espacio inferior reserva la mitad de las tarjetas superpuestas */}
-      <div className="pb-10 sm:pb-11 lg:pb-12">
+      {/* Espacio inferior: 75% de las tarjetas (57px) queda fuera del banner */}
+      <div className="pb-10 sm:pb-[64px] lg:pb-[64px]">
       {/* Contenedor relativo: banner + tarjetas superpuestas */}
       <div className="group relative max-w-full overflow-visible rounded-3xl">
         {/* Carrusel de banners */}
@@ -86,7 +86,7 @@ export function PromotionsBanner() {
         </div>
 
         {/* Tarjetas de valor superpuestas sobre el borde inferior del banner (ocultas en móvil) */}
-        <div className="absolute inset-x-0 -bottom-0 hidden translate-y-[42%] grid-cols-3 gap-3 px-3 sm:grid">
+        <div className="absolute inset-x-0 -bottom-0 hidden translate-y-[75%] grid-cols-3 gap-3 px-3 sm:grid">
           {valueCards.map((card, i) => {
             const inner = (
               <div className="flex h-full items-start gap-2 rounded-xl border border-border bg-white p-3 shadow-md">
