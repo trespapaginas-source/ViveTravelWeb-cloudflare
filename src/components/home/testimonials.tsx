@@ -66,7 +66,7 @@ function TestimonialCard({
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           {rev.avatarUrl ? (
-            <img
+            <img loading="lazy" decoding="async"
               src={rev.avatarUrl}
               alt={`Foto de ${rev.name}`}
               referrerPolicy="no-referrer"

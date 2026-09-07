@@ -33,7 +33,7 @@ export function PromotionsBanner() {
         <div className="relative max-w-full overflow-hidden rounded-3xl">
           <div className="relative h-[119px] w-full sm:aspect-[2560/675] sm:h-auto">
             {banners.map((b, i) => (
-              <img
+              <img loading="lazy" decoding="async"
                 key={b.id}
                 src={b.url}
                 alt={b.alt}

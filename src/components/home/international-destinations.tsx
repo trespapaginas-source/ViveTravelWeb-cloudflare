@@ -35,7 +35,7 @@ export function InternationalDestinations() {
             className="group relative flex aspect-[4/5] w-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-border shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
           >
             {/* Imagen: llena el 100% del contenedor sin distorsionarse */}
-            <img
+            <img loading="lazy" decoding="async"
               src={dest.image}
               alt={dest.name}
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"

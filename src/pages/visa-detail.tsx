@@ -63,7 +63,7 @@ export function VisaDetailPage() {
 
       {/* Header */}
       <header className="mt-4 flex flex-wrap items-center gap-4 border-b border-border pb-6">
-        <img
+        <img loading="lazy" decoding="async"
           src={`https://flagcdn.com/w160/${visa.countryCode.toLowerCase()}.png`}
           alt={visa.country}
           className="h-20 w-20 rounded-xl object-cover ring-1 ring-border"

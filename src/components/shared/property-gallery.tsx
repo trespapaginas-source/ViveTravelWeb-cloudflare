@@ -361,7 +361,7 @@ export function Lightbox({
         className="relative flex flex-1 items-center justify-center p-4 sm:p-10"
         onClick={(e) => e.stopPropagation()}
       >
-        <img
+        <img loading="lazy" decoding="async"
           src={images[index]}
           alt={`Foto ${index + 1}`}
           className="max-h-[80vh] max-w-full object-contain"
@@ -398,7 +398,7 @@ export function Lightbox({
                 i === index ? "border-white opacity-100" : "border-transparent opacity-40"
               )}
             >
-              <img src={img} alt="" className="h-full w-full object-cover" />
+              <img loading="lazy" decoding="async" src={img} alt="" className="h-full w-full object-cover" />
             </button>
           ))}
         </div>

@@ -55,7 +55,7 @@ export function TransportDetailPage() {
         <div>
           {/* Hero */}
           <div className="relative h-64 overflow-hidden rounded-2xl sm:h-80">
-            <img
+            <img loading="lazy" decoding="async"
               src={transport.image}
               alt={transport.name}
               className="h-full w-full object-cover"

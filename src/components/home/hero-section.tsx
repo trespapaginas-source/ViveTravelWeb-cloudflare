@@ -241,6 +241,9 @@ export function HeroSection() {
             src={backgroundImage}
             alt="Vive Travel"
             className="h-full w-full object-cover"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             onError={(e) => {
               e.currentTarget.src = HERO_FALLBACK;
               e.currentTarget.onerror = null;
