@@ -3,12 +3,11 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Vive Travel — Web pública migrada a Vite + React + Tailwind (FASE 0: auditoría y estructura base)",
+  "description": "Vive Travel \u2014 Web p\u00fablica migrada a Vite + React + Tailwind (FASE 0: auditor\u00eda y estructura base)",
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/generate-content.mjs",
     "build": "tsc --noEmit && vite build",
-    "postbuild": "node -e \"const fs=require('fs');fs.copyFileSync('dist/index.html','dist/404.html')\"",
     "preview": "vite preview",
     "lint": "eslint ."
   },
