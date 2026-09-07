@@ -59,70 +59,6 @@
     "sectionTitles": {}
   },
   {
-    "id": "plan-17",
-    "slug": "japon-esencial",
-    "name": "Japón Esencial",
-    "shortDescription": "La combinación perfecta entre tradición milenaria y tecnología del futuro en Tokio, Kioto y Osaka.",
-    "fullDescription": "Embárcate en un fascinante circuito de 10 días por la tierra del sol naciente. Desde los rascacielos iluminados y templos antiguos de Tokio, hasta los serenos jardines zen de Kioto y la gastronomía callejera de Osaka, este viaje te mostrará la verdadera esencia de Japón. Viaja en el tren bala Shinkansen y alójate en un Ryokan tradicional con aguas termales (Onsen).",
-    "images": [
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop"
-    ],
-    "price": 8200000,
-    "duration": "10 días, 9 noches",
-    "location": "Tokio, Kioto y Osaka",
-    "experienceSection": "circuitos",
-    "regionId": "japon",
-    "category": "Circuitos",
-    "includes": [
-      "Tiquetes aéreos internacionales",
-      "Pase de tren Japan Rail Pass (JR Pass)",
-      "Alojamiento 8 noches en hotel + 1 noche en Ryokan",
-      "Desayunos diarios y 1 cena tradicional Kaiseki",
-      "Guía acompañante de habla hispana",
-      "Entradas a todos los templos descritos"
-    ],
-    "excludes": [
-      "Almuerzos y cenas no descritos",
-      "Seguro de viaje de cobertura médica extendida",
-      "Propinas y gastos personales"
-    ],
-    "highlights": [
-      "Viaje en el Tren Bala Shinkansen",
-      "Paseo por el bosque de bambú de Arashiyama",
-      "Templo Senso-ji en Asakusa, Tokio",
-      "Visita al santuario Fushimi Inari-Taisha"
-    ],
-    "importantInfo": "Horario: Salidas programadas en época de cerezos (Abril) y otoño (Octubre)\n\nPunto de encuentro: Aeropuerto Internacional El Dorado, Bogotá",
-    "rating": 4.9,
-    "reviewCount": 94,
-    "published": true,
-    "order": 0,
-    "servicios_incluidos": [
-      {
-        "id": "hotel",
-        "icon": "hotel",
-        "label": "Hotel"
-      },
-      {
-        "id": "vuelos",
-        "icon": "vuelos",
-        "label": "Vuelos"
-      },
-      {
-        "id": "comidas",
-        "icon": "comidas",
-        "label": "Comidas"
-      }
-    ],
-    "sectionTitles": {}
-  },
-  {
     "id": "plan-16",
     "slug": "eurotrip-clasico",
     "name": "Eurotrip Clásico",
@@ -165,7 +101,7 @@
     "importantInfo": "Horario: Salidas el primer sábado de cada mes\n\nPunto de encuentro: Aeropuerto Internacional El Dorado, Bogotá",
     "rating": 4.9,
     "reviewCount": 148,
-    "published": true,
+    "published": false,
     "order": 0,
     "badge_precio": "Precio 2x1",
     "servicios_incluidos": [
@@ -188,6 +124,70 @@
         "id": "traslados",
         "icon": "traslados",
         "label": "Traslados"
+      }
+    ],
+    "sectionTitles": {}
+  },
+  {
+    "id": "plan-17",
+    "slug": "japon-esencial",
+    "name": "Japón Esencial",
+    "shortDescription": "La combinación perfecta entre tradición milenaria y tecnología del futuro en Tokio, Kioto y Osaka.",
+    "fullDescription": "Embárcate en un fascinante circuito de 10 días por la tierra del sol naciente. Desde los rascacielos iluminados y templos antiguos de Tokio, hasta los serenos jardines zen de Kioto y la gastronomía callejera de Osaka, este viaje te mostrará la verdadera esencia de Japón. Viaja en el tren bala Shinkansen y alójate en un Ryokan tradicional con aguas termales (Onsen).",
+    "images": [
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop"
+    ],
+    "price": 8200000,
+    "duration": "10 días, 9 noches",
+    "location": "Tokio, Kioto y Osaka",
+    "experienceSection": "circuitos",
+    "regionId": "japon",
+    "category": "Circuitos",
+    "includes": [
+      "Tiquetes aéreos internacionales",
+      "Pase de tren Japan Rail Pass (JR Pass)",
+      "Alojamiento 8 noches en hotel + 1 noche en Ryokan",
+      "Desayunos diarios y 1 cena tradicional Kaiseki",
+      "Guía acompañante de habla hispana",
+      "Entradas a todos los templos descritos"
+    ],
+    "excludes": [
+      "Almuerzos y cenas no descritos",
+      "Seguro de viaje de cobertura médica extendida",
+      "Propinas y gastos personales"
+    ],
+    "highlights": [
+      "Viaje en el Tren Bala Shinkansen",
+      "Paseo por el bosque de bambú de Arashiyama",
+      "Templo Senso-ji en Asakusa, Tokio",
+      "Visita al santuario Fushimi Inari-Taisha"
+    ],
+    "importantInfo": "Horario: Salidas programadas en época de cerezos (Abril) y otoño (Octubre)\n\nPunto de encuentro: Aeropuerto Internacional El Dorado, Bogotá",
+    "rating": 4.9,
+    "reviewCount": 94,
+    "published": false,
+    "order": 0,
+    "servicios_incluidos": [
+      {
+        "id": "hotel",
+        "icon": "hotel",
+        "label": "Hotel"
+      },
+      {
+        "id": "vuelos",
+        "icon": "vuelos",
+        "label": "Vuelos"
+      },
+      {
+        "id": "comidas",
+        "icon": "comidas",
+        "label": "Comidas"
       }
     ],
     "sectionTitles": {}
@@ -359,7 +359,7 @@
     "importantInfo": "Horario: 6:00 PM - 12:00 AM\n\nPunto de encuentro: Hotel lobby zona norte, Barranquilla",
     "rating": 4.9,
     "reviewCount": 67,
-    "published": true,
+    "published": false,
     "order": 4,
     "mostrar_limite_personas": true,
     "max_personas": 35,
@@ -1623,105 +1623,86 @@
   },
   {
     "id": "ac658a12-c3bc-4073-b700-e3fb7efde724",
-    "slug": "expedicion-sierra-limon",
-    "name": "Expedición Grupal Sierra Limón",
-    "shortDescription": "Aventura grupal de un día descubriendo cascadas y senderos ocultos en Sierra Limón.",
-    "fullDescription": "Forma parte de esta expedición de un día pensada para grupos. Caminaremos por senderos ecológicos hasta llegar a las impresionantes cascadas de Sierra Limón. Un plan perfecto para team building o grupos de amigos que buscan aventura y naturaleza. Terminaremos con un almuerzo tradicional preparado por la comunidad local.",
+    "slug": "viaje-grupal-san-andres",
+    "name": "Viaje Grupal a San Andrés",
+    "shortDescription": "Viaje grupal de 4 días y 3 noches al mar de los 7 colores: vuela desde Barranquilla, conoce el Acuario Natural, Johnny Cay y la Noche Blanca en barco.",
+    "fullDescription": "Prepárate para vivir una experiencia inolvidable en el mar de los 7 colores. Viaja en grupo, disfruta playas paradisíacas, conoce nuevas personas y crea recuerdos que durarán toda la vida. Salida el 17 de septiembre y regreso el 20 de septiembre: tres noches y cuatro días con todo organizado — alojamiento en hotel 4 estrellas, comidas, excursiones y fiesta a bordo. Tú solo trae tu ropa de playa.",
     "images": [
-      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop"
+      "https://gvpioebttpmtblsjilbt.supabase.co/storage/v1/object/public/site-images/plans/2852227d-d36d-430d-a6b0-e062d122b6b5.webp",
+      "https://gvpioebttpmtblsjilbt.supabase.co/storage/v1/object/public/site-images/plans/c95c1c46-5e6c-4d1a-bf00-51d694d377bd.webp",
+      "https://gvpioebttpmtblsjilbt.supabase.co/storage/v1/object/public/site-images/plans/2d44f0a5-758d-438d-91b2-64ac5874d7f1.webp",
+      "https://gvpioebttpmtblsjilbt.supabase.co/storage/v1/object/public/site-images/plans/79553bdf-b488-495f-a678-29a207baaf55.avif",
+      "https://gvpioebttpmtblsjilbt.supabase.co/storage/v1/object/public/site-images/plans/359620cd-83b2-408e-9f4d-bca75dc92483.avif",
+      "https://gvpioebttpmtblsjilbt.supabase.co/storage/v1/object/public/site-images/plans/58513c7a-6ce6-467b-8feb-fb8234964c64.avif"
     ],
-    "price": 180000,
-    "duration": "Día completo (8 horas)",
-    "location": "Santa Marta",
+    "price": 1850000,
+    "duration": "4 días / 3 noches",
+    "location": "San Andrés, Colombia",
     "experienceSection": "grupales",
-    "regionId": "magdalena",
+    "regionId": "san-andres",
     "category": "Grupal",
     "includes": [
-      "Transporte en bus",
-      "Guía local",
-      "Almuerzo tradicional",
-      "Seguro de viaje"
+      "Tiquetes ida y regreso Barranquilla – San Andrés",
+      "Traslados aeropuerto – hotel – aeropuerto",
+      "3 noches de alojamiento en hotel 4 estrellas",
+      "Acomodación múltiple",
+      "Desayunos",
+      "Almuerzos",
+      "Cenas",
+      "Wi-Fi en zonas comunes",
+      "Visita al Acuario Natural",
+      "Día de playa en Johnny Cay",
+      "Noche Blanca en barco"
     ],
     "excludes": [
-      "Gastos personales"
+      "Tarjeta de turismo"
     ],
     "highlights": [
-      "Cascadas escondidas",
-      "Senderismo",
-      "Almuerzo comunitario"
+      "Mar de los 7 colores",
+      "Acuario Natural",
+      "Día de playa en Johnny Cay",
+      "Noche Blanca en barco",
+      "Hotel 4 estrellas frente al mar"
     ],
-    "importantInfo": "Horario: 6:00 AM - 4:00 PM\n\nPunto de encuentro: Plaza Central",
+    "importantInfo": "Salida: jueves 17 de septiembre · Regreso: domingo 20 de septiembre (3 noches / 4 días).\nVuelos desde Barranquilla (aeropuerto Ernesto Cortissoz).\nReserva tu cupo con solo $500.000; saldo antes del viaje.\nCupos limitados: no esperes hasta el último momento para reservar.",
     "rating": 4.6,
     "reviewCount": 88,
     "published": true,
     "order": 12,
     "departureDates": [
       {
-        "end": "2026-09-17",
+        "end": "2026-09-20",
         "start": "2026-09-17"
       }
     ],
     "fixedDeparture": true,
+    "fecha_salida": "17 - 20 de septiembre",
+    "mostrar_limite_personas": true,
+    "max_personas": 25,
+    "badge_imagen": "Cupos limitados",
+    "badge_precio": "Reserva con $500.000",
     "servicios_incluidos": [
       {
-        "id": "comidas",
-        "icon": "comidas",
-        "label": "Comidas"
+        "id": "vuelos",
+        "icon": "vuelos",
+        "label": "Vuelos"
+      },
+      {
+        "id": "hotel",
+        "icon": "hotel",
+        "label": "Hotel"
       },
       {
         "id": "traslados",
         "icon": "traslados",
         "label": "Traslados"
+      },
+      {
+        "id": "comidas",
+        "icon": "comidas",
+        "label": "Comidas"
       }
     ],
-    "sectionTitles": {}
-  },
-  {
-    "id": "656270f5-2d91-4751-8959-694c845d4852",
-    "slug": "tour-paracaidismo",
-    "name": "Salto en Paracaidismo",
-    "shortDescription": "Siente la adrenalina extrema en una experiencia de paracaidismo tandem.",
-    "fullDescription": "Para los amantes de la adrenalina pura. Una experiencia corta pero indefinida donde realizarás un salto en paracaídas tipo tandem junto a un instructor certificado. Disfruta de una caída libre a más de 200 km/h y luego planea suavemente admirando un paisaje inigualable desde el aire.",
-    "images": [
-      "https://images.unsplash.com/photo-1520114757270-b1836a0fb494?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1521685360661-04ba71a06288?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1520114757270-b1836a0fb494?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1521685360661-04ba71a06288?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1520114757270-b1836a0fb494?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1521685360661-04ba71a06288?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1520114757270-b1836a0fb494?w=800&h=600&fit=crop"
-    ],
-    "price": 650000,
-    "duration": "Tour corto (3 horas)",
-    "location": "Aeródromo local",
-    "experienceSection": "tours",
-    "regionId": "colombia-generico",
-    "category": "Tours",
-    "includes": [
-      "Vuelo escénico",
-      "Salto tandem",
-      "Instructor certificado",
-      "Seguro"
-    ],
-    "excludes": [
-      "Fotos y video",
-      "Transporte al aeródromo"
-    ],
-    "highlights": [
-      "Caída libre de 1 minuto",
-      "Vuelo de 5 minutos en paracaídas"
-    ],
-    "importantInfo": "Horario: Varios horarios disponibles\n\nPunto de encuentro: Aeródromo",
-    "rating": 4.9,
-    "reviewCount": 205,
-    "published": true,
-    "order": 13,
     "sectionTitles": {}
   },
   {
@@ -1934,6 +1915,48 @@
         "label": "Traslados"
       }
     ],
+    "sectionTitles": {}
+  },
+  {
+    "id": "656270f5-2d91-4751-8959-694c845d4852",
+    "slug": "tour-paracaidismo",
+    "name": "Salto en Paracaidismo",
+    "shortDescription": "Siente la adrenalina extrema en una experiencia de paracaidismo tandem.",
+    "fullDescription": "Para los amantes de la adrenalina pura. Una experiencia corta pero indefinida donde realizarás un salto en paracaídas tipo tandem junto a un instructor certificado. Disfruta de una caída libre a más de 200 km/h y luego planea suavemente admirando un paisaje inigualable desde el aire.",
+    "images": [
+      "https://images.unsplash.com/photo-1520114757270-b1836a0fb494?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1521685360661-04ba71a06288?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1520114757270-b1836a0fb494?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1521685360661-04ba71a06288?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1520114757270-b1836a0fb494?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1521685360661-04ba71a06288?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1520114757270-b1836a0fb494?w=800&h=600&fit=crop"
+    ],
+    "price": 650000,
+    "duration": "Tour corto (3 horas)",
+    "location": "Aeródromo local",
+    "experienceSection": "tours",
+    "regionId": "colombia-generico",
+    "category": "Tours",
+    "includes": [
+      "Vuelo escénico",
+      "Salto tandem",
+      "Instructor certificado",
+      "Seguro"
+    ],
+    "excludes": [
+      "Fotos y video",
+      "Transporte al aeródromo"
+    ],
+    "highlights": [
+      "Caída libre de 1 minuto",
+      "Vuelo de 5 minutos en paracaídas"
+    ],
+    "importantInfo": "Horario: Varios horarios disponibles\n\nPunto de encuentro: Aeródromo",
+    "rating": 4.9,
+    "reviewCount": 205,
+    "published": true,
+    "order": 13,
     "sectionTitles": {}
   },
   {
