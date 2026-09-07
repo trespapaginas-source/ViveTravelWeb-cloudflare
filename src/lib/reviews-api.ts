@@ -98,3 +98,28 @@ export function normalizeCountryCode(
 export const TURNSTILE_SITEKEY: string | undefined =
   (import.meta as unknown as { env?: { VITE_TURNSTILE_SITEKEY?: string } }).env
     ?.VITE_TURNSTILE_SITEKEY;
+
+/**
+ * Carga el script de Turnstile bajo demanda (una sola vez por sesión).
+ * Antes vivía en index.html y se descargaba en TODAS las páginas; ahora
+ * solo lo pide el formulario de reseñas cuando se monta.
+ */
+let turnstileCargando: Promise<void> | null = null;
+
+export function cargarTurnstile(): Promise<void> {
+  if (turnstileCargando) return turnstileCargando;
+  turnstileCargando = new Promise((resolve, reject) => {
+    if ((window as unknown as { turnstile?: unknown }).turnstile) return resolve();
+    const s = document.createElement("script");
+    s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+    s.async = true;
+    s.defer = true;
+    s.onload = () => resolve();
+    s.onerror = () => {
+      turnstileCargando = null; // permite reintentar en un próximo mount
+      reject(new Error("No se pudo cargar Turnstile"));
+    };
+    document.head.appendChild(s);
+  });
+  return turnstileCargando;
+}

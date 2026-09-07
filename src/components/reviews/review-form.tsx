@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Check, Loader2 } from "lucide-react";
 import { StarRating, ratingLabel } from "./star-rating";
-import { TURNSTILE_SITEKEY } from "@/lib/reviews-api";
+import { TURNSTILE_SITEKEY, cargarTurnstile } from "@/lib/reviews-api";
 import { cn } from "@/lib/utils";
 
 const MAX_COMMENT_CHARS = 300;
@@ -49,6 +49,7 @@ export function ReviewForm({
   useEffect(() => {
     if (!TURNSTILE_SITEKEY || !turnstileRef.current) return;
     if (widgetId.current) return; // ya renderizado
+    let cancelado = false;
 
     const tryRender = () => {
       const ts = (window as unknown as { turnstile?: { render: Function } }).turnstile;
@@ -62,8 +63,12 @@ export function ReviewForm({
       }
     };
 
-    // El script de Turnstile se carga vía index.html; si aún no está listo, reintentar.
-    tryRender();
+    // El script ya no vive en index.html: se inyecta aquí, bajo demanda.
+    cargarTurnstile()
+      .then(() => { if (!cancelado) tryRender(); })
+      .catch(() => { /* sin Turnstile el form sigue funcionando sin token */ });
+
+    // Salvaguarda: si el script tarda en definirse, reintentar un par de veces.
     const interval = setInterval(() => {
       if (widgetId.current) {
         clearInterval(interval);
@@ -71,7 +76,7 @@ export function ReviewForm({
       }
       tryRender();
     }, 500);
-    return () => clearInterval(interval);
+    return () => { cancelado = true; clearInterval(interval); };
   }, []);
 
   const resetTurnstile = () => {
