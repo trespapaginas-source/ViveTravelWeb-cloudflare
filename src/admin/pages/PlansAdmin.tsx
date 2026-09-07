@@ -8,6 +8,7 @@ import {
   moveItem,
   listServiceCategories,
   listPlanRegions,
+  insertPlanRegion,
   uploadImage,
   type PlanRow,
   type ServiceCategoryRow,
@@ -79,6 +80,10 @@ export function PlansAdmin() {
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [uploadingLugarIndex, setUploadingLugarIndex] = useState<number | null>(null);
+  const [regionNueva, setRegionNueva] = useState("");
+  const [regionNuevaGrupo, setRegionNuevaGrupo] = useState<"colombia" | "internacional">("internacional");
+  const [creandoRegion, setCreandoRegion] = useState(false);
+  const [regionError, setRegionError] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const lugarFileRefs = useRef<Record<number, HTMLInputElement | null>>({});
   const initializedForRef = useRef<string | null>(null);
@@ -95,6 +100,22 @@ export function PlansAdmin() {
   });
 
   const reload = () => listPlans().then(setRows);
+
+  // Crea una región/país desde el selector del editor y la deja seleccionada.
+  const crearRegion = async () => {
+    if (!editing) return;
+    setCreandoRegion(true);
+    setRegionError(null);
+    const { row, error } = await insertPlanRegion(regionNueva, regionNuevaGrupo);
+    setCreandoRegion(false);
+    if (error || !row) {
+      setRegionError(error ?? "No se pudo crear la región");
+      return;
+    }
+    setRegions((prev) => [...prev, row].sort((a, b) => a.display_order - b.display_order));
+    setEditing({ ...editing, region_id: row.id });
+    setRegionNueva("");
+  };
 
   useEffect(() => {
     Promise.all([listPlans(), listServiceCategories(), listPlanRegions()])
@@ -373,7 +394,11 @@ export function PlansAdmin() {
               <label className="text-xs font-medium text-muted-foreground">Región/país</label>
               <select
                 value={plan.region_id ?? "otro"}
-                onChange={(e) => setEditing({ ...plan, region_id: e.target.value })}
+                onChange={(e) => {
+                  setRegionError(null);
+                  setEditing({ ...plan, region_id: e.target.value });
+                  if (e.target.value === "__nueva__") setRegionNueva("");
+                }}
                 className="mt-1 w-full rounded-md border border-input px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
               >
                 {regions.map((r) => (
@@ -381,7 +406,46 @@ export function PlansAdmin() {
                     {r.label}
                   </option>
                 ))}
+                <option value="__nueva__">+ Crear nueva región/país…</option>
               </select>
+              {plan.region_id === "__nueva__" && (
+                <div className="mt-2 space-y-2 rounded-md border border-dashed border-border bg-neutral-50 p-3">
+                  <input
+                    autoFocus
+                    value={regionNueva}
+                    onChange={(e) => setRegionNueva(e.target.value)}
+                    placeholder="Nombre (ej. Egipto, Caraibe insular…)"
+                    className="w-full rounded-md border border-input px-2 py-1.5 text-sm outline-none focus:ring-2 focus:ring-ring"
+                    onKeyDown={(e) => e.key === "Enter" && crearRegion()}
+                  />
+                  <div className="flex items-center gap-2">
+                    <select
+                      value={regionNuevaGrupo}
+                      onChange={(e) => setRegionNuevaGrupo(e.target.value as "colombia" | "internacional")}
+                      className="flex-1 rounded-md border border-input px-2 py-1.5 text-sm outline-none focus:ring-2 focus:ring-ring"
+                    >
+                      <option value="internacional">Internacional</option>
+                      <option value="colombia">Colombia</option>
+                    </select>
+                    <button
+                      type="button"
+                      onClick={crearRegion}
+                      disabled={creandoRegion}
+                      className="rounded-md bg-neutral-900 px-3 py-1.5 text-xs font-medium text-white disabled:opacity-50"
+                    >
+                      {creandoRegion ? "Creando…" : "Crear y usar"}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setEditing({ ...plan, region_id: "otro" })}
+                      className="rounded-md px-2 py-1.5 text-xs text-muted-foreground hover:text-foreground"
+                    >
+                      Cancelar
+                    </button>
+                  </div>
+                  {regionError && <p className="text-xs text-red-600">{regionError}</p>}
+                </div>
+              )}
             </div>
           </div>
 

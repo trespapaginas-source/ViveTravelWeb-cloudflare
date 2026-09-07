@@ -1,5 +1,6 @@
 import { supabase } from "./supabase-client";
 import { optimizeImage } from "./optimize-image";
+import { slugify } from "./slugify";
 
 /* ─────────────────────────── Reorder genérico ──────────────────────────── */
 // Todas las tablas ordenables tienen una columna `display_order` (int).
@@ -215,6 +216,39 @@ export async function listPlanRegions(): Promise<PlanRegionRow[]> {
   const { data, error } = await supabase.from("plan_regions").select("*").order("display_order");
   if (error) throw new Error(error.message);
   return data as PlanRegionRow[];
+}
+
+/** Crea una región/país nuevo al final del orden; devuelve la fila creada. */
+export async function insertPlanRegion(
+  label: string,
+  group: "colombia" | "internacional"
+): Promise<{ row: PlanRegionRow | null; error: string | null }> {
+  const nombre = label.trim();
+  if (!nombre) return { row: null, error: "Escribe un nombre" };
+  const id = slugify(nombre) || crypto.randomUUID();
+  const { data: existing, error: readError } = await supabase
+    .from("plan_regions")
+    .select("display_order")
+    .order("display_order", { ascending: false })
+    .limit(1);
+  if (readError) return { row: null, error: readError.message };
+  const nextOrder = (existing?.[0]?.display_order ?? -1) + 1;
+  const { data, error } = await supabase
+    .from("plan_regions")
+    .insert({ id, label: nombre, group, display_order: nextOrder, active: true })
+    .select()
+    .single();
+  if (error) return { row: null, error: error.message };
+  return { row: data as PlanRegionRow, error: null };
+}
+
+/** Renombra, cambia grupo o activa/desactiva una región. */
+export async function updatePlanRegion(
+  id: string,
+  patch: Partial<Pick<PlanRegionRow, "label" | "group" | "active">>
+): Promise<string | null> {
+  const { error } = await supabase.from("plan_regions").update(patch).eq("id", id);
+  return error?.message ?? null;
 }
 
 /* ───────────────────────── Popular destinations ─────────────────────────── */
