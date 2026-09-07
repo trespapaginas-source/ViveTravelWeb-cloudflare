@@ -59,15 +59,9 @@ interface PromotionBanner {
   alt: string;
   url: string;
 }
-interface PromotionValueCard {
-  id: string;
-  title: string;
-  description: string;
-}
 interface PromotionsContent {
   sectionTitle: string;
   banners: PromotionBanner[];
-  valueCards: PromotionValueCard[];
 }
 
 export function PromotionsForm({
@@ -80,7 +74,6 @@ export function PromotionsForm({
   const [uploading, setUploading] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
   const banners = value.banners ?? [];
-  const valueCards = value.valueCards ?? [];
   const bannersDrag = useDragReorder(banners, (next) => onChange({ ...value, banners: next }));
 
   const addBanner = async (file: File) => {
@@ -161,38 +154,6 @@ export function PromotionsForm({
         >
           <Plus className="h-4 w-4" /> {uploading ? "Subiendo…" : "Agregar banner"}
         </Button>
-      </div>
-
-      <div>
-        <label className="text-xs font-medium text-muted-foreground">
-          Tarjetas de valor (íconos fijos — solo se edita el texto)
-        </label>
-        <div className="mt-2 space-y-2">
-          {valueCards.map((c, i) => (
-            <div key={c.id} className="space-y-1 rounded-md border border-border p-2">
-              <input
-                value={c.title}
-                onChange={(e) => {
-                  const next = [...valueCards];
-                  next[i] = { ...c, title: e.target.value };
-                  onChange({ ...value, valueCards: next });
-                }}
-                placeholder="Título"
-                className="w-full rounded-md border border-input px-2 py-1 text-sm outline-none focus:ring-2 focus:ring-ring"
-              />
-              <input
-                value={c.description}
-                onChange={(e) => {
-                  const next = [...valueCards];
-                  next[i] = { ...c, description: e.target.value };
-                  onChange({ ...value, valueCards: next });
-                }}
-                placeholder="Descripción"
-                className="w-full rounded-md border border-input px-2 py-1 text-xs outline-none focus:ring-2 focus:ring-ring"
-              />
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );

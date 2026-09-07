@@ -245,23 +245,6 @@
         "alt": "Tour Eje Cafetero",
         "url": "/images/banner-eje-cafetero.webp"
       }
-    ],
-    "valueCards": [
-      {
-        "id": 1,
-        "title": "Promos y medios de pago",
-        "description": "Cuotas con tarjetas de crédito, transferencias y facilidades de pago."
-      },
-      {
-        "id": 2,
-        "title": "Beneficios y promociones",
-        "description": "Acumula beneficios y aprovecha todas las promociones 2x1 activas."
-      },
-      {
-        "id": 3,
-        "title": "Mi agente Vive Travel",
-        "description": "Asesoría personalizada por WhatsApp o llamada con nuestros agentes."
-      }
     ]
   },
   "influencer": {
