@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { to: "/admin/cabanas", label: "Cabañas" },
   { to: "/admin/categorias", label: "Categorías del buscador" },
   { to: "/admin/destinos", label: "Destinos sugeridos" },
+  { to: "/admin/regiones", label: "Regiones y países" },
   { to: "/admin/hero", label: "Hero (portada)" },
   { to: "/admin/secciones", label: "Inicio" },
 ];

@@ -1,4 +1,6 @@
 import { supabase } from "./supabase-client";
+import { optimizeImage } from "./optimize-image";
+import { slugify } from "./slugify";
 
 /* ─────────────────────────── Reorder genérico ──────────────────────────── */
 // Todas las tablas ordenables tienen una columna `display_order` (int).
@@ -35,14 +37,25 @@ export async function moveItem(
 
 /* ────────────────────────────── Storage ─────────────────────────────────── */
 
+/**
+ * Sube una imagen a Supabase Storage optimizándola antes: JPG/PNG/TIFF/BMP
+ * se convierten a WebP y se redimensionan (hero hasta 2560px, resto 1920px).
+ * Todos los puntos de subida del CMS pasan por aquí.
+ */
 export async function uploadImage(file: File, folder: string): Promise<{ url: string | null; error: string | null }> {
-  const ext = file.name.split(".").pop() || "jpg";
+  const { file: listo, formatoOriginal, ahorro } = await optimizeImage(file, {
+    maxAncho: folder === "hero" ? 2560 : 1920,
+  });
+  const ext = listo.name.split(".").pop() || (listo.type === "image/webp" ? "webp" : "jpg");
   const path = `${folder}/${crypto.randomUUID()}.${ext}`;
-  const { error } = await supabase.storage.from("site-images").upload(path, file, {
-    cacheControl: "3600",
+  const { error } = await supabase.storage.from("site-images").upload(path, listo, {
+    // URLs inmutables (UUID por subida): caché de un año sin riesgo.
+    cacheControl: "public, max-age=31536000, immutable",
     upsert: false,
   });
   if (error) return { url: null, error: error.message };
+  // eslint-disable-next-line no-console
+  console.info(`[admin] imagen subida (${folder}): ${formatoOriginal} — ${ahorro} → ${path}`);
   const { data } = supabase.storage.from("site-images").getPublicUrl(path);
   return { url: data.publicUrl, error: null };
 }
@@ -203,6 +216,39 @@ export async function listPlanRegions(): Promise<PlanRegionRow[]> {
   const { data, error } = await supabase.from("plan_regions").select("*").order("display_order");
   if (error) throw new Error(error.message);
   return data as PlanRegionRow[];
+}
+
+/** Crea una región/país nuevo al final del orden; devuelve la fila creada. */
+export async function insertPlanRegion(
+  label: string,
+  group: "colombia" | "internacional"
+): Promise<{ row: PlanRegionRow | null; error: string | null }> {
+  const nombre = label.trim();
+  if (!nombre) return { row: null, error: "Escribe un nombre" };
+  const id = slugify(nombre) || crypto.randomUUID();
+  const { data: existing, error: readError } = await supabase
+    .from("plan_regions")
+    .select("display_order")
+    .order("display_order", { ascending: false })
+    .limit(1);
+  if (readError) return { row: null, error: readError.message };
+  const nextOrder = (existing?.[0]?.display_order ?? -1) + 1;
+  const { data, error } = await supabase
+    .from("plan_regions")
+    .insert({ id, label: nombre, group, display_order: nextOrder, active: true })
+    .select()
+    .single();
+  if (error) return { row: null, error: error.message };
+  return { row: data as PlanRegionRow, error: null };
+}
+
+/** Renombra, cambia grupo o activa/desactiva una región. */
+export async function updatePlanRegion(
+  id: string,
+  patch: Partial<Pick<PlanRegionRow, "label" | "group" | "active">>
+): Promise<string | null> {
+  const { error } = await supabase.from("plan_regions").update(patch).eq("id", id);
+  return error?.message ?? null;
 }
 
 /* ───────────────────────── Popular destinations ─────────────────────────── */

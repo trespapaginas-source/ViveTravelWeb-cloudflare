@@ -67,7 +67,7 @@ export function VisasPage() {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Hero oscuro */}
       <div className="relative mb-8 overflow-hidden rounded-3xl bg-[#002B49] px-6 py-12 text-center text-white sm:px-12">
-        <img
+        <img loading="lazy" decoding="async"
           src="/images/visas/pasaporte-colombiano.png"
           alt=""
           aria-hidden="true"

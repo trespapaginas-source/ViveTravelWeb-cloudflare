@@ -2,10 +2,22 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PublicLayout } from "@/components/layout/public-layout";
 import { HomePage } from "@/pages/home";
-import { PlansPage } from "@/pages/plans";
-import { CabinsPage } from "@/pages/cabins";
-import { VisasPage } from "@/pages/visas";
-import { TransportsPage } from "@/pages/transports";
+
+// Code-splitting: todo salvo el Home se carga bajo demanda. Los catálogos
+// (planes/cabañas/visas/transporte) también son lazy — así sus datos JSON y
+// sus filtros no pesan en la primera visita.
+const PlansPage = lazy(() =>
+  import("@/pages/plans").then((m) => ({ default: m.PlansPage }))
+);
+const CabinsPage = lazy(() =>
+  import("@/pages/cabins").then((m) => ({ default: m.CabinsPage }))
+);
+const VisasPage = lazy(() =>
+  import("@/pages/visas").then((m) => ({ default: m.VisasPage }))
+);
+const TransportsPage = lazy(() =>
+  import("@/pages/transports").then((m) => ({ default: m.TransportsPage }))
+);
 
 // Code-splitting: las páginas secundarias se cargan bajo demanda.
 // Esto reduce el bundle inicial (solo Home + catálogos críticos cargan de entrada).
@@ -69,12 +81,42 @@ export default function App() {
         />
 
         <Route element={<PublicLayout />}>
-          {/* Rutas críticas (eager) */}
+          {/* Ruta crítica (eager) */}
           <Route path="/" element={<HomePage />} />
-          <Route path="/planes" element={<PlansPage />} />
-          <Route path="/cabanas" element={<CabinsPage />} />
-          <Route path="/visas" element={<VisasPage />} />
-          <Route path="/transporte" element={<TransportsPage />} />
+
+          {/* Catálogos y rutas secundarias (lazy) */}
+          <Route
+            path="/planes"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <PlansPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/cabanas"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <CabinsPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/visas"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <VisasPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/transporte"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <TransportsPage />
+              </Suspense>
+            }
+          />
 
           {/* Rutas secundarias (lazy) */}
           <Route

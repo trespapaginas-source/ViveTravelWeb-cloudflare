@@ -105,7 +105,7 @@ function ReviewsCard({
           <div className="mt-2 flex items-center justify-between gap-2">
             <span className="flex min-w-0 items-center gap-1.5 truncate text-xs font-semibold text-foreground">
               {normalizeCountryCode(current.country) && (
-                <img
+                <img loading="lazy" decoding="async"
                   src={`https://flagcdn.com/20x15/${normalizeCountryCode(current.country)}.png`}
                   srcSet={`https://flagcdn.com/40x30/${normalizeCountryCode(current.country)}.png 2x`}
                   width={16}

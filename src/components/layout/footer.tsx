@@ -72,7 +72,7 @@ export function Footer() {
           {/* Marca + redes */}
           <div className="lg:col-span-4 space-y-4">
             <Link to={ROUTES.home} className="inline-block">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/logos/vive-travel-white.png"
                 alt={f.brandName}
                 className="h-16 sm:h-20 lg:h-22 w-auto object-contain select-none"

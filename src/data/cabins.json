@@ -1,32 +1,29 @@
 [
   {
     "id": "cabin-la-martina",
-    "name": "Cabaña La Martina",
     "slug": "cabana-la-martina",
+    "name": "Cabaña La Martina",
     "shortDescription": "Cabaña totalmente privada en Sabanagrande, Atlántico, con piscina, jacuzzi de hidromasaje, cancha de fútbol y animales en libertad.",
     "fullDescription": "Cabaña La Martina es una propiedad totalmente privada y exclusiva ubicada en Sabanagrande, Atlántico, a solo 30 minutos de Barranquilla. Alquila toda la finca en exclusiva para tu familia o grupo sin compartir áreas: piscina privada con solárium, jacuzzi de hidromasaje integrado, cancha de fútbol en césped natural, kiosco tradicional de techo alto y amplios jardines verdes. Los interiores disponen de aire acondicionado en todas las habitaciones, cocina totalmente equipada, Smart TVs y WiFi de alta velocidad. Además, podrás recorrer senderos ecológicos y convivir pacíficamente con avestruces, llamas y guacamayas en libertad.",
     "images": [
-      "/images/cabanas/La-Martina/IMG_7109-2.jpg",
+      "/images/cabanas/La-Martina/IMG_7154-2.jpg",
+      "/images/cabanas/La-Martina/IMG_7126-2.jpg",
+      "/images/cabanas/La-Martina/IMG_7448.jpg",
+      "/images/cabanas/La-Martina/IMG_7131-2.jpg",
+      "/images/cabanas/La-Martina/IMG_7150-2.jpg",
+      "/images/cabanas/La-Martina/IMG_7129-2.jpg",
       "/images/cabanas/La-Martina/IMG_7112-2.jpg",
       "/images/cabanas/La-Martina/IMG_7117-2.jpg",
       "/images/cabanas/La-Martina/IMG_7121-2.jpg",
       "/images/cabanas/La-Martina/IMG_7124-2.jpg",
-      "/images/cabanas/La-Martina/IMG_7126-2.jpg",
-      "/images/cabanas/La-Martina/IMG_7129-2.jpg",
-      "/images/cabanas/La-Martina/IMG_7131-2.jpg",
       "/images/cabanas/La-Martina/IMG_7132-2.jpg",
-      "/images/cabanas/La-Martina/IMG_7150-2.jpg",
       "/images/cabanas/La-Martina/IMG_7151-2.jpg",
-      "/images/cabanas/La-Martina/IMG_7154-2.jpg",
       "/images/cabanas/La-Martina/IMG_7175-2.jpg",
-      "/images/cabanas/La-Martina/IMG_7448.jpg",
       "/images/cabanas/La-Martina/IMG_7498.jpg",
-      "/images/cabanas/La-Martina/IMG_7514.jpg",
-      "/images/cabanas/La-Martina/IMG_7535.jpg",
-      "/images/cabanas/La-Martina/IMG_7582-2.jpg"
+      "/images/cabanas/La-Martina/IMG_7514.jpg"
     ],
     "pricePerNight": 3000000,
-    "priceRange": "$1.200.000 - $3.000.000 COP / noche",
+    "priceRange": "$ 1.200.000 - $ 3.000.000 COP / noche",
     "location": "Sabanagrande, Atlántico",
     "capacity": 14,
     "bedrooms": 3,
@@ -72,52 +69,54 @@
     "bedroomDetails": [
       {
         "id": "room-0",
-        "title": "Habitación 01",
         "beds": "1 cama doble",
         "image": "/images/cabanas/La-Martina/H1/IMG_7565.jpg",
+        "order": 0,
+        "title": "Habitación 01",
+        "active": true,
         "images": [
           "/images/cabanas/La-Martina/H1/IMG_7565.jpg",
           "/images/cabanas/La-Martina/H1/IMG_7566.jpg",
           "/images/cabanas/La-Martina/H1/IMG_7567.jpg",
           "/images/cabanas/La-Martina/H1/IMG_7570.jpg",
           "/images/cabanas/La-Martina/H1/IMG_7571.jpg"
-        ],
-        "order": 0,
-        "active": true
+        ]
       },
       {
         "id": "room-1",
-        "title": "Habitación 02",
         "beds": "2 camas literas",
         "image": "/images/cabanas/La-Martina/H2/IMG_7546.jpg",
+        "order": 1,
+        "title": "Habitación 02",
+        "active": true,
         "images": [
           "/images/cabanas/La-Martina/H2/IMG_7546.jpg",
+          "/images/cabanas/La-Martina/H2/IMG_7551.jpg",
           "/images/cabanas/La-Martina/H2/IMG_7548.jpg",
           "/images/cabanas/La-Martina/H2/IMG_7549.jpg",
-          "/images/cabanas/La-Martina/H2/IMG_7551.jpg",
           "/images/cabanas/La-Martina/H2/IMG_7552.jpg"
-        ],
-        "order": 1,
-        "active": true
+        ]
       },
       {
         "id": "room-2",
-        "title": "Habitación 03",
         "beds": "2 camas literas",
         "image": "/images/cabanas/La-Martina/H3/IMG_7518.jpg",
-        "images": [
-          "/images/cabanas/La-Martina/H3/IMG_7518.jpg",
-          "/images/cabanas/La-Martina/H3/IMG_7519.jpg",
-          "/images/cabanas/La-Martina/H3/IMG_7520.jpg",
-          "/images/cabanas/La-Martina/H3/IMG_7523.jpg",
-          "/images/cabanas/La-Martina/H3/IMG_7524.jpg"
-        ],
         "order": 2,
-        "active": true
+        "title": "Habitación 03",
+        "active": true,
+        "images": [
+          "/images/cabanas/La-Martina/H3/IMG_7519.jpg",
+          "/images/cabanas/La-Martina/H3/IMG_7524.jpg",
+          "/images/cabanas/La-Martina/H3/IMG_7520.jpg",
+          "/images/cabanas/La-Martina/H3/IMG_7518.jpg",
+          "/images/cabanas/La-Martina/H3/IMG_7523.jpg"
+        ]
       }
     ],
     "published": true,
+    "order": 0,
     "icsUrl": "https://calendar.google.com/calendar/ical/info.lamartina.co%40gmail.com/public/basic.ics",
-    "order": 0
+    "sectionTitles": {},
+    "sectionVisibility": {}
   }
 ]

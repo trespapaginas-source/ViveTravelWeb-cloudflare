@@ -27,6 +27,14 @@ dist-ssr
 .wrangler
 .dev.vars
 
+# Credenciales locales (nunca committear)
+.env
+.env.*
+!.env.example
+
+# Originales de banners reencuadrados (el historial de git los conserva)
+public/images/banners-originales/
+
 # Artefactos de build de TypeScript (tsc -b)
 *.tsbuildinfo
 vite.config.d.ts

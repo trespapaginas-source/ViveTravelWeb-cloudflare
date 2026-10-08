@@ -47,7 +47,7 @@ export function FeaturedPlans() {
           >
             {/* Imagen */}
             <div className="relative h-52 overflow-hidden">
-              <img
+              <img loading="lazy" decoding="async"
                 src={plan.images[0]}
                 alt={plan.name}
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
