@@ -14,7 +14,7 @@ const TEAM_MEMBERS = [
     name: "Luis Méndez",
     role: "Co-fundador & Vocero Principal",
     bio: "Viajero empedernido y vocero de Vive Travel. Recorre cada destino en primera persona para garantizar calidad, seguridad y experiencias memorables.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=750&fit=crop&q=80",
+    image: "/images/team/luis-mendez.webp",
     featured: true,
   },
   {
