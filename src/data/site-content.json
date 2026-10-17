@@ -235,19 +235,14 @@
         "url": "https://gvpioebttpmtblsjilbt.supabase.co/storage/v1/object/public/site-images/promotions/82948e60-762d-46a7-ab50-9595f7014801.jpeg"
       },
       {
-        "id": "d1175593-f144-4a3b-84e8-d61289c4edd8",
+        "id": "03f5b19f-d3af-48de-a348-edaa602d7a4c",
+        "alt": "Panama 2x1",
+        "url": "https://gvpioebttpmtblsjilbt.supabase.co/storage/v1/object/public/site-images/promotions/06cf0fb0-e57d-4d73-bb73-773846bf2e67.webp"
+      },
+      {
+        "id": "ff644b5d-4fb1-49db-8343-eade53df949d",
         "alt": "Peru 2x1",
-        "url": "https://gvpioebttpmtblsjilbt.supabase.co/storage/v1/object/public/site-images/promotions/f3d15607-fa8b-402c-b5f9-2b232b83beda.webp"
-      },
-      {
-        "id": "77ec5ab7-fef3-415b-bf1e-cc2ff1b5245c",
-        "alt": "Panamá 2x1",
-        "url": "https://gvpioebttpmtblsjilbt.supabase.co/storage/v1/object/public/site-images/promotions/6f5f5934-f32a-4b74-87eb-53700fab3556.webp"
-      },
-      {
-        "id": "197b6ebd-c816-423f-9305-c4f20c936d4c",
-        "alt": "San andres 2x1",
-        "url": "https://gvpioebttpmtblsjilbt.supabase.co/storage/v1/object/public/site-images/promotions/7a64fbe0-268d-42fd-a0e0-8b8cee6d99b2.webp"
+        "url": "https://gvpioebttpmtblsjilbt.supabase.co/storage/v1/object/public/site-images/promotions/c4297a93-363f-4810-a985-341537d4b294.webp"
       }
     ],
     "sectionTitle": ""
